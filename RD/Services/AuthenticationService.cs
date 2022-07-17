@@ -22,7 +22,7 @@ namespace RD.Services
         public Guid Register(string userName, string password)
         {
 
-            var person = _dbContext.Users.FirstOrDefault(x => x.UserName == userName);
+            var person = _dbContext.Persons.FirstOrDefault(x => x.UserName == userName);
             if (person != null)
                 return person.Id;
 
@@ -30,16 +30,20 @@ namespace RD.Services
 
             Guid Id = Guid.NewGuid();
 
+            var newPerson = new Person() { Id = Id, UserName = userName, PasswordHash = Hash(password + salt), Salt = salt };
+
+            _dbContext.Persons.Add(newPerson);
+
             _dbContext.Users.Add(new User(Id, userName, "", 0));
 
             _dbContext.SaveChanges();
-            return Id;
+            return newPerson.Id; ;
         }
 
         // Проверяем существует ли пользователь в базе данных с таким именем, если существует проверяем совпадает ли пароль
         public bool Login(string userName, string password)
         {
-            var person = _dbContext.Users.FirstOrDefault(x => x.UserName == userName);
+            var person = _dbContext.Persons.FirstOrDefault(x => x.UserName == userName);
             if (person == null)
                 return false;
 

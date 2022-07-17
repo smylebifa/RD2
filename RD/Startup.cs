@@ -33,8 +33,10 @@ namespace RD
 
             //services.AddTransient<IUsersService, UsersService>();
 
-            services.AddTransient<AuthenticationService>();
+            services.AddTransient<IUsersService, UsersService>();
 
+            services.AddTransient<AuthenticationService>();
+            
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options => options.LoginPath = "/login");
         }

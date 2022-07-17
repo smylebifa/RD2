@@ -7413,23 +7413,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\OLEG\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Oleg\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Институт\\Магистратура\\ВКР\\Система RD\\RD2\\RD\\RD.csproj",
+      "projectUniqueName": "C:\\Users\\Oleg\\source\\repos\\RD\\RD2\\RD\\RD.csproj",
       "projectName": "RD",
-      "projectPath": "D:\\Институт\\Магистратура\\ВКР\\Система RD\\RD2\\RD\\RD.csproj",
-      "packagesPath": "C:\\Users\\OLEG\\.nuget\\packages\\",
-      "outputPath": "D:\\Институт\\Магистратура\\ВКР\\Система RD\\RD2\\RD\\obj\\",
+      "projectPath": "C:\\Users\\Oleg\\source\\repos\\RD\\RD2\\RD\\RD.csproj",
+      "packagesPath": "C:\\Users\\Oleg\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Oleg\\source\\repos\\RD\\RD2\\RD\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\OLEG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Oleg\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7441,7 +7437,6 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
-          "targetAlias": "netcoreapp3.0",
           "projectReferences": {}
         }
       },
@@ -7453,7 +7448,6 @@
     },
     "frameworks": {
       "netcoreapp3.0": {
-        "targetAlias": "netcoreapp3.0",
         "dependencies": {
           "EntityFramework": {
             "target": "Package",
@@ -7508,24 +7502,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.0.1, 3.0.1]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[3.0.3, 3.0.3]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[3.0.0, 3.0.0]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[3.0.0, 3.0.0]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -7534,7 +7510,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },

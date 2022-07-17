@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using RD.Data;
 
 namespace RD
 {
@@ -13,12 +14,12 @@ namespace RD
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            // CreateHostBuilder(args).Build().Run();
 
-            //var host = CreateHostBuilder(args);
-            //var app = host.Build();
-            //DbInitializer.InitializeDb(app);
-            //app.Run();
+            var host = CreateHostBuilder(args);
+            var app = host.Build();
+            DbInitializer.InitializeDb(app);
+            app.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
