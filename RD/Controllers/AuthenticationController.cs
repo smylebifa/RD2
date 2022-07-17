@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
@@ -34,14 +35,15 @@ namespace RD.Controllers
 
             // Проверка на заполненность полей формы
             if (!form.ContainsKey("username") || !form.ContainsKey("password"))
-                return RedirectToPage("400");
+                //return RedirectToPage("400");
+                throw new UnauthorizedAccessException();
 
             var username = form["username"];
             var password = form["password"];
 
             if (!_authenticationService.Login(username, password))
-                return RedirectToPage("401");
-
+                //return RedirectToPage("401");
+                throw new InvalidOperationException();
 
             var claims = new List<Claim> { new Claim(ClaimTypes.Name, username) };
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);

@@ -34,7 +34,7 @@ namespace RD.Services
             var newPerson = new Person()
             {
                 Id = user.Id,
-                UserName = user.Name,
+                Login = user.Name,
                 PasswordHash = Hash("" + salt),
                 Salt = salt,
             };
