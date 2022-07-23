@@ -1,0 +1,63 @@
+﻿@model RD.Models.User;
+
+@{
+    ViewBag.Title = "Профиль";
+    Layout = "_Layout";
+}
+
+<form method="post" asp-action="ChangeLogin" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
+    <table>
+        <h4>Добавление пользователей</h4>
+
+        <tr>
+            <td style="padding: 4px;">
+                ivan123
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">
+                <input type="text" name="Login" />
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 2px;">
+                <input type="submit" value="Изменить логин" />
+            </td>
+            <td></td>
+        </tr>
+
+    </table>
+</form>
+
+<form method="post" asp-action="ChangePassword" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
+
+    <table>
+        <tr>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Текущий пароль" name="OldPassword" />
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Новый пароль" name="NewPassword" />
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Повторить новый пароль" name="NewPassword2" />
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 2px;">
+                <input type="submit" value="Изменить пароль" />
+            </td>
+            <td></td>
+        </tr>
+
+    </table>
+</form>

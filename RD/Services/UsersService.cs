@@ -86,5 +86,38 @@ namespace RD.Services
             return new string(Enumerable.Repeat(chars, length)
                                         .Select(s => s[random.Next(s.Length)]).ToArray());
         }
+
+        public void ChangeLogin(string Login)
+        {
+            var existing = _dbContext.Users.FirstOrDefault(x => x.Name == Login);
+            var person = _dbContext.Persons.FirstOrDefault(x => x.Login == Login);
+            
+            if (existing == null)
+                return;
+
+            existing.Name = Login;
+            person.Login = Login;
+
+            _dbContext.SaveChanges();
+
+        }
+
+        public void ChangePassword(string Login, string OldPassword, string NewPassword, string NewPassword2)
+        {
+            var existing = _dbContext.Users.FirstOrDefault(x => x.Name == Login);
+            var person = _dbContext.Persons.FirstOrDefault(x => x.Login == Login);
+
+            if (existing == null)
+                return;
+
+            var salt = RandomString(10);
+
+            var PasswordHash = Hash("" + salt);
+
+             //_dbContext.Persons.Add(newPerson);
+
+            _dbContext.SaveChanges();
+        }
+
     }
 }

@@ -381,3 +381,8 @@ C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\RD.Views.pdb
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\RD.csproj.CopyComplete
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\RD.dll
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\RD.pdb
+D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Logging.Debug.dll
+D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Profile\Index.cshtml.g.cs
+D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Customers\Index.cshtml.g.cs
+D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Themes\Index.cshtml.g.cs
+D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Counterparties\Index.cshtml.g.cs

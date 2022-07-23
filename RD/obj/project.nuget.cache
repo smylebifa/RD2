@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "z21r2LPfK+lSQt5BBtJZAGmducEjS1YX7kD18JbfhlGmA04f8BE4EB/2EskEvUKpL6bPbZlICLLW09jN5SKFpw==",
+  "dgSpecHash": "z178I7oFuMuB4pD/123QgLzlYqzcbAsZlJXAYra40GFIqoLLf+x9rN5+tyd1Lk468LvdH47f4jR2bnTSyHcr1Q==",
   "success": true,
   "projectFilePath": "D:\\Институт\\Магистратура\\ВКР\\Система RD\\RD2\\RD\\RD.csproj",
   "expectedPackageFiles": [
@@ -33,7 +33,7 @@
     "C:\\Users\\OLEG\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\OLEG\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
     "C:\\Users\\OLEG\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
-    "C:\\Users\\OLEG\\.nuget\\packages\\microsoft.extensions.logging.debug\\3.0.0\\microsoft.extensions.logging.debug.3.0.0.nupkg.sha512",
+    "C:\\Users\\OLEG\\.nuget\\packages\\microsoft.extensions.logging.debug\\3.1.0\\microsoft.extensions.logging.debug.3.1.0.nupkg.sha512",
     "C:\\Users\\OLEG\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
     "C:\\Users\\OLEG\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "C:\\Users\\OLEG\\.nuget\\packages\\microsoft.identity.client\\4.14.0\\microsoft.identity.client.4.14.0.nupkg.sha512",

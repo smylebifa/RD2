@@ -15,5 +15,10 @@ namespace RD.Services
         public void UpdateUser(User user);
 
         public void DeleteUser(Guid id);
+
+        public void ChangeLogin(string Login);
+
+        public void ChangePassword(string Login, string OldPassword, string NewPassword, string NewPassword2);
+
     }
 }
