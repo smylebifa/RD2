@@ -1,5 +1,143 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@*@model RD.Models.Themes;*@
+
 @{
+    ViewBag.Title = "Темы";
+    Layout = "_Layout";
 }
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h2>Темы</h2>
+        </div>
+        <div class="col-sm">
+            <h2> @Html.ActionLink("+", "Theme") </h2>
+        
+        </div>
+        <div class="col-sm">
+            2020
+        </div>
+        <div class="col-sm">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Выбор года
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">2020</a>
+                    <a class="dropdown-item" href="#">2021</a>
+                    <a class="dropdown-item" href="#">2022</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<table class="table table-hover" style="text-align: center;">
+
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">№ Темы</th>
+            <th scope="col">Наименование темы</th>
+            <th scope="col">ФИО руководителя</th>
+            <th scope="col">Подразделение исполнитель</th>
+            <th scope="col">Заказчик работы</th>
+            <th scope="col">Срок - начало</th>
+            <th scope="col">Срок - конец</th>
+            <th scope="col">Общий объем финансирования</th>
+            <th scope="col">НДС</th>
+            <th scope="col">Объем без НДС</th>
+            <th scope="col">Приказ об открытии темы</th>
+            <th scope="col">Вид документа</th>
+            <th scope="col">Реквизиты документа</th>
+            <th scope="col">Вид исследования</th>
+            <th scope="col">Область знания</th>
+            <th scope="col">Статус</th>            
+        </tr>
+    </thead>
+
+    <tbody>
+        @*@foreach (var user in @ViewBag.Users)
+        {
+            <tr>
+                <td>@user.Name</td>
+                <td>@user.Email</td>
+                <td>@user.Cash</td>
+                <td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
+                <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>
+            </tr>
+        }*@
+
+        <tr>
+            <td>1</td>
+            <td>Тема1</td>
+            <td>Петров И.А.</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>Тема2</td>
+            <td>Иванов А.И.</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+
+
+    </tbody>
+</table>
+
+@*<form method="post" asp-action="Users" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
+    <table>
+        <h4>Добавление пользователей</h4>
+
+        <tr>
+            <td style="padding: 4px;">Имя:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="Name" />
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 4px;">Электронная почта:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="Email" />
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 4px;">Баланс:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="Cash" />
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 2px;">
+                <input type="submit" value="Отправить" />
+            </td>
+            <td></td>
+        </tr>
+
+    </table>
+</form>*@

@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Новая тема";
+    Layout = "_Layout";
+}
+
+
+
+<form method="post" asp-action="AddTheme" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
+    <table>
+        <h2>Новая тема</h2>
+
+        <tr>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="№ Темы" name="" />
+            </td>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Наименование темы" name="" />
+            </td>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="ФИО руководителя" name="" />                
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Подразделение исполнитель" name="" />                
+            </td>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Заказчик работы" name="" />                
+            </td>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Срок - начало" name="" />                
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Срок - конец" name="" />                
+            </td>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Общий объем финансирования" name="" />                
+            </td>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="НДС" name="" />                
+            </td>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Объем без НДС" name="" />                
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Приказ об открытии темы" name="" />                
+            </td>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Вид документа" name="" />                                
+            </td>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Реквизиты документа" name="" />                
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Вид исследования" name="" />                
+            </td>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Область знания" name="" />                
+            </td>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Статус" name="" />                
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 2px;">
+                <a href="/" value="Отмена" />
+            </td>
+            <td style="padding: 2px;">
+                <input type="submit" value="Сохранить" />
+            </td>
+            <td></td>
+        </tr>
+
+    </table>
+</form>

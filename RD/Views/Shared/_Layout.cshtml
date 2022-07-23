@@ -20,55 +20,59 @@
                     <ul class="navbar-nav flex-grow-1">
 
                         @*@if (User.Identity.Name == "admin")
-                        {*@
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Пользователи</a>
-                            </li>
+        {*@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Пользователи</a>
+                        </li>
 
-                            @*<li class="nav-item">
-                <a class="nav-link text-dark" asp-area="" asp-controller="ProductPrices" asp-action="Index">Цены на продукты</a>
-            </li>*@
+                        @*<li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="ProductPrices" asp-action="Index">Цены на продукты</a>
+        </li>*@
 
-                            @*<li class="nav-item">
-                                <a id="login-link" class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="Index">Вход</a>
-                            </li>
+                        @*<li class="nav-item">
+            <a id="login-link" class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="Index">Вход</a>
+        </li>
 
-                            <li class="nav-item" id="register-menu">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="RegisterPage">Регистрация</a>
-                            </li>
+        <li class="nav-item" id="register-menu">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="RegisterPage">Регистрация</a>
+        </li>
 
-                            <li class="nav-item" id="logout-menu">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="Logout">Выйти</a>
+        <li class="nav-item" id="logout-menu">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="Logout">Выйти</a>
 
-                            </li>*@
+        </li>*@
                         @*}
 
-                        else
-                        {*@
-                            @*<li class="nav-item">
-                <a class="nav-link text-dark" asp-area="" asp-controller="ProductsOfUsers" asp-action="Index">Мои продукты</a>
-            </li>
+        else
+        {*@
+                        @*<li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="ProductsOfUsers" asp-action="Index">Мои продукты</a>
+        </li>
 
-            <li class="nav-item">
-                <a class="nav-link text-dark" asp-area="" asp-controller="ShoppingList" asp-action="Index">Список покупок</a>
-            </li>*@
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="ShoppingList" asp-action="Index">Список покупок</a>
+        </li>*@
 
-                            @*<li class="nav-item">
-                                <a id="login-link" class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="Index">Вход</a>
-                            </li>
+                        @*<li class="nav-item">
+            <a id="login-link" class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="Index">Вход</a>
+        </li>
 
-                            <li class="nav-item" id="register-menu">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="RegisterPage">Регистрация</a>
-                            </li>
+        <li class="nav-item" id="register-menu">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="RegisterPage">Регистрация</a>
+        </li>
 
-                            <li class="nav-item" id="logout-menu">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="Logout">Выйти</a>
-                            </li>*@
+        <li class="nav-item" id="logout-menu">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="Logout">Выйти</a>
+        </li>*@
 
-                            <li class="nav-item" id="profile-menu">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Profile" asp-action="Index"><img src="images/user.png" width="5%" alt="Profile"></a>
-                            </li>
-                       @* }*@
+                        <li class="nav-item" id="themes-menu">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Themes" asp-action="Index">Темы</a>
+                        </li>
+
+                        <li class="nav-item" id="profile-menu">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Profile" asp-action="Index"><img src="images/user.png" width="5%" alt="Profile"></a>
+                        </li>
+                        @* }*@
 
 
                     </ul>

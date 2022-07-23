@@ -12,5 +12,11 @@ namespace RD.Controllers
         {
             return View();
         }
+
+        [HttpGet("/add_theme")]
+        public IActionResult Theme()
+        {
+            return View();
+        }
     }
 }

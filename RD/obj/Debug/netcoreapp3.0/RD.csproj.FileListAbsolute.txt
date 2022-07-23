@@ -386,3 +386,4 @@ D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\obj
 D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Customers\Index.cshtml.g.cs
 D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Themes\Index.cshtml.g.cs
 D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Counterparties\Index.cshtml.g.cs
+D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Themes\Theme.cshtml.g.cs
