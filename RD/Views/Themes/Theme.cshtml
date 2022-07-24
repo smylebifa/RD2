@@ -4,8 +4,7 @@
 }
 
 
-
-<form method="post" asp-action="AddTheme" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
+<form method="post" asp-action="AddTheme" class="my-2 col-10" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
     <table>
         <h2>Новая тема</h2>
 
@@ -74,12 +73,11 @@
 
         <tr>
             <td style="padding: 2px;">
-                <a href="/" value="Отмена" />
+                <input type="button" value="Отмена" onClick='location.href="/"'/>
             </td>
             <td style="padding: 2px;">
                 <input type="submit" value="Сохранить" />
             </td>
-            <td></td>
         </tr>
 
     </table>
