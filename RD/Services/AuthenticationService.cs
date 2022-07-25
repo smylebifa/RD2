@@ -19,10 +19,10 @@ namespace RD.Services
         }
 
         // Если имя пользователя найдено в базе, возвращаем его Id, иначе создаем нового пользователя
-        public Guid Register(string userName, string password)
+        public Guid Register(string login, string password)
         {
 
-            var person = _dbContext.Persons.FirstOrDefault(x => x.Login == userName);
+            var person = _dbContext.Persons.FirstOrDefault(x => x.Login == login);
             if (person != null)
                 return person.Id;
 
@@ -30,20 +30,21 @@ namespace RD.Services
 
             Guid Id = Guid.NewGuid();
 
-            var newPerson = new Person() { Id = Id, Login = userName, PasswordHash = Hash(password + salt), Salt = salt };
+            var newPerson = new Person() { Id = Id, Login = login, PasswordHash = Hash(password + salt), Salt = salt };
 
             _dbContext.Persons.Add(newPerson);
 
-            _dbContext.Users.Add(new User(Id, userName, "", 0));
+            _dbContext.Users.Add(new User(Id, login, password, ""));
 
             _dbContext.SaveChanges();
-            return newPerson.Id; ;
+
+            return newPerson.Id;
         }
 
         // Проверяем существует ли пользователь в базе данных с таким именем, если существует проверяем совпадает ли пароль
-        public bool Login(string userName, string password)
+        public bool Login(string login, string password)
         {
-            var person = _dbContext.Persons.FirstOrDefault(x => x.Login == userName);
+            var person = _dbContext.Persons.FirstOrDefault(x => x.Login == login);
             if (person == null)
                 return false;
 

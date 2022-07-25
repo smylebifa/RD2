@@ -34,18 +34,18 @@ namespace RD.Controllers
             var form = context.Request.Form;
 
             // Проверка на заполненность полей формы
-            if (!form.ContainsKey("username") || !form.ContainsKey("password"))
+            if (!form.ContainsKey("login") || !form.ContainsKey("password"))
                 //return RedirectToPage("400");
                 throw new UnauthorizedAccessException();
 
-            var username = form["username"];
+            var login = form["login"];
             var password = form["password"];
 
-            if (!_authenticationService.Login(username, password))
+            if (!_authenticationService.Login(login, password))
                 //return RedirectToPage("401");
                 throw new InvalidOperationException();
 
-            var claims = new List<Claim> { new Claim(ClaimTypes.Name, username) };
+            var claims = new List<Claim> { new Claim(ClaimTypes.Name, login) };
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
             await context.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
 

@@ -7,17 +7,17 @@
 
 <form method="post" asp-action="ChangeLogin" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
     <table>
-        <h4>Добавление пользователей</h4>
+        <h4>Профиль пользователя</h4>
 
         <tr>
             <td style="padding: 4px;">
-                ivan123
+                @ViewBag.UserName
             </td>
         </tr>
 
         <tr>
             <td style="padding: 4px;">
-                <input type="text" name="Login" />
+                <input type="text" name="NewLogin" />
             </td>
         </tr>
 

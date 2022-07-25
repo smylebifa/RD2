@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RD.Services;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace RD.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class ProfileController : Controller
     {
         private readonly ILogger<ProfileController> _logger;
@@ -23,23 +24,30 @@ namespace RD.Controllers
 
         public IActionResult Index()
         {
+            var userClaims = HttpContext.User.Claims;
+            var name = userClaims.FirstOrDefault(x => x.Type == ClaimTypes.Name)?.Value;
+
+            ViewBag.UserName = name;
             return View();
         }
 
-        [HttpPost("/edit")]
-        public IActionResult ChangeLogin(string Login)
+        [HttpPost("/change_login")]
+        public IActionResult ChangeLogin(string newLogin)
         {
-            _usersService.ChangeLogin(Login);
+            var userClaims = HttpContext.User.Claims;
+            var oldLogin = userClaims.FirstOrDefault(x => x.Type == ClaimTypes.Name)?.Value;
+
+            _usersService.ChangeLogin(oldLogin, newLogin);
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpPost("/edit")]
-        public IActionResult ChangePassword(string OldPassword, string NewPassword, string NewPassword2)
+        [HttpPost("/change_password")]
+        public IActionResult ChangePassword(string oldPassword, string newPassword, string newPassword2)
         {
             var userClaims = HttpContext.User.Claims;
             var name = userClaims.FirstOrDefault(x => x.Type == ClaimTypes.Name)?.Value;
 
-            _usersService.ChangePassword(name, OldPassword, NewPassword, NewPassword2);
+            _usersService.ChangePassword(name, oldPassword, newPassword, newPassword2);
             return RedirectToAction(nameof(Index));
         }
     }

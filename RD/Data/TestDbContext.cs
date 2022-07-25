@@ -15,5 +15,6 @@ namespace RD.Data
 
         public DbSet<User> Users { get; set; } = null!;
         public DbSet<Person> Persons { get; set; } = null!;
+        public DbSet<Theme> Themes { get; set; } = null!;
     }
 }

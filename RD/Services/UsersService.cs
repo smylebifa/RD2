@@ -25,7 +25,7 @@ namespace RD.Services
 
         public void AddUser(User user)
         {
-            if (_dbContext.Users.Any(x => x.Name == user.Name))
+            if (_dbContext.Users.Any(x => x.Login == user.Login))
                 throw new ArgumentException("User with such name already exists.");
 
             _dbContext.Users.Add(user);
@@ -34,8 +34,8 @@ namespace RD.Services
             var newPerson = new Person()
             {
                 Id = user.Id,
-                Login = user.Name,
-                PasswordHash = Hash("" + salt),
+                Login = user.Login,
+                PasswordHash = Hash(user.Password + salt),
                 Salt = salt,
             };
 
@@ -51,9 +51,9 @@ namespace RD.Services
             if (existing == null)
                 return;
 
-            existing.Name = user.Name;
-            existing.Email = user.Email;
-            existing.Cash = user.Cash;
+            existing.Login = user.Login;
+            existing.Password = user.Password;
+            existing.IsActive= true;
 
             _dbContext.SaveChanges();
         }
@@ -87,34 +87,35 @@ namespace RD.Services
                                         .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        public void ChangeLogin(string Login)
+        public void ChangeLogin(string oldLogin, string newLogin)
         {
-            var existing = _dbContext.Users.FirstOrDefault(x => x.Name == Login);
-            var person = _dbContext.Persons.FirstOrDefault(x => x.Login == Login);
-            
-            if (existing == null)
+            var existing = _dbContext.Users.FirstOrDefault(x => x.Login == newLogin);
+            var user = _dbContext.Users.FirstOrDefault(x => x.Login == oldLogin);
+            var person = _dbContext.Persons.FirstOrDefault(x => x.Login == oldLogin);
+
+            if (existing != null)
                 return;
 
-            existing.Name = Login;
-            person.Login = Login;
+            user.Login = newLogin;
+            person.Login = newLogin;
 
             _dbContext.SaveChanges();
 
         }
 
-        public void ChangePassword(string Login, string OldPassword, string NewPassword, string NewPassword2)
+        public void ChangePassword(string login, string oldPassword, string newPassword, string newPassword2)
         {
-            var existing = _dbContext.Users.FirstOrDefault(x => x.Name == Login);
-            var person = _dbContext.Persons.FirstOrDefault(x => x.Login == Login);
-
-            if (existing == null)
-                return;
-
-            var salt = RandomString(10);
-
-            var PasswordHash = Hash("" + salt);
-
-             //_dbContext.Persons.Add(newPerson);
+            var user = _dbContext.Users.FirstOrDefault(x => x.Login == login);
+            var person = _dbContext.Persons.FirstOrDefault(x => x.Login == login);
+                        
+            if (newPassword == newPassword2 && user.Password == oldPassword) {
+                var salt = RandomString(10);
+                user.Password = newPassword;
+                person.Salt = salt;
+                person.PasswordHash = Hash(newPassword + salt);
+            }
+            
+            //_dbContext.Persons.Add(newPerson);
 
             _dbContext.SaveChanges();
         }

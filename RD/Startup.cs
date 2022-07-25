@@ -48,6 +48,7 @@ namespace RD
             //services.AddTransient<IUsersService, UsersService>();
 
             services.AddTransient<IUsersService, UsersService>();
+            services.AddTransient<IThemesService, ThemesService>();
 
             services.AddTransient<AuthenticationService>();
             

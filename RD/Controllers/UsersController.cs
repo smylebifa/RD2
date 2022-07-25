@@ -30,6 +30,7 @@ namespace RD.Controllers
         [HttpPost]
         public IActionResult Users(User user)
         {
+            user.IsActive = true;
             _usersService.AddUser(user);
             return RedirectToAction(nameof(Index));
         }

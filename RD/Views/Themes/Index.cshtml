@@ -1,4 +1,4 @@
-﻿@*@model RD.Models.Themes;*@
+﻿@model RD.Models.Theme;
 
 @{
     ViewBag.Title = "Темы";
@@ -32,83 +32,98 @@
     </div>
 </div>
 
+<div style="overflow-x:auto;">
+    <table class="table table-hover" style="text-align: center; ">
 
-<table class="table table-hover" style="text-align: center;">
-
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col">№ Темы</th>
-            <th scope="col">Наименование темы</th>
-            <th scope="col">ФИО руководителя</th>
-            <th scope="col">Подразделение исполнитель</th>
-            <th scope="col">Заказчик работы</th>
-            <th scope="col">Срок - начало</th>
-            <th scope="col">Срок - конец</th>
-            <th scope="col">Общий объем финансирования</th>
-            <th scope="col">НДС</th>
-            <th scope="col">Объем без НДС</th>
-            <th scope="col">Приказ об открытии темы</th>
-            <th scope="col">Вид документа</th>
-            <th scope="col">Реквизиты документа</th>
-            <th scope="col">Вид исследования</th>
-            <th scope="col">Область знания</th>
-            <th scope="col">Статус</th>            
-        </tr>
-    </thead>
-
-    <tbody>
-        @*@foreach (var user in @ViewBag.Users)
-        {
+        <thead class="thead-dark">
             <tr>
-                <td>@user.Name</td>
-                <td>@user.Email</td>
-                <td>@user.Cash</td>
-                <td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
-                <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>
+                <th scope="col">№ Темы</th>
+                <th scope="col">Наименование темы</th>
+                <th scope="col">ФИО руководителя</th>
+                <th scope="col">Подразделение исполнитель</th>
+                <th scope="col">Заказчик работы</th>
+                <th scope="col">Срок - начало</th>
+                <th scope="col">Срок - конец</th>
+                <th scope="col">Общий объем финансирования</th>
+                <th scope="col">НДС</th>
+                <th scope="col">Объем без НДС</th>
+                <th scope="col">Приказ об открытии темы</th>
+                <th scope="col">Вид документа</th>
+                <th scope="col">Реквизиты документа</th>
+                <th scope="col">Вид исследования</th>
+                <th scope="col">Область знания</th>
+                <th scope="col">Статус</th>
             </tr>
-        }*@
+        </thead>
 
-        <tr>
-            <td>1</td>
-            <td>Тема1</td>
-            <td>Петров И.А.</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-        </tr>
+        <tbody>
+            @foreach (var theme in @ViewBag.Themes)
+                {
+            <tr>
+                <td>@theme.Number</td>
+                <td>@theme.Name</td>
+                <td>@theme.FioManager</td>
+                <td>@theme.ExecutiveDepartment</td>
+                <td>@theme.WorkStart</td>
+                <td>@theme.WorkEnd</td>
+                <td>@theme.Amount</td>
+                <td>@theme.Vat</td>
+                <td>@theme.AmountWithoutVat</td>
+                <td>@theme.Decree</td>
+                <td>@theme.DocType</td>
+                <td>@theme.Props</td>
+                <td>@theme.ResearchType</td>
+                <td>@theme.Knowledge</td>
+                <td>@theme.Status</td>
+               
+                @*<td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>*@
+                @*<td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>*@
 
-        <tr>
-            <td>2</td>
-            <td>Тема2</td>
-            <td>Иванов А.И.</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-        </tr>
+            </tr>
+                }
+
+            @*<tr>
+                <td>1</td>
+                <td>Тема1</td>
+                <td>Петров И.А.</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Тема2</td>
+                <td>Иванов А.И.</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+            </tr>*@
 
 
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
 
 @*<form method="post" asp-action="Users" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
     <table>
