@@ -31,7 +31,7 @@ namespace RD.Controllers
             return View();
         }
 
-        [HttpPost("/change_login")]
+        [HttpPost("/change_login/{login}")]
         public IActionResult ChangeLogin(string newLogin)
         {
             var userClaims = HttpContext.User.Claims;
@@ -41,7 +41,7 @@ namespace RD.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpPost("/change_password")]
+        [HttpPost("/change_password/{oldPassword}/{newPassword}/{newPassword2}")]
         public IActionResult ChangePassword(string oldPassword, string newPassword, string newPassword2)
         {
             var userClaims = HttpContext.User.Claims;
