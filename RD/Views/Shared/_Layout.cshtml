@@ -19,8 +19,8 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
 
-                        @if (User.Identity.Name == "admin")
-                        {
+                        @*@if (User.Identity.Name == "admin")
+                        {*@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Пользователи</a>
                             </li>
@@ -45,12 +45,12 @@
                             <li class="nav-item" id="profile-menu">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Profile" asp-action="Index"><img src="~/images/user.png" width="5%" alt="Profile"></a>
                             </li>
-                        }
+                        @*}
 
                         else
-                        {
+                        {*@
 
-                            <li class="nav-item">
+                            @*<li class="nav-item">
                                 <a id="login-link" class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="Index">Вход</a>
                             </li>
 
@@ -68,8 +68,8 @@
 
                             <li class="nav-item" id="profile-menu">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Profile" asp-action="Index"><img src="~/images/user.png" width="5%" alt="Profile"></a>
-                            </li>
-                        }
+                            </li>*@
+                        @*}*@
 
 
                     </ul>

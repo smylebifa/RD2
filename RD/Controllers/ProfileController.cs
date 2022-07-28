@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace RD.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class ProfileController : Controller
     {
         private readonly ILogger<ProfileController> _logger;

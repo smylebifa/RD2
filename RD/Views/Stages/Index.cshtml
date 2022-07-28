@@ -1,0 +1,119 @@
+﻿@model RD.Models.Stage;
+
+@{
+    ViewBag.Title = "Этапы";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h2>Этапы</h2>
+        </div>
+        <div class="col-sm">
+            <h2> @Html.ActionLink("+", "Stage") </h2>
+        </div>
+        <div class="col-sm">
+            <h2> <a class="nav-link text-dark" asp-area="" asp-controller="TRL" asp-action="Index">TRL</a> </h2>
+        </div>
+    </div>
+</div>
+
+<div style="overflow-x:auto;">
+    <table class="table table-hover" style="text-align: center; ">
+
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">№ этапа</th>
+                <th scope="col">Срок выполнения - начало</th>
+                <th scope="col">Срок выполнения - конец</th>
+                <th scope="col">Сумма этапа</th>
+                <th scope="col">Акт о завершении</th>
+                <th scope="col">Статус</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @*@foreach (var theme in @ViewBag.Themes)
+            {
+                <tr>
+                    <td><a class="nav-link text-dark" asp-area="" asp-controller="Stage" asp-action="Index">Этапы</a></td>
+                    <td>@theme.Number</td>
+                    <td>@theme.Name</td>
+                    <td>@theme.FioManager</td>
+                    <td>@theme.ExecutiveDepartment</td>
+                    <td>@theme.WorkStart</td>
+                    <td>@theme.WorkEnd</td>
+                    <td>@theme.Amount</td>
+                    <td>@theme.Vat</td>
+                    <td>@theme.AmountWithoutVat</td>
+                    <td>@theme.Decree</td>
+                    <td>@theme.DocType</td>
+                    <td>@theme.Props</td>
+                    <td>@theme.ResearchType</td>
+                    <td>@theme.Knowledge</td>
+                    <td>@theme.Status</td>*@
+
+                    @*<td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>*@
+                    @*<td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>*@
+
+                @*</tr>
+            }*@
+
+            <tr>
+                    <td></td>
+                    <td>1</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                   
+                </tr>
+
+            <tr>
+                <td></td>
+                <td>y</td>
+                <td>y.</td>
+                <td>y</td>
+                <td>y</td>
+                <td>y</td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</div>
+
+@*<form method="post" asp-action="Users" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
+        <table>
+            <h4>Добавление пользователей</h4>
+
+            <tr>
+                <td style="padding: 4px;">Имя:</td>
+                <td style="padding: 4px;">
+                    <input type="text" name="Name" />
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 4px;">Электронная почта:</td>
+                <td style="padding: 4px;">
+                    <input type="text" name="Email" />
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 4px;">Баланс:</td>
+                <td style="padding: 4px;">
+                    <input type="text" name="Cash" />
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 2px;">
+                    <input type="submit" value="Отправить" />
+                </td>
+                <td></td>
+            </tr>
+
+        </table>
+    </form>*@

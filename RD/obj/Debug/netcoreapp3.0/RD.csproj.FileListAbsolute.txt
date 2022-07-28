@@ -393,3 +393,13 @@ C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Custome
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Profile\Index.cshtml.g.cs
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Themes\Index.cshtml.g.cs
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Themes\Theme.cshtml.g.cs
+D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\bin\Debug\netcoreapp3.0\System.Web.Mvc.dll
+D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\bin\Debug\netcoreapp3.0\System.Web.Razor.dll
+D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\bin\Debug\netcoreapp3.0\System.Web.Helpers.dll
+D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\bin\Debug\netcoreapp3.0\System.Web.WebPages.Deployment.dll
+D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\bin\Debug\netcoreapp3.0\System.Web.WebPages.Razor.dll
+D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\bin\Debug\netcoreapp3.0\System.Web.WebPages.dll
+D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\bin\Debug\netcoreapp3.0\Microsoft.Web.Infrastructure.dll
+D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Stages\Index.cshtml.g.cs
+D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Stages\Stage.cshtml.g.cs
+D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\TRL\Index.cshtml.g.cs

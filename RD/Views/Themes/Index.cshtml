@@ -37,7 +37,8 @@
 
         <thead class="thead-dark">
             <tr>
-                <th scope="col">№ Темы</th>
+                <th scope="col"></th>
+                <th scope="col">№ темы</th>
                 <th scope="col">Наименование темы</th>
                 <th scope="col">ФИО руководителя</th>
                 <th scope="col">Подразделение исполнитель</th>
@@ -57,9 +58,10 @@
         </thead>
 
         <tbody>
-            @foreach (var theme in @ViewBag.Themes)
+            @*@foreach (var theme in @ViewBag.Themes)
                 {
             <tr>
+                <td><a class="nav-link text-dark" asp-area="" asp-controller="Stage" asp-action="Index">Этапы</a></td>
                 <td>@theme.Number</td>
                 <td>@theme.Name</td>
                 <td>@theme.FioManager</td>
@@ -74,15 +76,16 @@
                 <td>@theme.Props</td>
                 <td>@theme.ResearchType</td>
                 <td>@theme.Knowledge</td>
-                <td>@theme.Status</td>
+                <td>@theme.Status</td>*@
                
                 @*<td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>*@
                 @*<td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>*@
 
-            </tr>
-                }
+            @*</tr>
+                }*@
 
-            @*<tr>
+            <tr>
+                <td><a class="nav-link text-dark" asp-area="" asp-controller="Stages" asp-action="Index">Этапы</a></td>
                 <td>1</td>
                 <td>Тема1</td>
                 <td>Петров И.А.</td>
@@ -102,6 +105,7 @@
             </tr>
 
             <tr>
+                <td><a class="nav-link text-dark" asp-area="" asp-controller="Stages" asp-action="Index">Этапы</a></td>
                 <td>2</td>
                 <td>Тема2</td>
                 <td>Иванов А.И.</td>
@@ -118,7 +122,7 @@
                 <td>x</td>
                 <td>x</td>
                 <td>x</td>
-            </tr>*@
+            </tr>
 
 
         </tbody>
