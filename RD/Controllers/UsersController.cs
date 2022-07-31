@@ -8,7 +8,7 @@ using RD.Services;
 
 namespace RD.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class UsersController : Controller
     {
         private readonly ILogger<UsersController> _logger;

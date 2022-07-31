@@ -6,7 +6,9 @@
 
 }
 
-<form method="post" asp-action="ChangeLogin" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
+<h4>Профиль пользователя</h4>
+
+@*<form method="post" asp-action="ChangeLogin" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
     <table>
         <h4>Профиль пользователя</h4>
 
@@ -30,11 +32,14 @@
         </tr>
 
     </table>
-</form>
+</form>*@
 
 
 <form method="post" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
     <table>
+        
+        <h5>Смена пароля</h5>
+
         <tr>
             <td style="padding: 4px;">
                 <input type="text" placeholder="Текущий пароль" id="oldPassword" />
@@ -49,7 +54,7 @@
 
         <tr>
             <td style="padding: 4px;">
-                <input type="text" placeholder="Повторить новый пароль" id="NewPassword2" />
+                <input type="text" placeholder="Повторить новый пароль" id="newPassword2" />
             </td>
         </tr>
 
@@ -75,7 +80,7 @@
                 location.reload();
             },
             error: function () {
-                alert("Всё сломалось!!!")
+                alert("Ошибка выполнения!")
             }
         })
     }
@@ -84,19 +89,19 @@
 <script type="text/javascript">
     function changePassword() {
 
-        var oldPassword = document.getElementById('newLogin').value;
-        var newPassword = document.getElementById('oldPassword').value;
-        var newPassword2 = document.getElementById('newPassword').value;
+        var oldPassword = document.getElementById('oldPassword').value;
+        var newPassword = document.getElementById('newPassword').value;
+        var newPassword2 = document.getElementById('newPassword2').value;
 
         $.ajax({
-            url: '/change_login/' + oldPassword + '/' + newPassword + '/' + newPassword2,
+            url: '/change_password/' + oldPassword + '/' + newPassword + '/' + newPassword2,
             type: 'POST',
             contentType: "application/json; charset=utf-8",
             success: function () {
                 location.reload()
             },
             error: function () {
-                alert("Всё сломалось!!!")
+                alert("Ошибка выполнения!")
             }
         })
     }
