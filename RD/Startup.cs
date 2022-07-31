@@ -49,12 +49,15 @@ namespace RD
 
             services.AddTransient<IUsersService, UsersService>();
             services.AddTransient<IThemesService, ThemesService>();
+            services.AddTransient<ITRLsService, TRLsService>();
 
             services.AddTransient<AuthenticationService>();
-            
+
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options => options.LoginPath = "/login");
-        }
+
+
+                }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

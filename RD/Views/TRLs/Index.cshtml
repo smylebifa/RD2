@@ -1,0 +1,180 @@
+﻿@model RD.Models.TRL;
+
+@{
+    ViewBag.Title = "TRL";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h2>TRL</h2>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="toggle"]').change(function () {
+            $(this).parents().next('.hide').toggle();
+        });
+    });
+
+    $(document).ready(function () {
+        $(".expandFRED").click(function () {
+            $(".expandSUB1").toggle();
+        });
+        $(".expandFRED2").click(function () {
+            $(".expandSUB2").toggle();
+        });
+        $(".expandVALS").click(function () {
+            $(".expandCAT1").toggle();
+        });
+    })
+</script>
+
+<style>
+    .label tr td label {
+        display: block;
+    }
+
+    [data-toggle='toggle'] {
+        display: none;
+    }
+
+    .expandSUB1 {
+        display: none;
+    }
+
+    .expandSUB2 {
+        display: none;
+    }
+
+    . {
+        display: none;
+    }
+
+        .expandCAT1 {
+            display: none;
+        }
+
+    .expandFRED, .expandFRED2 {
+        cursor: pointer;
+    }
+</style>
+
+
+<div style="overflow-x:auto;">
+    <table class="table table-hover table-bordered" style="text-align: center; ">
+
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Уровень TRL</th>
+                <th scope="col">Наименование уровня TRL</th>
+                <th scope="col">Статус</th>
+            </tr>
+        </thead>
+
+        @*@foreach (var theme in @ViewBag.Themes)
+            {
+                <tr>
+                    <td><a class="nav-link text-dark" asp-area="" asp-controller="Stage" asp-action="Index">Этапы</a></td>
+                    <td>@theme.Number</td>
+                    <td>@theme.Name</td>
+                    <td>@theme.FioManager</td>
+                    <td>@theme.ExecutiveDepartment</td>
+                    <td>@theme.WorkStart</td>
+                    <td>@theme.WorkEnd</td>
+                    <td>@theme.Amount</td>
+                    <td>@theme.Vat</td>
+                    <td>@theme.AmountWithoutVat</td>
+                    <td>@theme.Decree</td>
+                    <td>@theme.DocType</td>
+                    <td>@theme.Props</td>
+                    <td>@theme.ResearchType</td>
+                    <td>@theme.Knowledge</td>
+                    <td>@theme.Status</td>
+
+                    <td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
+                    <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>
+
+                </tr>
+            }*@
+
+
+        <tbody class="labels">
+            <tr>
+                <td></td>
+                <td>1</td>
+                <td class='expandFRED'>Сформулирована фундаментальная концепция технологии и обоснование ее полезности. ▼</td>
+                <td><input type="checkbox" id="trl1" @(ViewBag.Trls.Trl1 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+
+        </tbody>
+
+        <tbody class="hide">
+            <tr>
+                <td class='expandSUB1 expandVALS'></td>
+                <td class='expandSUB1'>1</td>
+                <td class='expandSUB1' align='right'>
+                    Начальный уровень зрелости технологии. Научные исследования начинают переходить в прикладные исследования. Сформулирована идея, основные принципы наблюдались и были документированы. Проведен анализ существующих на рынке решений, определена потребность в новом продукте, сформулировано перспективное технологическое/алгоритмическое/архитектурное решение. Проведен экспертный анализ предлагаемого решения: ценность, удобство, реализуемость, прибыльность, востребованность, защищенность бизнеса, полезность для развития технологической базы исполнителя.
+                </td>
+                <td class='expandSUB1'></td>
+            </tr>
+        </tbody>
+
+
+        <tbody class="labels">
+
+            <tr>
+                <td></td>
+                <td>2</td>
+                <td class='expandFRED2'>Определены целевые области применения технологии и ее критические элементы. ▼</td>
+                <td><input type="checkbox" id="trl2" @(ViewBag.Trls.Trl2 ? "checked=\"checked\"" : "") /></td>
+                
+            </tr>
+
+        </tbody>
+
+        <tbody class="hide">
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>2</td>
+                <td class='expandSUB2' align='right'>
+                    Концепция технологии/продукта и/или ее применения сформулированы. Сформулировано техническое предложение, может быть предложено практическое использование. Аналитический обзор, проведенный в рамках патентного исследования, показал реализуемость и отсутствие аналогичных решений. Сформулировано предварительное техническое задание, определена архитектура (описание основных компонентов и их связей) продукта: платформа для решения, компоненты, связь и взаимодействие между ними, проведено моделирование продукта, разработан предварительный дизайн. Проведен предварительный патентный анализ, анализ промышленных и технологических рисков.
+                </td>
+                <td class='expandSUB2'></td>
+            </tr>
+
+
+        </tbody>
+
+
+    </table>
+</div>
+
+<a onclick="save()" href="#"> Сохранить </a>
+
+<script type="text/javascript">
+    function save() {
+
+        var trl1 = document.getElementById('trl1').checked;
+        var trl2 = document.getElementById('trl2').checked;
+
+        //alert(trl1);
+        //alert(trl2);
+
+        $.ajax({
+            url: '/save/' + trl1 + '/' + trl2,
+            type: 'POST',
+            contentType: "application/json; charset=utf-8",
+            success: function () {
+                location.reload()
+            },
+            error: function () {
+                alert("Всё сломалось!!!")
+            }
+        })
+    }
+</script>

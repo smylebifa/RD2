@@ -11,11 +11,10 @@
             <h2>Темы</h2>
         </div>
         <div class="col-sm">
-            <h2> @Html.ActionLink("+", "Theme") </h2>
-        
+            <h4> @Html.ActionLink("Добавить тему", "Theme") </h4>        
         </div>
         <div class="col-sm">
-            2020
+            <h4>2020</h4>
         </div>
         <div class="col-sm">
             <div class="dropdown">
@@ -85,7 +84,7 @@
                 }*@
 
             <tr>
-                <td><a class="nav-link text-dark" asp-area="" asp-controller="Stages" asp-action="Index">Этапы</a></td>
+                <td><a class="nav-link text-primary" asp-area="" asp-controller="Stages" asp-action="Index">Этапы</a></td>
                 <td>1</td>
                 <td>Тема1</td>
                 <td>Петров И.А.</td>
@@ -105,7 +104,7 @@
             </tr>
 
             <tr>
-                <td><a class="nav-link text-dark" asp-area="" asp-controller="Stages" asp-action="Index">Этапы</a></td>
+                <td><a class="nav-link text-primary" asp-area="" asp-controller="Stages" asp-action="Index">Этапы</a></td>
                 <td>2</td>
                 <td>Тема2</td>
                 <td>Иванов А.И.</td>
@@ -128,35 +127,3 @@
         </tbody>
     </table>
 </div>
-
-@*<form method="post" asp-action="Users" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
-    <table>
-        <h4>Добавление пользователей</h4>
-
-        <tr>
-            <td style="padding: 4px;">Имя:</td>
-            <td style="padding: 4px;">
-                <input type="text" name="Name" />
-            </td>
-        </tr>
-        <tr>
-            <td style="padding: 4px;">Электронная почта:</td>
-            <td style="padding: 4px;">
-                <input type="text" name="Email" />
-            </td>
-        </tr>
-        <tr>
-            <td style="padding: 4px;">Баланс:</td>
-            <td style="padding: 4px;">
-                <input type="text" name="Cash" />
-            </td>
-        </tr>
-        <tr>
-            <td style="padding: 2px;">
-                <input type="submit" value="Отправить" />
-            </td>
-            <td></td>
-        </tr>
-
-    </table>
-</form>*@

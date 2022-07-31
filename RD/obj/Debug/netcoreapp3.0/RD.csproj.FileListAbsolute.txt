@@ -353,10 +353,8 @@ C:\Users\Oleg\source\repos\RD\RD2\RD\bin\Debug\netcoreapp3.0\runtimes\unix\lib\n
 C:\Users\Oleg\source\repos\RD\RD2\RD\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 C:\Users\Oleg\source\repos\RD\RD2\RD\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.0\System.Text.Encoding.CodePages.dll
 C:\Users\Oleg\source\repos\RD\RD2\RD\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\RD.csprojAssemblyReference.cache
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\staticwebassets\RD.StaticWebAssets.Manifest.cache
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\staticwebassets\RD.StaticWebAssets.xml
-C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\RD.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\RD.RazorAssemblyInfo.cache
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\RD.RazorAssemblyInfo.cs
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\RD.AssemblyInfoInputs.cache
@@ -403,3 +401,15 @@ D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\bin
 D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Stages\Index.cshtml.g.cs
 D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Stages\Stage.cshtml.g.cs
 D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\TRL\Index.cshtml.g.cs
+C:\Users\Oleg\source\repos\RD\RD2\RD\bin\Debug\netcoreapp3.0\System.Web.Mvc.dll
+C:\Users\Oleg\source\repos\RD\RD2\RD\bin\Debug\netcoreapp3.0\System.Web.Razor.dll
+C:\Users\Oleg\source\repos\RD\RD2\RD\bin\Debug\netcoreapp3.0\System.Web.Helpers.dll
+C:\Users\Oleg\source\repos\RD\RD2\RD\bin\Debug\netcoreapp3.0\System.Web.WebPages.Deployment.dll
+C:\Users\Oleg\source\repos\RD\RD2\RD\bin\Debug\netcoreapp3.0\System.Web.WebPages.Razor.dll
+C:\Users\Oleg\source\repos\RD\RD2\RD\bin\Debug\netcoreapp3.0\System.Web.WebPages.dll
+C:\Users\Oleg\source\repos\RD\RD2\RD\bin\Debug\netcoreapp3.0\Microsoft.Web.Infrastructure.dll
+C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Stages\Index.cshtml.g.cs
+C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Stages\Stage.cshtml.g.cs
+C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\RD.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\RD.csprojAssemblyReference.cache
+C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\TRLs\Index.cshtml.g.cs

@@ -87,19 +87,21 @@ namespace RD.Services
                                         .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        public void ChangeLogin(string oldLogin, string newLogin)
+        public bool ChangeLogin(string oldLogin, string newLogin)
         {
             var existing = _dbContext.Users.FirstOrDefault(x => x.Login == newLogin);
             var user = _dbContext.Users.FirstOrDefault(x => x.Login == oldLogin);
             var person = _dbContext.Persons.FirstOrDefault(x => x.Login == oldLogin);
 
             if (existing != null)
-                return;
+                return false;
 
             user.Login = newLogin;
             person.Login = newLogin;
 
             _dbContext.SaveChanges();
+
+            return true;
 
         }
 

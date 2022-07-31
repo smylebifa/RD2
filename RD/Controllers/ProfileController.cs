@@ -31,13 +31,15 @@ namespace RD.Controllers
             return View();
         }
 
-        [HttpPost("/change_login/{login}")]
+        [HttpPost("/change_login/{newLogin}")]
         public IActionResult ChangeLogin(string newLogin)
         {
             var userClaims = HttpContext.User.Claims;
             var oldLogin = userClaims.FirstOrDefault(x => x.Type == ClaimTypes.Name)?.Value;
 
-            _usersService.ChangeLogin(oldLogin, newLogin);
+            if (_usersService.ChangeLogin(oldLogin, newLogin))
+                userClaims.Append(new Claim(ClaimTypes.Name, newLogin));
+
             return RedirectToAction(nameof(Index));
         }
 

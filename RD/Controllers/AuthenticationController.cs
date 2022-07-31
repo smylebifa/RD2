@@ -85,9 +85,9 @@ namespace RD.Controllers
         }
 
         [HttpPost]
-        public IActionResult Register(string userName, string password)
+        public IActionResult Register(string login, string password)
         {
-            _authenticationService.Register(userName, password);
+            _authenticationService.Register(login, password);
             return RedirectToAction("Index");
         }
     }

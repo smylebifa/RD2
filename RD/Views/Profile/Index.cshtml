@@ -6,27 +6,25 @@
 
 }
 
-<form method="post" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
-    @*<form method="post" asp-action="ChangeLogin" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">*@
+<form method="post" asp-action="ChangeLogin" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
     <table>
         <h4>Профиль пользователя</h4>
 
         <tr>
-            <td style="padding: 4px;">
+            <td style="padding: 4px;" id="username">
                 @ViewBag.UserName
             </td>
         </tr>
 
         <tr>
             <td style="padding: 4px;">
-                <input type="text" name="newLogin" />
+                <input type="text" id="newLogin" />
             </td>
         </tr>
 
         <tr>
             <td style="padding: 2px;">
                 <a onclick="changeLogin()" href="#">Изменить логин</a>
-                @*<input type="submit" value="Изменить логин" />*@
             </td>
             <td></td>
         </tr>
@@ -35,74 +33,71 @@
 </form>
 
 
-
 <form method="post" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
-    @*<form method="post" asp-action="ChangePassword" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">*@
+    <table>
+        <tr>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Текущий пароль" id="oldPassword" />
+            </td>
+        </tr>
 
-        <table>
-            <tr>
-                <td style="padding: 4px;">
-                    <input type="text" placeholder="Текущий пароль" name="oldPassword" />
-                </td>
-            </tr>
+        <tr>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Новый пароль" id="newPassword" />
+            </td>
+        </tr>
 
-            <tr>
-                <td style="padding: 4px;">
-                    <input type="text" placeholder="Новый пароль" name="newPassword" />
-                </td>
-            </tr>
+        <tr>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Повторить новый пароль" id="NewPassword2" />
+            </td>
+        </tr>
 
-            <tr>
-                <td style="padding: 4px;">
-                    <input type="text" placeholder="Повторить новый пароль" name="NewPassword2" />
-                </td>
-            </tr>
+        <tr>
+            <td style="padding: 2px;">
+                <a onclick="changePassword()" href="#">Изменить пароль</a>
+            </td>
+            <td></td>
+        </tr>
 
-            <tr>
-                <td style="padding: 2px;">
-                    @*<input type="submit" value="Изменить пароль" />*@
-                    <a onclick="changePassword()" href="#">Изменить пароль</a>
-
-                </td>
-                <td></td>
-            </tr>
-
-        </table>
-        </form>
+    </table>
+</form>
 
 
-        <script type="text/javascript">
-            function changeLogin() {
-                $.ajax({
-                    url: '/change_login/' + login,
-                    type: 'UPDATE',
-                    contentType: "application/json; charset=utf-8",
-                    success: function () {
-                        location.reload()
-                    },
-                    error: function () {
-                        alert("Всё сломалось!!!")
-                    }
-                })
+<script type="text/javascript">
+    function changeLogin() {
+        var newLogin = document.getElementById('newLogin').value;
+        $.ajax({
+            url: '/change_login/' + newLogin,
+            type: 'POST',
+            contentType: "application/json; charset=utf-8",
+            success: function () {
+                location.reload();
+            },
+            error: function () {
+                alert("Всё сломалось!!!")
             }
-        </script>
+        })
+    }
+</script>
 
-        <script type="text/javascript">
-            function changePassword() {
-                var oldPassword = document.getElementsByName('newLogin').value;
-                var newPassword = document.getElementsByName('oldPassword').value;
-                var newPassword2 = document.getElementsByName('newPassword').value;
+<script type="text/javascript">
+    function changePassword() {
 
-                $.ajax({
-                    url: '/change_login/' + oldPassword + '/' + newPassword + '/' + newPassword2,
-                    type: 'UPDATE',
-                    contentType: "application/json; charset=utf-8",
-                    success: function () {
-                        location.reload()
-                    },
-                    error: function () {
-                        alert("Всё сломалось!!!")
-                    }
-                })
+        var oldPassword = document.getElementById('newLogin').value;
+        var newPassword = document.getElementById('oldPassword').value;
+        var newPassword2 = document.getElementById('newPassword').value;
+
+        $.ajax({
+            url: '/change_login/' + oldPassword + '/' + newPassword + '/' + newPassword2,
+            type: 'POST',
+            contentType: "application/json; charset=utf-8",
+            success: function () {
+                location.reload()
+            },
+            error: function () {
+                alert("Всё сломалось!!!")
             }
-        </script>
+        })
+    }
+</script>

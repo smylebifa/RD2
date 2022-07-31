@@ -11,21 +11,70 @@
             <h2>Этапы</h2>
         </div>
         <div class="col-sm">
-            <h2> @Html.ActionLink("+", "Stage") </h2>
+           @* <h4> <a class="nav-link text-primary" asp-controller="Stage" asp-action="Stage">Добавить этап</a> </h4>*@
+            <h4> @Html.ActionLink("Добавить этап", "Stage") </h4>
         </div>
         <div class="col-sm">
-            <h2> <a class="nav-link text-dark" asp-area="" asp-controller="TRL" asp-action="Index">TRL</a> </h2>
+            <h4> <a class="nav-link text-primary" asp-area="" asp-controller="TRLs" asp-action="Index">TRL</a> </h4>
         </div>
     </div>
 </div>
 
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="toggle"]').change(function () {
+            $(this).parents().next('.hide').toggle();
+        });
+    });
+
+    $(document).ready(function () {
+        $(".expandFRED").click(function () {
+            $(".expandSUB1").toggle();
+        });
+        $(".expandFRED2").click(function () {
+            $(".expandSUB2").toggle();
+        });
+        $(".expandVALS").click(function () {
+            $(".expandCAT1").toggle();
+        });
+    })
+</script>
+
+<style>
+    .label tr td label {
+        display: block;
+    }
+
+    [data-toggle='toggle'] {
+        display: none;
+    }
+
+    .expandSUB1 {
+        display: none;
+    }
+
+    .expandSUB2 {
+        display: none;
+    }
+
+    . {
+        display: none;
+    }
+
+        .expandCAT1 {
+            display: none;
+        }
+</style>
+
+
 <div style="overflow-x:auto;">
-    <table class="table table-hover" style="text-align: center; ">
+    <table class="table table-hover table-bordered" style="text-align: center; ">
 
         <thead class="thead-dark">
             <tr>
                 <th scope="col"></th>
                 <th scope="col">№ этапа</th>
+                <th scope="col">Этап</th>
                 <th scope="col">Срок выполнения - начало</th>
                 <th scope="col">Срок выполнения - конец</th>
                 <th scope="col">Сумма этапа</th>
@@ -53,67 +102,115 @@
                     <td>@theme.Props</td>
                     <td>@theme.ResearchType</td>
                     <td>@theme.Knowledge</td>
-                    <td>@theme.Status</td>*@
+                    <td>@theme.Status</td>
 
-                    @*<td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>*@
-                    @*<td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>*@
+                    <td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
+                    <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>
 
-                @*</tr>
+                </tr>
             }*@
 
             <tr>
-                    <td></td>
-                    <td>1</td>
-                    <td>x</td>
-                    <td>x</td>
-                    <td>x</td>
-                    <td>x</td>
-                    <td>x</td>
-                   
-                </tr>
+                <td></td>
+                <td>1</td>
+                <td>Разработка ТЗ НИР</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td><input type="checkbox" name="active" /></td>
+            </tr>
+        </tbody>
+
+        <tbody class="labels">
+            <tr>
+                <td></td>
+                <td>2</td>
+                <td class='expandFRED'>Выбор направления исследования ▼</td>
+                <td>y</td>
+                <td>y</td>
+                <td>y</td>
+                <td>y</td>
+                <td><input type="checkbox" name="active" /></td>
+            </tr>
+
+        </tbody>
+
+        <tbody class="hide">
+            <tr>
+                <td class='expandSUB1 expandVALS'></td>
+                <td class='expandSUB1'>2.1</td>
+                <td class='expandSUB1' align='right'>
+                    Сбор и изучение научно-технической литературы, нормативно-технической документации,  эксплуатационной информации об аналоговых и других материалах, относящихся к разрабатываемой теме.
+                </td>
+                <td class='expandSUB1'></td>
+                <td class='expandSUB1' align='right'></td>
+                <td class='expandSUB1' align='right'></td>
+                <td class='expandSUB1' align='right'></td>
+                <td class='expandSUB1' align='right'></td>
+            </tr>
+
+            <tr>
+                <td class='expandSUB1 expandVALS'></td>
+                <td class='expandSUB1'>2.2</td>
+                <td class='expandSUB1' align='right'>
+                    Проведение патентных исследований. Составление отчета по патентным исследованиям в соответствии с ГОСТ 15.011
+                </td>
+                <td class='expandSUB1'></td>
+                <td class='expandSUB1' align='right'></td>
+                <td class='expandSUB1' align='right'></td>
+                <td class='expandSUB1' align='right'></td>
+                <td class='expandSUB1' align='right'></td>
+            </tr>
+
+        </tbody>
+
+
+        <tbody class="labels">
 
             <tr>
                 <td></td>
+                <td>3</td>
+                <td class='expandFRED2'>Теоретические и экспериментальные исследования ▼</td>
                 <td>y</td>
-                <td>y.</td>
                 <td>y</td>
                 <td>y</td>
                 <td>y</td>
+                <td><input type="checkbox" name="active" /></td>
+            </tr>
+
+        </tbody>
+
+        <tbody class="hide">
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.1</td>
+                <td class='expandSUB2' align='right'>
+                    Разработка рабочих гипотез, построение моделей объекта исследований, обоснование допущений.
+                </td>
+                <td class='expandSUB2'></td>
+                <td class='expandSUB2' align='right'></td>
+                <td class='expandSUB2' align='right'></td>
+                <td class='expandSUB2' align='right'></td>
+                <td class='expandSUB2' align='right'></td>
+            </tr>
+
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.2</td>
+                <td class='expandSUB2' align='right'>
+                    Выявление необходимости проведения экспериментов для подтверждения отдельных положений теоретических исследований для получения конкретных значений параметров (коэффициентов, необходимых для проведения расчѐтов).
+                </td>
+                <td class='expandSUB2'></td>
+                <td class='expandSUB2' align='right'></td>
+                <td class='expandSUB2' align='right'></td>
+                <td class='expandSUB2' align='right'></td>
+                <td class='expandSUB2' align='right'></td>
             </tr>
 
 
         </tbody>
+
+
     </table>
 </div>
-
-@*<form method="post" asp-action="Users" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
-        <table>
-            <h4>Добавление пользователей</h4>
-
-            <tr>
-                <td style="padding: 4px;">Имя:</td>
-                <td style="padding: 4px;">
-                    <input type="text" name="Name" />
-                </td>
-            </tr>
-            <tr>
-                <td style="padding: 4px;">Электронная почта:</td>
-                <td style="padding: 4px;">
-                    <input type="text" name="Email" />
-                </td>
-            </tr>
-            <tr>
-                <td style="padding: 4px;">Баланс:</td>
-                <td style="padding: 4px;">
-                    <input type="text" name="Cash" />
-                </td>
-            </tr>
-            <tr>
-                <td style="padding: 2px;">
-                    <input type="submit" value="Отправить" />
-                </td>
-                <td></td>
-            </tr>
-
-        </table>
-    </form>*@
