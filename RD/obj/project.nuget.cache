@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "N690wNNgVqee2z1xlpInPwMSFqjYe/OmkJGem5o4pNURYaAI68K6MmGtZUPIJoONDIBIsZ8GlcYEQbD/u79zxg==",
+  "dgSpecHash": "VBlHbk7dF+sVNlakGqKVz/f5L1HRG+gLOyWAF2LPzXfM+1ejrYVDlzWPS1UlPBbeQW2GO94O3KVASOU57Dk4wA==",
   "success": true,
   "projectFilePath": "D:\\Институт\\Магистратура\\ВКР\\Система RD\\RD2\\RD\\RD.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\OLEG\\.nuget\\packages\\entityframework\\6.1.0\\entityframework.6.1.0.nupkg.sha512",
+    "C:\\Users\\OLEG\\.nuget\\packages\\jquery\\1.4.4\\jquery.1.4.4.nupkg.sha512",
     "C:\\Users\\OLEG\\.nuget\\packages\\microsoft.aspnet.mvc\\5.0.0\\microsoft.aspnet.mvc.5.0.0.nupkg.sha512",
     "C:\\Users\\OLEG\\.nuget\\packages\\microsoft.aspnet.razor\\3.0.0\\microsoft.aspnet.razor.3.0.0.nupkg.sha512",
     "C:\\Users\\OLEG\\.nuget\\packages\\microsoft.aspnet.webpages\\3.0.0\\microsoft.aspnet.webpages.3.0.0.nupkg.sha512",
@@ -45,6 +46,7 @@
     "C:\\Users\\OLEG\\.nuget\\packages\\microsoft.identitymodel.protocols\\5.6.0\\microsoft.identitymodel.protocols.5.6.0.nupkg.sha512",
     "C:\\Users\\OLEG\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\5.6.0\\microsoft.identitymodel.protocols.openidconnect.5.6.0.nupkg.sha512",
     "C:\\Users\\OLEG\\.nuget\\packages\\microsoft.identitymodel.tokens\\5.6.0\\microsoft.identitymodel.tokens.5.6.0.nupkg.sha512",
+    "C:\\Users\\OLEG\\.nuget\\packages\\microsoft.jquery.unobtrusive.ajax\\3.1.0\\microsoft.jquery.unobtrusive.ajax.3.1.0.nupkg.sha512",
     "C:\\Users\\OLEG\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\OLEG\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
     "C:\\Users\\OLEG\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.9.5\\microsoft.visualstudio.azure.containers.tools.targets.1.9.5.nupkg.sha512",

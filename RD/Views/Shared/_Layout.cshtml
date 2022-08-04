@@ -10,79 +10,86 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
- 
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <div class="navbar-collapse collapse d-sm-inline-flex ">
 
-                        @*<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                                    aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>*@
-
-                        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-
-
-                            <ul class="navbar-nav flex-grow-1">
-
-                                @*@if (User.Identity.Name == "admin"){*@
-
-                                <li class="nav-item">
-                                    <h6><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">RD</a></h6>
-                                </li>
-
-                                <li class="nav-item">
-                                    <h6><a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Пользователи</a></h6>
-                                </li>
-
-                                <li class="nav-item" id="themes-menu">
-                                    <h6><a class="nav-link text-dark" asp-area="" asp-controller="Themes" asp-action="Index">Темы</a></h6>
-                                </li>
-                            </ul>                   
+                        @*@if (User.Identity.Name == "admin"){*@
 
                         <ul class="navbar-nav flex-grow-1">
-
-                            @*<li class="dropdown open">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Dropdown <b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Войти</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                        <li><a href="#">One more separated link</a></li>
-                                    </ul>
-                                </li>*@
-
-                            <li class=" dropdown open">
-                                
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Меню<b class="caret"></b></a>
-                               
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <h6><a class="nav-link text-dark" asp-area="" asp-controller="Profile" asp-action="Index" style="text-align:center"><img src="~/images/user.png" width="20%" alt="Profile"></a></h6>
-                                    </li>
-                                    <li><h6><a href="#" class="nav-link text-dark">Вход</a></h6></li>
-                                    <li><h6><a href="#" class="nav-link text-dark">Регистрация</a></h6></li>
-                                    <li><h6><a href="#" class="nav-link text-dark">Выйти</a></h6></li>
-                                </ul>
-
+                            <li class="nav-item">
+                                <h6><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">RD</a></h6>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
                             </li>
 
-                            @*<li class="nav-item">
-                                    <h6><a id="login-link" class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="Index">Вход</a></h6>
-                                </li>
+                            <li class="nav-item">
+                                <h6><a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Пользователи</a></h6>
+                            </li>
 
-                                <li class="nav-item" id="register-menu">
-                                    <h6><a class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="RegisterPage">Регистрация</a></h6>
-                                </li>
+                            <li class="nav-item" id="themes-menu">
+                                <h6><a class="nav-link text-dark" asp-area="" asp-controller="Themes" asp-action="Index">Темы</a></h6>
+                            </li>
 
-                                <li class="nav-item" id="logout-menu">
-                                    <h6><a class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="Logout">Выйти</a></h6>
-                                </li>*@
+                            <li class="nav-item" id="themes-menu" style="margin-left: 70%;"></li>
+
+                            <li class="dropdown nav-item">
+                                <a href="#" class="dropdown-toggle nav-link text-dark" data-toggle="dropdown"><img src="~/images/user.png" width="20%" alt="Profile"><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><h6><a class="nav-link text-dark" asp-area="" asp-controller="Profile" asp-action="Index">Профиль</a></h6></li>
+                                    <li><h6><a id="login-link" class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="Index">Вход</a></h6></li>
+                                    <li><h6><a class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="RegisterPage">Регистрация</a></h6></li>
+                                    <li><h6><a class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="Logout">Выйти</a></h6></li>
+                                </ul>
+                            </li>
                         </ul>
 
-            </div>
-        </nav>
+                    </div>
+                </div>
+
+            <!--<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+
+        <div class="navbar-collapse collapse">
+
+            <ul class="navbar-nav flex-grow-1">-->
+            @*@if (User.Identity.Name == "admin"){*@
+
+            <!--<li class="nav-item">
+                    <h6><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">RD</a></h6>
+                </li>
+
+                <li class="nav-item">
+                    <h6><a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Пользователи</a></h6>
+                </li>
+
+                <li class="nav-item" id="themes-menu">
+                    <h6><a class="nav-link text-dark" asp-area="" asp-controller="Themes" asp-action="Index">Темы</a></h6>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav flex-grow-1"></ul>
+
+                <ul class="navbar-nav navbar-right flex-grow-1">
+                    <li class="dropdown nav-item">
+                        <a href="#" class="dropdown-toggle nav-link text-dark" data-toggle="dropdown"><img src="~/images/user.png" width="5%" alt="Profile" style="text-align:right;"><b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><h6><a class="nav-link text-dark" asp-area="" asp-controller="Profile" asp-action="Index">Профиль</a></h6></li>
+                            <li><h6><a id="login-link" class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="Index">Вход</a></h6></li>
+                            <li><h6><a class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="RegisterPage">Регистрация</a></h6></li>
+                            <li><h6><a class="nav-link text-dark" asp-area="" asp-controller="Authentication" asp-action="Logout">Выйти</a></h6></li>
+                        </ul>
+                    </li>
+                </ul>
+
+        </div>
+    </nav>-->
+
+        </div>
+
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
