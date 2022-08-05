@@ -3,19 +3,26 @@
 @{
     ViewBag.Title = "Этапы";
     Layout = "_Layout";
+
+    List<string> stageLevel1 = new List<string> { "Разработка ТЗ НИР", "Выбор направления исследования", "Теоретические и экспериментальные исследования" };
+
+    var stageLevel2 = new string[][] {
+        new string[] { "Сбор и изучение научно-технической литературы, нормативно-технической документации,  эксплуатационной информации об аналоговых и других материалах, относящихся к разрабатываемой теме." , "Проведение патентных исследований. Составление отчета по патентным исследованиям в соответствии с ГОСТ 15.011" },
+        new string[] { "Разработка рабочих гипотез, построение моделей объекта исследований, обоснование допущений." , "Выявление необходимости проведения экспериментов для подтверждения отдельных положений теоретических исследований для получения конкретных значений параметров (коэффициентов, необходимых для проведения расчетов)." }
+    };
 }
 
 <div class="container">
     <div class="row">
         <div class="col-sm">
-            <h2>Этапы</h2>
+            <h2>Этапы - @ViewBag.ThemeName</h2>
         </div>
         <div class="col-sm">
-           @* <h4> <a class="nav-link text-primary" asp-controller="Stage" asp-action="Stage">Добавить этап</a> </h4>*@
+            @* <h4> <a class="nav-link text-primary" asp-controller="Stage" asp-action="Stage">Добавить этап</a> </h4>*@
             <h4> @Html.ActionLink("Добавить этап", "Stage") </h4>
         </div>
         <div class="col-sm">
-            <h4> <a class="nav-link text-primary" asp-area="" asp-controller="TRLs" asp-action="Index">TRL</a> </h4>
+            <h4> <a class="nav-link text-primary" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="TRLs" asp-action="Index">TRL</a> </h4>
         </div>
     </div>
 </div>
@@ -83,46 +90,70 @@
             </tr>
         </thead>
 
-        <tbody>
-            @*@foreach (var theme in @ViewBag.Themes)
-            {
+        @{int i = 0;}
+        @foreach (var stage in @ViewBag.Stages)
+        {
+            <tbody>
                 <tr>
-                    <td><a class="nav-link text-dark" asp-area="" asp-controller="Stage" asp-action="Index">Этапы</a></td>
-                    <td>@theme.Number</td>
-                    <td>@theme.Name</td>
-                    <td>@theme.FioManager</td>
-                    <td>@theme.ExecutiveDepartment</td>
-                    <td>@theme.WorkStart</td>
-                    <td>@theme.WorkEnd</td>
-                    <td>@theme.Amount</td>
-                    <td>@theme.Vat</td>
-                    <td>@theme.AmountWithoutVat</td>
-                    <td>@theme.Decree</td>
-                    <td>@theme.DocType</td>
-                    <td>@theme.Props</td>
-                    <td>@theme.ResearchType</td>
-                    <td>@theme.Knowledge</td>
-                    <td>@theme.Status</td>
+                    <td></td>
+                    <td>@stage.NumStage</td>
+                    <td class='expandFRED'>@stageLevel1[i] ▼</td>
+                    <td>@stage.WorkStart</td>
+                    <td>@stage.WorkEnd</td>
+                    <td>@stage.Amount</td>
+                    <td>@stage.CompletionAct</td>
+                    <td>@stage.Status</td>
 
-                    <td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
-                    <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>
+                    @*<td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
+                    <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>*@
 
                 </tr>
-            }*@
+            </tbody>
 
-            <tr>
-                <td></td>
-                <td>1</td>
-                <td>Разработка ТЗ НИР</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td><input type="checkbox" name="active" /></td>
-            </tr>
-        </tbody>
+            int j = 0;
+            int iView = i + 1;
+            int jView;
 
-        <tbody class="labels">
+            @foreach (var stage2 in stageLevel2[i])
+            {
+                jView = j + 1;
+
+                <tbody class="hide">
+                    <tr>
+                        <td class='expandSUB1 expandVALS'></td>
+                        <td class='expandSUB1'>@iView.@jView </td>
+                        <td class='expandSUB1' align='right'>
+                            @stage2
+                        </td>
+                        <td class='expandSUB1'></td>
+                        <td class='expandSUB1' align='right'></td>
+                        <td class='expandSUB1' align='right'></td>
+                        <td class='expandSUB1' align='right'></td>
+                        <td class='expandSUB1' align='right'></td>
+                    </tr>
+
+                </tbody>
+
+                j++;
+
+            }
+
+            i++;
+        }
+
+        @*<tr>
+            <td></td>
+            <td>1</td>
+            <td>Разработка ТЗ НИР</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+            <td><input type="checkbox" name="active" /></td>
+        </tr>*@
+
+
+        @*<tbody class="labels">
             <tr>
                 <td></td>
                 <td>2</td>
@@ -134,9 +165,9 @@
                 <td><input type="checkbox" name="active" /></td>
             </tr>
 
-        </tbody>
+        </tbody>*@
 
-        <tbody class="hide">
+        @*<tbody class="hide">
             <tr>
                 <td class='expandSUB1 expandVALS'></td>
                 <td class='expandSUB1'>2.1</td>
@@ -163,10 +194,10 @@
                 <td class='expandSUB1' align='right'></td>
             </tr>
 
-        </tbody>
+        </tbody>*@
 
 
-        <tbody class="labels">
+        @*<tbody class="labels">
 
             <tr>
                 <td></td>
@@ -209,7 +240,7 @@
             </tr>
 
 
-        </tbody>
+        </tbody>*@
 
 
     </table>

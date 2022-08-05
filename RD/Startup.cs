@@ -50,6 +50,7 @@ namespace RD
             services.AddTransient<IUsersService, UsersService>();
             services.AddTransient<IThemesService, ThemesService>();
             services.AddTransient<ITRLsService, TRLsService>();
+            services.AddTransient<IStagesService, StagesService>();
 
             services.AddTransient<AuthenticationService>();
 

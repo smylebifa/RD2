@@ -23,8 +23,8 @@ namespace RD.Controllers
         }
         public IActionResult Index()
         {
-            //var themes = _themeService.GetThemes();
-            //ViewBag.Themes = themes;
+            var themes = _themeService.GetThemes();
+            ViewBag.Themes = themes;
             return View();
         }
 
