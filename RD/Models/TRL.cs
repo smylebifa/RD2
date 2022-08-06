@@ -21,8 +21,11 @@ namespace RD.Models
 
         public string? StageName { get; set; }
 
+        public int? TotalReady { get; set; }
+
+
         public TRL(string themeName, bool? trl1_1, bool? trl1_2, bool? trl1_3, bool? trl1_4, bool? trl1_5,
-            bool? trl2_1, bool? trl2_2, bool? trl2_3, bool? trl2_4, bool? trl2_5)
+            bool? trl2_1, bool? trl2_2, bool? trl2_3, bool? trl2_4, bool? trl2_5, int? totalReady)
         {
             Id = Guid.NewGuid();
 
@@ -38,6 +41,8 @@ namespace RD.Models
             Trl2_3 = trl2_3;
             Trl2_4 = trl2_4;
             Trl2_5 = trl2_5;
+
+            TotalReady = totalReady;
         }
 
         public TRL()

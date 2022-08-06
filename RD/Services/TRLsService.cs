@@ -31,6 +31,31 @@ namespace RD.Services
             Trl.Trl2_4 = trl2_4;
             Trl.Trl2_5 = trl2_5;
 
+            int count = 0;
+
+            if (trl1_1 == true)
+                count++;
+            if (trl1_2 == true)
+                count++;
+            if (trl1_3 == true)
+                count++;
+            if (trl1_4 == true)
+                count++;
+            if (trl1_5 == true)
+                count++;
+            if (trl2_1 == true)
+                count++;
+            if (trl2_2 == true)
+                count++;
+            if (trl2_3 == true)
+                count++;
+            if (trl2_4 == true)
+                count++;
+            if (trl2_5 == true)
+                count++;
+
+            Trl.TotalReady = count;
+
             _dbContext.SaveChanges();
         }
 
@@ -40,7 +65,7 @@ namespace RD.Services
 
             if (existing == null)
             {
-                TRL trl = new TRL(themeName, false, false, false, false, false, false, false, false, false, false);
+                TRL trl = new TRL(themeName, false, false, false, false, false, false, false, false, false, false, 0);
                 _dbContext.Add(trl);
                 _dbContext.SaveChanges();
                 return trl;

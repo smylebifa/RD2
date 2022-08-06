@@ -58,9 +58,9 @@
             display: none;
         }
 
-    .expandFRED, .expandFRED2 {
-        cursor: pointer;
-    }
+        .expandFRED, .expandFRED2 {
+            cursor: pointer;
+        }
 </style>
 
 
@@ -109,10 +109,10 @@
                 <td>1</td>
                 <td class='expandFRED'>Сформулирована фундаментальная концепция технологии и обоснование ее полезности. ▼</td>
                 @*<td><input type="checkbox" id="trl1") /></td>*@
-                <td><input type="checkbox" id="trl1" 
-                           @(ViewBag.Trls.Trl1_1 && ViewBag.Trls.Trl1_2 && 
-                             ViewBag.Trls.Trl1_3 && ViewBag.Trls.Trl1_4 && ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "") 
-                           /></td>
+                <td>
+                    <input type="checkbox" id="trl1"
+                           @(ViewBag.Trls.Trl1_1 && ViewBag.Trls.Trl1_2 && ViewBag.Trls.Trl1_3 && ViewBag.Trls.Trl1_4 && ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "") />
+                </td>
             </tr>
 
         </tbody>
@@ -122,48 +122,48 @@
                 <td class='expandSUB1 expandVALS'></td>
                 <td class='expandSUB1'>1.1</td>
                 <td class='expandSUB1' align='right'>
-                    Начальный уровень зрелости технологии. 
+                    Начальный уровень зрелости технологии.
                 </td>
-                <td class='expandSUB1'><input type="checkbox" id="trl1_1" 
-                                              
-                                              @(ViewBag.Trls.Trl1_1 ? "checked=\"checked\"" : "") 
-                                              
-                                              ) /></td>
+                <td class='expandSUB1'>
+                    <input type="checkbox" id="trl1_1"
+                           @(ViewBag.Trls.Trl1_1 ? "checked=\"checked\"" : "")
+                           ) />
+                </td>
             </tr>
 
             <tr>
                 <td class='expandSUB1 expandVALS'></td>
                 <td class='expandSUB1'>1.2</td>
                 <td class='expandSUB1' align='right'>
-                    Научные исследования начинают переходить в прикладные исследования. 
+                    Научные исследования начинают переходить в прикладные исследования.
                 </td>
-                <td class='expandSUB1'><input type="checkbox" id="trl1_2"
-                                              
-                                              @(ViewBag.Trls.Trl1_2 ? "checked=\"checked\"" : "") 
-                                              
-                                              ) /></td>
+                <td class='expandSUB1'>
+                    <input type="checkbox" id="trl1_2"
+                           @(ViewBag.Trls.Trl1_2 ? "checked=\"checked\"" : "")
+                           ) />
+                </td>
             </tr>
             <tr>
                 <td class='expandSUB1 expandVALS'></td>
                 <td class='expandSUB1'>1.3</td>
                 <td class='expandSUB1' align='right'>
-                    Сформулирована идея, основные принципы наблюдались и были документированы. 
+                    Сформулирована идея, основные принципы наблюдались и были документированы.
                 </td>
-                <td class='expandSUB1'><input type="checkbox" id="trl1_3" 
-                                             @(ViewBag.Trls.Trl1_3 ? "checked=\"checked\"" : "") )
-                                                  
-                                              /></td>
+                <td class='expandSUB1'>
+                    <input type="checkbox" id="trl1_3"
+                           @(ViewBag.Trls.Trl1_3 ? "checked=\"checked\"" : "") ) />
+                </td>
             </tr>
             <tr>
                 <td class='expandSUB1 expandVALS'></td>
                 <td class='expandSUB1'>1.4</td>
                 <td class='expandSUB1' align='right'>
-                    Проведен анализ существующих на рынке решений, определена потребность в новом продукте, сформулировано перспективное технологическое/алгоритмическое/архитектурное решение. 
+                    Проведен анализ существующих на рынке решений, определена потребность в новом продукте, сформулировано перспективное технологическое/алгоритмическое/архитектурное решение.
                 </td>
-                <td class='expandSUB1'><input type="checkbox" id="trl1_4" 
-                                              
-                                              @(ViewBag.Trls.Trl1_4 ? "checked=\"checked\"" : "") ) 
-                                                   /></td>
+                <td class='expandSUB1'>
+                    <input type="checkbox" id="trl1_4"
+                           @(ViewBag.Trls.Trl1_4 ? "checked=\"checked\"" : "") ) />
+                </td>
             </tr>
             <tr>
                 <td class='expandSUB1 expandVALS'></td>
@@ -171,8 +171,10 @@
                 <td class='expandSUB1' align='right'>
                     Проведен экспертный анализ предлагаемого решения: ценность, удобство, реализуемость, прибыльность, востребованность, защищенность бизнеса, полезность для развития технологической базы исполнителя.
                 </td>
-                <td class='expandSUB1'><input type="checkbox" id="trl1_5" 
-                                                  @(ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "") )  /></td>
+                <td class='expandSUB1'>
+                    <input type="checkbox" id="trl1_5"
+                           @(ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "") ) />
+                </td>
             </tr>
         </tbody>
 
@@ -184,10 +186,10 @@
                 <td>2</td>
                 <td class='expandFRED2'>Определены целевые области применения технологии и ее критические элементы. ▼</td>
                 @*<td><input type="checkbox" id="trl2") /></td>*@
-                <td><input type="checkbox" id="trl2" 
-                          @(ViewBag.Trls.Trl2_1 && ViewBag.Trls.Trl2_2 && ViewBag.Trls.Trl2_3 && 
-                             ViewBag.Trls.Trl2_4 && ViewBag.Trls.Trl2_5  ? "checked=\"checked\"" : "")
-                           /></td>
+                <td>
+                    <input type="checkbox" id="trl2"
+                           @(ViewBag.Trls.Trl2_1 && ViewBag.Trls.Trl2_2 && ViewBag.Trls.Trl2_3 && ViewBag.Trls.Trl2_4 && ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") />
+                </td>
 
             </tr>
 
@@ -198,33 +200,33 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>2.1</td>
                 <td class='expandSUB2' align='right'>
-                    Концепция технологии/продукта и/или ее применения сформулированы. 
+                    Концепция технологии/продукта и/или ее применения сформулированы.
                 </td>
-                <td class='expandSUB2'><input type="checkbox" id="trl2_1"  @(ViewBag.Trls.Trl2_1 ? "checked=\"checked\"" : "") )  /></td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_1" @(ViewBag.Trls.Trl2_1 ? "checked=\"checked\"" : "") ) /></td>
             </tr>
             <tr>
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>2.2</td>
                 <td class='expandSUB2' align='right'>
-                    Сформулировано техническое предложение, может быть предложено практическое использование. 
+                    Сформулировано техническое предложение, может быть предложено практическое использование.
                 </td>
-                <td class='expandSUB2'><input type="checkbox" id="trl2_2"  @(ViewBag.Trls.Trl2_2 ? "checked=\"checked\"" : "") )  /></td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_2" @(ViewBag.Trls.Trl2_2 ? "checked=\"checked\"" : "") ) /></td>
             </tr>
             <tr>
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>2.3</td>
                 <td class='expandSUB2' align='right'>
-                    Аналитический обзор, проведенный в рамках патентного исследования, показал реализуемость и отсутствие аналогичных решений. 
+                    Аналитический обзор, проведенный в рамках патентного исследования, показал реализуемость и отсутствие аналогичных решений.
                 </td>
-                <td class='expandSUB2'><input type="checkbox" id="trl2_3" @(ViewBag.Trls.Trl2_3 ? "checked=\"checked\"" : "") )  /></td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_3" @(ViewBag.Trls.Trl2_3 ? "checked=\"checked\"" : "") ) /></td>
             </tr>
             <tr>
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>2.4</td>
                 <td class='expandSUB2' align='right'>
-                    Сформулировано предварительное техническое задание, определена архитектура (описание основных компонентов и их связей) продукта: платформа для решения, компоненты, связь и взаимодействие между ними, проведено моделирование продукта, разработан предварительный дизайн. 
+                    Сформулировано предварительное техническое задание, определена архитектура (описание основных компонентов и их связей) продукта: платформа для решения, компоненты, связь и взаимодействие между ними, проведено моделирование продукта, разработан предварительный дизайн.
                 </td>
-                <td class='expandSUB2'><input type="checkbox" id="trl2_4"  @(ViewBag.Trls.Trl2_4 ? "checked=\"checked\"" : "") ) /></td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_4" @(ViewBag.Trls.Trl2_4 ? "checked=\"checked\"" : "") ) /></td>
             </tr>
             <tr>
                 <td class='expandSUB2 expandVALS'></td>
@@ -232,7 +234,7 @@
                 <td class='expandSUB2' align='right'>
                     Проведен предварительный патентный анализ, анализ промышленных и технологических рисков.
                 </td>
-                <td class='expandSUB2'><input type="checkbox" id="trl2_5"  @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") )  /></td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") ) /></td>
             </tr>
         </tbody>
 
@@ -240,7 +242,71 @@
     </table>
 </div>
 
-<a onclick="save('@ViewBag.ThemeName')" href="#"> Сохранить </a>
+<br>
+
+<h5 style="color: green">Выполненные уровни - @ViewBag.Trls.TotalReady</h5>
+
+<br>
+
+@*<script>
+        google.load("visualization", "1", { packages: ["corechart"] });
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+            Total = 10;
+
+            var ready = @ViewBag.Trls.TotalReady;
+            var notReady = Total - ready;
+
+            var data = google.visualization.arrayToDataTable([
+                ['Уровни', 'Количество'],
+                ['Выполненные уровни', ready],
+                ['Не выполненные уровни', notReady],
+            ]);
+            var options = {
+                title: 'Готовность проекта',
+                is3D: true,
+                //pieResidueSliceLabel: 'Остальное'
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('trl_diagram'));
+            chart.draw(data, options);
+        }
+    </script>*@
+
+
+@*<div id="trl_diagram" style="width: 500px; height: 400px;"></div>*@
+
+<script type="text/javascript">
+    // Load google charts
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    // Draw the chart and set the chart values
+    function drawChart() {
+
+        Total = 10;
+
+        var ready = @ViewBag.Trls.TotalReady;
+        var notReady = Total - ready;
+
+        var data = google.visualization.arrayToDataTable([
+            ['Уровни', 'Количество'],
+            ['Выполненные уровни', ready],
+            ['Не выполненные уровни', notReady],
+        ]);
+
+        // Optional; add a title and set the width and height of the chart
+        var options = { 'title': 'Готовность проекта', 'width': 600, 'height': 450, 'colors': ['green', 'red'] };
+
+        // Display the chart inside the <div> element with id="piechart"
+        var chart = new google.visualization.PieChart(document.getElementById('trl_diagram'));
+        chart.draw(data, options);
+    }
+</script>
+
+<div id="trl_diagram"></div>
+
+<button class="btn btn-primary" onclick="save('@ViewBag.ThemeName')" href="#" style="text-align:center"> Сохранить </button>
 
 <script type="text/javascript">
     function save(themeName) {
