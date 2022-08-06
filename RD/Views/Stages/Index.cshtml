@@ -1,7 +1,7 @@
 ﻿@model RD.Models.Stage;
 
 @{
-    ViewBag.Title = "Этапы";
+    ViewBag.Title = ViewBag.ThemeName;
     Layout = "_Layout";
 
     List<string> stageLevel1 = new List<string> { "Разработка ТЗ НИР", "Выбор направления исследования", "Теоретические и экспериментальные исследования" };
@@ -15,7 +15,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm">
-            <h2>Этапы - @ViewBag.ThemeName</h2>
+            <h2>Тема - @ViewBag.ThemeName</h2>
         </div>
         <div class="col-sm">
             @* <h4> <a class="nav-link text-primary" asp-controller="Stage" asp-action="Stage">Добавить этап</a> </h4>*@
