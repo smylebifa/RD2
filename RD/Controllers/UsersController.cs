@@ -36,7 +36,7 @@ namespace RD.Controllers
         }
 
         [HttpGet("/edit/{id}")]
-        public new IActionResult User(Guid id)
+        public new IActionResult User(int id)
         {
             var user = _usersService.GetUsers().FirstOrDefault(x => x.Id == id);
             return View(user);
@@ -50,7 +50,7 @@ namespace RD.Controllers
         }
 
         [HttpDelete("/delete/{id}")]
-        public IActionResult Delete(Guid id)
+        public IActionResult Delete(int id)
         {
             _usersService.DeleteUser(id);
             return Ok();

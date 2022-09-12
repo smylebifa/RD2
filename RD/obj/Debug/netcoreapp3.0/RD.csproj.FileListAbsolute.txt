@@ -409,7 +409,10 @@ C:\Users\Oleg\source\repos\RD\RD2\RD\bin\Debug\netcoreapp3.0\System.Web.WebPages
 C:\Users\Oleg\source\repos\RD\RD2\RD\bin\Debug\netcoreapp3.0\Microsoft.Web.Infrastructure.dll
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Stages\Index.cshtml.g.cs
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Stages\Stage.cshtml.g.cs
-C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\RD.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\RD.csprojAssemblyReference.cache
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\TRLs\Index.cshtml.g.cs
 D:\Институт\Магистратура\ВКР\Система RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\TRLs\Index.cshtml.g.cs
+C:\Users\Oleg\source\repos\RD\RD2\RD\bin\Debug\netcoreapp3.0\MySqlConnector.dll
+C:\Users\Oleg\source\repos\RD\RD2\RD\bin\Debug\netcoreapp3.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Oleg\source\repos\RD\RD2\RD\bin\Debug\netcoreapp3.0\Pomelo.EntityFrameworkCore.MySql.Design.dll
+C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\RD.MvcApplicationPartsAssemblyInfo.cache

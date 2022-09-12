@@ -7,7 +7,7 @@ namespace RD.Models
 {
     public class TRL
     {
-        public Guid Id { get; set; }
+        public int? Id { get; set; }
         public bool? Trl1_1 { get; set; }
         public bool? Trl1_2 { get; set; }
         public bool? Trl1_3 { get; set; }
@@ -27,7 +27,7 @@ namespace RD.Models
         public TRL(string themeName, bool? trl1_1, bool? trl1_2, bool? trl1_3, bool? trl1_4, bool? trl1_5,
             bool? trl2_1, bool? trl2_2, bool? trl2_3, bool? trl2_4, bool? trl2_5, int? totalReady)
         {
-            Id = Guid.NewGuid();
+            //Id = Guid.NewGuid();
 
             StageName = themeName;
 
@@ -47,7 +47,7 @@ namespace RD.Models
 
         public TRL()
         {
-            Id = Guid.NewGuid();
+            //Id = Guid.NewGuid();
             StageName = "a";
         }
 }

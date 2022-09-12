@@ -7,12 +7,12 @@ namespace RD.Models
 {
     public class Theme
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string? Name { get; set; }
         public string? Number { get; set; }
         public string? FioManager { get; set; }
         public string? ExecutiveDepartment { get; set; }
-        public Guid? CustomerId { get; set; }
+        public int? CustomerId { get; set; }
         public DateTime? WorkStart { get; set; }
         public DateTime? WorkEnd { get; set; }
         public int? Amount { get; set; }
@@ -28,7 +28,7 @@ namespace RD.Models
         //public DateTime? CreatedAt { get; set; }
         //public DateTime? UpdatedAt { get; set; }
 
-        public Theme(Guid id, string? name)
+        public Theme(int id, string? name)
         {
             Id = id;
             Name = name;
@@ -36,7 +36,7 @@ namespace RD.Models
 
         public Theme()
         {
-            Id = Guid.NewGuid();
+            //Id = Guid.NewGuid();
         }
     }
 }

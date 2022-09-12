@@ -58,7 +58,7 @@ namespace RD.Services
             _dbContext.SaveChanges();
         }
 
-        public void DeleteUser(Guid id)
+        public void DeleteUser(int id)
         {
             var existing = _dbContext.Users.FirstOrDefault(x => x.Id == id);
             var person = _dbContext.Persons.FirstOrDefault(x => x.Id == id);

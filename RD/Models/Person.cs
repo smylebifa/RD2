@@ -7,7 +7,7 @@ namespace RD.Models
 {
     public class Person
     {
-        public Guid Id { get; set; }
+        public int? Id { get; set; }
         public string Login { get; set; }
         public string PasswordHash { get; set; }
         public string Salt { get; set; }

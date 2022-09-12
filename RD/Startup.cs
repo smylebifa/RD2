@@ -42,8 +42,12 @@ namespace RD
             //});
 
             services.AddControllersWithViews();
+            string mySqlConnectionStr = Configuration.GetConnectionString("Default");
 
-            services.AddDbContext<TestDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("Default")));
+            services.AddDbContext<TestDbContext>(options => options.UseMySql(mySqlConnectionStr, 
+                ServerVersion.AutoDetect(mySqlConnectionStr)));
+
+            //services.AddDbContext<TestDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("Default")));
 
             //services.AddTransient<IUsersService, UsersService>();
 
