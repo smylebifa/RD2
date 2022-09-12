@@ -14,9 +14,10 @@ namespace RD.Controllers
     public class ThemesController : Controller
     {
         private readonly ILogger<ThemesController> _logger;
-        private readonly IThemesService _themeService;
+        //private readonly IThemesService _themeService;
+        private readonly ThemesService _themeService;
 
-        public ThemesController(ILogger<ThemesController> logger, IThemesService themesService)
+        public ThemesController(ILogger<ThemesController> logger, ThemesService themesService)
         {
             _logger = logger;
             _themeService = themesService;

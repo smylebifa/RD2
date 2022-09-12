@@ -13,9 +13,10 @@ namespace RD.Controllers
     public class TRLsController : Controller
     {
         private readonly ILogger<TRLsController> _logger;
-        private readonly ITRLsService _trlsService;
+        //private readonly ITRLsService _trlsService;
+        private readonly TRLsService _trlsService;
 
-        public TRLsController(ILogger<TRLsController> logger, ITRLsService trlsService)
+        public TRLsController(ILogger<TRLsController> logger, TRLsService trlsService)
         {
             _logger = logger;
             _trlsService = trlsService;

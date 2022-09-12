@@ -193,3 +193,6 @@ C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Release\netcoreapp3.0\RD.Views.pdb
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Release\netcoreapp3.0\RD.csproj.CopyComplete
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Release\netcoreapp3.0\RD.dll
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Release\netcoreapp3.0\RD.pdb
+C:\Users\Oleg\source\repos\RD\RD2\RD\bin\Release\netcoreapp3.0\MySqlConnector.dll
+C:\Users\Oleg\source\repos\RD\RD2\RD\bin\Release\netcoreapp3.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Oleg\source\repos\RD\RD2\RD\bin\Release\netcoreapp3.0\Pomelo.EntityFrameworkCore.MySql.Design.dll

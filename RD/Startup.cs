@@ -63,6 +63,10 @@ namespace RD
             //    .AddCookie(options => options.LoginPath = "/login");
 
             services.AddTransient<UsersService>();
+            services.AddTransient<ThemesService>();
+            services.AddTransient<StagesService>();
+            services.AddTransient<TRLsService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

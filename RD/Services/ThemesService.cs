@@ -11,29 +11,40 @@ namespace RD.Services
 {
     public class ThemesService : IThemesService
     {
-        private readonly TestDbContext _dbContext;
+        //private readonly TestDbContext _dbContext;
 
-        public ThemesService(TestDbContext dbContext)
+        //public ThemesService(TestDbContext dbContext)
+        //{
+        //    _dbContext = dbContext;
+        //}
+
+        private static readonly List<Theme> Themes = new List<Theme>
         {
-            _dbContext = dbContext;
-        }
+                new Theme(1, "Тема 1"),
+        };
 
         public IEnumerable<Theme> GetThemes()
         {
-            return _dbContext.Themes.ToArray();
+            return Themes;
+            //return _dbContext.Themes.ToArray();
         }
 
         public void AddTheme(Theme theme)
         {
-            if (_dbContext.Themes.Any(x => x.Name == theme.Name))
-                throw new ArgumentException("User with such name already exists.");
+            if (Themes.Any(x => x.Name == theme.Name))
+                throw new ArgumentException("Theme with such login already exists.");
 
-            _dbContext.Themes.Add(theme);
+            Themes.Add(theme);
 
-            _dbContext.SaveChanges();
+            //if (_dbContext.Themes.Any(x => x.Name == theme.Name))
+            //    throw new ArgumentException("Theme with such name already exists.");
+
+            //_dbContext.Themes.Add(theme);
+
+            //_dbContext.SaveChanges();
         }
 
-       
+
 
     }
 }

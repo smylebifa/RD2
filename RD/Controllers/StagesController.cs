@@ -6,15 +6,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using RD.Models;
 
 namespace RD.Controllers
 {
     public class StagesController : Controller
     {
         private readonly ILogger<StagesController> _logger;
-        private readonly IStagesService _stageService;
+        //private readonly IStagesService _stageService;
+        private readonly StagesService _stageService;
 
-        public StagesController(ILogger<StagesController> logger, IStagesService stageService)
+        public StagesController(ILogger<StagesController> logger, StagesService stageService)
         {
             _logger = logger;
             _stageService = stageService;
@@ -32,6 +34,13 @@ namespace RD.Controllers
         public IActionResult Stage()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddStage(Stage stage)
+        {
+            _stageService.AddStage(stage);
+            return RedirectToAction(nameof(Index));
         }
 
     }

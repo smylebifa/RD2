@@ -11,26 +11,38 @@ namespace RD.Services
 {
     public class StagesService : IStagesService
     {
-        private readonly TestDbContext _dbContext;
+        //private readonly TestDbContext _dbContext;
 
-        public StagesService(TestDbContext dbContext)
+        //public StagesService(TestDbContext dbContext)
+        //{
+        //    _dbContext = dbContext;
+        //}
+
+        private static readonly List<Stage> Stages = new List<Stage>
         {
-            _dbContext = dbContext;
-        }
+                new Stage(1, "Этап 1"),
+        };
 
         public IEnumerable<Stage> GetStages()
         {
-            return _dbContext.Stages.ToArray();
+            return Stages;
+            //return _dbContext.Stages.ToArray();
         }
 
         public void AddStage(Stage stage)
         {
-            if (_dbContext.Stages.Any(x => x.NumStage == stage.NumStage))
-                throw new ArgumentException("User with such name already exists.");
+            //if (_dbContext.Stages.Any(x => x.NumStage == stage.NumStage))
+            //    throw new ArgumentException("User with such name already exists.");
 
-            _dbContext.Stages.Add(stage);
+            //_dbContext.Stages.Add(stage);
 
-            _dbContext.SaveChanges();
+            //_dbContext.SaveChanges();
+
+
+            if (Stages.Any(x => x.NumStage == stage.NumStage))
+                throw new ArgumentException("This stage already exists.");
+
+            Stages.Add(stage);
         }
 
        

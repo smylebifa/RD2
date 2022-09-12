@@ -7,7 +7,7 @@ namespace RD.Models
 {
     public class TRL
     {
-        public int? Id { get; set; }
+        public int Id { get; set; }
         public bool? Trl1_1 { get; set; }
         public bool? Trl1_2 { get; set; }
         public bool? Trl1_3 { get; set; }
