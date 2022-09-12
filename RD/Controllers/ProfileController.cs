@@ -14,9 +14,10 @@ namespace RD.Controllers
     public class ProfileController : Controller
     {
         private readonly ILogger<ProfileController> _logger;
-        private readonly IUsersService _usersService;
+        //private readonly IUsersService _usersService;
+        private readonly UsersService _usersService;
 
-        public ProfileController(ILogger<ProfileController> logger, IUsersService usersService)
+        public ProfileController(ILogger<ProfileController> logger, UsersService usersService)
         {
             _logger = logger;
             _usersService = usersService;

@@ -27,8 +27,8 @@
             <td>@user.Login</td>
             <td>@user.Password</td>
             <td>@user.FullName</td>
-            <td><input type="checkbox" checked name="Активен" disabled /></td>
-            <td><input type="checkbox" checked name="" disabled /> </td>
+            <td><input type="checkbox" @(user.IsActive ? "checked=\"checked\"" : "") disabled name="Активен" /></td>
+            <td><input type="checkbox" @(user.IsAdmin ? "checked=\"checked\"" : "") disabled name="" /> </td>
             
             <td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
             <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>

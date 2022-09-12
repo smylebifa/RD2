@@ -12,9 +12,11 @@ namespace RD.Controllers
     public class UsersController : Controller
     {
         private readonly ILogger<UsersController> _logger;
-        private readonly IUsersService _usersService;
+        private readonly UsersService _usersService;
+        //private readonly IUsersService _usersService;
 
-        public UsersController(ILogger<UsersController> logger, IUsersService usersService)
+        //public UsersController(ILogger<UsersController> logger, IUsersService usersService)
+        public UsersController(ILogger<UsersController> logger, UsersService usersService)
         {
             _logger = logger;
             _usersService = usersService;
