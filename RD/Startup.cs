@@ -51,8 +51,6 @@ namespace RD
             //services.AddDbContext<TestDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("Default")));
 
             //services.AddTransient<IUsersService, UsersService>();
-
-            //services.AddTransient<IUsersService, UsersService>();
             //services.AddTransient<IThemesService, ThemesService>();
             //services.AddTransient<ITRLsService, TRLsService>();
             //services.AddTransient<IStagesService, StagesService>();
@@ -66,6 +64,11 @@ namespace RD
             services.AddTransient<ThemesService>();
             services.AddTransient<StagesService>();
             services.AddTransient<TRLsService>();
+            services.AddTransient<AuthenticationService>();
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options => options.LoginPath = "/login");
+
 
         }
 

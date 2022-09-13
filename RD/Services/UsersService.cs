@@ -19,7 +19,7 @@ namespace RD.Services
         //    _dbContext = dbContext;
         //}
 
-        private static readonly List<User> Users = new List<User>
+        public static List<User> Users = new List<User>
         {
                 new User(1, "admin", "password", "", true),
         };

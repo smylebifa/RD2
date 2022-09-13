@@ -35,15 +35,15 @@ namespace RD.Controllers
 
             // Проверка на заполненность полей формы
             if (!form.ContainsKey("login") || !form.ContainsKey("password"))
-                //return RedirectToPage("400");
-                throw new UnauthorizedAccessException();
+                return RedirectToPage("400");
+                //throw new UnauthorizedAccessException();
 
             var login = form["login"];
             var password = form["password"];
 
             if (!_authenticationService.Login(login, password))
-                //return RedirectToPage("401");
-                throw new InvalidOperationException();
+                return RedirectToPage("401");
+                //throw new InvalidOperationException();
 
             var claims = new List<Claim> { new Claim(ClaimTypes.Name, login) };
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);

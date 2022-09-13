@@ -6,23 +6,49 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using RD.Services;
 
 namespace RD.Services
 {
     public class AuthenticationService
     {
-        private readonly TestDbContext _dbContext;
+        //private readonly TestDbContext _dbContext;
 
-        public AuthenticationService(TestDbContext dbContext)
+        //public AuthenticationService(TestDbContext dbContext)
+        //{
+        //    _dbContext = dbContext;
+        //}
+
+        private static readonly List<Person> Persons = new List<Person>
         {
-            _dbContext = dbContext;
-        }
+                new Person(1, "admin"),
+        };
 
         // Если имя пользователя найдено в базе, возвращаем его Id, иначе создаем нового пользователя
         public int? Register(string login, string password)
         {
 
-            var person = _dbContext.Persons.FirstOrDefault(x => x.Login == login);
+            //var person = _dbContext.Persons.FirstOrDefault(x => x.Login == login);
+            //if (person != null)
+            //    return person.Id;
+
+            //var salt = RandomString(10);
+
+            ////Guid Id = Guid.NewGuid();
+
+            //var newPerson = new Person() { Id = 2, Login = login, PasswordHash = Hash(password + salt), Salt = salt };
+
+            //_dbContext.Persons.Add(newPerson);
+
+            //_dbContext.Users.Add(new User(2, login, password, ""));
+
+            //_dbContext.SaveChanges();
+
+            //return newPerson.Id;
+
+
+
+            var person = Persons.FirstOrDefault(x => x.Login == login);
             if (person != null)
                 return person.Id;
 
@@ -32,11 +58,9 @@ namespace RD.Services
 
             var newPerson = new Person() { Id = 2, Login = login, PasswordHash = Hash(password + salt), Salt = salt };
 
-            _dbContext.Persons.Add(newPerson);
+            Persons.Add(newPerson);
 
-            _dbContext.Users.Add(new User(2, login, password, ""));
-
-            _dbContext.SaveChanges();
+            UsersService.Users.Add(new User(2, login, password, ""));
 
             return newPerson.Id;
         }
@@ -44,7 +68,14 @@ namespace RD.Services
         // Проверяем существует ли пользователь в базе данных с таким именем, если существует проверяем совпадает ли пароль
         public bool Login(string login, string password)
         {
-            var person = _dbContext.Persons.FirstOrDefault(x => x.Login == login);
+            //var person = _dbContext.Persons.FirstOrDefault(x => x.Login == login);
+            //if (person == null)
+            //    return false;
+
+            //return person.PasswordHash == Hash(password + person.Salt);
+
+
+            var person = Persons.FirstOrDefault(x => x.Login == login);
             if (person == null)
                 return false;
 
