@@ -15,6 +15,7 @@ namespace RD.Controllers
         private readonly ILogger<StagesController> _logger;
         //private readonly IStagesService _stageService;
         private readonly StagesService _stageService;
+        private static string ThemeName;
 
         public StagesController(ILogger<StagesController> logger, StagesService stageService)
         {
@@ -27,12 +28,14 @@ namespace RD.Controllers
             var stages = _stageService.GetStages();
             ViewBag.Stages = stages;
             ViewBag.ThemeName = themeName;
+            ThemeName = themeName;
             return View();
         }
 
         [HttpGet("/add_stage")]
         public IActionResult Stage()
         {
+            ViewBag.ThemeName = ThemeName;
             return View();
         }
 

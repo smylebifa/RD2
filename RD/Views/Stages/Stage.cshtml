@@ -1,4 +1,6 @@
-﻿@{
+﻿@model RD.Models.Stage;
+
+@{
     ViewBag.Title = "Новый этап";
     Layout = "_Layout";
 }
@@ -31,11 +33,11 @@
                 <input type="text" placeholder="Статус" name="" />
             </td>
         </tr>
-        
+
 
         <tr>
             <td style="padding: 2px;">
-                <input type="button" value="Отмена" onClick='location.href="/"' />
+                <a class="btn btn-primary" href="/Stages?themeName=@ViewBag.ThemeName" style="text-align:center"> Назад </a>
             </td>
             <td style="padding: 2px;">
                 <input type="submit" value="Добавить этап" />
