@@ -8,7 +8,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm">
-            <h3 style="color: #76361d;">TRL</h3>
+            <h3 style="color: #343a40;">TRL</h3>
         </div>
     </div>
 </div>
@@ -67,7 +67,7 @@
 <div style="overflow-x:auto;">
     <table class="table table-hover table-bordered" style="text-align: center; ">
 
-        <thead style="background-color: #efc6a0; color: #76361d;">
+        <thead  class="thead-dark">
             <tr>
                 <th scope="col"></th>
                 <th scope="col">Уровень TRL</th>
@@ -103,7 +103,7 @@
             }*@
 
 
-        <tbody class="labels" style="background-color: #efcfb2; color: #76361d;">
+        <tbody class="labels" >
             <tr>
                 <td></td>
                 <td>1</td>
@@ -117,7 +117,7 @@
 
         </tbody>
 
-        <tbody class="hide" style="background-color: #efcfb2; color: #76361d;">
+        <tbody class="hide" >
             <tr>
                 <td class='expandSUB1 expandVALS'></td>
                 <td class='expandSUB1'>1.1</td>
@@ -179,7 +179,7 @@
         </tbody>
 
 
-        <tbody class="labels" style="background-color: #efcfb2; color: #76361d;">
+        <tbody class="labels">
 
             <tr>
                 <td></td>
@@ -195,7 +195,7 @@
 
         </tbody>
 
-        <tbody class="hide" style="background-color: #efcfb2; color: #76361d;">
+        <tbody class="hide" >
             <tr>
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>2.1</td>
@@ -244,7 +244,7 @@
 
 <br>
 
-<h5 style="color: green">Выполненные уровни - @ViewBag.Trls.TotalReady</h5>
+<h5 style="color: #3949AC;">Выполненные уровни - @ViewBag.Trls.TotalReady</h5>
 
 <br>
 
@@ -296,7 +296,7 @@
         ]);
 
         // Optional; add a title and set the width and height of the chart
-        var options = { 'title': 'Готовность проекта', 'width': 600, 'height': 450, 'colors': ['#9ccf9c', '#ff7272'] };
+        var options = { 'title': 'Готовность проекта', 'width': 600, 'height': 450, 'colors': ['#3949AC', '#d13030'] };
 
         // Display the chart inside the <div> element with id="piechart"
         var chart = new google.visualization.PieChart(document.getElementById('trl_diagram'));

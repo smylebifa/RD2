@@ -15,14 +15,14 @@
 <div class="container">
     <div class="row">
         <div class="col-sm">
-            <h3 style="color: #76361d;">Тема - @ViewBag.ThemeName</h3>
+            <h3 style="color: #343a40;">Тема - @ViewBag.ThemeName</h3>
         </div>
         <div class="col-sm">
             @* <h4> <a class="nav-link text-primary" asp-controller="Stage" asp-action="Stage">Добавить этап</a> </h4>*@
-            <h5> <a class="nav-link" asp-controller="Stages" asp-action="Stage" style="color: #76361d;">Добавить этап</a>  </h5>
+            <h5> <a class="nav-link" asp-controller="Stages" asp-action="Stage" style="color: #343a40;">Добавить этап</a>  </h5>
         </div>
         <div class="col-sm">
-            <h5> <a class="nav-link" style="color: #76361d;" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="TRLs" asp-action="Index">TRL</a> </h5>
+            <h5> <a class="nav-link" style="color: #343a40;" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="TRLs" asp-action="Index">TRL</a> </h5>
         </div>
     </div>
 </div>
@@ -77,7 +77,7 @@
 <div style="overflow-x:auto;">
     <table class="table table-hover table-bordered" style="text-align: center; ">
 
-        <thead style="background-color: #efc6a0; color: #76361d;">
+        <thead class="thead-dark">
             <tr>
                 <th scope="col"></th>
                 <th scope="col">№ этапа</th>
@@ -93,7 +93,7 @@
         @{int i = 0;}
         @foreach (var stage in @ViewBag.Stages)
         {
-            <tbody style="background-color: #efcfb2; color: #76361d;">
+            <tbody >
                 <tr>
                     <td></td>
                     <td>@stage.NumStage</td>
@@ -118,7 +118,7 @@
             {
                 jView = j + 1;
 
-                <tbody class="hide" style="background-color: #efcfb2; color: #76361d;">
+                <tbody class="hide">
                     <tr>
                         <td class='expandSUB1 expandVALS'></td>
                         <td class='expandSUB1'>@iView.@jView </td>

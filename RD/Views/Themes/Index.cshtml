@@ -11,7 +11,7 @@
             <h3>Темы</h3>
         </div>
         <div class="col-sm">
-            <h5> <a class="nav-link" asp-controller="Themes" asp-action="Theme" style="color: #76361d;">Добавить тему</a> </h5>        
+            <h5> <a class="nav-link" asp-controller="Themes" asp-action="Theme" >Добавить тему</a> </h5>        
         </div>
         <div class="col-sm">
             <h5 style="padding: 0.5rem 1rem;">2020</h5>
@@ -20,14 +20,14 @@
             
             <div class="dropdown">
                 
-                    <button class="btn dropdown-toggle" style="font-size: 1.25rem; color: #76361d; font-weight: 500;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn dropdown-toggle" style="font-size: 1.25rem; color: #343a40; font-weight: 500;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Выбор года 
                     </button>
                
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" style="color: #76361d;" type="button" href="#">2020</a>
-                        <a class="dropdown-item" style="color: #76361d;" href="#">2021</a>
-                        <a class="dropdown-item" style="color: #76361d;" href="#">2022</a>
+                        <a class="dropdown-item" style="color: #343a40;" type="button" href="#">2020</a>
+                        <a class="dropdown-item" style="color: #343a40;" href="#">2021</a>
+                        <a class="dropdown-item" style="color: #343a40;" href="#">2022</a>
                     </div>
             </div>
                 
@@ -38,7 +38,7 @@
 <div style="overflow-x:auto;">
     <table class="table table-hover" style="text-align: center; ">
 
-        <thead style="background-color: #efc6a0; color: #76361d;">
+        <thead class="thead-dark">
             <tr>
                 <th scope="col"></th>
                 <th scope="col">№ темы</th>
@@ -60,11 +60,11 @@
             </tr>
         </thead>
 
-        <tbody style="background-color: #efcfb2; color: #76361d;">
+        <tbody>
             @foreach (var theme in @ViewBag.Themes)
                 {
             <tr>
-                <td><a style="color: #76361d;" class="nav-link" asp-area="" asp-route-themeName="@theme.Name" asp-controller="Stages" asp-action="Index">Тема</a></td>
+                <td><a class="nav-link" asp-area="" asp-route-themeName="@theme.Name" asp-controller="Stages" asp-action="Index">Тема</a></td>
                 <td>@theme.Number</td>
                 <td>@theme.Name</td>
                 <td>@theme.FioManager</td>
