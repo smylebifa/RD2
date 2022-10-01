@@ -19,10 +19,10 @@
         </div>
         <div class="col-sm">
             @* <h4> <a class="nav-link text-primary" asp-controller="Stage" asp-action="Stage">Добавить этап</a> </h4>*@
-            <h5> <a class="nav-link" asp-controller="Stages" asp-action="Stage" style="color: #343a40;">Добавить этап</a>  </h5>
-        </div>
+            <h5> <a class="nav-link" asp-controller="Stages" asp-action="Stage">Добавить этап</a> </h5>
+        </div>  
         <div class="col-sm">
-            <h5> <a class="nav-link" style="color: #343a40;" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="TRLs" asp-action="Index">TRL</a> </h5>
+            <h5> <a class="nav-link"  asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="TRLs" asp-action="Index">TRL</a> </h5>
         </div>
     </div>
 </div>
@@ -93,7 +93,7 @@
         @{int i = 0;}
         @foreach (var stage in @ViewBag.Stages)
         {
-            <tbody >
+            <tbody style="background-color: #ececec;">
                 <tr>
                     <td></td>
                     <td>@stage.NumStage</td>
@@ -118,7 +118,7 @@
             {
                 jView = j + 1;
 
-                <tbody class="hide">
+                <tbody class="hide" >
                     <tr>
                         <td class='expandSUB1 expandVALS'></td>
                         <td class='expandSUB1'>@iView.@jView </td>
