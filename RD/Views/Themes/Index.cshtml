@@ -58,6 +58,7 @@
         <thead class="thead-dark" >
             <tr>
                 <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;"></th>
+                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;"></th>
                 <th scope="col" style="padding-bottom:0; padding-top:0rem;padding-left: 1.5rem;vertical-align: middle;">№ темы</th>
                 <th scope="col" style="padding-bottom:0; padding-top:0rem;padding-left: 1.5rem;vertical-align: middle;">Наименование темы</th>
                 <th scope="col" style="padding-bottom:0; padding-top:0rem;padding-left: 1.5rem;vertical-align: middle;">ФИО руководителя</th>
@@ -82,6 +83,9 @@
                 {
             <tr>
                 <td><a class="nav-link" asp-area="" asp-route-themeName="@theme.Name" asp-controller="Stages" asp-action="Index">Этапы</a></td>
+
+                <td>@Html.ActionLink("Изменить тему", "ChangingTheme", new { id = theme.Id })</td>
+
                 <td>@theme.Number</td>
                 <td>@theme.Name</td>
                 <td>@theme.FioManager</td>
@@ -93,9 +97,30 @@
                 <td>@theme.Vat</td>
                 <td>@theme.AmountWithoutVat</td>
                 <td>@theme.Decree</td>
-                <td>@theme.DocType</td>
+
+                <td>
+                    <select name="DocType   " size="1">
+                        <option selected value="s1">Гос. Контракт</option>
+                        <option value="s2">Договор</option>
+                        <option value="s3">Контракт</option>
+                        <option value="s4">Хоз. договора</option>
+                    </select>
+                </td>
+
+                @*<td>@theme.DocType</td>*@
                 <td>@theme.Props</td>
-                <td>@theme.ResearchType</td>
+                @*<td>@theme.ResearchType</td>*@
+
+                <td>
+                    <select name="ResearchType" size="1">
+                        <option selected value="s1">Прикладное</option>
+                        <option value="s2">Фундаментальное</option>
+                        <option value="s3">Разработка</option>
+                        <option value="s4">Поисковое</option>
+                        <option value="s4">ОКР</option>
+                    </select>
+                </td>
+
                 <td>@theme.Knowledge</td>
                 <td>@theme.Status</td>
 

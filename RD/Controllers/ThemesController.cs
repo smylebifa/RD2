@@ -35,6 +35,20 @@ namespace RD.Controllers
             return View();
         }
 
+        [HttpGet("/edit_theme/{id}")]
+        public new IActionResult ChangingTheme(int id)
+        {
+            var theme = _themeService.GetThemes().FirstOrDefault(x => x.Id == id);
+            return View(theme);
+        }
+
+        [HttpPost("/edit_theme")]
+        public IActionResult Edit(Theme theme)
+        {
+            _themeService.UpdateTheme(theme);
+            return RedirectToAction(nameof(Index));
+        }
+
         [HttpPost]
         public IActionResult AddTheme(Theme theme)
         {

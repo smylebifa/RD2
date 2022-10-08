@@ -1,0 +1,86 @@
+﻿@model RD.Models.Theme;
+
+@{
+    ViewBag.Title = "Редактирование темы";
+    Layout = "_Layout";
+}
+
+@using (Html.BeginForm("Edit", "Themes", FormMethod.Post))
+{
+    <table>
+        @Html.HiddenFor(m => m.Id)
+
+        <tr>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.Number)
+            </td>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.Name)
+            </td>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.FioManager)
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.ExecutiveDepartment)
+            </td>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Заказчик работы"  name="" />
+            </td>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.WorkStart)
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.WorkEnd)
+            </td>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.Amount)
+            </td>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="НДС"  name="" />
+            </td>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.AmountWithoutVat)
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Приказ об открытии темы" name="" />
+            </td>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.DocType)
+            </td>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Реквизиты документа" name="" />
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.ResearchType)
+            </td>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Область знания" name="" />
+            </td>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.Status)
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 2px;">
+                <input type="button" value="Отмена" onClick='location.href="/Themes"' />
+            </td>
+            <td style="padding: 2px;">
+                <input type="submit" value="Изменить тему" />
+            </td>
+        </tr>
+
+    </table>
+}

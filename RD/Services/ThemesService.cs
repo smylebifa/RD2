@@ -44,6 +44,42 @@ namespace RD.Services
             //_dbContext.SaveChanges();
         }
 
+        public void UpdateTheme(Theme theme)
+        {
+            //var existing = _dbContext.Users.FirstOrDefault(x => x.Id == user.Id);
+
+            //if (existing == null)
+            //    return;
+
+            //existing.Login = user.Login;
+            //existing.Password = user.Password;
+            //existing.IsActive= true;
+
+            //_dbContext.SaveChanges();
+
+            var existing = Themes.FirstOrDefault(x => x.Id == theme.Id);
+            if (existing == null)
+                return;
+
+            existing.Name = theme.Name;
+            existing.Number = theme.Number;
+            existing.FioManager = theme.FioManager;
+            existing.ExecutiveDepartment = theme.ExecutiveDepartment;
+            existing.WorkStart = theme.WorkStart;
+            existing.WorkEnd = theme.WorkEnd;
+            existing.Amount = theme.Amount;
+            existing.Vat = theme.Vat;
+            existing.AmountWithoutVat = theme.AmountWithoutVat;
+            existing.Decree = theme.Decree;
+            existing.DocType = theme.DocType;
+            existing.Props = theme.Props;
+            existing.ResearchType = theme.ResearchType;
+            existing.Knowledge = theme.Knowledge;
+            existing.Status = theme.Status;
+            existing.Props = theme.Props;
+
+        }
+
 
 
     }

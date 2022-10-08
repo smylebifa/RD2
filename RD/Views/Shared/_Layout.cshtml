@@ -36,10 +36,18 @@
                             <h6><a class="nav-link" asp-area="" asp-controller="Themes" asp-action="Index" style="color: white;">Темы</a></h6>
                         </li>
 
+                        <li class="nav-item" >
+                            <h6><a class="nav-link" asp-area="" asp-controller="Customers" asp-action="Index" style="color: white;">Заказчики</a></h6>
+                        </li>
+
+                        <li class="nav-item" >
+                            <h6><a class="nav-link" asp-area="" asp-controller="Counterparties" asp-action="Index" style="color: white;">Контрагенты</a></h6>
+                        </li>
+
                         <li class="nav-item" id="themes-menu" style="margin-left: 70%;"></li>
 
                         <li class="dropdown nav-item">
-                            <a href="#" class="dropdown-toggle nav-link " data-toggle="dropdown" style="color:white"><img src="~/images/user2.png" width="20%" alt="Profile" ><b class="caret" ></b></a>
+                            <a href="#" class="dropdown-toggle nav-link " data-toggle="dropdown" style="color:white"><img src="~/images/user2.png" width="100%" alt="Profile"><b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><h6><a class="nav-link " asp-area="" asp-controller="Profile" asp-action="Index" style="color: #343a40;">Профиль</a></h6></li>
                                 <li><h6><a id="login-link" class="nav-link " asp-area="" asp-controller="Authentication" asp-action="Index" style="color: #343a40;">Вход</a></h6></li>
