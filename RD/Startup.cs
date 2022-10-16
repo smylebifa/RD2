@@ -65,6 +65,8 @@ namespace RD
             services.AddTransient<StagesService>();
             services.AddTransient<TRLsService>();
             services.AddTransient<AuthenticationService>();
+            
+            services.AddTransient<CustomersService>();
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options => options.LoginPath = "/login");
