@@ -418,3 +418,4 @@ C:\Users\Oleg\source\repos\RD\RD2\RD\bin\Debug\netcoreapp3.0\Pomelo.EntityFramew
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\RD.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Themes\ChangingTheme.cshtml.g.cs
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Customers\Customer.cshtml.g.cs
+C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Counterparties\Counterparty.cshtml.g.cs

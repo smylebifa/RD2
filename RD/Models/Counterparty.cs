@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace RD.Models
+﻿namespace RD.Models
 {
     public class Counterparty
     {
@@ -13,6 +8,12 @@ namespace RD.Models
         public Counterparty()
         {
             Id = 1;
+        }
+
+        public Counterparty(int id, string name)
+        {
+            Id = id; 
+            Name = name;
         }
 
         public Counterparty(string name)

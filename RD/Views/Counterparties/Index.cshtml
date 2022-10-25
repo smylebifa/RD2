@@ -1,5 +1,67 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model RD.Models.Counterparty;
+
 @{
+    ViewBag.Title = "Контрагенты";
+    Layout = "_Layout";
 }
+
+<table class="table table-hover" style="text-align: center;">
+
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Имя</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var counterparty in @ViewBag.Counterparties)
+        {
+            <tr>
+                <td>@counterparty.Name</td>
+                <td>@Html.ActionLink("изменить", "Counterparty", new { id = counterparty.Id })</td>
+                <td><a onclick="deleteUser('@counterparty.Id')" href="#"> удалить </a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<form method="post" asp-action="Counterparties" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
+    <table>
+        <h4>Добавление контрагента</h4>
+
+        <tr>
+            <td style="padding: 4px;">Имя:</td>
+            <td style="padding: 4px;">
+                <input name="Name" />
+            </td>
+        </tr>
+
+
+        <tr>
+            <td style="padding: 2px;">
+                <input type="submit" value="Добавить" />
+            </td>
+            <td></td>
+        </tr>
+
+    </table>
+</form>
+
+
+<script type="text/javascript">
+        function deleteUser(userId) {
+            $.ajax({
+                url: '/delete_counterparty/' + userId,
+                type: 'DELETE',
+                contentType: "application/json; charset=utf-8",
+                success: function () {
+                    location.reload()
+                },
+                error: function () {
+                    alert("Ошибка выполнения!")
+                }
+            })
+        }
+</script>
