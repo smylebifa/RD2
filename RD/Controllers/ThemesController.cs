@@ -39,6 +39,7 @@ namespace RD.Controllers
         public new IActionResult ChangingTheme(int id)
         {
             var theme = _themeService.GetThemes().FirstOrDefault(x => x.Id == id);
+            ViewBag.CurrentTheme = theme;
             return View(theme);
         }
 

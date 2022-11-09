@@ -20,10 +20,17 @@
         <div class="col-sm">
             @* <h4> <a class="nav-link text-primary" asp-controller="Stage" asp-action="Stage">Добавить этап</a> </h4>*@
             <h5> <a class="nav-link" asp-controller="Stages" asp-action="Stage">Добавить этап</a> </h5>
-        </div>  
-        <div class="col-sm">
-            <h5> <a class="nav-link"  asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="TRLs" asp-action="Index">TRL</a> </h5>
         </div>
+        <div class="col-sm">
+            <h5> <a class="nav-link" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="TRLs" asp-action="Index">TRL</a> </h5>
+        </div>
+
+        <div class="col-sm">
+            <h5> <a class="nav-link" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="AnnualFinancings" asp-action="Index">Финансирование</a> </h5>
+        </div>
+
+
+
     </div>
 </div>
 

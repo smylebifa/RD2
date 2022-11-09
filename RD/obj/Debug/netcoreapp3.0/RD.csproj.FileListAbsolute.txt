@@ -419,3 +419,5 @@ C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\RD.MvcApplicationPa
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Themes\ChangingTheme.cshtml.g.cs
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Customers\Customer.cshtml.g.cs
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Counterparties\Counterparty.cshtml.g.cs
+C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\AnnualFinancings\AnnualFinancing.cshtml.g.cs
+C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\AnnualFinancings\Index.cshtml.g.cs

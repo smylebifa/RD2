@@ -3,6 +3,21 @@
 @{
     ViewBag.Title = "Редактирование темы";
     Layout = "_Layout";
+
+    var CurTheme = ViewBag.CurrentTheme;
+
+    var el = 0;
+
+    if (CurTheme.DocType == "Гос.Контракт")
+
+        el = 0;
+    else if (CurTheme.DocType == "Договор")
+        el = 1;
+    else if (CurTheme.DocType == "Контракт")
+        el = 2;
+    else if (CurTheme.DocType == "Хоз.договора")
+        el = 3;
+
 }
 
 @using (Html.BeginForm("Edit", "Themes", FormMethod.Post))
@@ -27,7 +42,7 @@
                 @Html.TextBoxFor(m => m.ExecutiveDepartment)
             </td>
             <td style="padding: 4px;">
-                <input type="text" placeholder="Заказчик работы"  name="" />
+                <input type="text" placeholder="Заказчик работы" name="" />
             </td>
             <td style="padding: 4px;">
                 @Html.TextBoxFor(m => m.WorkStart)
@@ -42,7 +57,7 @@
                 @Html.TextBoxFor(m => m.Amount)
             </td>
             <td style="padding: 4px;">
-                <input type="text" placeholder="НДС"  name="" />
+                <input type="text" placeholder="НДС" name="" />
             </td>
             <td style="padding: 4px;">
                 @Html.TextBoxFor(m => m.AmountWithoutVat)
@@ -53,18 +68,45 @@
             <td style="padding: 4px;">
                 <input type="text" placeholder="Приказ об открытии темы" name="" />
             </td>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.DocType)
-            </td>
+
+            @*@Html.DropDownListFor(model => model.TeamId, ViewBag.Teams as SelectList)*@
+
+
+            @*<td style="padding: 4px;">
+                <select name="DocType" size="1">
+                    <option @{if (el= =0) { @("selected") } } value="Гос. Контракт">Гос. Контракт</option>
+                    <option @{if (el= =1) "selected" } value="Договор">Договор</option>
+                    <option @{if (el= =2) "selected" } value="Контракт">Контракт</option>
+                    <option @{if (el= =3) "selected" } value="Хоз. договора">Хоз. договора</option>
+                </select>
+            </td>*@
+
             <td style="padding: 4px;">
                 <input type="text" placeholder="Реквизиты документа" name="" />
             </td>
         </tr>
 
         <tr>
+
             <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.ResearchType)
+                <select name="ResearchType" size="1">
+                    <option value="Прикладное">Прикладное</option>
+                    <option value="Фундаментальное">Фундаментальное</option>
+                    <option value="Разработка">Разработка</option>
+                    <option value="Поисковое">Поисковое</option>
+                    <option value="ОКР">ОКР</option>
+                </select>
             </td>
+
+
+            @(ViewBag.Trls.Trl1_1 && ViewBag.Trls.Trl1_2 && ViewBag.Trls.Trl1_3 && ViewBag.Trls.Trl1_4 && ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "")
+
+            @*<td style="padding: 4px;">
+            @Html.TextBoxFor(m => m.ResearchType)
+        </td>*@
+
+
+
             <td style="padding: 4px;">
                 <input type="text" placeholder="Область знания" name="" />
             </td>
