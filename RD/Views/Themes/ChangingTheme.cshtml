@@ -21,67 +21,84 @@
 }
 
 @using (Html.BeginForm("Edit", "Themes", FormMethod.Post))
-{
-    <table>
-        @Html.HiddenFor(m => m.Id)
+    {
+        <table>
+@Html.HiddenFor(m => m.Id)
 
-        <tr>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.Number)
-            </td>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.Name)
-            </td>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.FioManager)
-            </td>
-        </tr>
+    <tr>
+        <td style="padding: 4px;">
+            <input type="text" placeholder="Номер темы" name="Number" value="@ViewBag.CurrentTheme.Number" />
+            @*@Html.TextBoxFor(m => m.Number)*@
+        </td>
+        <td style="padding: 4px;">
+            @Html.TextBoxFor(m => m.Name)
+        </td>
+        <td style="padding: 4px;">
+            @Html.TextBoxFor(m => m.FioManager)
+        </td>
+    </tr>
 
-        <tr>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.ExecutiveDepartment)
-            </td>
-            <td style="padding: 4px;">
-                <input type="text" placeholder="Заказчик работы" name="" />
-            </td>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.WorkStart)
-            </td>
-        </tr>
+    <tr>
+        <td style="padding: 4px;">
+            @Html.TextBoxFor(m => m.ExecutiveDepartment)
+        </td>
+        <td style="padding: 4px;">
+            <input type="text" placeholder="Заказчик работы" name="" />
+        </td>
+        <td style="padding: 4px;">
+            @Html.TextBoxFor(m => m.WorkStart)
+        </td>
+    </tr>
 
-        <tr>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.WorkEnd)
-            </td>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.Amount)
-            </td>
-            <td style="padding: 4px;">
-                <input type="text" placeholder="НДС" name="" />
-            </td>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.AmountWithoutVat)
-            </td>
-        </tr>
-
-        <tr>
-            <td style="padding: 4px;">
-                <input type="text" placeholder="Приказ об открытии темы" name="" />
-            </td>
-
-            @*@Html.DropDownListFor(model => model.TeamId, ViewBag.Teams as SelectList)*@
+    <tr>
+        <td style="padding: 4px;">
+            @Html.TextBoxFor(m => m.WorkEnd)
+        </td>
+        <td style="padding: 4px;">
+            @Html.TextBoxFor(m => m.Amount)
+        </td>
+        <td style="padding: 4px;">
+            <input type="text" placeholder="НДС" name="" />
+        </td>
+        <td style="padding: 4px;">
+            @Html.TextBoxFor(m => m.AmountWithoutVat)
+        </td>
+    </tr>
 
 
-            @*<td style="padding: 4px;">
-                <select name="DocType" size="1">
-                    <option @{if (el= =0) { @("selected") } } value="Гос. Контракт">Гос. Контракт</option>
-                    <option @{if (el= =1) "selected" } value="Договор">Договор</option>
-                    <option @{if (el= =2) "selected" } value="Контракт">Контракт</option>
-                    <option @{if (el= =3) "selected" } value="Хоз. договора">Хоз. договора</option>
-                </select>
-            </td>*@
+    <tr>
+        <td style="padding: 4px;">
+            <input type="text" placeholder="Приказ об открытии темы" name="" />
+        </td>
 
-            <td style="padding: 4px;">
+
+
+
+        @*@Html.DropDownListFor(model => model.TeamId, ViewBag.Teams as SelectList)*@
+
+
+        @*<td style="padding: 4px;">
+            <select name="DocType" size="1">
+                <option @{if (el= =0) { @("selected") } } value="Гос. Контракт">Гос. Контракт</option>
+                <option @{if (el= =1) "selected" } value="Договор">Договор</option>
+                <option @{if (el= =2) "selected" } value="Контракт">Контракт</option>
+                <option @{if (el= =3) "selected" } value="Хоз. договора">Хоз. договора</option>
+            </select>
+        </td>*@
+
+
+        <td style="padding: 4px;">
+            <select name="DocType" size="1">
+                <option value="Гос. Контракт">Гос. Контракт</option>
+                <option value="Договор">Договор</option>
+                <option value="Контракт">Контракт</option>
+                <option value="Хоз. договора">Хоз. договора</option>
+            </select>
+        </td>
+
+
+
+        <td style="padding: 4px;">
                 <input type="text" placeholder="Реквизиты документа" name="" />
             </td>
         </tr>
@@ -99,30 +116,37 @@
             </td>
 
 
-            @(ViewBag.Trls.Trl1_1 && ViewBag.Trls.Trl1_2 && ViewBag.Trls.Trl1_3 && ViewBag.Trls.Trl1_4 && ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "")
-
-            @*<td style="padding: 4px;">
-            @Html.TextBoxFor(m => m.ResearchType)
-        </td>*@
 
 
 
-            <td style="padding: 4px;">
-                <input type="text" placeholder="Область знания" name="" />
-            </td>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.Status)
-            </td>
-        </tr>
+        @*@(ViewBag.Trls.Trl1_1 && ViewBag.Trls.Trl1_2 && ViewBag.Trls.Trl1_3 && ViewBag.Trls.Trl1_4 && ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "")
 
-        <tr>
-            <td style="padding: 2px;">
-                <input type="button" value="Отмена" onClick='location.href="/Themes"' />
-            </td>
-            <td style="padding: 2px;">
-                <input type="submit" value="Изменить тему" />
-            </td>
-        </tr>
+        <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.ResearchType)
+            </td>*@
 
-    </table>
-}
+
+
+        <td style="padding: 4px;">
+            <input type="text" placeholder="Область знания" name="" />
+        </td>
+
+        <td style="padding: 4px;">
+            @Html.TextBoxFor(m => m.Status)
+        </td>
+
+    </tr>
+
+    <tr>
+        <td style="padding: 2px;">
+            <input type="button" value="Отмена" onClick='location.href="/Themes"' />
+        </td>
+        <td style="padding: 2px;">
+            <input type="submit" value="Изменить тему" />
+        </td>
+    </tr>
+
+
+
+</table>
+    }

@@ -41,7 +41,7 @@ namespace RD.Controllers
         [HttpGet("/edit_annual_financing/{id}")]
         public new IActionResult AnnualFinancing(int id)
         {
-            var user = _annualFinancingsService.GetAnnualFinancings().First();
+            var user = _annualFinancingsService.GetAnnualFinancings().FirstOrDefault(x => x.Id == id);
             return View(user);
         }
 

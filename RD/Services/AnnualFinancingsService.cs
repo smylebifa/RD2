@@ -21,10 +21,17 @@ namespace RD.Services
 
         public void AddAnnualFinancing(AnnualFinancing annualFinancing)
         {
-            if (AnnualFinancings.Any(x => x.Id == annualFinancing.Id))
-                throw new ArgumentException("Theme with such login already exists.");
+            //if (AnnualFinancings.Any(x => x.Id == annualFinancing.Id))
+            //    throw new ArgumentException("Theme with such login already exists.");
 
-            AnnualFinancings.Add(annualFinancing);
+            int LastId = AnnualFinancings.Max(annualFinancings => annualFinancings.Id);
+            
+            if (LastId is int)
+            {
+                annualFinancing.Id = LastId + 1;
+                AnnualFinancings.Add(annualFinancing);
+            }
+           
 
             //if (_dbContext.Themes.Any(x => x.Name == theme.Name))
             //    throw new ArgumentException("Theme with such name already exists.");
@@ -36,37 +43,12 @@ namespace RD.Services
 
         public void UpdateAnnualFinancing(AnnualFinancing annualFinancing)
         {
-            //var existing = _dbContext.Users.FirstOrDefault(x => x.Id == user.Id);
+            var existing = AnnualFinancings.FirstOrDefault(x => x.Id == annualFinancing.Id);
+            if (existing == null)
+                return;
 
-            //if (existing == null)
-            //    return;
-
-            //existing.Login = user.Login;
-            //existing.Password = user.Password;
-            //existing.IsActive= true;
-
-            //_dbContext.SaveChanges();
-
-            //var existing = Themes.FirstOrDefault(x => x.Id == theme.Id);
-            //if (existing == null)
-            //    return;
-
-            //existing.Name = theme.Name;
-            //existing.Number = theme.Number;
-            //existing.FioManager = theme.FioManager;
-            //existing.ExecutiveDepartment = theme.ExecutiveDepartment;
-            //existing.WorkStart = theme.WorkStart;
-            //existing.WorkEnd = theme.WorkEnd;
-            //existing.Amount = theme.Amount;
-            //existing.Vat = theme.Vat;
-            //existing.AmountWithoutVat = theme.AmountWithoutVat;
-            //existing.Decree = theme.Decree;
-            //existing.DocType = theme.DocType;
-            //existing.Props = theme.Props;
-            //existing.ResearchType = theme.ResearchType;
-            //existing.Knowledge = theme.Knowledge;
-            //existing.Status = theme.Status;
-            //existing.Props = theme.Props;
+            existing.Year = annualFinancing.Year;
+            existing.Amount = annualFinancing.Amount;
 
         }
         public AnnualFinancing GetAnnualFinancingById(int theme_id)
@@ -77,10 +59,6 @@ namespace RD.Services
 
             return existing;            
         }
-
-       
-
-       
 
     }
 }
