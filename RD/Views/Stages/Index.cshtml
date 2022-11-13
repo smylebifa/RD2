@@ -12,125 +12,185 @@
     };
 }
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <h3 style="color: #343a40;">Тема - @ViewBag.ThemeName</h3>
-        </div>
-        <div class="col-sm">
-            @* <h4> <a class="nav-link text-primary" asp-controller="Stage" asp-action="Stage">Добавить этап</a> </h4>*@
-            <h5> <a class="nav-link" asp-controller="Stages" asp-action="Stage">Добавить этап</a> </h5>
-        </div>
-        <div class="col-sm">
-            <h5> <a class="nav-link" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="TRLs" asp-action="Index">TRL</a> </h5>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h3 style="color: #343a40;">Тема - @ViewBag.ThemeName</h3>
+            </div>
         </div>
 
-        <div class="col-sm">
-            <h5> <a class="nav-link" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="AnnualFinancings" asp-action="Index">Финансирование</a> </h5>
+        <div class="row">
+            <div class="col-sm">
+                @* <h4> <a class="nav-link text-primary" asp-controller="Stage" asp-action="Stage">Добавить этап</a> </h4>*@
+                <h5> <a class="nav-link" asp-controller="Stages" asp-action="Stage">Добавить этап</a> </h5>
+            </div>
+
+
+            <div class="col-sm">
+                <h5> <a class="nav-link" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="AnnualFinancings" asp-action="Index">Финансирование</a> </h5>
+            </div>
+
+            <div class="col-sm">
+                <h5> <a class="nav-link" href="#">Договоры</a> </h5>
+            </div>
+
+            <div class="col-sm">
+                <h5> <a class="nav-link" asp-controller="Files" asp-action="Index">Файлы</a> </h5>
+            </div>
+
+            <div class="col-sm">
+                <h5> <a class="nav-link" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="TRLs" asp-action="Index">TRL</a> </h5>
+            </div>
+
         </div>
-
-
-
     </div>
-</div>
 
-<script>
-    $(document).ready(function () {
-        $('[data-toggle="toggle"]').change(function () {
-            $(this).parents().next('.hide').toggle();
-        });
-    });
+        <script>
+            $(document).ready(function () {
+                $('[data-toggle="toggle"]').change(function () {
+                    $(this).parents().next('.hide').toggle();
+                });
+            });
 
-    $(document).ready(function () {
-        $(".expandFRED").click(function () {
-            $(".expandSUB1").toggle();
-        });
-        $(".expandFRED2").click(function () {
-            $(".expandSUB2").toggle();
-        });
-        $(".expandVALS").click(function () {
-            $(".expandCAT1").toggle();
-        });
-    })
-</script>
+            $(document).ready(function () {
+                $(".expandFRED").click(function () {
+                    $(".expandSUB1").toggle();
+                });
+                $(".expandFRED2").click(function () {
+                    $(".expandSUB2").toggle();
+                });
+                $(".expandVALS").click(function () {
+                    $(".expandCAT1").toggle();
+                });
+            })
+        </script>
 
-<style>
-    .label tr td label {
-        display: block;
-    }
+        <style>
+            .label tr td label {
+                display: block;
+            }
 
-    [data-toggle='toggle'] {
-        display: none;
-    }
+            [data-toggle='toggle'] {
+                display: none;
+            }
 
-    .expandSUB1 {
-        display: none;
-    }
+            .expandSUB1 {
+                display: none;
+            }
 
-    .expandSUB2 {
-        display: none;
-    }
+            .expandSUB2 {
+                display: none;
+            }
 
-    . {
-        display: none;
-    }
+            . {
+                display: none;
+            }
 
-        .expandCAT1 {
-            display: none;
-        }
-</style>
+                .expandCAT1 {
+                    display: none;
+                }
+        </style>
 
 
-<div style="overflow-x:auto;">
-    <table class="table table-hover table-bordered" style="text-align: center; ">
+        <div style="overflow-x:auto;">
+            <table class="table table-hover table-bordered" style="text-align: center; ">
 
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;"></th>
-                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">№ этапа</th>
-                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Этап</th>
-                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Срок выполнения - начало</th>
-                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Срок выполнения - конец</th>
-                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Сумма этапа</th>
-                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Акт о завершении</th>
-                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Статус</th>
-            </tr>
-        </thead>
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;"></th>
+                        <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">№ этапа</th>
+                        <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Этап</th>
+                        <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Срок выполнения - начало</th>
+                        <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Срок выполнения - конец</th>
+                        <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Сумма этапа</th>
+                        <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Акт о завершении</th>
+                        <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Статус</th>
+                    </tr>
+                </thead>
 
-        @{int i = 0;}
-        @foreach (var stage in @ViewBag.Stages)
-        {
-            <tbody style="background-color: #ececec;">
-                <tr>
+                @{int i = 0;}
+                @foreach (var stage in @ViewBag.Stages)
+                {
+                    <tbody style="background-color: #ececec;">
+                        <tr>
+                            <td></td>
+                            <td>@stage.NumStage</td>
+                            <td class='expandFRED'>@stageLevel1[i] ▼</td>
+                            <td>@stage.WorkStart</td>
+                            <td>@stage.WorkEnd</td>
+                            <td>@stage.Amount</td>
+                            <td>@stage.CompletionAct</td>
+                            <td>@stage.Status</td>
+
+                            @*<td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
+                            <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>*@
+
+                        </tr>
+                    </tbody>
+
+                    int j = 0;
+                    int iView = i + 1;
+                    int jView;
+
+                    @foreach (var stage2 in stageLevel2[i])
+                    {
+                        jView = j + 1;
+
+                        <tbody class="hide">
+                            <tr>
+                                <td class='expandSUB1 expandVALS'></td>
+                                <td class='expandSUB1'>@iView.@jView </td>
+                                <td class='expandSUB1' align='right'>
+                                    @stage2
+                                </td>
+                                <td class='expandSUB1'></td>
+                                <td class='expandSUB1' align='right'></td>
+                                <td class='expandSUB1' align='right'></td>
+                                <td class='expandSUB1' align='right'></td>
+                                <td class='expandSUB1' align='right'></td>
+                            </tr>
+
+                        </tbody>
+
+                        j++;
+
+                    }
+
+                    i++;
+                }
+
+                @*<tr>
                     <td></td>
-                    <td>@stage.NumStage</td>
-                    <td class='expandFRED'>@stageLevel1[i] ▼</td>
-                    <td>@stage.WorkStart</td>
-                    <td>@stage.WorkEnd</td>
-                    <td>@stage.Amount</td>
-                    <td>@stage.CompletionAct</td>
-                    <td>@stage.Status</td>
+                    <td>1</td>
+                    <td>Разработка ТЗ НИР</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td><input type="checkbox" name="active" /></td>
+                </tr>*@
 
-                    @*<td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
-                    <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>*@
 
-                </tr>
-            </tbody>
+                @*<tbody class="labels">
+                    <tr>
+                        <td></td>
+                        <td>2</td>
+                        <td class='expandFRED'>Выбор направления исследования ▼</td>
+                        <td>y</td>
+                        <td>y</td>
+                        <td>y</td>
+                        <td>y</td>
+                        <td><input type="checkbox" name="active" /></td>
+                    </tr>
 
-            int j = 0;
-            int iView = i + 1;
-            int jView;
+                </tbody>*@
 
-            @foreach (var stage2 in stageLevel2[i])
-            {
-                jView = j + 1;
-
-                <tbody class="hide" >
+                @*<tbody class="hide">
                     <tr>
                         <td class='expandSUB1 expandVALS'></td>
-                        <td class='expandSUB1'>@iView.@jView </td>
+                        <td class='expandSUB1'>2.1</td>
                         <td class='expandSUB1' align='right'>
-                            @stage2
+                            Сбор и изучение научно-технической литературы, нормативно-технической документации,  эксплуатационной информации об аналоговых и других материалах, относящихся к разрабатываемой теме.
                         </td>
                         <td class='expandSUB1'></td>
                         <td class='expandSUB1' align='right'></td>
@@ -139,116 +199,67 @@
                         <td class='expandSUB1' align='right'></td>
                     </tr>
 
+                    <tr>
+                        <td class='expandSUB1 expandVALS'></td>
+                        <td class='expandSUB1'>2.2</td>
+                        <td class='expandSUB1' align='right'>
+                            Проведение патентных исследований. Составление отчета по патентным исследованиям в соответствии с ГОСТ 15.011
+                        </td>
+                        <td class='expandSUB1'></td>
+                        <td class='expandSUB1' align='right'></td>
+                        <td class='expandSUB1' align='right'></td>
+                        <td class='expandSUB1' align='right'></td>
+                        <td class='expandSUB1' align='right'></td>
+                    </tr>
+
+                </tbody>*@
+
+
+                @*<tbody class="labels">
+
+                    <tr>
+                        <td></td>
+                        <td>3</td>
+                        <td class='expandFRED2'>Теоретические и экспериментальные исследования ▼</td>
+                        <td>y</td>
+                        <td>y</td>
+                        <td>y</td>
+                        <td>y</td>
+                        <td><input type="checkbox" name="active" /></td>
+                    </tr>
+
                 </tbody>
 
-                j++;
+                <tbody class="hide">
+                    <tr>
+                        <td class='expandSUB2 expandVALS'></td>
+                        <td class='expandSUB2'>3.1</td>
+                        <td class='expandSUB2' align='right'>
+                            Разработка рабочих гипотез, построение моделей объекта исследований, обоснование допущений.
+                        </td>
+                        <td class='expandSUB2'></td>
+                        <td class='expandSUB2' align='right'></td>
+                        <td class='expandSUB2' align='right'></td>
+                        <td class='expandSUB2' align='right'></td>
+                        <td class='expandSUB2' align='right'></td>
+                    </tr>
 
-            }
-
-            i++;
-        }
-
-        @*<tr>
-            <td></td>
-            <td>1</td>
-            <td>Разработка ТЗ НИР</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-            <td>x</td>
-            <td><input type="checkbox" name="active" /></td>
-        </tr>*@
-
-
-        @*<tbody class="labels">
-            <tr>
-                <td></td>
-                <td>2</td>
-                <td class='expandFRED'>Выбор направления исследования ▼</td>
-                <td>y</td>
-                <td>y</td>
-                <td>y</td>
-                <td>y</td>
-                <td><input type="checkbox" name="active" /></td>
-            </tr>
-
-        </tbody>*@
-
-        @*<tbody class="hide">
-            <tr>
-                <td class='expandSUB1 expandVALS'></td>
-                <td class='expandSUB1'>2.1</td>
-                <td class='expandSUB1' align='right'>
-                    Сбор и изучение научно-технической литературы, нормативно-технической документации,  эксплуатационной информации об аналоговых и других материалах, относящихся к разрабатываемой теме.
-                </td>
-                <td class='expandSUB1'></td>
-                <td class='expandSUB1' align='right'></td>
-                <td class='expandSUB1' align='right'></td>
-                <td class='expandSUB1' align='right'></td>
-                <td class='expandSUB1' align='right'></td>
-            </tr>
-
-            <tr>
-                <td class='expandSUB1 expandVALS'></td>
-                <td class='expandSUB1'>2.2</td>
-                <td class='expandSUB1' align='right'>
-                    Проведение патентных исследований. Составление отчета по патентным исследованиям в соответствии с ГОСТ 15.011
-                </td>
-                <td class='expandSUB1'></td>
-                <td class='expandSUB1' align='right'></td>
-                <td class='expandSUB1' align='right'></td>
-                <td class='expandSUB1' align='right'></td>
-                <td class='expandSUB1' align='right'></td>
-            </tr>
-
-        </tbody>*@
+                    <tr>
+                        <td class='expandSUB2 expandVALS'></td>
+                        <td class='expandSUB2'>3.2</td>
+                        <td class='expandSUB2' align='right'>
+                            Выявление необходимости проведения экспериментов для подтверждения отдельных положений теоретических исследований для получения конкретных значений параметров (коэффициентов, необходимых для проведения расчѐтов).
+                        </td>
+                        <td class='expandSUB2'></td>
+                        <td class='expandSUB2' align='right'></td>
+                        <td class='expandSUB2' align='right'></td>
+                        <td class='expandSUB2' align='right'></td>
+                        <td class='expandSUB2' align='right'></td>
+                    </tr>
 
 
-        @*<tbody class="labels">
-
-            <tr>
-                <td></td>
-                <td>3</td>
-                <td class='expandFRED2'>Теоретические и экспериментальные исследования ▼</td>
-                <td>y</td>
-                <td>y</td>
-                <td>y</td>
-                <td>y</td>
-                <td><input type="checkbox" name="active" /></td>
-            </tr>
-
-        </tbody>
-
-        <tbody class="hide">
-            <tr>
-                <td class='expandSUB2 expandVALS'></td>
-                <td class='expandSUB2'>3.1</td>
-                <td class='expandSUB2' align='right'>
-                    Разработка рабочих гипотез, построение моделей объекта исследований, обоснование допущений.
-                </td>
-                <td class='expandSUB2'></td>
-                <td class='expandSUB2' align='right'></td>
-                <td class='expandSUB2' align='right'></td>
-                <td class='expandSUB2' align='right'></td>
-                <td class='expandSUB2' align='right'></td>
-            </tr>
-
-            <tr>
-                <td class='expandSUB2 expandVALS'></td>
-                <td class='expandSUB2'>3.2</td>
-                <td class='expandSUB2' align='right'>
-                    Выявление необходимости проведения экспериментов для подтверждения отдельных положений теоретических исследований для получения конкретных значений параметров (коэффициентов, необходимых для проведения расчѐтов).
-                </td>
-                <td class='expandSUB2'></td>
-                <td class='expandSUB2' align='right'></td>
-                <td class='expandSUB2' align='right'></td>
-                <td class='expandSUB2' align='right'></td>
-                <td class='expandSUB2' align='right'></td>
-            </tr>
+                </tbody>*@
 
 
-        </tbody>*@
-
-
-    </table>
-</div>
+            </table>
+        </div>

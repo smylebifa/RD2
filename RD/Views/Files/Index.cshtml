@@ -1,0 +1,73 @@
+﻿@model RD.Models.File;
+
+@{
+    ViewBag.Title = "Файлы";
+    Layout = "_Layout";
+}
+
+<table class="table table-hover" style="text-align: center;">
+
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Имя файла</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var file in @ViewBag.Files)
+        {
+            <tr>
+                <td>@file.Filename.@file.EntityType</td>
+                <td>@Html.ActionLink("Загрузить", "File", new { id = file.Id })</td>
+                <td><a onclick="deleteFile('@file.Id')" href="#"> Удалить </a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<form method="post" asp-action="Files" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
+    <table>
+        <h4>Загрузить файл</h4>
+
+        <tr>
+            <td style="padding: 4px;">
+                <button>Открыть</button>
+            </td>
+            <td style="padding: 4px;">
+                <input name="Login" placeholder="Загрузка файлов" />
+            </td>
+            <td style="padding: 2px;">
+                <input type="submit" value="Добавить" />
+            </td>
+
+
+            @*<form asp-action="AddFile" asp-controller="Home" method="post" enctype="multipart/form-data">
+                <input type="file" name="uploadedFile" /><br>
+                <input type="submit" value="Загрузить" />
+            </form>*@
+
+
+        </tr>        
+        
+    </table>
+</form>
+
+
+<script type="text/javascript">
+        function deleteFile(fileId) {
+            $.ajax({
+                url: '/delete_file/' + fileId,
+                type: 'DELETE',
+                contentType: "application/json; charset=utf-8",
+                success: function () {
+                    location.reload()
+                },
+                error: function () {
+                    alert("Ошибка выполнения!")
+                }
+            })
+        }
+</script>
