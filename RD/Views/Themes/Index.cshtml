@@ -59,6 +59,7 @@
             <tr>
                 <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;"></th>
                 <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;"></th>
+                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;"></th>
                 <th scope="col" style="padding-bottom:0; padding-top:0rem;padding-left: 1.5rem;vertical-align: middle;">№ темы</th>
                 <th scope="col" style="padding-bottom:0; padding-top:0rem;padding-left: 1.5rem;vertical-align: middle;">Наименование темы</th>
                 <th scope="col" style="padding-bottom:0; padding-top:0rem;padding-left: 1.5rem;vertical-align: middle;">ФИО руководителя</th>
@@ -85,6 +86,8 @@
                 <td><a class="nav-link" asp-area="" asp-route-themeName="@theme.Name" asp-controller="Stages" asp-action="Index">Этапы</a></td>
 
                 <td>@Html.ActionLink("Изменить тему", "ChangingTheme", new { id = theme.Id })</td>
+                
+                <td><a onclick="deleteTheme('@theme.Id')" href="#"> Удалить тему</a></td>
 
                 <td>@theme.Number</td>
                 <td>@theme.Name</td>
@@ -99,27 +102,27 @@
                 <td>@theme.Decree</td>
 
                 @*<td>
-                    <select name="DocType" size="1">
-                        <option selected value="s1">Гос. Контракт</option>
-                        <option value="s2">Договор</option>
-                        <option value="s3">Контракт</option>
-                        <option value="s4">Хоз. договора</option>
-                    </select>
-                </td>*@
+            <select name="DocType" size="1">
+                <option selected value="s1">Гос. Контракт</option>
+                <option value="s2">Договор</option>
+                <option value="s3">Контракт</option>
+                <option value="s4">Хоз. договора</option>
+            </select>
+        </td>*@
 
                 <td>@theme.DocType</td>
                 <td>@theme.Props</td>
                 <td>@theme.ResearchType</td>
 
                 @*<td>
-                    <select name="ResearchType" size="1">
-                        <option selected value="s1">Прикладное</option>
-                        <option value="s2">Фундаментальное</option>
-                        <option value="s3">Разработка</option>
-                        <option value="s4">Поисковое</option>
-                        <option value="s4">ОКР</option>
-                    </select>
-                </td>*@
+            <select name="ResearchType" size="1">
+                <option selected value="s1">Прикладное</option>
+                <option value="s2">Фундаментальное</option>
+                <option value="s3">Разработка</option>
+                <option value="s4">Поисковое</option>
+                <option value="s4">ОКР</option>
+            </select>
+        </td>*@
 
                 <td>@theme.Knowledge</td>
                 <td>@theme.Status</td>
@@ -171,3 +174,20 @@
         </tbody>
     </table>
 </div>
+
+
+<script type="text/javascript">
+    function deleteTheme(themeId) {
+        $.ajax({
+            url: '/delete_theme/' + themeId,
+            type: 'DELETE',
+            contentType: "application/json; charset=utf-8",
+            success: function () {
+                location.reload()
+            },
+            error: function () {
+                alert("Ошибка выполнения!")
+            }
+        })
+    }
+</script>

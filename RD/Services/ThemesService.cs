@@ -80,6 +80,25 @@ namespace RD.Services
 
         }
 
+        public void DeleteTheme(int id)
+        {
+            //var existing = _dbContext.Users.FirstOrDefault(x => x.Id == id);
+            //var person = _dbContext.Persons.FirstOrDefault(x => x.Id == id);
+
+            //if (existing == null)
+            //    return;
+
+            //_dbContext.Users.Remove(existing);
+            //_dbContext.Persons.Remove(person);
+
+            //_dbContext.SaveChanges();
+
+            var existing = Themes.FirstOrDefault(x => x.Id == id);
+            if (existing == null)
+                return;
+            Themes.Remove(existing);
+        }
+
 
 
     }

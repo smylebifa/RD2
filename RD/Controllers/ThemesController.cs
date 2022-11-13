@@ -56,5 +56,12 @@ namespace RD.Controllers
             _themeService.AddTheme(theme);
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpDelete("/delete_theme/{id}")]
+        public IActionResult Delete(int id)
+        {
+            _themeService.DeleteTheme(id);
+            return Ok();
+        }
     }
 }
