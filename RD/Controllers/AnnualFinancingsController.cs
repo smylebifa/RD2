@@ -55,7 +55,7 @@ namespace RD.Controllers
         [HttpDelete("/delete_annual_financing/{id}")]
         public IActionResult Delete(int id)
         {
-            //_usersService.DeleteAnnualFinancing(id);
+            _annualFinancingsService.DeleteAnnualFinancing(id);
             return Ok();
         }
     }

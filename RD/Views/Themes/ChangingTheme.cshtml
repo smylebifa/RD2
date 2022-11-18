@@ -25,50 +25,58 @@
         <table>
 @Html.HiddenFor(m => m.Id)
 
-    <tr>
-        <td style="padding: 4px;">
-            <input type="text" placeholder="Номер темы" name="Number" value="@ViewBag.CurrentTheme.Number" />
-            @*@Html.TextBoxFor(m => m.Number)*@
-        </td>
-        <td style="padding: 4px;">
-            @Html.TextBoxFor(m => m.Name)
-        </td>
-        <td style="padding: 4px;">
-            @Html.TextBoxFor(m => m.FioManager)
-        </td>
-    </tr>
+            <tr>
+                <td style="padding: 4px;">
+                    <input type="text" placeholder="Номер темы" name="Number" value="@ViewBag.CurrentTheme.Number" />
+                    @*@Html.TextBoxFor(m => m.Number)*@
+                </td>
+
+                <td style="padding: 4px;">
+                    <input type="text" placeholder="Наименование темы" name="Name" value="@ViewBag.CurrentTheme.Name" />
+                </td>
+
+                <td style="padding: 4px;">
+                    <input type="text" placeholder="ФИО руководителя" name="FioManager" value="@ViewBag.CurrentTheme.FioManager" />
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding: 4px;">
+                    <input type="text" placeholder="Подразделение исполнитель" name="ExecutiveDepartment" value="@ViewBag.CurrentTheme.ExecutiveDepartment" />
+                </td>
+
+                <td style="padding: 4px;">
+                    <input type="text" placeholder="Заказчик работы" name="CustomerName" value="@ViewBag.CurrentTheme.CustomerName" />
+                </td>
+
+                <td style="padding: 4px;">
+                    <input type="text" placeholder="Срок - начало" name="WorkStart" value="@ViewBag.CurrentTheme.WorkStart" />
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding: 4px;">
+                    <input type="text" placeholder="Срок - конец" name="WorkEnd" value="@ViewBag.CurrentTheme.WorkEnd" />
+                </td>
+
+                <td style="padding: 4px;">
+                    <input type="text" placeholder="Общий объем финансирования" name="Amount" value="@ViewBag.CurrentTheme.Amount" />
+                </td>
+
+                <td style="padding: 4px;">
+                    <input type="text" placeholder="НДС" name="Vat" value="@ViewBag.CurrentTheme.Vat" />
+                </td>
+
+                <td style="padding: 4px;">
+                    <input type="text" placeholder="Объем без НДС" name="AmountWithoutVat" value="@ViewBag.CurrentTheme.AmountWithoutVat" />
+                </td>
+              
+            </tr>
+
 
     <tr>
         <td style="padding: 4px;">
-            @Html.TextBoxFor(m => m.ExecutiveDepartment)
-        </td>
-        <td style="padding: 4px;">
-            <input type="text" placeholder="Заказчик работы" name="" />
-        </td>
-        <td style="padding: 4px;">
-            @Html.TextBoxFor(m => m.WorkStart)
-        </td>
-    </tr>
-
-    <tr>
-        <td style="padding: 4px;">
-            @Html.TextBoxFor(m => m.WorkEnd)
-        </td>
-        <td style="padding: 4px;">
-            @Html.TextBoxFor(m => m.Amount)
-        </td>
-        <td style="padding: 4px;">
-            <input type="text" placeholder="НДС" name="" />
-        </td>
-        <td style="padding: 4px;">
-            @Html.TextBoxFor(m => m.AmountWithoutVat)
-        </td>
-    </tr>
-
-
-    <tr>
-        <td style="padding: 4px;">
-            <input type="text" placeholder="Приказ об открытии темы" name="" />
+            <input type="text" placeholder="Приказ об открытии темы" name="Decree" value="@ViewBag.CurrentTheme.Decree"/>
         </td>
 
 
@@ -99,7 +107,7 @@
 
 
         <td style="padding: 4px;">
-                <input type="text" placeholder="Реквизиты документа" name="" />
+                <input type="text" placeholder="Реквизиты документа" name="Props" value="@ViewBag.CurrentTheme.Props" />
             </td>
         </tr>
 
@@ -128,11 +136,11 @@
 
 
         <td style="padding: 4px;">
-            <input type="text" placeholder="Область знания" name="" />
+            <input type="text" placeholder="Область знания" name="Knowledge" value="@ViewBag.CurrentTheme.Knowledge"/>
         </td>
 
         <td style="padding: 4px;">
-            @Html.TextBoxFor(m => m.Status)
+            <input type="text" placeholder="Статус" name="Status" value="@ViewBag.CurrentTheme.Status" />
         </td>
 
     </tr>

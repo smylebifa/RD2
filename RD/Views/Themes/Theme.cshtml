@@ -10,64 +10,86 @@
 
         <tr>
             <td style="padding: 4px;">
-                <input type="text" placeholder="№ темы" name="Number" />
+                <input type="text" placeholder="Номер темы" name="Number" />
             </td>
             <td style="padding: 4px;">
                 <input type="text" placeholder="Наименование темы" name="Name" />
             </td>
             <td style="padding: 4px;">
-                <input type="text" placeholder="ФИО руководителя" name="" />                
+                <input type="text" placeholder="ФИО руководителя" name="FioManager" />                
             </td>
         </tr>
 
         <tr>
             <td style="padding: 4px;">
-                <input type="text" placeholder="Подразделение исполнитель" name="" />                
+                <input type="text" placeholder="Подразделение исполнитель" name="ExecutiveDepartment" />                
             </td>
             <td style="padding: 4px;">
-                <input type="text" placeholder="Заказчик работы" name="" />                
+                <input type="text" placeholder="Заказчик работы" name="CustomerName" />                
             </td>
             <td style="padding: 4px;">
-                <input type="text" placeholder="Срок - начало" name="" />                
-            </td>
-        </tr>
-
-        <tr>
-            <td style="padding: 4px;">
-                <input type="text" placeholder="Срок - конец" name="" />                
-            </td>
-            <td style="padding: 4px;">
-                <input type="text" placeholder="Общий объем финансирования" name="" />                
-            </td>
-            <td style="padding: 4px;">
-                <input type="text" placeholder="НДС" name="" />                
-            </td>
-            <td style="padding: 4px;">
-                <input type="text" placeholder="Объем без НДС" name="" />                
+                <input type="text" placeholder="Срок - начало" name="WorkStart" />                
             </td>
         </tr>
 
         <tr>
             <td style="padding: 4px;">
-                <input type="text" placeholder="Приказ об открытии темы" name="" />                
+                <input type="text" placeholder="Срок - конец" name="WorkEnd" />                
             </td>
             <td style="padding: 4px;">
-                <input type="text" placeholder="Вид документа" name="" />                                
+                <input type="text" placeholder="Общий объем финансирования" name="Amount" />                
             </td>
             <td style="padding: 4px;">
-                <input type="text" placeholder="Реквизиты документа" name="" />                
+                <input type="text" placeholder="НДС" name="Vat" />                
+            </td>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Объем без НДС" name="AmountWithoutVat" />                
             </td>
         </tr>
 
         <tr>
             <td style="padding: 4px;">
-                <input type="text" placeholder="Вид исследования" name="" />                
+                <input type="text" placeholder="Приказ об открытии темы" name="Decree" />
+            </td>
+
+            @*<td style="padding: 4px;">
+            <input type="text" placeholder="Вид документа" name="" />
+        </td>*@
+
+            <td style="padding: 4px;">
+                <select name="DocType" size="1">
+                    <option value="Гос. Контракт">Гос. Контракт</option>
+                    <option value="Договор">Договор</option>
+                    <option value="Контракт">Контракт</option>
+                    <option value="Хоз. договора">Хоз. договора</option>
+                </select>
+            </td>
+
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Реквизиты документа" name="Props" />
+            </td>
+        </tr>
+
+        <tr>
+            @*<td style="padding: 4px;">
+            <input type="text" placeholder="Вид исследования" name="" />
+        </td>*@
+
+            <td style="padding: 4px;">
+                <select name="ResearchType" size="1">
+                    <option value="Прикладное">Прикладное</option>
+                    <option value="Фундаментальное">Фундаментальное</option>
+                    <option value="Разработка">Разработка</option>
+                    <option value="Поисковое">Поисковое</option>
+                    <option value="ОКР">ОКР</option>
+                </select>
+            </td>
+
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Область знания" name="Knowledge" />
             </td>
             <td style="padding: 4px;">
-                <input type="text" placeholder="Область знания" name="" />                
-            </td>
-            <td style="padding: 4px;">
-                <input type="text" placeholder="Статус" name="" />                
+                <input type="text" placeholder="Статус" name="Status" />
             </td>
         </tr>
 

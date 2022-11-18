@@ -5,9 +5,11 @@
     Layout = "_Layout";
 }
 
-<table class="table table-hover" style="text-align: center;">
 
-    <thead class="thead-dark">
+
+<table class="table table-hover " style="text-align: center;">
+
+    <thead>
         <tr>
             <th scope="col">Имя файла</th>
             <th scope="col"></th>
@@ -21,12 +23,60 @@
         {
             <tr>
                 <td>@file.Filename.@file.EntityType</td>
-                <td>@Html.ActionLink("Загрузить", "File", new { id = file.Id })</td>
+                <td>@Html.ActionLink("Загрузить", "File", new { FileName = file.Filename })</td>
+
+                @*<td>
+                    <a href="file_name.jpg" download=@file.Filename.@file.EntityType>
+                        Загрузить
+                    </a>*@
+
+                    @*<button class="btn btn-primary" type="submit" asp-route-file="@file.Filename"
+                            asp-route-mode="virtual" style="background: rgb(0,0,255);">
+                        Virtual
+                    </button>
+                    <button class="btn btn-primary" type="submit" asp-route-file="@file.Filename"
+                            asp-route-mode="stream" style="background: rgb(0,0,255);">
+                        Stream
+                    </button>
+                    <button class="btn btn-primary" type="submit" asp-route-file="@file.Filename"
+                            asp-route-mode="bytes" style="background: rgb(0,0,255);">
+                        Bytes
+                    </button>*@
+
+                
+                @*</td>*@
+
                 <td><a onclick="deleteFile('@file.Id')" href="#"> Удалить </a></td>
             </tr>
         }
     </tbody>
 </table>
+
+
+
+@*<form enctype="multipart/form-data" method="post">
+        <dl>
+            <dt>
+                <label asp-for="FileUpload.FormFile"></label>
+            </dt>
+            <dd>
+                <input asp-for="asp:FileUpload.FormFile" type="file">
+                <span asp-validation-for="FileUpload.FormFile"></span>
+            </dd>
+        </dl>
+        <input asp-page-handler="Upload" class="btn" type="submit" value="Upload" />
+    </form>*@
+
+
+@using (Html.BeginForm("Upload", "Files", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="upload" />
+    <input type="submit" value="Добавить" />
+}
+
+
+
+
 
 <form method="post" asp-action="Files" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
     <table>
@@ -44,30 +94,31 @@
             </td>
 
 
-            @*<form asp-action="AddFile" asp-controller="Home" method="post" enctype="multipart/form-data">
+            <form asp-action="AddFile" asp-controller="Home" method="post" enctype="multipart/form-data">
                 <input type="file" name="uploadedFile" /><br>
                 <input type="submit" value="Загрузить" />
-            </form>*@
+            </form>
 
 
-        </tr>        
-        
+        </tr>
+
     </table>
 </form>
 
 
 <script type="text/javascript">
-        function deleteFile(fileId) {
-            $.ajax({
-                url: '/delete_file/' + fileId,
-                type: 'DELETE',
-                contentType: "application/json; charset=utf-8",
-                success: function () {
-                    location.reload()
-                },
-                error: function () {
-                    alert("Ошибка выполнения!")
-                }
-            })
-        }
+    function deleteFile(fileId) {
+        $.ajax({
+            url: '/delete_file/' + fileId,
+            type: 'DELETE',
+            contentType: "application/json; charset=utf-8",
+            success: function () {
+                location.reload()
+            },
+            error: function () {
+                alert("Ошибка выполнения!")
+            }
+        })
+    }
 </script>
+

@@ -43,9 +43,7 @@ namespace RD.Services
                 throw new ArgumentException("This stage already exists.");
 
             Stages.Add(stage);
-        }
-
-       
+        }       
 
     }
 }

@@ -27,15 +27,23 @@ namespace RD.Controllers
         {
             var stages = _stageService.GetStages();
             ViewBag.Stages = stages;
-            ViewBag.ThemeName = themeName;
-            ThemeName = themeName;
+            if (themeName == null)
+            {
+                ViewBag.ThemeName = ThemeName;
+            }
+
+            else
+            {
+                ViewBag.ThemeName = themeName;
+                ThemeName = themeName;
+            }
+
             return View();
         }
 
         [HttpGet("/add_stage")]
         public IActionResult Stage()
         {
-            ViewBag.ThemeName = ThemeName;
             return View();
         }
 
@@ -43,7 +51,7 @@ namespace RD.Controllers
         public IActionResult AddStage(Stage stage)
         {
             _stageService.AddStage(stage);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Stages", ThemeName);
         }
 
     }

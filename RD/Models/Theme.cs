@@ -12,6 +12,7 @@ namespace RD.Models
         public string? Number { get; set; }
         public string? FioManager { get; set; }
         public string? ExecutiveDepartment { get; set; }
+        public string? CustomerName { get; set; }
         public int? CustomerId { get; set; }
         public DateTime? WorkStart { get; set; }
         public DateTime? WorkEnd { get; set; }

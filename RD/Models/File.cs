@@ -25,9 +25,13 @@ namespace RD.Models
             EntityType = entityType;
         }
 
+        public File(string? filename)
+        {
+            Filename = filename;
+        }
+
         public File()
         {
-            //Id = Guid.NewGuid();
         }
     }
 }

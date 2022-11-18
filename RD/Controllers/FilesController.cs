@@ -63,9 +63,16 @@ namespace RD.Controllers
         }
 
         [HttpGet("/download/{id}")]
-        public new IActionResult File(int id)
+        public new IActionResult File(string Filename)
         {
-            return Ok();
+            string file_path = ("Files/" + Filename + "." + "txt");
+            // Тип файла - content-type
+            string file_type = "application/pdf";
+            // Имя файла - необязательно
+            string file_name = "PDFIcon.pdf";
+            return File(file_path, file_type, file_name);
+            
+            //return Ok();
         }
 
 
@@ -83,6 +90,91 @@ namespace RD.Controllers
             return Ok();
         }
 
+
+        [HttpPost]
+        public ActionResult Upload(IFormFile upload)
+        {
+            string fileName;
+            if (upload != null)
+            {
+                // получаем имя файла
+                fileName = upload.FileName;
+                // сохраняем файл в папку Files в проекте
+
+                _filesService.AddFile(fileName);
+
+            }
+            return RedirectToAction("Index");
+        }
+
+        
+
+        //public IActionResult PrivateFiles(string file, string mode)
+        //{
+        //    // Путь к закрытому каталогу.
+        //    string pathDirectory =
+        //        System.IO.Path.Combine(MyConstants.PrivateDownloadDirectory);
+
+        //    return SelectiveResult(file, mode, pathDirectory);
+        //}
+
+        //public IActionResult PublicFiles(string file, string mode)
+        //{
+        //    // Путь к открытому каталогу.
+        //    string pathDirectory =
+        //        System.IO.Path.Combine(_environment.WebRootPath, MyConstants.PublicDownloadDirectory);
+
+        //    return SelectiveResult(file, mode, pathDirectory);
+        //}
+
+        //// =======
+
+        //[NonAction]
+        //private IActionResult SelectiveResult(string file, string mode, string pathDirectory)
+        //{
+        //    if (file == null)
+        //    {
+        //        var model = new Download();
+
+        //        // Заполняем список данными файлов для показа на странице.
+        //        var di = new System.IO.DirectoryInfo(pathDirectory);
+
+        //        // При первом извлечении свойств FileInfo вызывает Refresh метод и 
+        //        // кэширует сведения о файле.
+        //        // При последующих вызовах необходимо вызвать, Refresh чтобы 
+        //        // получить последнюю копию информации.
+        //        model.ListFiles = di.GetFiles().ToList();
+
+        //        return View(model);
+        //    }
+        //    else
+        //    {
+        //        var fi = new System.IO.FileInfo(Path.Combine(pathDirectory, file));
+        //        // Обновляем информацию о запрошенном файле.
+        //        fi.Refresh();
+
+        //        if (fi.Exists == true)
+        //        {
+        //            // Конструкция оператора switch начиная с C# 8.0
+        //            return mode switch
+        //            {
+        //                "virtual" => VirtualDownload(fi),
+        //                "stream" => StreamDownload(fi),
+        //                "bytes" => BytesDownload(fi),
+        //                _ => new EmptyResult(),
+        //            };
+        //        }
+        //        else
+        //        {
+        //            // Обработка ситуации отсутствия файла.
+        //            // 1. Запись в файл регистрации ошибок 
+        //            // 2. Отправка оповещения на e-mail
+        //            //  и другое
+
+        //            return new EmptyResult();
+        //        }
+        //    }
+        //}
 
 
         //        string path = "/Files/" + uploadedFile.FileName;

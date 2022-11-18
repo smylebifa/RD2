@@ -60,5 +60,24 @@ namespace RD.Services
             return existing;            
         }
 
+        public void DeleteAnnualFinancing(int id)
+        {
+            //var existing = _dbContext.Users.FirstOrDefault(x => x.Id == id);
+            //var person = _dbContext.Persons.FirstOrDefault(x => x.Id == id);
+
+            //if (existing == null)
+            //    return;
+
+            //_dbContext.Users.Remove(existing);
+            //_dbContext.Persons.Remove(person);
+
+            //_dbContext.SaveChanges();
+
+            var existing = AnnualFinancings.FirstOrDefault(x => x.Id == id);
+            if (existing == null)
+                return;
+            AnnualFinancings.Remove(existing);
+        }
+
     }
 }

@@ -23,18 +23,40 @@ namespace RD.Services
 
         public void AddFile(string fileName)
         {
-            //if (Users.Any(x => x.Login == file.Login))
-            //    throw new ArgumentException("User with such login already exists.");
+            string[] subs = fileName.Split('.');
 
-            //int LastId = Users.Max(user => user.Id);
-            //if (LastId is int)
-            //{
-            //    user.Id = LastId + 1;
-            //    user.IsAdmin = false;
-            //    user.IsActive = true;
+            if (subs.Count() > 0)
+            {
+                if (Files.Any(x => x.Filename == subs[0]))
+                    throw new ArgumentException("User with such login already exists.");
 
-            //    Users.Add(user);
-            //}
+                File file = new File();
+
+                if (subs.Count() > 1)
+                {
+                    int LastId = Files.Max(user => user.Id);
+                    if (LastId is int)
+                    {
+                        file.Id = LastId + 1;
+                        file.Filename = subs[0];
+                        file.EntityType = subs[1];
+
+                        Files.Add(file);
+                    }
+                }
+                else
+                {
+                    int LastId = Files.Max(user => user.Id);
+                    if (LastId is int)
+                    {
+                        file.Id = LastId + 1;
+                        file.Filename = subs[0];
+                       
+                        Files.Add(file);
+                    }
+                }
+
+            }
 
             //if (_dbContext.Users.Any(x => x.Login == user.Login))
             //    throw new ArgumentException("User with such name already exists.");
