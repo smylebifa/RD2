@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-sm">
                 @* <h4> <a class="nav-link text-primary" asp-controller="Stage" asp-action="Stage">Добавить этап</a> </h4>*@
-                <h5> <a class="nav-link"  asp-route-themeName="@ViewBag.ThemeName" asp-controller="Stages" asp-action="Stage">Добавить этап</a> </h5>
+                <h5> <a class="nav-link" asp-route-themeName="@ViewBag.ThemeName" asp-controller="Stages" asp-action="Stage">Добавить этап</a> </h5>
             </div>
 
 
@@ -31,16 +31,26 @@
             </div>
 
             @*<div class="col-sm">
-                <h5> <a class="nav-link" href="#">Договоры</a> </h5>
-            </div>*@
+            <h5> <a class="nav-link" href="#">Договоры</a> </h5>
+        </div>*@
 
             <div class="col-sm">
                 <h5> <a class="nav-link" asp-controller="Files" asp-action="Index">Файлы</a> </h5>
             </div>
 
             <div class="col-sm">
+                <h5> <a class="nav-link" asp-area="" asp-controller="RIAs" asp-action="Index">РИД</a> </h5>
+            </div>
+
+            <div class="col-sm">
+                <h5> <a class="nav-link" asp-area="" asp-controller="Products" asp-action="Index">Продукты</a> </h5>
+            </div>
+
+            <div class="col-sm">
                 <h5> <a class="nav-link" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="TRLs" asp-action="Index">TRL</a> </h5>
             </div>
+
+
 
         </div>
     </div>

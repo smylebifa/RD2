@@ -1,0 +1,27 @@
+﻿@model RD.Models.Product;
+
+@{
+    ViewBag.Title = "Редактирование продукты";
+    Layout = "_Layout";
+}
+
+@using (Html.BeginForm("Edit", "Products", FormMethod.Post))
+{
+    <table>
+        @Html.HiddenFor(m => m.Id)
+        <tr>
+            <td style="padding: 4px;">Наименование:</td>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.Name)
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 2px;">
+                <input type="submit" value="Изменить продукт" />
+            </td>
+            <td></td>
+        </tr>
+
+    </table>
+}

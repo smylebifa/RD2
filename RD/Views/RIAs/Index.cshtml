@@ -1,0 +1,57 @@
+﻿@model RD.Models.RIA;
+
+@{
+    ViewBag.Title = "РИД";
+    Layout = "_Layout";
+}
+
+    <h3>РИД <a asp-controller="RIAs" asp-action="RIA"> + </a> </h3> 
+
+<br>
+
+<table class="table table-hover " style="text-align: center;">
+
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Результат</th>
+            <th scope="col">Реквизиты</th>
+            <th scope="col">Авторы</th>
+            <th scope="col">Местоположение</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var ria in @ViewBag.RIAs)
+        {
+        <tr>
+            <td></td>
+            <td>@ria.Result</td>
+            <td>@ria.Props</td>
+            <td>@ria.Authors</td>
+            <td>@ria.Location</td>
+
+            <td>@Html.ActionLink("изменить", "RIA", new { id = ria.Id })</td>
+            <td><a onclick="deleteRIA('@ria.Id')" href="#"> удалить </a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+
+<script type="text/javascript">
+        function deleteRIA(riaId) {
+            $.ajax({
+                url: '/delete_ria/' + riaId,
+                type: 'DELETE',
+                contentType: "application/json; charset=utf-8",
+                success: function () {
+                    location.reload()
+                },
+                error: function () {
+                    alert("Ошибка выполнения!")
+                }
+            })
+        }
+</script>

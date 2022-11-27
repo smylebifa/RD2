@@ -71,11 +71,15 @@ namespace RD
             services.AddTransient<CounterpartiesService>();
             services.AddTransient<AnnualFinancingsService>();
            
+            services.AddTransient<RIAsService>();
+           
             services.AddTransient<FilesService>();
+           
+            services.AddTransient<ProductsService>();
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options => options.LoginPath = "/login");
-
+                
 
         }
 
