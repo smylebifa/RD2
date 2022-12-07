@@ -27,7 +27,6 @@ namespace RD.Services
             if (LastId is int)
             {
                 scientificDoc.Id = LastId + 1;
-
                 ScientificDocs.Add(scientificDoc);
             }           
         }
