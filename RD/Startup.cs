@@ -77,6 +77,9 @@ namespace RD
            
             services.AddTransient<ProductsService>();
 
+            services.AddTransient<ScientificDocsService>();
+            
+
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options => options.LoginPath = "/login");
                 

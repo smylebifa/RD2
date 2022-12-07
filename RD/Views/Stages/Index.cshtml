@@ -47,6 +47,10 @@
             </div>
 
             <div class="col-sm">
+                <h5> <a class="nav-link" asp-area="" asp-controller="ScientificDocs" asp-action="Index">Научно-техническая документация</a> </h5>
+            </div>
+
+            <div class="col-sm">
                 <h5> <a class="nav-link" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="TRLs" asp-action="Index">TRL</a> </h5>
             </div>
 
@@ -105,7 +109,7 @@
         <div style="overflow-x:auto;">
             <table class="table table-hover table-bordered" style="text-align: center; ">
 
-                <thead class="thead-dark">
+                <thead>
                     <tr>
                         <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;"></th>
                         <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">№ этапа</th>
@@ -132,8 +136,6 @@
                             <td>@stage.CompletionAct</td>
                             <td>@stage.Status</td>
 
-                            @*<td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
-                            <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>*@
 
                         </tr>
                     </tbody>
@@ -169,106 +171,7 @@
                     i++;
                 }
 
-                @*<tr>
-                    <td></td>
-                    <td>1</td>
-                    <td>Разработка ТЗ НИР</td>
-                    <td>x</td>
-                    <td>x</td>
-                    <td>x</td>
-                    <td>x</td>
-                    <td><input type="checkbox" name="active" /></td>
-                </tr>*@
-
-
-                @*<tbody class="labels">
-                    <tr>
-                        <td></td>
-                        <td>2</td>
-                        <td class='expandFRED'>Выбор направления исследования ▼</td>
-                        <td>y</td>
-                        <td>y</td>
-                        <td>y</td>
-                        <td>y</td>
-                        <td><input type="checkbox" name="active" /></td>
-                    </tr>
-
-                </tbody>*@
-
-                @*<tbody class="hide">
-                    <tr>
-                        <td class='expandSUB1 expandVALS'></td>
-                        <td class='expandSUB1'>2.1</td>
-                        <td class='expandSUB1' align='right'>
-                            Сбор и изучение научно-технической литературы, нормативно-технической документации,  эксплуатационной информации об аналоговых и других материалах, относящихся к разрабатываемой теме.
-                        </td>
-                        <td class='expandSUB1'></td>
-                        <td class='expandSUB1' align='right'></td>
-                        <td class='expandSUB1' align='right'></td>
-                        <td class='expandSUB1' align='right'></td>
-                        <td class='expandSUB1' align='right'></td>
-                    </tr>
-
-                    <tr>
-                        <td class='expandSUB1 expandVALS'></td>
-                        <td class='expandSUB1'>2.2</td>
-                        <td class='expandSUB1' align='right'>
-                            Проведение патентных исследований. Составление отчета по патентным исследованиям в соответствии с ГОСТ 15.011
-                        </td>
-                        <td class='expandSUB1'></td>
-                        <td class='expandSUB1' align='right'></td>
-                        <td class='expandSUB1' align='right'></td>
-                        <td class='expandSUB1' align='right'></td>
-                        <td class='expandSUB1' align='right'></td>
-                    </tr>
-
-                </tbody>*@
-
-
-                @*<tbody class="labels">
-
-                    <tr>
-                        <td></td>
-                        <td>3</td>
-                        <td class='expandFRED2'>Теоретические и экспериментальные исследования ▼</td>
-                        <td>y</td>
-                        <td>y</td>
-                        <td>y</td>
-                        <td>y</td>
-                        <td><input type="checkbox" name="active" /></td>
-                    </tr>
-
-                </tbody>
-
-                <tbody class="hide">
-                    <tr>
-                        <td class='expandSUB2 expandVALS'></td>
-                        <td class='expandSUB2'>3.1</td>
-                        <td class='expandSUB2' align='right'>
-                            Разработка рабочих гипотез, построение моделей объекта исследований, обоснование допущений.
-                        </td>
-                        <td class='expandSUB2'></td>
-                        <td class='expandSUB2' align='right'></td>
-                        <td class='expandSUB2' align='right'></td>
-                        <td class='expandSUB2' align='right'></td>
-                        <td class='expandSUB2' align='right'></td>
-                    </tr>
-
-                    <tr>
-                        <td class='expandSUB2 expandVALS'></td>
-                        <td class='expandSUB2'>3.2</td>
-                        <td class='expandSUB2' align='right'>
-                            Выявление необходимости проведения экспериментов для подтверждения отдельных положений теоретических исследований для получения конкретных значений параметров (коэффициентов, необходимых для проведения расчѐтов).
-                        </td>
-                        <td class='expandSUB2'></td>
-                        <td class='expandSUB2' align='right'></td>
-                        <td class='expandSUB2' align='right'></td>
-                        <td class='expandSUB2' align='right'></td>
-                        <td class='expandSUB2' align='right'></td>
-                    </tr>
-
-
-                </tbody>*@
+               
 
 
             </table>
