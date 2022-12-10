@@ -83,7 +83,6 @@ namespace RD.Services
             existing.Login = user.Login;
             existing.Password = user.Password;
             existing.FullName = user.FullName;
-            existing.FullName = user.FullName;
             existing.IsActive = user.IsActive;
             existing.IsAdmin = user.IsAdmin;
         }

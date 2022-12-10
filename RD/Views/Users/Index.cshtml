@@ -27,8 +27,8 @@
             <td>@user.Login</td>
             <td>@user.Password</td>
             <td>@user.FullName</td>
-            <td><input type="checkbox" @(user.IsActive ? "checked=\"checked\"" : "") disabled name="Активен" /></td>
-            <td><input type="checkbox" @(user.IsAdmin ? "checked=\"checked\"" : "") disabled name="" /> </td>
+            <td><input type="checkbox" @(user.IsActive ? "checked=\"checked\"" : "") disabled name="IsActive" /></td>
+            <td><input type="checkbox" @(user.IsAdmin ? "checked=\"checked\"" : "") disabled name="IsAdmin" /> </td>
             
             <td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
             <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>
@@ -36,6 +36,7 @@
         }
     </tbody>
 </table>
+
 <form method="post" asp-action="Users" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
     <table>
         <h4>Добавление пользователей</h4>
@@ -52,7 +53,14 @@
                 <input type="password" name="Password" />
             </td>
         </tr>
-        
+
+        <tr>
+            <td style="padding: 4px;">ФИО:</td>
+            <td style="padding: 4px;">
+                <input name="FullName" />
+            </td>
+        </tr>
+
         <tr>
             <td style="padding: 2px;">
                 <input type="submit" value="Добавить" />
