@@ -1,0 +1,52 @@
+﻿@model RD.Models.Doc;
+
+@{
+    ViewBag.Title = "Добавление документа";
+    Layout = "_Layout";
+}
+
+<form method="post" asp-action="Docs" class="my-2 col-10" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
+
+
+    <table>
+
+        <h2>Добавление документа</h2>
+
+        @Html.HiddenFor(m => m.Id)
+        <tr>
+            <td style="padding: 4px;">Наименование:</td>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.NameDoc)
+            </td>
+        </tr>
+
+        @*<tr>
+            <td style="padding: 4px;">Реквизиты:</td>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.Props)
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">Авторы:</td>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.Authors)
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">Местоположение:</td>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.Location)
+            </td>
+        </tr>*@
+
+        <tr>
+            <td style="padding: 2px;">
+                <input type="submit" value="Добавить" />
+            </td>
+            <td></td>
+        </tr>
+
+    </table>
+</form>

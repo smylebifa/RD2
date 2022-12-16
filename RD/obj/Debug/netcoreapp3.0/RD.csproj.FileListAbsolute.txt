@@ -432,3 +432,6 @@ C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Scienti
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Contracts\Index.cshtml.g.cs
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Contracts\ChangingContract.cshtml.g.cs
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Contracts\Contract.cshtml.g.cs
+C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Docs\ChangingDoc.cshtml.g.cs
+C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Docs\Doc.cshtml.g.cs
+C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Docs\Index.cshtml.g.cs

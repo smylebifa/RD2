@@ -81,6 +81,8 @@ namespace RD
 
             services.AddTransient<ContractsService>();
 
+            services.AddTransient<DocsService>();
+
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options => options.LoginPath = "/login");

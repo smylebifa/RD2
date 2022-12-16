@@ -9,6 +9,7 @@
 
     <thead>
         <tr>
+            <th scope="col"></th>
             <th scope="col">Наименование</th>
             <th scope="col">Результат</th>
             <th scope="col">Расположение</th>
@@ -23,6 +24,8 @@
         @foreach (var scientificDoc in @ViewBag.ScientificDocs)
         {
         <tr>
+            <td><a class="nav-link" asp-controller="Docs" asp-action="Index">Документы</a> </td>
+
             <td>@scientificDoc.Name</td>
             <td>@scientificDoc.Result</td>
             <td>@scientificDoc.Location</td>
@@ -34,6 +37,7 @@
         }
     </tbody>
 </table>
+
 <form method="post" asp-action="ScientificDocs" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
     <table>
         <h4>Добавление документации</h4>
