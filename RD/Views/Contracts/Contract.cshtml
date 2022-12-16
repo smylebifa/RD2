@@ -1,0 +1,59 @@
+﻿@model RD.Models.Contract;
+
+@{
+    ViewBag.Title = "Добавление договора";
+    Layout = "_Layout";
+}
+
+<form method="post" asp-action="Contracts" class="my-2 col-10" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
+
+
+    <table>
+
+        <h2>Добавление договора</h2>
+
+        @Html.HiddenFor(m => m.Id)
+        <tr>
+            <td style="padding: 4px;">Наменование договора:</td>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.NameContract)
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">Срок выполнения - начало:</td>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.WorkStart)
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">Срок выполнения - конец:</td>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.WorkEnd)
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">Реквизиты договора:</td>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.Props)
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">Статус:</td>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.Status)
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 2px;">
+                <input type="submit" value="Добавить" />
+            </td>
+            <td></td>
+        </tr>
+
+    </table>
+</form>

@@ -1,16 +1,16 @@
 ﻿@model RD.Models.RIA;
 
 @{
-    ViewBag.Title = "Редактирование РИД";
+    ViewBag.Title = "Добавление РИД";
     Layout = "_Layout";
 }
 
-    <form method="post" asp-action="AddRIA" class="my-2 col-10" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
+    <form method="post" asp-action="RIAs" class="my-2 col-10" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
 
     
         <table>
 
-            <h2>Редактирование РИД</h2>
+            <h2>Добавление РИД</h2>
 
             @Html.HiddenFor(m => m.Id)
             <tr>
@@ -43,7 +43,7 @@
 
             <tr>
                 <td style="padding: 2px;">
-                    <input type="submit" value="Изменить" />
+                    <input type="submit" value="Добавить" />
                 </td>
                 <td></td>
             </tr>

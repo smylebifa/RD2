@@ -35,15 +35,7 @@ namespace RD.Controllers
         {
             return View();
         }
-        
-
-        [HttpPost]
-        public IActionResult AddRIA(RIA ria)
-        {
-            _riasService.AddRIA(ria);
-            return RedirectToAction(nameof(Index));
-        }
-
+       
 
         [HttpPost]
         public IActionResult RIAs(RIA ria)
@@ -53,7 +45,7 @@ namespace RD.Controllers
         }
 
         [HttpGet("/edit_ria/{id}")]
-        public new IActionResult RIA(int id)
+        public new IActionResult ChangingRIA(int id)
         {
             var ria = _riasService.GetRIAs().FirstOrDefault(x => x.Id == id);
             return View(ria);
