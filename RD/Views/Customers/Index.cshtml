@@ -5,6 +5,8 @@
     Layout = "_Layout";
 }
 
+    <h3>Заказчики</h3>
+
 <table class="table table-hover " style="text-align: center;">
 
     <thead>
@@ -37,7 +39,7 @@
                 <input name="Name" />
             </td>
         </tr>
-       
+
 
         <tr>
             <td style="padding: 2px;">
@@ -51,17 +53,17 @@
 
 
 <script type="text/javascript">
-        function deleteUser(userId) {
-            $.ajax({
-                url: '/delete_customer/' + userId,
-                type: 'DELETE',
-                contentType: "application/json; charset=utf-8",
-                success: function () {
-                    location.reload()
-                },
-                error: function () {
-                    alert("Ошибка выполнения!")
-                }
-            })
-        }
+    function deleteUser(userId) {
+        $.ajax({
+            url: '/delete_customer/' + userId,
+            type: 'DELETE',
+            contentType: "application/json; charset=utf-8",
+            success: function () {
+                location.reload()
+            },
+            error: function () {
+                alert("Ошибка выполнения!")
+            }
+        })
+    }
 </script>

@@ -5,6 +5,9 @@
     Layout = "_Layout";
 }
 
+
+<h3>Научно-техническая документация <a asp-controller="ScientificDocs" asp-action="ScientificDoc"> + </a> </h3>
+
 <table class="table table-hover " style="text-align: center;">
 
     <thead>
@@ -31,14 +34,14 @@
             <td>@scientificDoc.Location</td>
             <td>@scientificDoc.Note</td>
 
-            <td>@Html.ActionLink("изменить", "ScientificDoc", new { id = scientificDoc.Id })</td>
+            <td>@Html.ActionLink("изменить", "ChangingDoc", new { id = scientificDoc.Id })</td>
             <td><a onclick="deleteScientificDoc('@scientificDoc.Id')" href="#"> удалить </a></td>
         </tr>
         }
     </tbody>
 </table>
 
-<form method="post" asp-action="ScientificDocs" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
+@*<form method="post" asp-action="ScientificDocs" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
     <table>
         <h4>Добавление документации</h4>
 
@@ -57,7 +60,7 @@
         </tr>
 
     </table>
-</form>
+</form>*@
 
 
 <script type="text/javascript">

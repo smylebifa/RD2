@@ -27,6 +27,12 @@ namespace RD.Controllers
             return View();
         }
 
+        [HttpGet("/add_scientific_doc")]
+        public IActionResult ScientificDoc()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult ScientificDocs(ScientificDoc scientificDoc)
         {
@@ -35,7 +41,7 @@ namespace RD.Controllers
         }
 
         [HttpGet("/edit_scientific_doc/{id}")]
-        public new IActionResult ScientificDoc(int id)
+        public new IActionResult ChangingDoc(int id)
         {
             var scientificDoc = _scientificDocsService.GetScientificDocs().FirstOrDefault(x => x.Id == id);
             return View(scientificDoc);
