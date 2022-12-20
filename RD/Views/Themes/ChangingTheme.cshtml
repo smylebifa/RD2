@@ -60,6 +60,26 @@
                 </td>
 
                 <td style="padding: 4px;">
+                    <input type="text" placeholder="Приказ об открытии темы" name="Decree" value="@ViewBag.CurrentTheme.Decree" />
+                </td>
+
+                <td style="padding: 4px;">
+                    <select name="DocType" size="1">
+                        <option value="Гос. Контракт">Гос. Контракт</option>
+                        <option value="Договор">Договор</option>
+                        <option value="Контракт">Контракт</option>
+                        <option value="Хоз. договора">Хоз. договора</option>
+                    </select>
+                </td>
+
+              
+
+            </tr>
+
+
+            <tr>
+
+                <td style="padding: 4px;">
                     <input type="text" placeholder="Общий объем финансирования" name="Amount" value="@ViewBag.CurrentTheme.Amount" />
                 </td>
 
@@ -70,22 +90,13 @@
                 <td style="padding: 4px;">
                     <input type="text" placeholder="Объем без НДС" name="AmountWithoutVat" value="@ViewBag.CurrentTheme.AmountWithoutVat" />
                 </td>
-              
-            </tr>
-
-
-    <tr>
-        <td style="padding: 4px;">
-            <input type="text" placeholder="Приказ об открытии темы" name="Decree" value="@ViewBag.CurrentTheme.Decree"/>
-        </td>
 
 
 
+                @*@Html.DropDownListFor(model => model.TeamId, ViewBag.Teams as SelectList)*@
 
-        @*@Html.DropDownListFor(model => model.TeamId, ViewBag.Teams as SelectList)*@
 
-
-        @*<td style="padding: 4px;">
+                @*<td style="padding: 4px;">
             <select name="DocType" size="1">
                 <option @{if (el= =0) { @("selected") } } value="Гос. Контракт">Гос. Контракт</option>
                 <option @{if (el= =1) "selected" } value="Договор">Договор</option>
@@ -95,39 +106,33 @@
         </td>*@
 
 
-        <td style="padding: 4px;">
-            <select name="DocType" size="1">
-                <option value="Гос. Контракт">Гос. Контракт</option>
-                <option value="Договор">Договор</option>
-                <option value="Контракт">Контракт</option>
-                <option value="Хоз. договора">Хоз. договора</option>
-            </select>
-        </td>
 
 
 
-        <td style="padding: 4px;">
-                <input type="text" placeholder="Реквизиты документа" name="Props" value="@ViewBag.CurrentTheme.Props" />
-            </td>
-        </tr>
 
-        <tr>
+               
+            </tr>
 
-            <td style="padding: 4px;">
-                <select name="ResearchType" size="1">
-                    <option value="Прикладное">Прикладное</option>
-                    <option value="Фундаментальное">Фундаментальное</option>
-                    <option value="Разработка">Разработка</option>
-                    <option value="Поисковое">Поисковое</option>
-                    <option value="ОКР">ОКР</option>
-                </select>
-            </td>
+            <tr>
+                <td style="padding: 4px;">
+                    <input type="text" placeholder="Реквизиты документа" name="Props" value="@ViewBag.CurrentTheme.Props" />
+                </td>
+
+                <td style="padding: 4px;">
+                    <select name="ResearchType" size="1">
+                        <option value="Прикладное">Прикладное</option>
+                        <option value="Фундаментальное">Фундаментальное</option>
+                        <option value="Разработка">Разработка</option>
+                        <option value="Поисковое">Поисковое</option>
+                        <option value="ОКР">ОКР</option>
+                    </select>
+                </td>
 
 
 
 
 
-        @*@(ViewBag.Trls.Trl1_1 && ViewBag.Trls.Trl1_2 && ViewBag.Trls.Trl1_3 && ViewBag.Trls.Trl1_4 && ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "")
+                @*@(ViewBag.Trls.Trl1_1 && ViewBag.Trls.Trl1_2 && ViewBag.Trls.Trl1_3 && ViewBag.Trls.Trl1_4 && ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "")
 
         <td style="padding: 4px;">
                 @Html.TextBoxFor(m => m.ResearchType)
@@ -135,24 +140,32 @@
 
 
 
-        <td style="padding: 4px;">
-            <input type="text" placeholder="Область знания" name="Knowledge" value="@ViewBag.CurrentTheme.Knowledge"/>
-        </td>
+                <td style="padding: 4px;">
+                    <input type="text" placeholder="Область знания" name="Knowledge" value="@ViewBag.CurrentTheme.Knowledge" />
+                </td>
 
-        <td style="padding: 4px;">
-            <input type="text" placeholder="Статус" name="Status" value="@ViewBag.CurrentTheme.Status" />
-        </td>
+                
+            </tr>
 
-    </tr>
+            <tr>
+                <td style="padding: 4px;">
+                    <input type="text" placeholder="Статус" name="Status" value="@ViewBag.CurrentTheme.Status" />
+                </td>
+            </tr>
 
-    <tr>
-        <td style="padding: 2px;">
-            <input type="button" value="Отмена" onClick='location.href="/Themes"' />
-        </td>
-        <td style="padding: 2px;">
-            <input type="submit" value="Изменить тему" />
-        </td>
-    </tr>
+            <tr>
+                <td style="padding: 4px;">
+                </td>
+
+                <td style="padding: 4px;">
+                    <input type="button" value="Отмена" onClick='location.href="/Themes"' />
+                    <input class="btn btn-primary" style="margin-left: 6px;" type="submit" value="Изменить тему" />
+                </td>
+
+                <td style="padding: 4px;">
+                </td>
+
+            </tr>
 
 
 

@@ -86,7 +86,7 @@
                 <td><a class="nav-link" asp-area="" asp-route-themeName="@theme.Name" asp-controller="Stages" asp-action="Index">Этапы</a></td>
 
                 <td>@Html.ActionLink("Изменить тему", "ChangingTheme", new { id = theme.Id })</td>
-                
+
                 <td><a onclick="deleteTheme('@theme.Id')" href="#"> Удалить тему</a></td>
 
                 <td>@theme.Number</td>
@@ -101,6 +101,13 @@
                 <td>@theme.AmountWithoutVat</td>
                 <td>@theme.Decree</td>
 
+
+
+                <td>@theme.DocType</td>
+                <td>@theme.Props</td>
+                <td>@theme.ResearchType</td>
+
+
                 @*<td>
             <select name="DocType" size="1">
                 <option selected value="s1">Гос. Контракт</option>
@@ -109,10 +116,6 @@
                 <option value="s4">Хоз. договора</option>
             </select>
         </td>*@
-
-                <td>@theme.DocType</td>
-                <td>@theme.Props</td>
-                <td>@theme.ResearchType</td>
 
                 @*<td>
             <select name="ResearchType" size="1">

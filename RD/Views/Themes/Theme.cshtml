@@ -4,7 +4,7 @@
 }
 
 
-<form method="post" asp-action="AddTheme" class="my-2 col-10" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
+<form method="post" asp-action="AddTheme" class="my-2 col-8" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
     <table>
         <h2>Новая тема</h2>
 
@@ -16,45 +16,34 @@
                 <input type="text" placeholder="Наименование темы" name="Name" />
             </td>
             <td style="padding: 4px;">
-                <input type="text" placeholder="ФИО руководителя" name="FioManager" />                
+                <input type="text" placeholder="ФИО руководителя" name="FioManager" />
             </td>
         </tr>
 
         <tr>
             <td style="padding: 4px;">
-                <input type="text" placeholder="Подразделение исполнитель" name="ExecutiveDepartment" />                
+                <input type="text" placeholder="Подразделение исполнитель" name="ExecutiveDepartment" />
             </td>
             <td style="padding: 4px;">
-                <input type="text" placeholder="Заказчик работы" name="CustomerName" />                
+                <input type="text" placeholder="Заказчик работы" name="CustomerName" />
             </td>
             <td style="padding: 4px;">
-                <input type="text" placeholder="Срок - начало" name="WorkStart" />                
+                <input type="text" placeholder="Срок - начало" name="WorkStart" />
             </td>
         </tr>
 
         <tr>
             <td style="padding: 4px;">
-                <input type="text" placeholder="Срок - конец" name="WorkEnd" />                
+                <input type="text" placeholder="Срок - конец" name="WorkEnd" />
             </td>
-            <td style="padding: 4px;">
-                <input type="text" placeholder="Общий объем финансирования" name="Amount" />                
-            </td>
-            <td style="padding: 4px;">
-                <input type="text" placeholder="НДС" name="Vat" />                
-            </td>
-            <td style="padding: 4px;">
-                <input type="text" placeholder="Объем без НДС" name="AmountWithoutVat" />                
-            </td>
-        </tr>
 
-        <tr>
             <td style="padding: 4px;">
                 <input type="text" placeholder="Приказ об открытии темы" name="Decree" />
             </td>
 
             @*<td style="padding: 4px;">
-            <input type="text" placeholder="Вид документа" name="" />
-        </td>*@
+                <input type="text" placeholder="Вид документа" name="" />
+            </td>*@
 
             <td style="padding: 4px;">
                 <select name="DocType" size="1">
@@ -65,15 +54,24 @@
                 </select>
             </td>
 
+        </tr>
+
+        <tr>
             <td style="padding: 4px;">
-                <input type="text" placeholder="Реквизиты документа" name="Props" />
+                <input type="text" placeholder="Общий объем финансирования" name="Amount" />
+            </td>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="НДС" name="Vat" />
+            </td>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Объем без НДС" name="AmountWithoutVat" />
             </td>
         </tr>
 
         <tr>
-            @*<td style="padding: 4px;">
-            <input type="text" placeholder="Вид исследования" name="" />
-        </td>*@
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Реквизиты документа" name="Props" />
+            </td>
 
             <td style="padding: 4px;">
                 <select name="ResearchType" size="1">
@@ -88,17 +86,30 @@
             <td style="padding: 4px;">
                 <input type="text" placeholder="Область знания" name="Knowledge" />
             </td>
+        </tr>
+
+        <tr>
+            @*<td style="padding: 4px;">
+                <input type="text" placeholder="Вид исследования" name="" />
+            </td>*@
+
+
             <td style="padding: 4px;">
                 <input type="text" placeholder="Статус" name="Status" />
             </td>
         </tr>
 
+        
         <tr>
-            <td style="padding: 2px;">
-                <input type="button" value="Отмена" onClick='location.href="/Themes"'/>
+            <td style="padding: 4px;">
             </td>
-            <td style="padding: 2px;">
-                <input type="submit" value="Добавить тему" />
+
+            <td style="padding: 4px;">
+                <input type="button" value="Отмена" onClick='location.href="/Themes"' />
+                <input class="btn btn-primary" style="margin-left: 6px;" type="submit" value="Добавить тему" />
+            </td>
+
+            <td style="padding: 4px;">
             </td>
         </tr>
 
