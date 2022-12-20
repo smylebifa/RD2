@@ -47,8 +47,9 @@ namespace RD.Controllers
         [HttpGet("/edit_doc/{id}")]
         public new IActionResult ChangingDoc(int id)
         {
-            var ria = _docsService.GetDocs().FirstOrDefault(x => x.Id == id);
-            return View(ria);
+            var doc = _docsService.GetDocs().FirstOrDefault(x => x.Id == id);
+            ViewBag.Doc = doc;
+            return View(doc);
         }
 
         [HttpPost("/edit_doc")]

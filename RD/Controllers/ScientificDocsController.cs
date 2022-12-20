@@ -41,7 +41,7 @@ namespace RD.Controllers
         }
 
         [HttpGet("/edit_scientific_doc/{id}")]
-        public new IActionResult ChangingDoc(int id)
+        public new IActionResult ChangingScientificDoc(int id)
         {
             var scientificDoc = _scientificDocsService.GetScientificDocs().FirstOrDefault(x => x.Id == id);
             return View(scientificDoc);

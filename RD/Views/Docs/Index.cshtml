@@ -9,41 +9,64 @@
 
 <br>
 
-<table class="table table-hover " style="text-align: center;">
+<div style="overflow-x:auto;">
+    <table class="table table-hover " style="text-align: center;">
 
-    <thead>
-        <tr>
-            <th scope="col"></th>
-            <th scope="col">Наименование</th>
-            @*<th scope="col">Реквизиты</th>
-        <th scope="col">Авторы</th>
-        <th scope="col">Местоположение</th>*@
-            <th scope="col"></th>
-            <th scope="col"></th>
-
-        </tr>
-    </thead>
-
-    <tbody>
-        @foreach (var doc in @ViewBag.Docs)
-        {
+        <thead>
             <tr>
-                <td></td>
-                <td>@doc.NameDoc</td>
-                @*<td>@doc.Props</td>
-                <td>@doc.Authors</td>
-                <td>@doc.Location</td>*@
+                <th scope="col"></th>
+                <th scope="col">Инвентарный номер</th>
+                <th scope="col">Дата поставки</th>
+                <th scope="col">Оригинал/подлинник</th>
+                <th scope="col">Обозначение</th>
+                <th scope="col">Наименование документа</th>
+                <th scope="col">№ гос регистрации</th>
+                <th scope="col">Структурное подразделение</th>
+                <th scope="col">Руководиетель</th>
+                <th scope="col">Материально-отвественный</th>
+                <th scope="col">Количество листов</th>
+                <th scope="col">Количество копий</th>
+                <th scope="col">Кем сдан</th>
+                <th scope="col">Кем принят</th>
+                <th scope="col">Примечание</th>
 
-                <td>@Html.ActionLink("изменить", "ChangingDoc", new { id = doc.Id })</td>
-                <td><a onclick="deleteDoc('@doc.Id')" href="#"> удалить </a></td>
+                <th scope="col"></th>
+                <th scope="col"></th>
+
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+
+        <tbody>
+            @foreach (var doc in @ViewBag.Docs)
+            {
+                <tr>
+                    <td></td>
+                    <td>@doc.InventoryNum</td>
+                    <td>@doc.ReceiptDate</td>
+                    <td>@doc.DocType</td>
+                    <td>@doc.Designation</td>
+                    <td>@doc.NameDoc</td>
+                    <td>@doc.NumStateReg</td>
+                    <td>@doc.ExecutiveDepartment</td>
+                    <td>@doc.FioManager</td>
+                    <td>@doc.ResponsiblePerson</td>
+                    <td>@doc.SheetNumber</td>
+                    <td>@doc.NumCopies</td>
+                    <td>@doc.WhoPassed</td>
+                    <td>@doc.WhoAccepted</td>
+                    <td>@doc.Note</td>
 
 
+                    <td>@Html.ActionLink("изменить", "ChangingDoc", new { id = doc.Id })</td>
+                    <td><a onclick="deleteDoc('@doc.Id')" href="#"> удалить </a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
 
-<script type="text/javascript">
+</div>
+
+    <script type="text/javascript">
         function deleteDoc(docId) {
             $.ajax({
                 url: '/delete_doc/' + docId,
@@ -57,4 +80,4 @@
                 }
             })
         }
-</script>
+    </script>

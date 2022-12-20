@@ -34,7 +34,7 @@
             <td>@scientificDoc.Location</td>
             <td>@scientificDoc.Note</td>
 
-            <td>@Html.ActionLink("изменить", "ChangingDoc", new { id = scientificDoc.Id })</td>
+            <td>@Html.ActionLink("изменить", "ChangingScientificDoc", new { id = scientificDoc.Id })</td>
             <td><a onclick="deleteScientificDoc('@scientificDoc.Id')" href="#"> удалить </a></td>
         </tr>
         }

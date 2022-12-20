@@ -13,38 +13,82 @@
         <h2>Добавление документа</h2>
 
         @Html.HiddenFor(m => m.Id)
+
         <tr>
-            <td style="padding: 4px;">Наименование:</td>
             <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.NameDoc)
+                <input type="text" placeholder="Инвентарный номер" name="InventoryNum" />
+            </td>
+
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Дата поставки" name="ReceiptDate" />
+            </td>
+
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Оригинал/подлинник" name="DocType" />
             </td>
         </tr>
 
-        @*<tr>
-            <td style="padding: 4px;">Реквизиты:</td>
+
+        <tr>
             <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.Props)
+                <input type="text" placeholder="Обозначение" name="Designation" />
+            </td>
+
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Наименование документа" name="NameDoc" />
+            </td>
+
+            <td style="padding: 4px;">
+                <input type="text" placeholder="№ гос регистрации" name="DocType" />
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Структурное подразделение" name="ExecutiveDepartment" />
+            </td>
+
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Руководиетель" name="FioManager" />
+            </td>
+
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Материально-отвественный" name="ResponsiblePerson" />
             </td>
         </tr>
 
         <tr>
-            <td style="padding: 4px;">Авторы:</td>
             <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.Authors)
+                <input type="text" placeholder="Количество листов" name="SheetNumber" />
+            </td>
+
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Количество копий" name="NumCopies" />
+            </td>
+
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Кем сдан:" name="ResponsiblePerson" />
             </td>
         </tr>
 
         <tr>
-            <td style="padding: 4px;">Местоположение:</td>
             <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.Location)
+                <input type="text" placeholder="Кем принят" name="WhoAccepted" />
             </td>
-        </tr>*@
+
+            <td style="padding: 4px;">
+                <input type="text" placeholder="Примечание" name="Note" />
+            </td>
+
+        </tr>
 
         <tr>
             <td style="padding: 2px;">
                 <input type="submit" value="Добавить" />
             </td>
+            <td></td>
             <td></td>
         </tr>
 
