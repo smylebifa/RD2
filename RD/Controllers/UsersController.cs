@@ -22,21 +22,37 @@ namespace RD.Controllers
             _usersService = usersService;
         }
 
-        public ActionResult Index()
+        public ActionResult Index(string error = "")
         {
-            var users = _usersService.GetUsers();
-            ViewBag.Users = users;
-            return View();
+            if (error == "error")
+            {
+                var users = _usersService.GetUsers();
+                ViewBag.Error = "error";
+                ViewBag.Users = users; 
+                return View();
+            }
+
+            else
+            {
+                var users = _usersService.GetUsers();
+                ViewBag.Error = "";
+                ViewBag.Users = users;
+                return View();
+            }
         }
 
         [HttpPost]
         public IActionResult Users(User user)
         {
             user.IsActive = true;
-            _usersService.AddUser(user);
-            return RedirectToAction(nameof(Index));
+            bool addingUserCompleteSucces = _usersService.AddUser(user);
+            if (!addingUserCompleteSucces)
+                return RedirectToAction("Index", "Users", new { error = "error" });
+            else 
+                return RedirectToAction(nameof(Index));
         }
 
+        
         [HttpGet("/edit/{id}")]
         public new IActionResult User(int id)
         {

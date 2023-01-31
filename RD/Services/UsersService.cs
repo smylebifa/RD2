@@ -22,6 +22,7 @@ namespace RD.Services
         public static List<User> Users = new List<User>
         {
                 new User(1, "admin", "password", "", true),
+                new User(2, "ivan", "123", "", true),
         };
 
         public IEnumerable<User> GetUsers()
@@ -30,10 +31,10 @@ namespace RD.Services
             //return _dbContext.Users.ToArray();
         }
 
-        public void AddUser(User user)
+        public bool AddUser(User user)
         {
             if (Users.Any(x => x.Login == user.Login))
-                throw new ArgumentException("User with such login already exists.");
+                return false;
             
             int LastId = Users.Max(user => user.Id);
             if (LastId is int)
@@ -44,6 +45,8 @@ namespace RD.Services
 
                 Users.Add(user);
             }
+
+            return true;
 
             //if (_dbContext.Users.Any(x => x.Login == user.Login))
             //    throw new ArgumentException("User with such name already exists.");

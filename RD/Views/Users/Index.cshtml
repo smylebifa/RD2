@@ -5,6 +5,10 @@
     Layout = "_Layout";
 }
 
+<div id="modDialog" class="modal fade">
+    <div id="dialogContent" class="modal-dialog"></div>
+</div>
+
 <table class="table table-hover " style="text-align: center;">
 
     <thead>
@@ -23,16 +27,16 @@
     <tbody>
         @foreach (var user in @ViewBag.Users)
         {
-        <tr>
-            <td>@user.Login</td>
-            <td>@user.Password</td>
-            <td>@user.FullName</td>
-            <td><input type="checkbox" @(user.IsActive ? "checked=\"checked\"" : "") disabled name="IsActive" /></td>
-            <td><input type="checkbox" @(user.IsAdmin ? "checked=\"checked\"" : "") disabled name="IsAdmin" /> </td>
-            
-            <td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
-            <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>
-        </tr>
+            <tr>
+                <td>@user.Login</td>
+                <td>@user.Password</td>
+                <td>@user.FullName</td>
+                <td><input type="checkbox" @(user.IsActive ? "checked=\"checked\"" : "") disabled name="IsActive" /></td>
+                <td><input type="checkbox" @(user.IsAdmin ? "checked=\"checked\"" : "") disabled name="IsAdmin" /> </td>
+
+                <td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
+                <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>
+            </tr>
         }
     </tbody>
 </table>
@@ -63,7 +67,7 @@
 
         <tr>
             <td style="padding: 2px;">
-                <input type="submit"  class="btn btn-primary" value="Добавить" />
+                <input type="submit" class="btn btn-primary submitBtn" value="Добавить" />
             </td>
             <td></td>
         </tr>
@@ -73,17 +77,48 @@
 
 
 <script type="text/javascript">
-        function deleteUser(userId) {
-            $.ajax({
-                url: '/delete/' + userId,
-                type: 'DELETE',
-                contentType: "application/json; charset=utf-8",
-                success: function () {
-                    location.reload()
-                },
-                error: function () {
-                    alert("Ошибка выполнения!")
-                }
-            })
-        }
+    function deleteUser(userId) {
+        $.ajax({
+            url: '/delete/' + userId,
+            type: 'DELETE',
+            contentType: "application/json; charset=utf-8",
+            success: function () {
+                location.reload()
+            },
+            error: function () {
+                alert("Ошибка выполнения!")
+            }
+        })
+    }
 </script>
+
+@{
+    if (@ViewBag.Error == "error")
+    {
+    <script type="text/javascript">
+         $.get(this.href, function (data) {
+                    $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка ввода данных</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Тип ошибки:</dt> <dd>Пользователь уже существует</dd> </dl> </div> </div>');
+                    $('#modDialog').modal('show');
+                });
+    </script>
+    }
+
+}
+
+@*@section scripts
+    {
+    <script type="text/javascript">
+
+        $(function () {
+            $.ajaxSetup({ cache: false });
+            $(".submitBtn").click(function (e) {
+
+                e.preventDefault();
+                $.get(this.href, function (data) {
+                    $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка ввода данных</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Тип ошибки:</dt> <dd>Пользователь уже существует</dd> </dl> </div> </div>');
+                    $('#modDialog').modal('show');
+                });
+            });
+        })
+        </script>
+}*@

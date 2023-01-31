@@ -10,8 +10,6 @@ namespace RD.Services
     {
         public IEnumerable<User> GetUsers();
 
-        public void AddUser(User user);
-
         public void UpdateUser(User user);
 
         public void DeleteUser(int id);
