@@ -21,8 +21,12 @@ namespace RD.Controllers
         }
 
         [HttpGet("/login")]
-        public IActionResult Index()
+        public IActionResult Index(string status = "", string login = "", string password = "")
         {
+            ViewBag.Status = status;
+            ViewBag.Login = login;
+            ViewBag.Password = password;
+
             return View();
         }
 
@@ -33,16 +37,40 @@ namespace RD.Controllers
             var form = context.Request.Form;
 
             // Проверка на заполненность полей формы
-            if (!form.ContainsKey("login") || !form.ContainsKey("password"))
-                return RedirectToPage("400");
-                //throw new UnauthorizedAccessException();
+            //if (!form.ContainsKey("login") || !form.ContainsKey("password"))
+            //    return RedirectToPage("400");
+            ////throw new UnauthorizedAccessException();
 
             var login = form["login"];
             var password = form["password"];
 
-            if (!_authenticationService.Login(login, password))
-                return RedirectToPage("401");
-                //throw new InvalidOperationException();
+            if (!form.ContainsKey("login"))
+            {
+                return RedirectToAction("Index", "Authentication", new { status = "errorWithLogin", login = login });
+            }
+
+            if (!form.ContainsKey("password"))
+            {
+                return RedirectToAction("Index", "Authentication", new { status = "errorWithPassword", login = login });
+            }
+
+            if (_authenticationService.IsUserExist(login))
+            {
+                if (!_authenticationService.Login(login, password))
+                {
+                    return RedirectToAction("Index", "Authentication", new { status = "errorWithPassword", login = login, password = password });
+                }
+            }
+
+            else
+            {
+                return RedirectToAction("Index", "Authentication", new { status = "errorWithLogin", login = login, password = password });
+            }
+
+          
+            //if (!_authenticationService.Login(login, password))
+            //    return RedirectToPage("401");
+            //    //throw new InvalidOperationException();
 
             var claims = new List<Claim> { new Claim(ClaimTypes.Name, login) };
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -89,9 +117,9 @@ namespace RD.Controllers
         [HttpPost]
         public IActionResult Register(string login, string password, string password2, string email)
         {
-            if (_authenticationService.IsUserExist(login))
+            if (login == "" || login == null || _authenticationService.IsUserExist(login))
             {
-                return RedirectToAction("RegisterPage", "Authentication", new { status = "error", login = login });
+                return RedirectToAction("RegisterPage", "Authentication", new { status = "errorWithLogin", login = login });
             }
 
             else

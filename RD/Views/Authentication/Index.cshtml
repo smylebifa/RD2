@@ -2,17 +2,47 @@
     ViewData["Title"] = "Вход";
 }
 
+<div id="modDialog" class="modal fade">
+    <div id="dialogContent" class="modal-dialog"></div>
+</div>
+
+
 <h2>Вход</h2>
+
 <form method="post" asp-action="Login">
     <p>
         <label>Логин</label>
         <br />
-        <input name="login" />
+        <input name="login" value="@ViewBag.Login" />
     </p>
     <p>
         <label>Пароль</label>
         <br />
-        <input type="password" name="password" />
+        <input type="password" name="password" value="@ViewBag.Password" />
     </p>
     <input type="submit" value="Войти" />
 </form>
+
+
+@{
+    if (@ViewBag.Status == "errorWithLogin")
+    {
+        <script type="text/javascript">
+            $.get(this.href, function (data) {
+                $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Пользователь с таким именем уже существует или введен неверно</dd> </dl> </div> </div>');
+                $('#modDialog').modal('show');
+            });
+        </script>
+    }
+
+    else if (@ViewBag.Status == "errorWithPassword")
+    {
+        <script type="text/javascript">
+            $.get(this.href, function (data) {
+                $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Пароль введен неверно</dd> </dl> </div> </div>');
+                $('#modDialog').modal('show');
+            });
+        </script>
+    }
+
+}
