@@ -2,17 +2,109 @@
     ViewData["Title"] = "Регистрация";
 }
 
+<div id="modDialog" class="modal fade">
+    <div id="dialogContent" class="modal-dialog"></div>
+</div>
+
 <h2>Регистрация</h2>
-<form method="post" asp-action="Register">
-    <p>
-        <label>Логин</label>
-        <br />
-        <input name="login" />
-    </p>
-    <p>
-        <label>Пароль</label>
-        <br />
-        <input type="password" name="password" />
-    </p>
-    <input type="submit" value="Зарегистрироваться" />
+
+
+<form method="post" name="registerForm" asp-action="Register">
+
+
+    @{
+        if (@ViewBag.Status == "success")
+        {
+            <p>
+                <label>Логин</label>
+                <br />
+                <input name="login" value="@ViewBag.Login" />
+            </p>
+
+            <p>
+                <label>Электронная почта</label>
+                <br />
+                <input type="email" name="email" />
+            </p>
+
+            <p>
+                <label>Пароль</label>
+                <br />
+                <input type="password" name="password" />
+            </p>
+
+            <p>
+                <label>Подвтерждение пароля</label>
+                <br />
+                <input type="password" name="password2" />
+            </p>
+
+            <input type="submit" class="submitBtn" value="Зарегистрироваться" />
+        }
+
+        else
+        {
+            <p>
+                <label>Логин</label>
+                <br />
+                <input name="login" value="@ViewBag.Login" />
+            </p>
+
+            <input type="submit" class="submitBtn" value="Далее" />
+        }
+    }
+
+
 </form>
+
+
+@{
+        if (@ViewBag.Status == "error")
+        {
+            <script type="text/javascript">
+                $.get(this.href, function (data) {
+                    $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Пользователь с таким именем уже существует</dd> </dl> </div> </div>');
+                    $('#modDialog').modal('show');
+                });
+            </script>
+        }
+
+    }
+
+
+@section scripts
+        {
+        <script type="text/javascript">
+
+            $(function () {
+                $.ajaxSetup({ cache: false });
+                $(".submitBtn").click(function (e) {
+
+                    let registerForm = document.forms.registerForm; 
+
+                    let password1 = registerForm.elements.password.value; 
+                    let password2 = registerForm.elements.password2.value; 
+
+                    if (password1 != password2)
+                    {
+                    e.preventDefault();
+                    $.get(this.href, function (data) {
+                        $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Пароли не совпадают</dd> </dl> </div> </div>');
+                        $('#modDialog').modal('show');
+                    });
+
+                    }
+
+                    if (password1 == "")
+                    {
+                    e.preventDefault();
+                    $.get(this.href, function (data) {
+                        $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Для регистрации нужно ввести пароль</dd> </dl> </div> </div>');
+                        $('#modDialog').modal('show');
+                    });
+
+                    }
+                });
+            })
+            </script>
+    }

@@ -16,6 +16,7 @@
             <th scope="col">Логин</th>
             <th scope="col">Пароль</th>
             <th scope="col">ФИО</th>
+            <th scope="col">Email</th>
             <th scope="col">Активен</th>
             <th scope="col">Администратор</th>
             <th scope="col"></th>
@@ -27,16 +28,17 @@
     <tbody>
         @foreach (var user in @ViewBag.Users)
         {
-            <tr>
-                <td>@user.Login</td>
-                <td>@user.Password</td>
-                <td>@user.FullName</td>
-                <td><input type="checkbox" @(user.IsActive ? "checked=\"checked\"" : "") disabled name="IsActive" /></td>
-                <td><input type="checkbox" @(user.IsAdmin ? "checked=\"checked\"" : "") disabled name="IsAdmin" /> </td>
+        <tr>
+            <td>@user.Login</td>
+            <td>@user.Password</td>
+            <td>@user.FullName</td>
+            <td>@user.Email</td>
+            <td><input type="checkbox" @(user.IsActive ? "checked=\"checked\"" : "") disabled name="IsActive" /></td>
+            <td><input type="checkbox" @(user.IsAdmin ? "checked=\"checked\"" : "") disabled name="IsAdmin" /> </td>
 
-                <td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
-                <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>
-            </tr>
+            <td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
+            <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>
+        </tr>
         }
     </tbody>
 </table>
@@ -62,6 +64,13 @@
             <td style="padding: 4px;">ФИО:</td>
             <td style="padding: 4px;">
                 <input name="FullName" />
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">Email:</td>
+            <td style="padding: 4px;">
+                <input type="email" name="Email" />
             </td>
         </tr>
 
@@ -95,30 +104,30 @@
 @{
     if (@ViewBag.Error == "error")
     {
-    <script type="text/javascript">
-         $.get(this.href, function (data) {
-                    $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка ввода данных</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Тип ошибки:</dt> <dd>Пользователь уже существует</dd> </dl> </div> </div>');
-                    $('#modDialog').modal('show');
-                });
-    </script>
+        <script type="text/javascript">
+            $.get(this.href, function (data) {
+                $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Пользователь уже существует</dd> </dl> </div> </div>');
+                $('#modDialog').modal('show');
+            });
+        </script>
     }
 
 }
 
 @*@section scripts
-    {
-    <script type="text/javascript">
+        {
+        <script type="text/javascript">
 
-        $(function () {
-            $.ajaxSetup({ cache: false });
-            $(".submitBtn").click(function (e) {
+            $(function () {
+                $.ajaxSetup({ cache: false });
+                $(".submitBtn").click(function (e) {
 
-                e.preventDefault();
-                $.get(this.href, function (data) {
-                    $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка ввода данных</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Тип ошибки:</dt> <dd>Пользователь уже существует</dd> </dl> </div> </div>');
-                    $('#modDialog').modal('show');
+                    e.preventDefault();
+                    $.get(this.href, function (data) {
+                        $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка ввода данных</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Тип ошибки:</dt> <dd>Пользователь уже существует</dd> </dl> </div> </div>');
+                        $('#modDialog').modal('show');
+                    });
                 });
-            });
-        })
-        </script>
-}*@
+            })
+            </script>
+    }*@

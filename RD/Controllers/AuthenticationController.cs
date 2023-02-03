@@ -23,7 +23,6 @@ namespace RD.Controllers
         [HttpGet("/login")]
         public IActionResult Index()
         {
-            // Передаем пользователю представление Index (берется из названия функции контроллера) 
             return View();
         }
 
@@ -78,17 +77,37 @@ namespace RD.Controllers
         }
 
         [HttpGet]
-        public IActionResult RegisterPage()
+        public IActionResult RegisterPage(string status = "", string login = "")
         {
+            ViewBag.Status = status;
+            ViewBag.Login = login;
+
             // Передаем пользователю представление RegisterPage 
             return View();
         }
 
         [HttpPost]
-        public IActionResult Register(string login, string password)
+        public IActionResult Register(string login, string password, string password2, string email)
         {
-            _authenticationService.Register(login, password);
-            return RedirectToAction("Index");
+            if (_authenticationService.IsUserExist(login))
+            {
+                return RedirectToAction("RegisterPage", "Authentication", new { status = "error", login = login });
+            }
+
+            else
+            {               
+                if (password == null || password == "")
+                {
+                    return RedirectToAction("RegisterPage", "Authentication", new { status = "success" , login = login});
+                }
+
+                else
+                {
+                    _authenticationService.Register(login, password, email);
+                    return RedirectToAction("Index");
+                }
+
+            }
         }
     }
 }

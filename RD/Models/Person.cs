@@ -9,6 +9,7 @@ namespace RD.Models
     {
         public int Id { get; set; }
         public string Login { get; set; }
+        public string Email { get; set; }
         public string PasswordHash { get; set; }
         public string Salt { get; set; }
 
@@ -16,6 +17,14 @@ namespace RD.Models
         {
             Id = id;
             Login = login;            
+        }
+
+        public Person(int id, string? login, string passwordHash, string salt)
+        {
+            Id = id;
+            Login = login;
+            PasswordHash = passwordHash;
+            Salt = salt;
         }
 
         public Person()

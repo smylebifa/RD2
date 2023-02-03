@@ -22,48 +22,48 @@
 
 @using (Html.BeginForm("Edit", "Themes", FormMethod.Post))
     {
-        <table>
+        <table style = "width: 80%; border-spacing: 10px; border-collapse: separate;">
 @Html.HiddenFor(m => m.Id)
 
             <tr>
-                <td style="padding: 4px;">
+                <td style="text-align: center;">
                     <input type="text" placeholder="Номер темы" name="Number" value="@ViewBag.CurrentTheme.Number" />
                     @*@Html.TextBoxFor(m => m.Number)*@
                 </td>
 
-                <td style="padding: 4px;">
+                <td style="text-align: center;">
                     <input type="text" placeholder="Наименование темы" name="Name" value="@ViewBag.CurrentTheme.Name" />
                 </td>
 
-                <td style="padding: 4px;">
+                <td style="text-align: center;">
                     <input type="text" placeholder="ФИО руководителя" name="FioManager" value="@ViewBag.CurrentTheme.FioManager" />
                 </td>
             </tr>
 
             <tr>
-                <td style="padding: 4px;">
+                <td style="text-align: center;">
                     <input type="text" placeholder="Подразделение исполнитель" name="ExecutiveDepartment" value="@ViewBag.CurrentTheme.ExecutiveDepartment" />
                 </td>
 
-                <td style="padding: 4px;">
+                <td style="text-align: center;">
                     <input type="text" placeholder="Заказчик работы" name="CustomerName" value="@ViewBag.CurrentTheme.CustomerName" />
                 </td>
 
-                <td style="padding: 4px;">
+                <td style="text-align: center;">
                     <input type="text" placeholder="Срок - начало" name="WorkStart" value="@ViewBag.CurrentTheme.WorkStart" />
                 </td>
             </tr>
 
             <tr>
-                <td style="padding: 4px;">
+                <td style="text-align: center;">
                     <input type="text" placeholder="Срок - конец" name="WorkEnd" value="@ViewBag.CurrentTheme.WorkEnd" />
                 </td>
 
-                <td style="padding: 4px;">
+                <td style="text-align: center;">
                     <input type="text" placeholder="Приказ об открытии темы" name="Decree" value="@ViewBag.CurrentTheme.Decree" />
                 </td>
 
-                <td style="padding: 4px;">
+                <td style="text-align: center;">
                     <select name="DocType" size="1">
                         <option value="Гос. Контракт">Гос. Контракт</option>
                         <option value="Договор">Договор</option>
@@ -71,23 +71,22 @@
                         <option value="Хоз. договора">Хоз. договора</option>
                     </select>
                 </td>
-
-              
+                             
 
             </tr>
 
 
             <tr>
 
-                <td style="padding: 4px;">
+                <td style="text-align: center;">
                     <input type="text" placeholder="Общий объем финансирования" name="Amount" value="@ViewBag.CurrentTheme.Amount" />
                 </td>
 
-                <td style="padding: 4px;">
+                <td style="text-align: center;">
                     <input type="text" placeholder="НДС" name="Vat" value="@ViewBag.CurrentTheme.Vat" />
                 </td>
 
-                <td style="padding: 4px;">
+                <td style="text-align: center;">
                     <input type="text" placeholder="Объем без НДС" name="AmountWithoutVat" value="@ViewBag.CurrentTheme.AmountWithoutVat" />
                 </td>
 
@@ -105,20 +104,17 @@
             </select>
         </td>*@
 
-
-
-
-
+                                             
 
                
             </tr>
 
             <tr>
-                <td style="padding: 4px;">
+                <td style="text-align: center;">
                     <input type="text" placeholder="Реквизиты документа" name="Props" value="@ViewBag.CurrentTheme.Props" />
                 </td>
 
-                <td style="padding: 4px;">
+                <td style="text-align: center;">
                     <select name="ResearchType" size="1">
                         <option value="Прикладное">Прикладное</option>
                         <option value="Фундаментальное">Фундаментальное</option>
@@ -129,7 +125,9 @@
                 </td>
 
 
-
+                <td style="text-align: center;">
+                    <input type="text" placeholder="Область знания" name="Knowledge" value="@ViewBag.CurrentTheme.Knowledge" />
+                </td>
 
 
                 @*@(ViewBag.Trls.Trl1_1 && ViewBag.Trls.Trl1_2 && ViewBag.Trls.Trl1_3 && ViewBag.Trls.Trl1_4 && ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "")
@@ -139,30 +137,26 @@
             </td>*@
 
 
-
-                <td style="padding: 4px;">
-                    <input type="text" placeholder="Область знания" name="Knowledge" value="@ViewBag.CurrentTheme.Knowledge" />
-                </td>
-
-                
             </tr>
 
+           
+
             <tr>
-                <td style="padding: 4px;">
+                <td style="text-align: center;">
                     <input type="text" placeholder="Статус" name="Status" value="@ViewBag.CurrentTheme.Status" />
                 </td>
             </tr>
 
             <tr>
-                <td style="padding: 4px;">
+                <td style="text-align: center;">
                 </td>
 
-                <td style="padding: 4px;">
-                    <input type="button" value="Отмена" onClick='location.href="/Themes"' />
-                    <input class="btn btn-primary" style="margin-left: 6px;" type="submit" value="Изменить тему" />
+                <td style="text-align: center;">
+                    <input type="button" class="btn btn-outline-secondary" value="Отмена" onClick='location.href="/Themes"' />
+                    <input class="btn btn-outline-primary" style="margin-left: 6px;" type="submit" value="Изменить тему" />
                 </td>
 
-                <td style="padding: 4px;">
+                <td style="text-align: center;">
                 </td>
 
             </tr>

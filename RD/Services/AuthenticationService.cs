@@ -21,11 +21,12 @@ namespace RD.Services
 
         private static readonly List<Person> Persons = new List<Person>
         {
-                new Person(1, "admin"),
+                new Person(1, "admin", Hash("123" + "1234567890"), "1234567890"),
+                new Person(2, "ivan", Hash("123" + "1234567891"), "1234567891"),
         };
 
         // Если имя пользователя найдено в базе, возвращаем его Id, иначе создаем нового пользователя
-        public int? Register(string login, string password)
+        public void Register(string login, string password, string email)
         {
 
             //var person = _dbContext.Persons.FirstOrDefault(x => x.Login == login);
@@ -47,22 +48,34 @@ namespace RD.Services
             //return newPerson.Id;
 
 
-
-            var person = Persons.FirstOrDefault(x => x.Login == login);
-            if (person != null)
-                return person.Id;
-
             var salt = RandomString(10);
 
             //Guid Id = Guid.NewGuid();
 
-            var newPerson = new Person() { Id = 2, Login = login, PasswordHash = Hash(password + salt), Salt = salt };
+            int LastId = Persons.Max(user => user.Id);
+
+            var newPerson = new Person() { Id = LastId, Login = login, PasswordHash = Hash(password + salt), Salt = salt };
 
             Persons.Add(newPerson);
 
-            UsersService.Users.Add(new User(2, login, password, ""));
+            UsersService.Users.Add(new User(LastId, login, password, "", email));
 
-            return newPerson.Id;
+        }
+
+        public bool IsUserExist(string login)
+        {
+
+            var person = Persons.FirstOrDefault(x => x.Login == login);
+
+            if (person != null)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
         }
 
         // Проверяем существует ли пользователь в базе данных с таким именем, если существует проверяем совпадает ли пароль
@@ -83,7 +96,7 @@ namespace RD.Services
         }
 
         // Вычисляем хеш по паролю с помощью криптографического алгоритма SHA256 
-        private string Hash(string password)
+        private static string Hash(string password)
         {
             var algorithm = HashAlgorithm.Create("SHA256");
             var passwordBytes = Encoding.UTF8.GetBytes(password);

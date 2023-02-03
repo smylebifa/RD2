@@ -31,6 +31,13 @@
         </tr>
 
         <tr>
+            <td style="padding: 4px;">Email:</td>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.Email)
+            </td>
+        </tr>
+
+        <tr>
             <td style="padding: 4px;">Активен:</td>
             <td style="padding: 4px;">
                 @Html.CheckBox("IsActive", @Html.TextBoxFor(m => m.IsActive))

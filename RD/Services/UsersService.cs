@@ -21,8 +21,8 @@ namespace RD.Services
 
         public static List<User> Users = new List<User>
         {
-                new User(1, "admin", "password", "", true),
-                new User(2, "ivan", "123", "", true),
+                new User(1, "admin", "123", "", "" , true),
+                new User(2, "ivan", "123", "", "", true),
         };
 
         public IEnumerable<User> GetUsers()
