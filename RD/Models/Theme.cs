@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,8 +15,15 @@ namespace RD.Models
         public string? ExecutiveDepartment { get; set; }
         public string? CustomerName { get; set; }
         public int? CustomerId { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd'/'MM'/'yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? WorkStart { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd'/'MM'/'yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? WorkEnd { get; set; }
+       
         public int? Amount { get; set; }
         public int? Vat { get; set; }
         public int? AmountWithoutVat { get; set; }

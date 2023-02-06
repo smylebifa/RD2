@@ -6,9 +6,9 @@
 }
 
 <style>
-.theme_year:hover {
-    cursor: default;
-}
+    .theme_year:hover {
+        cursor: default;
+    }
 </style>
 
 <div class="container">
@@ -17,30 +17,30 @@
             <h3>Темы</h3>
         </div>
         <div class="col-sm">
-            <h5> <a class="nav-link" asp-controller="Themes" asp-action="Theme">Добавить тему</a> </h5>        
+            <h5> <a class="nav-link" asp-controller="Themes" asp-action="Theme">Добавить тему</a> </h5>
         </div>
         <div class="col-sm">
-            
+
             <h5 style="padding: 0.5rem 1rem;">
-                <input type="button" class="theme_year btn" id="theme_year" style="border-color: #0366d6; color: #0366d6;" value="2020"/>
+                <input type="button" class="theme_year btn" id="theme_year" style="border-color: #0366d6; color: #0366d6;" value="2020" />
             </h5>
         </div>
         <div class="col-sm">
-            
+
             <div class="dropdown">
-                
-                    <button class="btn dropdown-toggle" style="font-size: 1.25rem; color: #0366d6; font-weight: 500;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Выбор года 
-                    </button>
-               
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" style="color: #343a40;" type="button" href="#" onclick="changeYear()">-</a>
-                        <a class="dropdown-item" style="color: #343a40;" type="button" href="#" onclick="changeYear(2020)">2020</a>
-                        <a class="dropdown-item" style="color: #343a40;" href="#" onclick="changeYear(2021)">2021</a>
-                        <a class="dropdown-item" style="color: #343a40;" href="#" onclick="changeYear(2022)">2022</a>
-                    </div>
+
+                <button class="btn dropdown-toggle" style="font-size: 1.25rem; color: #0366d6; font-weight: 500;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Выбор года
+                </button>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" style="color: #343a40;" type="button" href="#" onclick="changeYear()">-</a>
+                    <a class="dropdown-item" style="color: #343a40;" type="button" href="#" onclick="changeYear(2020)">2020</a>
+                    <a class="dropdown-item" style="color: #343a40;" href="#" onclick="changeYear(2021)">2021</a>
+                    <a class="dropdown-item" style="color: #343a40;" href="#" onclick="changeYear(2022)">2022</a>
+                </div>
             </div>
-                
+
         </div>
     </div>
 </div>
@@ -50,7 +50,7 @@
     function changeYear(year) {
         theme_year = document.getElementById("theme_year");
 
-        if (year != null && typeof year !== "undefined") 
+        if (year != null && typeof year !== "undefined")
             theme_year.value = year;
         else
             theme_year.value = "год не выбран";
@@ -86,97 +86,121 @@
 
         <tbody>
             @foreach (var theme in @ViewBag.Themes)
-                {
-            <tr>
-                <td><a class="nav-link" asp-area="" asp-route-themeName="@theme.Name" asp-controller="Stages" asp-action="Index">Этапы</a></td>
+            {
+                <tr>
+                    <td><a class="nav-link" asp-area="" asp-route-themeName="@theme.Name" asp-controller="Stages" asp-action="Index">Этапы</a></td>
 
-                <td>@Html.ActionLink("Изменить тему", "ChangingTheme", new { id = theme.Id })</td>
+                    <td>@Html.ActionLink("Изменить тему", "ChangingTheme", new { id = theme.Id })</td>
 
-                <td><a onclick="deleteTheme('@theme.Id')" href="#"> Удалить тему</a></td>
+                    <td><a onclick="deleteTheme('@theme.Id')" href="#"> Удалить тему</a></td>
 
-                <td>@theme.Number</td>
-                <td>@theme.Name</td>
-                <td>@theme.FioManager</td>
-                <td>@theme.ExecutiveDepartment</td>
-                <td>@theme.CustomerId</td>
-                <td>@theme.WorkStart</td>
-                <td>@theme.WorkEnd</td>
-                <td>@theme.Amount</td>
-                <td>@theme.Vat</td>
-                <td>@theme.AmountWithoutVat</td>
-                <td>@theme.Decree</td>
+                    <td>@theme.Number</td>
+                    <td>@theme.Name</td>
+                    <td>@theme.FioManager</td>
+                    <td>@theme.ExecutiveDepartment</td>
+                    <td>@theme.CustomerName</td>
 
 
 
-                <td>@theme.DocType</td>
-                <td>@theme.Props</td>
-                <td>@theme.ResearchType</td>
+                    @if (@theme.WorkStart != null)
+                    {
+                        if (@theme.WorkEnd != null)
+                        {
+                            <td>@theme.WorkStart.ToString("dd/MM/yyyy")</td>
+                            <td>@theme.WorkEnd.ToString("dd/MM/yyyy")</td>
+                        }
+                        else
+                        {
+                            <td>@theme.WorkStart.ToString("dd/MM/yyyy")</td>
+                            <td>@theme.WorkEnd</td>
+                        }
+                    }
+                    else if (@theme.WorkEnd != null)
+                    {
+                        <td>@theme.WorkStart</td>
+                        <td>@theme.WorkEnd.ToString("dd/MM/yyyy")</td>
+                    }
+                    else
+                    {
+                        <td>@theme.WorkStart</td>
+                        <td>@theme.WorkEnd</td>
+                    }
 
 
-                @*<td>
-            <select name="DocType" size="1">
-                <option selected value="s1">Гос. Контракт</option>
-                <option value="s2">Договор</option>
-                <option value="s3">Контракт</option>
-                <option value="s4">Хоз. договора</option>
-            </select>
-        </td>*@
+                    <td>@theme.Amount</td>
+                    <td>@theme.Vat</td>
+                    <td>@theme.AmountWithoutVat</td>
+                    <td>@theme.Decree</td>
 
-                @*<td>
-            <select name="ResearchType" size="1">
-                <option selected value="s1">Прикладное</option>
-                <option value="s2">Фундаментальное</option>
-                <option value="s3">Разработка</option>
-                <option value="s4">Поисковое</option>
-                <option value="s4">ОКР</option>
-            </select>
-        </td>*@
+                    <td>@theme.DocType</td>
+                    <td>@theme.Props</td>
+                    <td>@theme.ResearchType</td>
 
-                <td>@theme.Knowledge</td>
-                <td>@theme.Status</td>
 
-            </tr>
-                }
+                    @*<td>
+                            <select name="DocType" size="1">
+                                <option selected value="s1">Гос. Контракт</option>
+                                <option value="s2">Договор</option>
+                                <option value="s3">Контракт</option>
+                                <option value="s4">Хоз. договора</option>
+                            </select>
+                        </td>*@
+
+                    @*<td>
+                            <select name="ResearchType" size="1">
+                                <option selected value="s1">Прикладное</option>
+                                <option value="s2">Фундаментальное</option>
+                                <option value="s3">Разработка</option>
+                                <option value="s4">Поисковое</option>
+                                <option value="s4">ОКР</option>
+                            </select>
+                        </td>*@
+
+                    <td>@theme.Knowledge</td>
+                    <td>@theme.Status</td>
+
+                </tr>
+            }
 
             @*<tr>
-                <td><a class="nav-link text-primary" asp-area="" asp-controller="Stages" asp-action="Index">Этапы</a></td>
-                <td>1</td>
-                <td>Тема1</td>
-                <td>Петров И.А.</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-            </tr>
+                    <td><a class="nav-link text-primary" asp-area="" asp-controller="Stages" asp-action="Index">Этапы</a></td>
+                    <td>1</td>
+                    <td>Тема1</td>
+                    <td>Петров И.А.</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                </tr>
 
-            <tr>
-                <td><a class="nav-link text-primary" asp-area="" asp-controller="Stages" asp-action="Index">Этапы</a></td>
-                <td>2</td>
-                <td>Тема2</td>
-                <td>Иванов А.И.</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-            </tr>*@
+                <tr>
+                    <td><a class="nav-link text-primary" asp-area="" asp-controller="Stages" asp-action="Index">Этапы</a></td>
+                    <td>2</td>
+                    <td>Тема2</td>
+                    <td>Иванов А.И.</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                </tr>*@
 
 
         </tbody>

@@ -65,6 +65,7 @@ namespace RD.Services
             existing.Number = theme.Number;
             existing.FioManager = theme.FioManager;
             existing.ExecutiveDepartment = theme.ExecutiveDepartment;
+            existing.CustomerName = theme.CustomerName;
             existing.WorkStart = theme.WorkStart;
             existing.WorkEnd = theme.WorkEnd;
             existing.Amount = theme.Amount;
