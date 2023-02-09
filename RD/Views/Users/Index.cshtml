@@ -5,6 +5,9 @@
     Layout = "_Layout";
 }
 
+<h3>Пользователи системы</h3>
+<br>
+
 <div id="modDialog" class="modal fade">
     <div id="dialogContent" class="modal-dialog"></div>
 </div>
@@ -28,17 +31,17 @@
     <tbody>
         @foreach (var user in @ViewBag.Users)
         {
-        <tr>
-            <td>@user.Login</td>
-            <td>@user.Password</td>
-            <td>@user.FullName</td>
-            <td>@user.Email</td>
-            <td><input type="checkbox" @(user.IsActive ? "checked=\"checked\"" : "") disabled name="IsActive" /></td>
-            <td><input type="checkbox" @(user.IsAdmin ? "checked=\"checked\"" : "") disabled name="IsAdmin" /> </td>
+            <tr>
+                <td>@user.Login</td>
+                <td>@user.Password</td>
+                <td>@user.FullName</td>
+                <td>@user.Email</td>
+                <td><input type="checkbox" @(user.IsActive ? "checked=\"checked\"" : "") disabled name="IsActive" /></td>
+                <td><input type="checkbox" @(user.IsAdmin ? "checked=\"checked\"" : "") disabled name="IsAdmin" /> </td>
 
-            <td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
-            <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>
-        </tr>
+                <td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
+                <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>
+            </tr>
         }
     </tbody>
 </table>

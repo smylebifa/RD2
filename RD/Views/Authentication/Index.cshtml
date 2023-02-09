@@ -7,20 +7,53 @@
 </div>
 
 
-<h2>Вход</h2>
-
 <form method="post" asp-action="Login">
-    <p>
-        <label>Логин</label>
-        <br />
-        <input name="login" value="@ViewBag.Login" />
-    </p>
-    <p>
-        <label>Пароль</label>
-        <br />
-        <input type="password" name="password" value="@ViewBag.Password" />
-    </p>
-    <input type="submit" value="Войти" />
+
+    <div class="mb-3 row">
+        <div class="col-sm-4 col-form-label"></div>
+
+        <div class="col-sm-3">
+            <label class="form-label h3">Вход</label>
+        </div>
+
+        <div class="col-sm-5 col-form-label"></div>
+    </div>
+
+    <div class="mb-3 row">
+        <div class="col-sm-4 col-form-label"></div>
+
+        <div class="col-sm-3">
+            <label class="form-label">Логин</label>
+            <input type="text" name="login" value="@ViewBag.Login" class="form-control">
+        </div>
+
+        <div class="col-sm-5 col-form-label"></div>
+    </div>
+
+    <div class="mb-3 row">
+        <div class="col-sm-4 col-form-label"></div>
+
+        <div class="col-sm-3">
+            <label class="form-label">Пароль</label>
+            <input type="password" name="password" value="@ViewBag.Password" class="form-control">
+        </div>
+
+        <div class="col-sm-5 col-form-label"></div>
+    </div>
+
+    <br>
+
+    <div class="mb-3 row">
+        <div class="col-sm-4 col-form-label"></div>
+
+        <div class="col-sm-3">
+            <button type="submit" class="btn btn-primary">Войти</button>
+        </div>
+
+        <div class="col-sm-5 col-form-label"></div>
+    </div>
+
+
 </form>
 
 
