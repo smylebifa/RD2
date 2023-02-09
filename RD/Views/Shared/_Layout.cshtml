@@ -11,10 +11,10 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
-    
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color: #3949AC;">
-            <div class="container" style="background-color: #3949AC;">
+            <div class="container-fluid" style="background-color: #3949AC;">
                 <div class="navbar-collapse collapse d-sm-inline-flex ">
 
                     @*@if (User.Identity.Name == "admin"){*@
@@ -36,18 +36,20 @@
                             <h6><a class="nav-link" asp-area="" asp-controller="Themes" asp-action="Index" style="color: white;">Темы</a></h6>
                         </li>
 
-                        <li class="nav-item" >
+                        <li class="nav-item">
                             <h6><a class="nav-link" asp-area="" asp-controller="Customers" asp-action="Index" style="color: white;">Заказчики</a></h6>
                         </li>
 
-                        <li class="nav-item" >
+                        <li class="nav-item">
                             <h6><a class="nav-link" asp-area="" asp-controller="Counterparties" asp-action="Index" style="color: white;">Контрагенты</a></h6>
                         </li>
+                    </ul>
 
-                        <li class="nav-item" id="themes-menu" style="margin-left: 70%;"></li>
+                    <ul class="navbar-nav navbar-right flex-grow-1">
 
-                        <li class="dropdown nav-item">
-                            <a href="#" class="dropdown-toggle nav-link " data-toggle="dropdown" style="color:white"><img src="~/images/user2.png" width="100%" alt="Profile"><b class="caret"></b></a>
+                        <li class="dropdown nav-item" style="margin-left: auto; padding-right: 90px;">
+                            <a href="#" class="dropdown-toggle nav-link" id="menu-login" data-toggle="dropdown" style="color:white">Вход<b class="caret"></b></a>
+                            @*<a href="#" class="dropdown-toggle nav-link " data-toggle="dropdown" style="color:white"><img src="~/images/user2.png" width="20%" alt="Profile"><b class="caret"></b></a>*@
                             <ul class="dropdown-menu">
                                 <li><h6><a class="nav-link " asp-area="" asp-controller="Profile" asp-action="Index" style="color: #343a40;">Профиль</a></h6></li>
                                 <li><h6><a id="login-link" class="nav-link " asp-area="" asp-controller="Authentication" asp-action="Index" style="color: #343a40;">Вход</a></h6></li>
@@ -123,6 +125,7 @@
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             success: function (data) {
+                document.getElementById("menu-login").innerText = "Выход";
                 document.getElementById("login-link").innerText = data;
                 document.getElementById("logout-menu").style.display = "block";
                 document.getElementById("register-menu").style.display = "none";
