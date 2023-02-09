@@ -51,10 +51,10 @@
                             <a href="#" class="dropdown-toggle nav-link" id="menu-login" data-toggle="dropdown" style="color:white">Вход<b class="caret"></b></a>
                             @*<a href="#" class="dropdown-toggle nav-link " data-toggle="dropdown" style="color:white"><img src="~/images/user2.png" width="20%" alt="Profile"><b class="caret"></b></a>*@
                             <ul class="dropdown-menu">
-                                <li><h6><a class="nav-link " asp-area="" asp-controller="Profile" asp-action="Index" style="color: #343a40;">Профиль</a></h6></li>
-                                <li><h6><a id="login-link" class="nav-link " asp-area="" asp-controller="Authentication" asp-action="Index" style="color: #343a40;">Вход</a></h6></li>
-                                <li><h6><a class="nav-link " asp-area="" asp-controller="Authentication" asp-action="RegisterPage" style="color: #343a40;">Регистрация</a></h6></li>
-                                <li><h6><a class="nav-link " asp-area="" asp-controller="Authentication" asp-action="Logout" style="color: #343a40;">Выйти</a></h6></li>
+                                <li><h6><a class="nav-link" id="profile" asp-area="" asp-controller="Profile" asp-action="Index" style="color: #343a40;">Профиль</a></h6></li>
+                                <li><h6><a class="nav-link" id="login-link"  asp-area="" asp-controller="Authentication" asp-action="Index" style="color: #343a40;">Вход</a></h6></li>
+                                <li><h6><a class="nav-link" id="register-menu" asp-area="" asp-controller="Authentication" asp-action="RegisterPage" style="color: #343a40;">Регистрация</a></h6></li>
+                                <li><h6><a class="nav-link" id="logout-menu" asp-area="" asp-controller="Authentication" asp-action="Logout" style="color: #343a40;">Выйти</a></h6></li>
                             </ul>
                         </li>
                     </ul>
@@ -124,16 +124,33 @@
             url: '/authenticated',
             type: 'GET',
             contentType: "application/json; charset=utf-8",
+
+            // Если выполнен вход
             success: function (data) {
-                document.getElementById("menu-login").innerText = "";
-                document.getElementById("login-link").innerText = data;
+
+                // Меню
+                document.getElementById("menu-login").innerText = "Меню";
+
+                // Вход
+                document.getElementById("login-link").style.display = "none"; 
+
+                 // Выход
                 document.getElementById("logout-menu").style.display = "block";
+
+                // Регистрация
                 document.getElementById("register-menu").style.display = "none";
+
+                // Профиль
+                document.getElementById("profile").style.display = "block";
             },
+
+            // Вход не выполнен (первых вход на сайт)
             error: function () {
+                document.getElementById("menu-login").innerText = "Войти";
                 document.getElementById("login-link").innerText = "Вход";
                 document.getElementById("logout-menu").style.display = "none";
                 document.getElementById("register-menu").style.display = "block";
+                document.getElementById("profile").style.display = "none";
             }
         })
     </script>
