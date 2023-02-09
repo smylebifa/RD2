@@ -41,33 +41,39 @@ namespace RD.Controllers
             }
         }
 
-        [HttpPost]
-        public IActionResult Users(User user)
+        [HttpGet("/add_user")]
+        public IActionResult User()
         {
-            user.IsActive = true;
-            bool addingUserCompleteSucces = _usersService.AddUser(user);
-            if (!addingUserCompleteSucces)
-                return RedirectToAction("Index", "Users", new { error = "error" });
-            else 
-                return RedirectToAction(nameof(Index));
+            return View();
         }
 
         
-        [HttpGet("/edit/{id}")]
-        public new IActionResult User(int id)
+        [HttpGet("/edit_user/{id}")]
+        public new IActionResult ChangingUser(int id)
         {
             var user = _usersService.GetUsers().FirstOrDefault(x => x.Id == id);
             return View(user);
         }
 
-        [HttpPost("/edit")]
+        [HttpPost("/edit_user")]
         public IActionResult Edit(User user)
         {
             _usersService.UpdateUser(user);
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpDelete("/delete/{id}")]
+        [HttpPost]
+        public IActionResult AddUser(User user)
+        {
+            user.IsActive = true;
+            bool addingUserCompleteSucces = _usersService.AddUser(user);
+            if (!addingUserCompleteSucces)
+                return RedirectToAction("Index", "Users", new { error = "error" });
+            else
+                return RedirectToAction(nameof(Index));
+        }
+
+        [HttpDelete("/delete_user/{id}")]
         public IActionResult Delete(int id)
         {
             _usersService.DeleteUser(id);

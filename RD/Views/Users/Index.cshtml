@@ -5,7 +5,16 @@
     Layout = "_Layout";
 }
 
-<h3>Пользователи системы</h3>
+<div class="row">
+    <div class="col-sm-5">
+        <h3 style="text-decoration: underline">Пользователи системы</h3>
+    </div>
+    <div class="col-sm-5">
+        <h5> <a class="nav-link" asp-controller="Users" asp-action="User">Добавить пользователя</a> </h5>
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+
 <br>
 
 <div id="modDialog" class="modal fade">
@@ -39,53 +48,12 @@
                 <td><input type="checkbox" @(user.IsActive ? "checked=\"checked\"" : "") disabled name="IsActive" /></td>
                 <td><input type="checkbox" @(user.IsAdmin ? "checked=\"checked\"" : "") disabled name="IsAdmin" /> </td>
 
-                <td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
+                <td>@Html.ActionLink("изменить", "ChangingUser", new { id = user.Id })</td>
                 <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>
             </tr>
         }
     </tbody>
 </table>
-
-<form method="post" asp-action="Users" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
-    <table>
-        <h4>Добавление пользователей</h4>
-
-        <tr>
-            <td style="padding: 4px;">Логин:</td>
-            <td style="padding: 4px;">
-                <input name="Login" />
-            </td>
-        </tr>
-        <tr>
-            <td style="padding: 4px;">Пароль:</td>
-            <td style="padding: 4px;">
-                <input type="password" name="Password" />
-            </td>
-        </tr>
-
-        <tr>
-            <td style="padding: 4px;">ФИО:</td>
-            <td style="padding: 4px;">
-                <input name="FullName" />
-            </td>
-        </tr>
-
-        <tr>
-            <td style="padding: 4px;">Email:</td>
-            <td style="padding: 4px;">
-                <input type="email" name="Email" />
-            </td>
-        </tr>
-
-        <tr>
-            <td style="padding: 2px;">
-                <input type="submit" class="btn btn-primary submitBtn" value="Добавить" />
-            </td>
-            <td></td>
-        </tr>
-
-    </table>
-</form>
 
 
 <script type="text/javascript">
@@ -104,33 +72,3 @@
     }
 </script>
 
-@{
-    if (@ViewBag.Error == "error")
-    {
-        <script type="text/javascript">
-            $.get(this.href, function (data) {
-                $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Пользователь уже существует</dd> </dl> </div> </div>');
-                $('#modDialog').modal('show');
-            });
-        </script>
-    }
-
-}
-
-@*@section scripts
-        {
-        <script type="text/javascript">
-
-            $(function () {
-                $.ajaxSetup({ cache: false });
-                $(".submitBtn").click(function (e) {
-
-                    e.preventDefault();
-                    $.get(this.href, function (data) {
-                        $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка ввода данных</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Тип ошибки:</dt> <dd>Пользователь уже существует</dd> </dl> </div> </div>');
-                        $('#modDialog').modal('show');
-                    });
-                });
-            })
-            </script>
-    }*@

@@ -1,73 +1,89 @@
 ﻿@model RD.Models.User;
 
 @{
-    ViewBag.Title = "Редактирование пользователя";
+    ViewBag.Title = "Добавление пользователя";
     Layout = "_Layout";
 }
 
-@using (Html.BeginForm("Edit", "Users", FormMethod.Post))
-{
-    <table>
-        @Html.HiddenFor(m => m.Id)
-        <tr>
-            <td style="padding: 4px;">Логин:</td>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.Login)
-            </td>
-        </tr>
 
-        <tr>
-            <td style="padding: 4px;">Пароль:</td>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.Password)
-            </td>
-        </tr>
+<h3>Добавление пользователя</h3>
+<br>
 
-        <tr>
-            <td style="padding: 4px;">ФИО:</td>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.FullName)
-            </td>
-        </tr>
+<form method="post" asp-action="AddUser" sstyle="border-color: #343a40;">
 
-        <tr>
-            <td style="padding: 4px;">Email:</td>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.Email)
-            </td>
-        </tr>
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Логин</label>
+        <div class="col-sm-10">
+            <input type="text" name="Login" class="form-control" />
+        </div>
+    </div>
 
-        <tr>
-            <td style="padding: 4px;">Активен:</td>
-            <td style="padding: 4px;">
-                @Html.CheckBox("IsActive", @Html.TextBoxFor(m => m.IsActive))
-            </td>
-        </tr>
-
-        <tr>
-            <td style="padding: 4px;">Администратор:</td>
-            <td style="padding: 4px;">
-                @Html.CheckBox("IsAdmin", @Html.TextBoxFor(m => m.IsAdmin))
-
-                @*<input type="checkbox" @(user.IsAdmin ? "checked=\"checked\"" : "") name="Администратор" />*@
-
-            </td>
-        </tr>
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Пароль</label>
+        <div class="col-sm-10">
+            <input type="password" name="Password" class="form-control" />
+        </div>
+    </div>
 
 
-        <tr>
-            <td style="padding: 4px;">
-            </td>
 
-            <td style="padding: 4px;">
-                <a class="btn" href="/" style="text-align:center">Отмена</a>
-                <input type="submit" class="btn btn-primary" value="Изменить пользователя" />
-            </td>
-
-            <td style="padding: 4px;">
-            </td>
-        </tr>
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">ФИО</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="FullName" />
+        </div>
+    </div>
 
 
-    </table>
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="Email" />
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Активен</label>
+        <div class="col-sm-10">
+            <input type="checkbox" class="form-control" name="IsActive" />
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Администратор</label>
+        <div class="col-sm-10">
+            <input type="checkbox" class="form-control" name="IsAdmin" />
+        </div>
+    </div>
+
+
+    <div class="mb-3 row">
+        <div class="col-sm-4 col-form-label"></div>
+
+        <div class="col-sm-2">
+            <input type="button" class="btn btn-outline-dark" style="margin-left: 15px;" value="Отмена" onClick='location.href="/"' />
+        </div>
+
+        <div class="col-sm-2">
+            <input class="btn btn-outline-primary" type="submit" value="Добавить пользователя" />
+        </div>
+
+        <div class="col-sm-4 col-form-label"></div>
+    </div>
+
+
+</form>
+
+
+@{
+    if (@ViewBag.Error == "error")
+    {
+        <script type="text/javascript">
+            $.get(this.href, function (data) {
+                $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Пользователь уже существует</dd> </dl> </div> </div>');
+                $('#modDialog').modal('show');
+            });
+        </script>
+    }
+
 }
