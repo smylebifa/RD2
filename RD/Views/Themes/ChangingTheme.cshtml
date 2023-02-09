@@ -23,204 +23,208 @@
 
 }
 
+@{
+    @if (ViewBag.CurrentTheme.WorkStart != null)
+    {
+        WorkStart = @ViewBag.CurrentTheme.WorkStart.ToString("yyyy-MM-dd");
+    }
+    else
+    {
+        WorkStart = @ViewBag.CurrentTheme.WorkStart;
+    }
+
+    @if (ViewBag.CurrentTheme.WorkEnd != null)
+    {
+        WorkEnd = @ViewBag.CurrentTheme.WorkEnd.ToString("yyyy-MM-dd");
+    }
+    else
+    {
+        WorkEnd = @ViewBag.CurrentTheme.WorkEnd;
+    }
+}
+
+
 
 
 @using (Html.BeginForm("Edit", "Themes", FormMethod.Post))
 {
-    <table style="width: 80%; border-spacing: 10px; border-collapse: separate;">
-        @Html.HiddenFor(m => m.Id)
 
-        <tr>
-            <td style="text-align: center;">
-                <input type="text" placeholder="Номер темы" name="Number" value="@ViewBag.CurrentTheme.Number" />
-                @*@Html.TextBoxFor(m => m.Number)*@
-            </td>
+    @Html.HiddenFor(m => m.Id)
+
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Номер темы</label>
+        <div class="col-sm-10">
+            <input type="text" name="Number" class="form-control" value="@ViewBag.CurrentTheme.Number" />
+        </div>
+    </div>
 
-            <td style="text-align: center;">
-                <input type="text" placeholder="Наименование темы" name="Name" value="@ViewBag.CurrentTheme.Name" />
-            </td>
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Наименование темы</label>
+        <div class="col-sm-10">
+            <input type="text" name="Name" class="form-control" value="@ViewBag.CurrentTheme.Name" />
+        </div>
+    </div>
 
-            <td style="text-align: center;">
-                <input type="text" placeholder="ФИО руководителя" name="FioManager" value="@ViewBag.CurrentTheme.FioManager" />
-            </td>
-        </tr>
 
-        <tr>
-            <td style="text-align: center;">
-                <input type="text" placeholder="Подразделение исполнитель" name="ExecutiveDepartment" value="@ViewBag.CurrentTheme.ExecutiveDepartment" />
-            </td>
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">ФИО руководителя</label>
+        <div class="col-sm-10">
+            <input type="text" name="FioManager" class="form-control" value="@ViewBag.CurrentTheme.FioManager" />
+        </div>
+    </div>
 
-            <td style="text-align: center;">
-                <input type="text" placeholder="Заказчик работы" name="CustomerName" value="@ViewBag.CurrentTheme.CustomerName" />
-            </td>
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Подразделение исполнитель</label>
+        <div class="col-sm-10">
+            <input type="text" name="ExecutiveDepartment" class="form-control" value="@ViewBag.CurrentTheme.ExecutiveDepartment" />
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Заказчик работы</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="CustomerName" value="@ViewBag.CurrentTheme.CustomerName" />
+        </div>
+    </div>
+
+
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Срок - начало</label>
+        <div class="col-sm-10">
+            <input type="date" id="WorkStart" class="form-control" name="WorkStart" value="@WorkStart" min="1950-01-01" />
+        </div>
+    </div>
+
+
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Срок - конец</label>
+        <div class="col-sm-10">
+            <input type="date" id="WorkEnd" class="form-control" name="WorkEnd" value="@WorkEnd" min="1950-01-01" />
+        </div>
+    </div>
 
-          
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Приказ об открытии темы</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="Decree" value="@ViewBag.CurrentTheme.Decree" />
+        </div>
+    </div>
 
-            @{
-                @if (ViewBag.CurrentTheme.WorkStart != null)
-                {
-                    WorkStart = @ViewBag.CurrentTheme.WorkStart.ToString("yyyy-MM-dd");
-                }
-                else
-                {
-                    WorkStart = @ViewBag.CurrentTheme.WorkStart;
-                }
-            }
 
-          
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Вид документа</label>
+        <div class="col-sm-10">
+            <select name="DocType" size="1" class="form-control">
 
-        <td style="text-align: center;">
-            <label for="WorkStartLabel">Срок - начало</label>
-            <input type="date" placeholder="Срок - начало" id="WorkStart" name="WorkStart" value="@WorkStart" min="1950-01-01" />
-        </td>
+                <option value="Гос. Контракт">Гос. Контракт</option>
+
+                <option value="Договор">Договор</option>
+
+                <option value="Контракт">Контракт</option>
+
+                <option value="Хоз. договора">Хоз. договора</option>
+
+            </select>
+        </div>
+    </div>
+
+
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Общий объем финансирования</label>
+        <div class="col-sm-10">
+            <input type="number" class="form-control" name="Amount" value="@ViewBag.CurrentTheme.Amount" />
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">НДС</label>
+        <div class="col-sm-10">
+            <input type="number" class="form-control" name="Vat" value="@ViewBag.CurrentTheme.Vat" />
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Объем без НДС</label>
+        <div class="col-sm-10">
+            <input type="number" class="form-control" name="AmountWithoutVat" value="@ViewBag.CurrentTheme.AmountWithoutVat" />
+        </div>
+    </div>
 
-        </tr>
 
 
-        <tr>           
+    @*@Html.DropDownListFor(model => model.TeamId, ViewBag.Teams as SelectList)*@
 
-            @{
-                @if (ViewBag.CurrentTheme.WorkEnd != null)
-                {
-                    WorkEnd = @ViewBag.CurrentTheme.WorkEnd.ToString("yyyy-MM-dd");
-                }
-                else
-                {
-                    WorkEnd = @ViewBag.CurrentTheme.WorkEnd;
-                }
-            }
 
-            <td style="text-align: center;">
+    @*<td style="padding: 4px;">
+            <select name="DocType" size="1">
+                <option @{if (el= =0) { @("selected") } } value="Гос. Контракт">Гос. Контракт</option>
+                <option @{if (el= =1) "selected" } value="Договор">Договор</option>
+                <option @{if (el= =2) "selected" } value="Контракт">Контракт</option>
+                <option @{if (el= =3) "selected" } value="Хоз. договора">Хоз. договора</option>
+            </select>
+        </td>*@
 
-                <label for="WorkEndLabel">Срок - конец</label>
 
-                <input type="date" placeholder="Срок - конец" id="WorkEnd" name="WorkEnd" value="@WorkEnd" min="1950-01-01" />
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Реквизиты документа</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="Props" value="@ViewBag.CurrentTheme.Props" />
+        </div>
+    </div>
 
-            </td>
 
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Тип исследования</label>
+        <div class="col-sm-10">
+            <select name="ResearchType" size="1" class="form-control">
+                <option value="Прикладное">Прикладное</option>
+                <option value="Фундаментальное">Фундаментальное</option>
+                <option value="Разработка">Разработка</option>
+                <option value="Поисковое">Поисковое</option>
+                <option value="ОКР">ОКР</option>
+            </select>
+        </div>
+    </div>
 
-            <td style="text-align: center;">
 
-                <input type="text" placeholder="Приказ об открытии темы" name="Decree" value="@ViewBag.CurrentTheme.Decree" />
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Область знания</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="Knowledge" value="@ViewBag.CurrentTheme.Knowledge" />
+        </div>
+    </div>
 
-            </td>
 
 
-            <td style="text-align: center;">
 
-                <select name="DocType" size="1">
+    @*@(ViewBag.Trls.Trl1_1 && ViewBag.Trls.Trl1_2 && ViewBag.Trls.Trl1_3 && ViewBag.Trls.Trl1_4 && ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "")
 
-                    <option value="Гос. Контракт">Гос. Контракт</option>
+        <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.ResearchType)
+            </td>*@
 
-                    <option value="Договор">Договор</option>
 
-                    <option value="Контракт">Контракт</option>
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Статус</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="Status" value="@ViewBag.CurrentTheme.Status" />
+        </div>
+    </div>
 
-                    <option value="Хоз. договора">Хоз. договора</option>
+    <div class="mb-3 row">
+        <div class="col-sm-5 col-form-label"></div>
+        
+        <div class="col-sm-1">
+            <input type="button" class="btn btn-outline-dark" value="Отмена" onClick='location.href="/Themes"' />
+        </div>
+        
+        <div class="col-sm-1">
+            <input class="btn btn-outline-primary" style="margin-left: 6px;" type="submit" value="Изменить тему" />
+        </div>
+       
+        <div class="col-sm-5 col-form-label"></div>
+    </div>
+       
 
-                </select>
-
-            </td>
-
-        </tr>
-
-
-        <tr>
-
-
-            <td style="text-align: center;">
-
-                <input type="number" placeholder="Общий объем финансирования" name="Amount" value="@ViewBag.CurrentTheme.Amount" />
-
-            </td>
-
-
-            <td style="text-align: center;">
-
-                <input type="number" placeholder="НДС" name="Vat" value="@ViewBag.CurrentTheme.Vat" />
-
-            </td>
-
-
-            <td style="text-align: center;">
-
-                <input type="number" placeholder="Объем без НДС" name="AmountWithoutVat" value="@ViewBag.CurrentTheme.AmountWithoutVat" />
-
-            </td>
-
-
-
-            @*@Html.DropDownListFor(model => model.TeamId, ViewBag.Teams as SelectList)*@
-
-
-            @*<td style="padding: 4px;">
-                    <select name="DocType" size="1">
-                        <option @{if (el= =0) { @("selected") } } value="Гос. Контракт">Гос. Контракт</option>
-                        <option @{if (el= =1) "selected" } value="Договор">Договор</option>
-                        <option @{if (el= =2) "selected" } value="Контракт">Контракт</option>
-                        <option @{if (el= =3) "selected" } value="Хоз. договора">Хоз. договора</option>
-                    </select>
-                </td>*@
-
-
-
-
-        </tr>
-
-        <tr>
-            <td style="text-align: center;">
-                <input type="text" placeholder="Реквизиты документа" name="Props" value="@ViewBag.CurrentTheme.Props" />
-            </td>
-
-            <td style="text-align: center;">
-                <select name="ResearchType" size="1">
-                    <option value="Прикладное">Прикладное</option>
-                    <option value="Фундаментальное">Фундаментальное</option>
-                    <option value="Разработка">Разработка</option>
-                    <option value="Поисковое">Поисковое</option>
-                    <option value="ОКР">ОКР</option>
-                </select>
-            </td>
-
-
-            <td style="text-align: center;">
-                <input type="text" placeholder="Область знания" name="Knowledge" value="@ViewBag.CurrentTheme.Knowledge" />
-            </td>
-
-
-            @*@(ViewBag.Trls.Trl1_1 && ViewBag.Trls.Trl1_2 && ViewBag.Trls.Trl1_3 && ViewBag.Trls.Trl1_4 && ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "")
-
-                <td style="padding: 4px;">
-                        @Html.TextBoxFor(m => m.ResearchType)
-                    </td>*@
-
-
-        </tr>
-
-
-
-        <tr>
-            <td style="text-align: center;">
-                <input type="text" placeholder="Статус" name="Status" value="@ViewBag.CurrentTheme.Status" />
-            </td>
-        </tr>
-
-        <tr>
-            <td style="text-align: center;">
-            </td>
-
-            <td style="text-align: center;">
-                <input type="button" class="btn btn-outline-secondary" value="Отмена" onClick='location.href="/Themes"' />
-                <input class="btn btn-outline-primary" style="margin-left: 6px;" type="submit" value="Изменить тему" />
-            </td>
-
-            <td style="text-align: center;">
-            </td>
-
-        </tr>
-
-
-
-    </table>
 }
 
