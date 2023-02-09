@@ -44,7 +44,8 @@
 }
 
 
-
+<h2>Изменение темы</h2>
+<br>
 
 @using (Html.BeginForm("Edit", "Themes", FormMethod.Post))
 {
@@ -212,17 +213,17 @@
     </div>
 
     <div class="mb-3 row">
-        <div class="col-sm-5 col-form-label"></div>
+        <div class="col-sm-4 col-form-label"></div>
         
-        <div class="col-sm-1">
-            <input type="button" class="btn btn-outline-dark" value="Отмена" onClick='location.href="/Themes"' />
+        <div class="col-sm-2">
+            <input type="button" class="btn btn-outline-dark" style="margin-left: 15px;" value="Отмена" onClick='location.href="/Themes"' />
         </div>
         
-        <div class="col-sm-1">
-            <input class="btn btn-outline-primary" style="margin-left: 6px;" type="submit" value="Изменить тему" />
+        <div class="col-sm-2">
+            <input class="btn btn-outline-primary" type="submit" value="Изменить тему" />
         </div>
        
-        <div class="col-sm-5 col-form-label"></div>
+        <div class="col-sm-4 col-form-label"></div>
     </div>
        
 
