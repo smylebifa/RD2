@@ -21,8 +21,8 @@ namespace RD.Services
 
         public static List<User> Users = new List<User>
         {
-                new User(1, "admin", "123", "", "" , true),
-                new User(2, "ivan", "123", "", "", true),
+                new User(1, "admin", "123", "", "", true, true),
+                new User(2, "ivan", "123", "", "", true, false)
         };
 
         public IEnumerable<User> GetUsers()
@@ -40,8 +40,8 @@ namespace RD.Services
             if (LastId is int)
             {
                 user.Id = LastId + 1;
-                user.IsAdmin = false;
-                user.IsActive = true;
+                //user.IsAdmin = false;
+                //user.IsActive = true;
 
                 Users.Add(user);
             }

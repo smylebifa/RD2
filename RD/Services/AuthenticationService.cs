@@ -58,7 +58,7 @@ namespace RD.Services
 
             Persons.Add(newPerson);
 
-            UsersService.Users.Add(new User(LastId, login, password, "", email));
+            UsersService.Users.Add(new User(LastId, login, password, email));
 
         }
 

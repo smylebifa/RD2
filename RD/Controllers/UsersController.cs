@@ -65,7 +65,6 @@ namespace RD.Controllers
         [HttpPost]
         public IActionResult AddUser(User user)
         {
-            user.IsActive = true;
             bool addingUserCompleteSucces = _usersService.AddUser(user);
             if (!addingUserCompleteSucces)
                 return RedirectToAction("Index", "Users", new { error = "error" });
