@@ -136,6 +136,9 @@
 
                 let registerForm = document.forms.registerForm;
 
+                let login = registerForm.elements.login.value;
+                let email = registerForm.elements.email.value;
+
                 let password1 = registerForm.elements.password.value;
                 let password2 = registerForm.elements.password2.value;
 
@@ -148,7 +151,16 @@
 
                 }
 
-                if (password1 == "") {
+                if (login == "") {
+                    e.preventDefault();
+                    $.get(this.href, function (data) {
+                        $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Для регистрации нужно ввести логин</dd> </dl> </div> </div>');
+                        $('#modDialog').modal('show');
+                    });
+
+                }
+
+                else if (email == "") {
                     e.preventDefault();
                     $.get(this.href, function (data) {
                         $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Для регистрации нужно ввести пароль</dd> </dl> </div> </div>');
@@ -156,6 +168,17 @@
                     });
 
                 }
+
+                else if (password1 == "") {
+                    e.preventDefault();
+                    $.get(this.href, function (data) {
+                        $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Для регистрации нужно ввести пароль</dd> </dl> </div> </div>');
+                        $('#modDialog').modal('show');
+                    });
+
+                }
+
+                
             });
         })
     </script>

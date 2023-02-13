@@ -5,83 +5,90 @@
     Layout = "_Layout";
 }
 
+<div id="modDialog" class="modal fade">
+    <div id="dialogContent" class="modal-dialog"></div>
+</div>
+
+<h3>Добавление пользователя</h3>
+<br>
+
 @using (Html.BeginForm("Edit", "Users", FormMethod.Post))
 {
-    <table>
-        @Html.HiddenFor(m => m.Id)
-        <tr>
-            <td style="padding: 4px;">Логин:</td>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.Login)
-            </td>
-        </tr>
+<table>
+    @Html.HiddenFor(m => m.Id)
+    <tr>
+        <td style="padding: 4px;">Логин:</td>
+        <td style="padding: 4px;">
+            @Html.TextBoxFor(m => m.Login)
+        </td>
+    </tr>
 
-        <tr>
-            <td style="padding: 4px;">Пароль:</td>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.Password)
-            </td>
-        </tr>
+    <tr>
+        <td style="padding: 4px;">Пароль:</td>
+        <td style="padding: 4px;">
+            @Html.TextBoxFor(m => m.Password)
+        </td>
+    </tr>
 
-        <tr>
-            <td style="padding: 4px;">ФИО:</td>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.FullName)
-            </td>
-        </tr>
+    <tr>
+        <td style="padding: 4px;">ФИО:</td>
+        <td style="padding: 4px;">
+            @Html.TextBoxFor(m => m.FullName)
+        </td>
+    </tr>
 
-        <tr>
-            <td style="padding: 4px;">Email:</td>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.Email)
-            </td>
-        </tr>
+    <tr>
+        <td style="padding: 4px;">Email:</td>
+        <td style="padding: 4px;">
+            @Html.TextBoxFor(m => m.Email)
+        </td>
+    </tr>
 
-        <tr>
-            <td style="padding: 4px;">Активен:</td>
-            <td style="padding: 4px;">
-                @Html.CheckBox("IsActive", @Html.TextBoxFor(m => m.IsActive))
-            </td>
-        </tr>
+    <tr>
+        <td style="padding: 4px;">Активен:</td>
+        <td style="padding: 4px;">
+            @Html.CheckBox("IsActive", @Html.TextBoxFor(m => m.IsActive))
+        </td>
+    </tr>
 
-        <tr>
-            <td style="padding: 4px;">Администратор:</td>
-            <td style="padding: 4px;">
-                @Html.CheckBox("IsAdmin", @Html.TextBoxFor(m => m.IsAdmin))
+    <tr>
+        <td style="padding: 4px;">Администратор:</td>
+        <td style="padding: 4px;">
+            @Html.CheckBox("IsAdmin", @Html.TextBoxFor(m => m.IsAdmin))
 
-                @*<input type="checkbox" @(user.IsAdmin ? "checked=\"checked\"" : "") name="Администратор" />*@
+            @*<input type="checkbox" @(user.IsAdmin ? "checked=\"checked\"" : "") name="Администратор" />*@
 
-            </td>
-        </tr>
+        </td>
+    </tr>
+
+   
+    <tr>
+        <td style="padding: 4px;">
+        </td>
+
+        <td style="padding: 4px;">
+            <a class="btn btn-outline-dark" href="/Users" style="text-align:center">Отмена</a>
+            <input type="submit" class="btn btn-outline-primary submitBtn" value="Изменить пользователя" />
+        </td>
+
+        <td style="padding: 4px;">
+        </td>
+    </tr>
 
 
-        <tr>
-            <td style="padding: 4px;">
-            </td>
-
-            <td style="padding: 4px;">
-                <a class="btn" href="/" style="text-align:center">Отмена</a>
-                <input type="submit" class="btn btn-primary" value="Изменить пользователя" />
-            </td>
-
-            <td style="padding: 4px;">
-            </td>
-        </tr>
-
-
-    </table>
+</table>
 }
 
 
-@{
-    if (@ViewBag.Error == "error")
-    {
-        <script type="text/javascript">
-            $.get(this.href, function (data) {
-                $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Пользователь уже существует</dd> </dl> </div> </div>');
-                $('#modDialog').modal('show');
-            });
-        </script>
-    }
+@*@{
+        if (@ViewBag.Error == "error")
+        {
+            <script type="text/javascript">
+                $.get(this.href, function (data) {
+                    $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Пользователь уже существует</dd> </dl> </div> </div>');
+                    $('#modDialog').modal('show');
+                });
+            </script>
+        }
 
-}
+    }*@

@@ -67,6 +67,38 @@ namespace RD.Services
             //_dbContext.SaveChanges();
         }
 
+        public bool IsUserExist(string login)
+        {
+
+            var person = Users.FirstOrDefault(x => x.Login == login);
+
+            if (person != null)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool IsEmailExist(string email)
+        {
+
+            var person = Users.FirstOrDefault(x => x.Email == email);
+
+            if (person != null)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
         public void UpdateUser(User user)
         {
             //var existing = _dbContext.Users.FirstOrDefault(x => x.Id == user.Id);

@@ -45,111 +45,110 @@
 
 
 <h3>Изменение темы</h3>
-<br>
 
 @using (Html.BeginForm("Edit", "Themes", FormMethod.Post))
 {
+<table>
 
     @Html.HiddenFor(m => m.Id)
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Номер темы</label>
-        <div class="col-sm-10">
-            <input type="text" name="Number" class="form-control" value="@ViewBag.CurrentTheme.Number" />
-        </div>
-    </div>
-
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Наименование темы</label>
-        <div class="col-sm-10">
-            <input type="text" name="Name" class="form-control" value="@ViewBag.CurrentTheme.Name" />
-        </div>
-    </div>
+    <tr>
+        <td style="padding: 4px;">Номер темы:</td>
+        <td style="padding: 4px;">
+            <input type="number" name="Number" value="@ViewBag.CurrentTheme.Number" />
+        </td>
+    </tr>
 
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">ФИО руководителя</label>
-        <div class="col-sm-10">
-            <input type="text" name="FioManager" class="form-control" value="@ViewBag.CurrentTheme.FioManager" />
-        </div>
-    </div>
+    <tr>
+        <td style="padding: 4px;">Наименование темы:</td>
+        <td style="padding: 4px;">
+            <input type="text" name="Name" value="@ViewBag.CurrentTheme.Name" />
+        </td>
+    </tr>
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Подразделение исполнитель</label>
-        <div class="col-sm-10">
-            <input type="text" name="ExecutiveDepartment" class="form-control" value="@ViewBag.CurrentTheme.ExecutiveDepartment" />
-        </div>
-    </div>
+    <tr>
+        <td style="padding: 4px;">ФИО руководителя:</td>
+        <td style="padding: 4px;">
+            <input type="text" name="FioManager" value="@ViewBag.CurrentTheme.FioManager" />
+        </td>
+    </tr>
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Заказчик работы</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name="CustomerName" value="@ViewBag.CurrentTheme.CustomerName" />
-        </div>
-    </div>
+    <tr>
+        <td style="padding: 4px;">Подразделение исполнитель:</td>
+        <td style="padding: 4px;">
+            <input type="text" name="ExecutiveDepartment" value="@ViewBag.CurrentTheme.ExecutiveDepartment" />
+        </td>
+    </tr>
 
+    <tr>
+        <td style="padding: 4px;">Заказчик работы:</td>
+        <td style="padding: 4px;">
+            <input type="text" name="CustomerName" value="@ViewBag.CurrentTheme.CustomerName" />
+        </td>
+    </tr>
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Срок - начало</label>
-        <div class="col-sm-10">
-            <input type="date" id="WorkStart" class="form-control" name="WorkStart" value="@WorkStart" min="1950-01-01" />
-        </div>
-    </div>
+    <tr>
+        <td style="padding: 4px;">Срок - начало:</td>
+        <td style="padding: 4px;">
+            <input type="date" id="WorkStart" name="WorkStart" value="@WorkStart" min="1950-01-01" />
+        </td>
+    </tr>
 
+    <tr>
+        <td style="padding: 4px;">Срок - конец:</td>
+        <td style="padding: 4px;">
+            <input type="date" id="WorkEnd" name="WorkEnd" min="1950-01-01" value="@WorkEnd" />
+        </td>
+    </tr>
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Срок - конец</label>
-        <div class="col-sm-10">
-            <input type="date" id="WorkEnd" class="form-control" name="WorkEnd" value="@WorkEnd" min="1950-01-01" />
-        </div>
-    </div>
+    <tr>
+        <td style="padding: 4px;">Приказ об открытии темы:</td>
+        <td style="padding: 4px;">
+            <input type="text" name="Decree" value="@ViewBag.CurrentTheme.Decree" />
+        </td>
+    </tr>
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Приказ об открытии темы</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name="Decree" value="@ViewBag.CurrentTheme.Decree" />
-        </div>
-    </div>
-
-
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Вид документа</label>
-        <div class="col-sm-10">
-            <select name="DocType" size="1" class="form-control">
-
+    <tr>
+        <td style="padding: 4px;">Вид документа:</td>
+        <td style="padding: 4px;">
+            <select name="DocType" size="1">
                 <option value="Гос. Контракт">Гос. Контракт</option>
-
                 <option value="Договор">Договор</option>
-
                 <option value="Контракт">Контракт</option>
-
                 <option value="Хоз. договора">Хоз. договора</option>
-
             </select>
-        </div>
-    </div>
+        </td>
+    </tr>
 
+    <tr>
+        <td style="padding: 4px;">Общий объем финансирования:</td>
+        <td style="padding: 4px;">
+            <input type="number" name="Amount" value="@ViewBag.CurrentTheme.Amount" />
+        </td>
+    </tr>
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Общий объем финансирования</label>
-        <div class="col-sm-10">
-            <input type="number" class="form-control" name="Amount" value="@ViewBag.CurrentTheme.Amount" />
-        </div>
-    </div>
+    <tr>
+        <td style="padding: 4px;">НДС:</td>
+        <td style="padding: 4px;">
+            <input type="number" name="Vat" value="@ViewBag.CurrentTheme.Vat" />
+        </td>
+    </tr>
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">НДС</label>
-        <div class="col-sm-10">
-            <input type="number" class="form-control" name="Vat" value="@ViewBag.CurrentTheme.Vat" />
-        </div>
-    </div>
+    <tr>
+        <td style="padding: 4px;">Объем без НДС:</td>
+        <td style="padding: 4px;">
+            <input type="number" name="AmountWithoutVat" value="@ViewBag.CurrentTheme.AmountWithoutVat" />
+        </td>
+    </tr>
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Объем без НДС</label>
-        <div class="col-sm-10">
-            <input type="number" class="form-control" name="AmountWithoutVat" value="@ViewBag.CurrentTheme.AmountWithoutVat" />
-        </div>
-    </div>
+    <tr>
+        <td style="padding: 4px;">Реквизиты документа:</td>
+        <td style="padding: 4px;">
+            <input type="text" name="Props" value="@ViewBag.CurrentTheme.Props" />
+        </td>
+    </tr>
+
 
 
 
@@ -166,36 +165,33 @@
         </td>*@
 
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Реквизиты документа</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name="Props" value="@ViewBag.CurrentTheme.Props" />
-        </div>
-    </div>
-
-
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Тип исследования</label>
-        <div class="col-sm-10">
-            <select name="ResearchType" size="1" class="form-control">
+    <tr>
+        <td style="padding: 4px;">Тип исследования:</td>
+        <td style="padding: 4px;">
+            <select name="ResearchType" size="1">
                 <option value="Прикладное">Прикладное</option>
                 <option value="Фундаментальное">Фундаментальное</option>
                 <option value="Разработка">Разработка</option>
                 <option value="Поисковое">Поисковое</option>
                 <option value="ОКР">ОКР</option>
             </select>
-        </div>
-    </div>
+        </td>
+    </tr>
 
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Область знания</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name="Knowledge" value="@ViewBag.CurrentTheme.Knowledge" />
-        </div>
-    </div>
+    <tr>
+        <td style="padding: 4px;">Область знания:</td>
+        <td style="padding: 4px;">
+            <input type="text" name="Knowledge" value="@ViewBag.CurrentTheme.Knowledge" />
+        </td>
+    </tr>
 
-
+    <tr>
+        <td style="padding: 4px;">Статус:</td>
+        <td style="padding: 4px;">
+            <input type="text" name="Status" value="@ViewBag.CurrentTheme.Status" />
+        </td>
+    </tr>
 
 
     @*@(ViewBag.Trls.Trl1_1 && ViewBag.Trls.Trl1_2 && ViewBag.Trls.Trl1_3 && ViewBag.Trls.Trl1_4 && ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "")
@@ -204,28 +200,23 @@
                 @Html.TextBoxFor(m => m.ResearchType)
             </td>*@
 
+    <tr><br></tr>
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Статус</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name="Status" value="@ViewBag.CurrentTheme.Status" />
-        </div>
-    </div>
+    <tr>
+        <td style="padding: 4px;">
+        </td>
 
-    <div class="mb-3 row">
-        <div class="col-sm-4 col-form-label"></div>
-        
-        <div class="col-sm-2">
-            <input type="button" class="btn btn-outline-dark" style="margin-left: 15px;" value="Отмена" onClick='location.href="/Themes"' />
-        </div>
-        
-        <div class="col-sm-2">
-            <input class="btn btn-outline-primary" type="submit" value="Изменить тему" />
-        </div>
-       
-        <div class="col-sm-4 col-form-label"></div>
-    </div>
-       
+        <td style="padding: 4px;">
+            <a class="btn btn-outline-dark" href="/Themes" style="text-align:center">Отмена</a>
+            <input type="submit" class="btn btn-outline-primary submitBtn" value="Изменить тему" />
+        </td>
+
+        <td style="padding: 4px;">
+        </td>
+    </tr>
+
+
+</table>
 
 }
 

@@ -5,98 +5,145 @@
     Layout = "_Layout";
 }
 
+<div id="modDialog" class="modal fade">
+    <div id="dialogContent" class="modal-dialog"></div>
+</div>
+
 
 <h3>Добавление пользователя</h3>
 <br>
 
-<form method="post" asp-action="AddUser" style="border-color: #343a40;">
+<form method="post" asp-action="AddUser" name="addUserForm" style="border-color: #343a40;">
 
+    <table>
+        <tr>
+            <td style="padding: 4px;">Логин:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="Login" value="@ViewBag.Login" />
+            </td>
+        </tr>
 
-    <div class="mb-3 row">
-        <label class="col-sm-1 col-form-label">Логин</label>
-        <div class="col-sm-5">
-            <input type="text" name="Login" class="form-control" />
-        </div>
-        <div class="col-sm-6"></div>
-    </div>
+        <tr>
+            <td style="padding: 4px;">Пароль:</td>
+            <td style="padding: 4px;">
+                <input type="password" name="Password" value="@ViewBag.Password" />
+            </td>
+        </tr>
 
-    <div class="mb-3 row">
-        <label class="col-sm-1 col-form-label">Пароль</label>
-        <div class="col-sm-5">
-            <input type="password" name="Password" class="form-control" />
-        </div>
-        <div class="col-sm-6"></div>
-    </div>
+        <tr>
+            <td style="padding: 4px;">ФИО:</td>
+            <td style="padding: 4px;">
+                <input type="text" value="@ViewBag.FullName" name="FullName" />
+            </td>
+        </tr>
 
-    <div class="mb-3 row">
-        <label class="col-sm-1 col-form-label">ФИО</label>
-        <div class="col-sm-5">
-            <input type="text" class="form-control" name="FullName" />
-        </div>
-        <div class="col-sm-6"></div>
-    </div>
+        <tr>
+            <td style="padding: 4px;">Email:</td>
+            <td style="padding: 4px;">
+                <input type="email" value="@ViewBag.Email" name="Email" />
+            </td>
+        </tr>
 
+        <tr>
+            <td style="padding: 4px;">Активен:</td>
+            <td style="padding: 4px;">
+                <input type="checkbox" name="IsActive" checked="@ViewBag.IsActive" value="true" />
+            </td>
+        </tr>
 
-    <div class="mb-3 row">
-        <label class="col-sm-1 col-form-label">Email</label>
-        <div class="col-sm-5">
-            <input type="email" class="form-control" name="Email" />
-        </div>
-        <div class="col-sm-6"></div>
-    </div>
-    
+        <tr>
+            <td style="padding: 4px;">Администратор:</td>
+            <td style="padding: 4px;">
+                <input type="checkbox" name="IsAdmin" checked="@ViewBag.IsAdmin" value="true" />
+            </td>
+        </tr>
 
-    <div class="mb-3 row">
-        <label class="col-sm-1 col-form-label">Активен</label>
+         <tr>
+            <td style="padding: 4px;">
+            </td>
 
-        <div class="col-sm-1">
-            <input type="checkbox" name="IsActive" value="true" />
-        </div>
+            <td style="padding: 4px;">
+                <a class="btn btn-outline-dark" href="/Users" style="text-align:center">Отмена</a>
+                <input type="submit" class="btn btn-outline-primary submitBtn" value="Добавить пользователя" />
+            </td>
 
-        <div class="col-sm-10"></div>
-    </div>
+            <td style="padding: 4px;">
+            </td>
+        </tr>
 
-    <div class="mb-3 row">
-
-        <label class="col-sm-1 col-form-label">Администратор</label>
-
-        <div class="col-sm-1">
-            <input type="checkbox" name="IsAdmin" value="true" />
-        </div>
-
-        <div class="col-sm-10"></div>
-    </div>
-
-
-    <div class="mb-3 row">
-        <div class="col-sm-2"></div>
-
-        <div class="col-sm-1">
-            <input type="button" class="btn btn-outline-dark" value="Отмена" onClick='location.href="/Users"' />
-        </div>
-
-        <div class="col-sm-2">
-            <input class="btn btn-outline-primary" type="submit" style="margin-left: 15px;" value="Добавить пользователя" />
-        </div>
-
-        <div class="col-sm-7"></div>
-    </div>
-
-
+    </table>
 </form>
 
 
 
 
-@*@{
-    if (@ViewBag.Error == "error")
+@{
+    if (@ViewBag.Status == "errorWithLogin")
     {
         <script type="text/javascript">
             $.get(this.href, function (data) {
-                $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Пользователь уже существует</dd> </dl> </div> </div>');
+                $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Пользователь с таким логином уже существует</dd> </dl> </div> </div>');
                 $('#modDialog').modal('show');
             });
         </script>
     }
 
-}*@
+   
+    else if (@ViewBag.Status == "errorWithEmail")
+    {
+        <script type="text/javascript">
+            $.get(this.href, function (data) {
+                $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Указанная электронная почта уже зарезервирована за другим пользователем</dd> </dl> </div> </div>');
+                $('#modDialog').modal('show');
+            });
+        </script>
+    }
+
+}
+
+@section scripts
+        {
+    <script type="text/javascript">
+
+        $(function () {
+            $.ajaxSetup({ cache: false });
+            $(".submitBtn").click(function (e) {
+
+                let addUserForm = document.forms.addUserForm;
+
+                let login = addUserForm.elements.Login.value;
+                let password = addUserForm.elements.Password.value;
+                //let email = registerForm.elements.email.value;
+
+                if (login == "") {
+                    e.preventDefault();
+                    $.get(this.href, function (data) {
+                        $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Для регистрации нужно ввести логин</dd> </dl> </div> </div>');
+                        $('#modDialog').modal('show');
+                    });
+
+                }
+
+                else if (password == "") {
+                    e.preventDefault();
+                    $.get(this.href, function (data) {
+                        $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Для регистрации нужно ввести пароль</dd> </dl> </div> </div>');
+                        $('#modDialog').modal('show');
+                    });
+
+                }
+
+                //if (email == "") {
+                //    e.preventDefault();
+                //    $.get(this.href, function (data) {
+                //        $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Для регистрации нужно ввести электронную почту</dd> </dl> </div> </div>');
+                //        $('#modDialog').modal('show');
+                //    });
+
+                //}
+
+            });
+        })
+    </script>
+
+}

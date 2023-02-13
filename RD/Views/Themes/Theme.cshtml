@@ -4,160 +4,151 @@
 }
 
 <h3>Добавление темы</h3>
-<br>
 
 <form method="post" asp-action="AddTheme" style="border-color: #343a40;">
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Номер темы</label>
-        <div class="col-sm-10">
-            <input type="text" name="Number" class="form-control"  />
-        </div>
-    </div>
+    <table>
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Наименование темы</label>
-        <div class="col-sm-10">
-            <input type="text" name="Name" class="form-control" />
-        </div>
-    </div>
+        <tr>
+            <td style="padding: 4px;">Номер темы:</td>
+            <td style="padding: 4px;">
+                <input type="number" name="Number" />
+            </td>
+        </tr>
 
+        <tr>
+            <td style="padding: 4px;">Наименование темы:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="Name" />
+            </td>
+        </tr>
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">ФИО руководителя</label>
-        <div class="col-sm-10">
-            <input type="text" name="FioManager" class="form-control"  />
-        </div>
-    </div>
+        <tr>
+            <td style="padding: 4px;">ФИО руководителя:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="FioManager" />
+            </td>
+        </tr>
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Подразделение исполнитель</label>
-        <div class="col-sm-10">
-            <input type="text" name="ExecutiveDepartment" class="form-control"  />
-        </div>
-    </div>
+        <tr>
+            <td style="padding: 4px;">Подразделение исполнитель:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="ExecutiveDepartment" />
+            </td>
+        </tr>
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Заказчик работы</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name="CustomerName"  />
-        </div>
-    </div>
+        <tr>
+            <td style="padding: 4px;">Заказчик работы:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="CustomerName" />
+            </td>
+        </tr>
 
+        <tr>
+            <td style="padding: 4px;">Срок - начало:</td>
+            <td style="padding: 4px;">
+                <input type="date" id="WorkStart" name="WorkStart" min="1950-01-01" />
+            </td>
+        </tr>
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Срок - начало</label>
-        <div class="col-sm-10">
-            <input type="date" id="WorkStart" class="form-control" name="WorkStart"  min="1950-01-01" />
-        </div>
-    </div>
+        <tr>
+            <td style="padding: 4px;">Срок - конец:</td>
+            <td style="padding: 4px;">
+                <input type="date" id="WorkEnd" name="WorkEnd" min="1950-01-01" />
+            </td>
+        </tr>
 
+        <tr>
+            <td style="padding: 4px;">Приказ об открытии темы:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="Decree" />
+            </td>
+        </tr>
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Срок - конец</label>
-        <div class="col-sm-10">
-            <input type="date" id="WorkEnd" class="form-control" name="WorkEnd"  min="1950-01-01" />
-        </div>
-    </div>
+        <tr>
+            <td style="padding: 4px;">Вид документа:</td>
+            <td style="padding: 4px;">
+                <select name="DocType" size="1">
+                    <option value="Гос. Контракт">Гос. Контракт</option>
+                    <option value="Договор">Договор</option>
+                    <option value="Контракт">Контракт</option>
+                    <option value="Хоз. договора">Хоз. договора</option>
+                </select>
+            </td>
+        </tr>
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Приказ об открытии темы</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name="Decree"  />
-        </div>
-    </div>
+        <tr>
+            <td style="padding: 4px;">Общий объем финансирования:</td>
+            <td style="padding: 4px;">
+                <input type="number" name="Amount" />
+            </td>
+        </tr>
 
+        <tr>
+            <td style="padding: 4px;">НДС:</td>
+            <td style="padding: 4px;">
+                <input type="number" name="Vat" />
+            </td>
+        </tr>
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Вид документа</label>
-        <div class="col-sm-10">
-            <select name="DocType" size="1" class="form-control">
+        <tr>
+            <td style="padding: 4px;">Объем без НДС:</td>
+            <td style="padding: 4px;">
+                <input type="number" name="AmountWithoutVat" />
+            </td>
+        </tr>
 
-                <option value="Гос. Контракт">Гос. Контракт</option>
+        <tr>
+            <td style="padding: 4px;">Реквизиты документа:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="Props" />
+            </td>
+        </tr>
 
-                <option value="Договор">Договор</option>
+        <tr>
+            <td style="padding: 4px;">Тип исследования:</td>
+            <td style="padding: 4px;">
+                <select name="ResearchType" size="1">
+                    <option value="Прикладное">Прикладное</option>
+                    <option value="Фундаментальное">Фундаментальное</option>
+                    <option value="Разработка">Разработка</option>
+                    <option value="Поисковое">Поисковое</option>
+                    <option value="ОКР">ОКР</option>
+                </select>
+            </td>
+        </tr>
 
-                <option value="Контракт">Контракт</option>
+        <tr>
+            <td style="padding: 4px;">Область знания:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="Knowledge" />
+            </td>
+        </tr>
 
-                <option value="Хоз. договора">Хоз. договора</option>
+        <tr>
+            <td style="padding: 4px;">Статус:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="Status" />
+            </td>
+        </tr>
 
-            </select>
-        </div>
-    </div>
-
-
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Общий объем финансирования</label>
-        <div class="col-sm-10">
-            <input type="number" class="form-control" name="Amount"  />
-        </div>
-    </div>
-
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">НДС</label>
-        <div class="col-sm-10">
-            <input type="number" class="form-control" name="Vat"  />
-        </div>
-    </div>
-
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Объем без НДС</label>
-        <div class="col-sm-10">
-            <input type="number" class="form-control" name="AmountWithoutVat"  />
-        </div>
-    </div>
-
-
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Реквизиты документа</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name="Props" />
-        </div>
-    </div>
-
-
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Тип исследования</label>
-        <div class="col-sm-10">
-            <select name="ResearchType" size="1" class="form-control">
-                <option value="Прикладное">Прикладное</option>
-                <option value="Фундаментальное">Фундаментальное</option>
-                <option value="Разработка">Разработка</option>
-                <option value="Поисковое">Поисковое</option>
-                <option value="ОКР">ОКР</option>
-            </select>
-        </div>
-    </div>
-
-
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Область знания</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name="Knowledge"  />
-        </div>
-    </div>
+        <tr><br></tr>
 
 
-    <div class="mb-3 row">
-        <label class="col-sm-2 col-form-label">Статус</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name="Status"  />
-        </div>
-    </div>
+        <tr>
+            <td style="padding: 4px;">
+            </td>
 
-    <div class="mb-3 row">
-        <div class="col-sm-4 col-form-label"></div>
+            <td style="padding: 4px;">
+                <a class="btn btn-outline-dark" href="/Themes" style="text-align:center">Отмена</a>
+                <input type="submit" class="btn btn-outline-primary submitBtn" value="Добавить тему" />
+            </td>
 
-        <div class="col-sm-2">
-            <input type="button" class="btn btn-outline-dark" style="margin-left: 15px;" value="Отмена" onClick='location.href="/Themes"' />
-        </div>
+            <td style="padding: 4px;">
+            </td>
+        </tr>
 
-        <div class="col-sm-2">
-            <input class="btn btn-outline-primary" type="submit" value="Добавить тему" />            
-        </div>
-
-        <div class="col-sm-4 col-form-label"></div>
-    </div>
-
+    </table>
 
 </form>
+
