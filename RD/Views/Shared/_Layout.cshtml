@@ -17,50 +17,125 @@
             <div class="container-fluid" style="background-color: #3949AC;">
                 <div class="navbar-collapse collapse d-sm-inline-flex ">
 
-                    @*@if (User.Identity.Name == "admin"){*@
+                    @if (User.Identity.Name == "admin")
+                    {
 
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <h6><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" style="color: white;">RD</a></h6>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                                    aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                        </li>
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <h6><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" style="color: white;">RD</a></h6>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                            </li>
 
-                        <li class="nav-item">
-                            <h6><a class="nav-link" asp-area="" asp-controller="Users" asp-action="Index" style="color: white;">Пользователи</a></h6>
-                        </li>
+                            <li class="nav-item">
+                                <h6><a class="nav-link" asp-area="" asp-controller="Users" asp-action="Index" style="color: white;">Пользователи</a></h6>
+                            </li>
 
-                        <li class="nav-item" id="themes-menu">
-                            <h6><a class="nav-link" asp-area="" asp-controller="Themes" asp-action="Index" style="color: white;">Темы</a></h6>
-                        </li>
+                            <li class="nav-item" id="themes-menu">
+                                <h6><a class="nav-link" asp-area="" asp-controller="Themes" asp-action="Index" style="color: white;">Темы</a></h6>
+                            </li>
 
-                        <li class="nav-item">
-                            <h6><a class="nav-link" asp-area="" asp-controller="Customers" asp-action="Index" style="color: white;">Заказчики</a></h6>
-                        </li>
+                            <li class="nav-item">
+                                <h6><a class="nav-link" asp-area="" asp-controller="Customers" asp-action="Index" style="color: white;">Заказчики</a></h6>
+                            </li>
 
-                        <li class="nav-item">
-                            <h6><a class="nav-link" asp-area="" asp-controller="Counterparties" asp-action="Index" style="color: white;">Контрагенты</a></h6>
-                        </li>
-                    </ul>
+                            <li class="nav-item">
+                                <h6><a class="nav-link" asp-area="" asp-controller="Counterparties" asp-action="Index" style="color: white;">Контрагенты</a></h6>
+                            </li>
+                        </ul>
 
-                    <ul class="navbar-nav navbar-right flex-grow-1">
+                        <ul class="navbar-nav navbar-right flex-grow-1">
 
-                        <li class="dropdown nav-item" style="margin-left: auto; padding-right: 90px;">
-                            <a href="#" class="dropdown-toggle nav-link" id="menu-login" data-toggle="dropdown" style="color:white">Вход<b class="caret"></b></a>
-                            @*<a href="#" class="dropdown-toggle nav-link " data-toggle="dropdown" style="color:white"><img src="~/images/user2.png" width="20%" alt="Profile"><b class="caret"></b></a>*@
-                            <ul class="dropdown-menu">
-                                <li><h6><a class="nav-link" id="profile" asp-area="" asp-controller="Profile" asp-action="Index" style="color: #343a40;">Профиль</a></h6></li>
-                                <li><h6><a class="nav-link" id="login-link"  asp-area="" asp-controller="Authentication" asp-action="Index" style="color: #343a40;">Вход</a></h6></li>
-                                <li><h6><a class="nav-link" id="register-menu" asp-area="" asp-controller="Authentication" asp-action="RegisterPage" style="color: #343a40;">Регистрация</a></h6></li>
-                                <li><h6><a class="nav-link" id="logout-menu" asp-area="" asp-controller="Authentication" asp-action="Logout" style="color: #343a40;">Выйти</a></h6></li>
-                            </ul>
-                        </li>
-                    </ul>
+                            <li class="dropdown nav-item" style="margin-left: auto; padding-right: 90px;">
+                                <a href="#" class="dropdown-toggle nav-link" id="menu-login" data-toggle="dropdown" style="color:white">Вход<b class="caret"></b></a>
+                                @*<a href="#" class="dropdown-toggle nav-link " data-toggle="dropdown" style="color:white"><img src="~/images/user2.png" width="20%" alt="Profile"><b class="caret"></b></a>*@
+                                <ul class="dropdown-menu">
+                                    <li><h6><a class="nav-link" id="profile" asp-area="" asp-controller="Profile" asp-action="Index" style="color: #343a40;">Профиль</a></h6></li>
+                                    <li><h6><a class="nav-link" id="login-link" asp-area="" asp-controller="Authentication" asp-action="Index" style="color: #343a40;">Вход</a></h6></li>
+                                    <li><h6><a class="nav-link" id="register-menu" asp-area="" asp-controller="Authentication" asp-action="RegisterPage" style="color: #343a40;">Регистрация</a></h6></li>
+                                    <li><h6><a class="nav-link" id="logout-menu" asp-area="" asp-controller="Authentication" asp-action="Logout" style="color: #343a40;">Выйти</a></h6></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    }
+
+                    else if (User.Identity.Name != "" && User.Identity.Name != null)
+                    {
+
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <h6><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" style="color: white;">RD</a></h6>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                            </li>
+
+                            <li class="nav-item" id="themes-menu">
+                                <h6><a class="nav-link" asp-area="" asp-controller="Themes" asp-action="Index" style="color: white;">Темы</a></h6>
+                            </li>
+
+                            <li class="nav-item">
+                                <h6><a class="nav-link" asp-area="" asp-controller="Customers" asp-action="Index" style="color: white;">Заказчики</a></h6>
+                            </li>
+
+                            <li class="nav-item">
+                                <h6><a class="nav-link" asp-area="" asp-controller="Counterparties" asp-action="Index" style="color: white;">Контрагенты</a></h6>
+                            </li>
+                        </ul>
+
+                        <ul class="navbar-nav navbar-right flex-grow-1">
+
+                            <li class="dropdown nav-item" style="margin-left: auto; padding-right: 90px;">
+                                <a href="#" class="dropdown-toggle nav-link" id="menu-login" data-toggle="dropdown" style="color:white">Вход<b class="caret"></b></a>
+                                @*<a href="#" class="dropdown-toggle nav-link " data-toggle="dropdown" style="color:white"><img src="~/images/user2.png" width="20%" alt="Profile"><b class="caret"></b></a>*@
+                                <ul class="dropdown-menu">
+                                    <li><h6><a class="nav-link" id="profile" asp-area="" asp-controller="Profile" asp-action="Index" style="color: #343a40;">Профиль</a></h6></li>
+                                    <li><h6><a class="nav-link" id="login-link" asp-area="" asp-controller="Authentication" asp-action="Index" style="color: #343a40;">Вход</a></h6></li>
+                                    <li><h6><a class="nav-link" id="register-menu" asp-area="" asp-controller="Authentication" asp-action="RegisterPage" style="color: #343a40;">Регистрация</a></h6></li>
+                                    <li><h6><a class="nav-link" id="logout-menu" asp-area="" asp-controller="Authentication" asp-action="Logout" style="color: #343a40;">Выйти</a></h6></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    }
+
+                    else
+                    {
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <h6><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" style="color: white;">RD</a></h6>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                            </li>
+                        </ul>
+
+                        <ul class="navbar-nav navbar-right flex-grow-1">
+
+                            <li class="dropdown nav-item" style="margin-left: auto; padding-right: 90px;">
+                                <a href="#" class="dropdown-toggle nav-link" id="menu-login" data-toggle="dropdown" style="color:white">Вход<b class="caret"></b></a>
+                                @*<a href="#" class="dropdown-toggle nav-link " data-toggle="dropdown" style="color:white"><img src="~/images/user2.png" width="20%" alt="Profile"><b class="caret"></b></a>*@
+                                <ul class="dropdown-menu">
+                                    <li><h6><a class="nav-link" id="profile" asp-area="" asp-controller="Profile" asp-action="Index" style="color: #343a40;">Профиль</a></h6></li>
+                                    <li><h6><a class="nav-link" id="login-link" asp-area="" asp-controller="Authentication" asp-action="Index" style="color: #343a40;">Вход</a></h6></li>
+                                    <li><h6><a class="nav-link" id="register-menu" asp-area="" asp-controller="Authentication" asp-action="RegisterPage" style="color: #343a40;">Регистрация</a></h6></li>
+                                    <li><h6><a class="nav-link" id="logout-menu" asp-area="" asp-controller="Authentication" asp-action="Logout" style="color: #343a40;">Выйти</a></h6></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    }
 
                 </div>
             </div>
+
+            </div>
+
 
             <!--<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
 
@@ -98,7 +173,7 @@
 
                 </div>
             </nav>-->
-            </div>
+
 
     </header>
 
@@ -132,9 +207,9 @@
                 document.getElementById("menu-login").innerText = "Меню";
 
                 // Вход
-                document.getElementById("login-link").style.display = "none"; 
+                document.getElementById("login-link").style.display = "none";
 
-                 // Выход
+                // Выход
                 document.getElementById("logout-menu").style.display = "block";
 
                 // Регистрация
