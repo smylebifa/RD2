@@ -32,6 +32,11 @@ namespace RD.Controllers
             return View();
         }
 
+        //public IActionResult Load(string FileName)
+        //{
+        //    return Ok;
+        //}
+
         //[HttpPost]
         //public async Task<IActionResult> Files(IFormFile uploadedFile)
         //{

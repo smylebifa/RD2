@@ -21,33 +21,35 @@
     <tbody>
         @foreach (var file in @ViewBag.Files)
         {
-            <tr>
-                <td>@file.Filename.@file.EntityType</td>
-                <td>@Html.ActionLink("Загрузить", "File", new { FileName = file.Filename })</td>
+        <tr>
+            <td>@file.Filename.@file.EntityType</td>
+            @*            <td>@Html.ActionLink("Load", "Files", new { FileName = file.Filename })</td>*@
+            <td><a href="#">Загрузить</a></td>
+            
 
-                @*<td>
-                    <a href="file_name.jpg" download=@file.Filename.@file.EntityType>
-                        Загрузить
-                    </a>*@
+            @*<td>
+        <a href="file_name.jpg" download=@file.Filename.@file.EntityType>
+            Загрузить
+        </a>*@
 
-                    @*<button class="btn btn-primary" type="submit" asp-route-file="@file.Filename"
-                            asp-route-mode="virtual" style="background: rgb(0,0,255);">
-                        Virtual
-                    </button>
-                    <button class="btn btn-primary" type="submit" asp-route-file="@file.Filename"
-                            asp-route-mode="stream" style="background: rgb(0,0,255);">
-                        Stream
-                    </button>
-                    <button class="btn btn-primary" type="submit" asp-route-file="@file.Filename"
-                            asp-route-mode="bytes" style="background: rgb(0,0,255);">
-                        Bytes
-                    </button>*@
+            @*<button class="btn btn-primary" type="submit" asp-route-file="@file.Filename"
+                asp-route-mode="virtual" style="background: rgb(0,0,255);">
+            Virtual
+        </button>
+        <button class="btn btn-primary" type="submit" asp-route-file="@file.Filename"
+                asp-route-mode="stream" style="background: rgb(0,0,255);">
+            Stream
+        </button>
+        <button class="btn btn-primary" type="submit" asp-route-file="@file.Filename"
+                asp-route-mode="bytes" style="background: rgb(0,0,255);">
+            Bytes
+        </button>*@
 
-                
-                @*</td>*@
 
-                <td><a onclick="deleteFile('@file.Id')" href="#"> Удалить </a></td>
-            </tr>
+            @*</td>*@
+
+            <td><a onclick="deleteFile('@file.Id')" href="#"> Удалить </a></td>
+        </tr>
         }
     </tbody>
 </table>

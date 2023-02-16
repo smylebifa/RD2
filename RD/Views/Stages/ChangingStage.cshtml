@@ -1,0 +1,122 @@
+﻿@model RD.Models.Stage;
+
+@{
+    ViewBag.Title = "Редактирование этапа";
+    Layout = "_Layout";
+
+    string WorkStart = "";
+    string WorkEnd = "";
+
+}
+
+@{
+    @if (ViewBag.CurrentStage.WorkStart != null)
+    {
+        WorkStart = @ViewBag.CurrentStage.WorkStart.ToString("yyyy-MM-dd");
+    }
+    else
+    {
+        WorkStart = @ViewBag.CurrentStage.WorkStart;
+    }
+
+    @if (ViewBag.CurrentStage.WorkEnd != null)
+    {
+        WorkEnd = @ViewBag.CurrentStage.WorkEnd.ToString("yyyy-MM-dd");
+    }
+    else
+    {
+        WorkEnd = @ViewBag.CurrentStage.WorkEnd;
+    }
+}
+
+
+<h3>Изменение этапа</h3>
+
+@using (Html.BeginForm("Edit", "Stages", FormMethod.Post))
+{
+    <table>
+
+        @Html.HiddenFor(m => m.Id)
+
+
+        <tr>
+            <td style="padding: 4px;">Срок - начало:</td>
+            <td style="padding: 4px;">
+                <input type="date" id="WorkStart" name="WorkStart" value="@WorkStart" min="1950-01-01" />
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">Срок - конец:</td>
+            <td style="padding: 4px;">
+                <input type="date" id="WorkEnd" name="WorkEnd" min="1950-01-01" value="@WorkEnd" />
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">Сумма этапа:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="Amount" value="@ViewBag.CurrentStage.Amount" />
+            </td>
+        </tr>
+
+
+        <tr>
+            <td style="padding: 4px;">Акт о завершении:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="CompletionAct" value="@ViewBag.CurrentStage.CompletionAct" />
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">Статус:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="Status" value="@ViewBag.CurrentStage.Status" />
+            </td>
+        </tr>
+
+
+
+
+        @*@Html.DropDownListFor(model => model.TeamId, ViewBag.Teams as SelectList)*@
+
+
+        @*<td style="padding: 4px;">
+                <select name="DocType" size="1">
+                    <option @{if (el= =0) { @("selected") } } value="Гос. Контракт">Гос. Контракт</option>
+                    <option @{if (el= =1) "selected" } value="Договор">Договор</option>
+                    <option @{if (el= =2) "selected" } value="Контракт">Контракт</option>
+                    <option @{if (el= =3) "selected" } value="Хоз. договора">Хоз. договора</option>
+                </select>
+            </td>*@
+
+
+
+
+
+        @*@(ViewBag.Trls.Trl1_1 && ViewBag.Trls.Trl1_2 && ViewBag.Trls.Trl1_3 && ViewBag.Trls.Trl1_4 && ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "")
+
+            <td style="padding: 4px;">
+                    @Html.TextBoxFor(m => m.ResearchType)
+                </td>*@
+
+        <tr><br></tr>
+
+        <tr>
+            <td style="padding: 4px;">
+            </td>
+
+            <td style="padding: 4px;">
+                <a class="btn btn-outline-dark" asp-route-themeName="@ViewBag.ThemeName" asp-controller="Stages" asp-action="Index" style="text-align:center">Отмена</a>
+                <input type="submit" class="btn btn-outline-primary submitBtn" value="Изменить этап" />
+            </td>
+
+            <td style="padding: 4px;">
+            </td>
+        </tr>
+
+
+    </table>
+
+}
+

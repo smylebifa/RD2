@@ -440,3 +440,4 @@ C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Users\C
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\TRLs\TRLPage1.cshtml.g.cs
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\TRLs\TRLPage2.cshtml.g.cs
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\TRLs\TRLPage3.cshtml.g.cs
+C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Stages\ChangingStage.cshtml.g.cs

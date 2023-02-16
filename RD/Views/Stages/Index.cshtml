@@ -1,12 +1,12 @@
 ﻿@model RD.Models.Stage;
 
 @{
-        ViewBag.Title = ViewBag.ThemeName;
-        Layout = "_Layout";
+    ViewBag.Title = ViewBag.ThemeName;
+    Layout = "_Layout";
 
-        List<string> stageLevel1 = new List<string> { "Разработка ТЗ НИР", "Выбор направления исследования", "Теоретические и экспериментальные исследования","Обобщение и оценка результатов исследований", "Приемка научно-исследовательской работы" };
+    List<string> stageLevel1 = new List<string> { "Разработка ТЗ НИР", "Выбор направления исследования", "Теоретические и экспериментальные исследования", "Обобщение и оценка результатов исследований", "Приемка научно-исследовательской работы" };
 
-        var stageLevel2 = new string[][] {
+    var stageLevel2 = new string[][] {
 
         new string[] {},
 
@@ -42,12 +42,12 @@
             "Составление и оформление отчета по ГОСТ 7.32-2001 Нормоконтроль отчета по ГОСТ 2.111-68  ",
             "Рассмотрение результатов проведенных НИР и приѐмка работы в целом. " }
 
-          
+
     };
 
-     List <string> ExpandFREDS = new List<string> {"expandFRED1", "expandFRED2", "expandFRED3" };
+    List<string> ExpandFREDS = new List<string> { "expandFRED1", "expandFRED2", "expandFRED3" };
 
-     List <string> ExpandSUBS = new List<string> {"expandSUB1", "expandSUB2", "expandSUB3" };
+    List<string> ExpandSUBS = new List<string> { "expandSUB1", "expandSUB2", "expandSUB3" };
 
 
 
@@ -67,8 +67,8 @@
 
     //var stageLevel2_3 = new string[][] {
 
-    //    new string[] { 
-    //        "Разработка рабочих гипотез, построение моделей объекта исследований, обоснование допущений." , 
+    //    new string[] {
+    //        "Разработка рабочих гипотез, построение моделей объекта исследований, обоснование допущений." ,
     //        "Выявление необходимости проведения экспериментов для подтверждения отдельных положений теоретических исследований для получения конкретных значений параметров (коэффициентов, необходимых для проведения расчетов)." ,
     //        "Разработка методики экспериментальных исследований, подготовка моделей (макетов экспериментальных образцов), а также испытательных стендов (установок).",
     //        "Определение номенклатур технической документации на макеты (модели, экспериментальные образцы) в соответствии с ГОСТ 2.102-68 и ее разработка.",
@@ -82,8 +82,8 @@
 
     //var stageLevel2_4 = new string[][] {
 
-    //    new string[] { 
-    //        "Обобщение результатов предыдущих этапов работ. Оценка полноты решения задач." , 
+    //    new string[] {
+    //        "Обобщение результатов предыдущих этапов работ. Оценка полноты решения задач." ,
     //        "Проведение дополнительных исследований, в том числе патентных." ,
     //        "Метрологическая проработка. Составление акта метрологической проработки.",
     //        "Разработка рекомендаций по использованию результатов проведенных НИР.",
@@ -93,207 +93,261 @@
     //};
 }
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm">
-                <h3 style="color: #343a40;">Тема - @ViewBag.ThemeName</h3>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm">
-                @* <h4> <a class="nav-link text-primary" asp-controller="Stage" asp-action="Stage">Добавить этап</a> </h4>*@
-                <h5> <a class="nav-link" asp-route-themeName="@ViewBag.ThemeName" asp-controller="Stages" asp-action="Stage">Добавить этап</a> </h5>
-            </div>
-
-
-            <div class="col-sm">
-                <h5> <a class="nav-link" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="AnnualFinancings" asp-action="Index">Финансирование</a> </h5>
-            </div>
-
-            @*<div class="col-sm">
-            <h5> <a class="nav-link" href="#">Договоры</a> </h5>
-        </div>*@
-
-            <div class="col-sm">
-                <h5> <a class="nav-link" asp-controller="Files" asp-action="Index">Файлы</a> </h5>
-            </div>
-
-            <div class="col-sm">
-                <h5> <a class="nav-link" asp-controller="Contracts" asp-action="Index">Договоры</a></h5>
-            </div>
-
-            <div class="col-sm">
-                <h5> <a class="nav-link" asp-area="" asp-controller="RIAs" asp-action="Index">РИД</a> </h5>
-            </div>
-
-            <div class="col-sm">
-                <h5> <a class="nav-link" asp-area="" asp-controller="Products" asp-action="Index">Продукты</a> </h5>
-            </div>
-
-            <div class="col-sm">
-                <h5> <a class="nav-link" asp-area="" asp-controller="ScientificDocs" asp-action="Index">Научно-техническая документация</a> </h5>
-            </div>
-
-            <div class="col-sm">
-                <h5> <a class="nav-link" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="TRLs" asp-action="Index">TRL</a> </h5>
-            </div>
-            
-
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm">
+            <h3 style="color: #343a40;">Тема - @ViewBag.ThemeName</h3>
         </div>
     </div>
 
-        <script>
-            $(document).ready(function () {
-                $('[data-toggle="toggle"]').change(function () {
-                    $(this).parents().next('.hide').toggle();
-                });
-            });
+    <div class="row">
 
-            $(document).ready(function () {
-                $(".expandFRED1").click(function () {
-                    $(".expandSUB1").toggle();
-                });
-                $(".expandFRED2").click(function () {
-                    $(".expandSUB2").toggle();
-                });
-                 $(".expandFRED3").click(function () {
-                    $(".expandSUB3").toggle();
-                });
-                $(".expandVALS").click(function () {
-                    $(".expandCAT1").toggle();
-                });
-            })
-        </script>
+        @*<div class="col-sm">*@
+        @*<h5> <a class="nav-link" asp-route-themeName="@ViewBag.ThemeName" asp-controller="Stages" asp-action="Stage">Добавить этап</a> </h5>
+            </div>*@
 
-        <style>
-            .label tr td label {
-                display: block;
-            }
+        @* <h4> <a class="nav-link text-primary" asp-controller="Stage" asp-action="Stage">Добавить этап</a> </h4>*@
 
-            [data-toggle='toggle'] {
-                display: none;
-            }
 
-            .expandSUB1 {
-                display: none;
-            }
 
-            .expandSUB2 {
-                display: none;
-            }
 
-            .expandSUB3 {
-                display: none;
-            }
+        <div class="col-sm">
+            <h5> <a class="nav-link" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="AnnualFinancings" asp-action="Index">Финансирование</a> </h5>
+        </div>
 
-            . {
-                display: none;
-            }
+        @*<div class="col-sm">
+                <h5> <a class="nav-link" href="#">Договоры</a> </h5>
+            </div>*@
 
-                .expandCAT1 {
-                    display: none;
-                }
+        <div class="col-sm">
+            <h5> <a class="nav-link" asp-controller="Files" asp-action="Index">Файлы</a> </h5>
+        </div>
 
-                .expandFRED1, .expandFRED2, .expandFRED3 {
+        <div class="col-sm">
+            <h5> <a class="nav-link" asp-controller="Contracts" asp-action="Index">Договоры</a></h5>
+        </div>
+
+        <div class="col-sm">
+            <h5> <a class="nav-link" asp-area="" asp-controller="RIAs" asp-action="Index">РИД</a> </h5>
+        </div>
+
+        <div class="col-sm">
+            <h5> <a class="nav-link" asp-area="" asp-controller="Products" asp-action="Index">Продукты</a> </h5>
+        </div>
+
+        <div class="col-sm">
+            <h5> <a class="nav-link" asp-area="" asp-controller="ScientificDocs" asp-action="Index">Научно-техническая документация</a> </h5>
+        </div>
+
+        <div class="col-sm">
+            <h5> <a class="nav-link" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="TRLs" asp-action="Index">TRL</a> </h5>
+        </div>
+
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="toggle"]').change(function () {
+            $(this).parents().next('.hide').toggle();
+        });
+    });
+
+    $(document).ready(function () {
+        $(".expandFRED1").click(function () {
+            $(".expandSUB1").toggle();
+        });
+        $(".expandFRED2").click(function () {
+            $(".expandSUB2").toggle();
+        });
+        $(".expandFRED3").click(function () {
+            $(".expandSUB3").toggle();
+        });
+        $(".expandVALS").click(function () {
+            $(".expandCAT1").toggle();
+        });
+    })
+</script>
+
+<style>
+    .label tr td label {
+        display: block;
+    }
+
+    [data-toggle='toggle'] {
+        display: none;
+    }
+
+    .expandSUB1 {
+        display: none;
+    }
+
+    .expandSUB2 {
+        display: none;
+    }
+
+    .expandSUB3 {
+        display: none;
+    }
+
+    . {
+        display: none;
+    }
+
+        .expandCAT1 {
+            display: none;
+        }
+
+        .expandFRED1, .expandFRED2, .expandFRED3 {
             cursor: pointer;
         }
-        </style>
+</style>
 
 
-        <div style="overflow-x:auto;">
-            <table class="table table-hover table-bordered" style="text-align: center; ">
+<div style="overflow-x:auto;">
+    <table class="table table-hover table-bordered" style="text-align: center; ">
 
-                <thead>
+        <thead>
+            <tr>
+                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;"></th>
+                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">№ этапа</th>
+                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Этап</th>
+                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Срок выполнения - начало</th>
+                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Срок выполнения - конец</th>
+                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Сумма этапа</th>
+                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Акт о завершении</th>
+                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Статус</th>
+            </tr>
+        </thead>
+
+
+        @{int i = 0; int j = 0; int iView = 0; int jView = 0;}
+        @foreach (var stage in @ViewBag.Stages)
+        {
+            if (i == 0)
+            {
+                <tbody>
                     <tr>
-                        <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;"></th>
-                        <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">№ этапа</th>
-                        <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Этап</th>
-                        <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Срок выполнения - начало</th>
-                        <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Срок выполнения - конец</th>
-                        <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Сумма этапа</th>
-                        <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Акт о завершении</th>
-                        <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Статус</th>
-                    </tr>
-                </thead>
+                        <td>@Html.ActionLink("Изменить этап", "ChangingStage", new { id = stage.Id })</td>
+                        <td>@stage.NumStage</td>
+                        <td>@stageLevel1[i]</td>
+                        @*<td>@stage.WorkStart</td>
+                            <td>@stage.WorkEnd</td>*@
 
-
-                @{int i = 0; int j = 0; int iView = 0; int jView = 0;}
-                @foreach (var stage in @ViewBag.Stages)
-                {
-                    if (i == 0)
-                    {
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td>@stage.NumStage</td>
-                                <td>@stageLevel1[i]</td>
-                                <td>@stage.WorkStart</td>
-                                <td>@stage.WorkEnd</td>
-                                <td>@stage.Amount</td>
-                                <td>@stage.CompletionAct</td>
-                                <td>@stage.Status</td>
-
-
-                            </tr>
-                        </tbody>
-                                                
-                    }
-
-                    else
-                    {
-                        <tbody style="background-color: #ececec;">
-                            <tr>
-                                <td></td>
-                                <td>@stage.NumStage</td>
-                                <td class='@ExpandFREDS[i - 1]'>@stageLevel1[i] ▼</td>
-                                <td>@stage.WorkStart</td>
-                                <td>@stage.WorkEnd</td>
-                                <td>@stage.Amount</td>
-                                <td>@stage.CompletionAct</td>
-                                <td>@stage.Status</td>
-
-
-                            </tr>
-                        </tbody>
-
-                        j = 0;
-                       
-                        iView = i + 1;
-
-                        @foreach (var stage2 in stageLevel2[i])
+                        @if (@stage.WorkStart != null)
                         {
-                            jView = j + 1;
-
-                            <tbody class="hide">
-                                <tr>
-                                    <td class='@ExpandSUBS[i - 1] expandVALS'></td>
-                                    <td class='@ExpandSUBS[i - 1]'>@iView.@jView </td>
-                                    <td class='@ExpandSUBS[i - 1]' align='right'>
-                                        @stage2
-                                    </td>
-                                    <td class='@ExpandSUBS[i - 1]'></td>
-                                    <td class='@ExpandSUBS[i - 1]' align='right'></td>
-                                    <td class='@ExpandSUBS[i - 1]' align='right'></td>
-                                    <td class='@ExpandSUBS[i - 1]' align='right'></td>
-                                    <td class='@ExpandSUBS[i - 1]' align='right'></td>
-                                </tr>
-
-                            </tbody>
-
-                            j++;
-
+                            if (@stage.WorkEnd != null)
+                            {
+                                <td>@stage.WorkStart.ToString("dd/MM/yyyy")</td>
+                                <td>@stage.WorkEnd.ToString("dd/MM/yyyy")</td>
+                            }
+                            else
+                            {
+                                <td>@stage.WorkStart.ToString("dd/MM/yyyy")</td>
+                                <td>@stage.WorkEnd</td>
+                            }
+                        }
+                        else if (@stage.WorkEnd != null)
+                        {
+                            <td>@stage.WorkStart</td>
+                            <td>@stage.WorkEnd.ToString("dd/MM/yyyy")</td>
+                        }
+                        else
+                        {
+                            <td>@stage.WorkStart</td>
+                            <td>@stage.WorkEnd</td>
                         }
 
-                       
-                    }
+                        <td>@stage.Amount</td>
+                        <td>@stage.CompletionAct</td>
+                        <td>@stage.Status</td>
 
-                     i++;
+
+                    </tr>
+                </tbody>
+
+            }
+
+            else
+            {
+                <tbody style="background-color: #ececec;">
+                    <tr>
+                        <td>@Html.ActionLink("Изменить этап", "ChangingStage", new { id = stage.Id })</td>
+                        <td>@stage.NumStage</td>
+                        <td class='@ExpandFREDS[i - 1]'>@stageLevel1[i] ▼</td>
+                        @*<td>@stage.WorkStart</td>
+                            <td>@stage.WorkEnd</td>*@
+
+                        @if (@stage.WorkStart != null)
+                        {
+                            if (@stage.WorkEnd != null)
+                            {
+                                <td>@stage.WorkStart.ToString("dd/MM/yyyy")</td>
+                                <td>@stage.WorkEnd.ToString("dd/MM/yyyy")</td>
+                            }
+                            else
+                            {
+                                <td>@stage.WorkStart.ToString("dd/MM/yyyy")</td>
+                                <td>@stage.WorkEnd</td>
+                            }
+                        }
+                        else if (@stage.WorkEnd != null)
+                        {
+                            <td>@stage.WorkStart</td>
+                            <td>@stage.WorkEnd.ToString("dd/MM/yyyy")</td>
+                        }
+                        else
+                        {
+                            <td>@stage.WorkStart</td>
+                            <td>@stage.WorkEnd</td>
+                        }
+
+                        <td>@stage.Amount</td>
+                        <td>@stage.CompletionAct</td>
+                        <td>@stage.Status</td>
+
+
+                    </tr>
+                </tbody>
+
+                j = 0;
+
+                iView = i + 1;
+
+                @foreach (var stage2 in stageLevel2[i])
+                {
+                    jView = j + 1;
+
+                    <tbody class="hide">
+                        <tr>
+                            <td class='@ExpandSUBS[i - 1] expandVALS'></td>
+                            <td class='@ExpandSUBS[i - 1]'>@iView.@jView </td>
+                            <td class='@ExpandSUBS[i - 1]' align='right'>
+                                @stage2
+                            </td>
+                            <td class='@ExpandSUBS[i - 1]'></td>
+                            <td class='@ExpandSUBS[i - 1]' align='right'></td>
+                            <td class='@ExpandSUBS[i - 1]' align='right'></td>
+                            <td class='@ExpandSUBS[i - 1]' align='right'></td>
+                            <td class='@ExpandSUBS[i - 1]' align='right'></td>
+                        </tr>
+
+                    </tbody>
+
+                    j++;
 
                 }
 
 
+            }
+
+            i++;
+
+        }
 
 
-            </table>
-        </div>
+
+
+    </table>
+</div>

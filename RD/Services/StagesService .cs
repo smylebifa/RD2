@@ -46,7 +46,28 @@ namespace RD.Services
                 throw new ArgumentException("This stage already exists.");
 
             Stages.Add(stage);
-        }       
+        }
+
+        public void UpdateStage(Stage stage)
+        {
+            //if (_dbContext.Stages.Any(x => x.NumStage == stage.NumStage))
+            //    throw new ArgumentException("User with such name already exists.");
+
+            //_dbContext.Stages.Add(stage);
+
+            //_dbContext.SaveChanges();
+
+
+            var existing = Stages.FirstOrDefault(x => x.Id == stage.Id);
+            if (existing == null)
+                return;
+
+            existing.WorkStart = stage.WorkStart;
+            existing.WorkEnd = stage.WorkEnd;
+            existing.Amount = stage.Amount;
+            existing.CompletionAct = stage.CompletionAct;
+            existing.Status = stage.Status;
+        }
 
     }
 }

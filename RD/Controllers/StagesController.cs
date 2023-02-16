@@ -41,6 +41,21 @@ namespace RD.Controllers
             return View();
         }
 
+        [HttpGet("/edit_stage/{id}")]
+        public IActionResult ChangingStage(int id)
+        {
+            var stage = _stageService.GetStages().FirstOrDefault(x => x.Id == id);
+            ViewBag.CurrentStage = stage;
+            return View(stage);
+        }
+
+        [HttpPost("/edit_stage")]
+        public IActionResult Edit(Stage stage)
+        {
+            _stageService.UpdateStage(stage);
+            return RedirectToAction(nameof(Index));
+        }
+
         [HttpGet("/add_stage")]
         public IActionResult Stage()
         {
