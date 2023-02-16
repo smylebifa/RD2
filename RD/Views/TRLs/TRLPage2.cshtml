@@ -77,37 +77,37 @@
         </thead>
 
         @*@foreach (var theme in @ViewBag.Themes)
-        {
-            <tr>
-                <td><a class="nav-link text-dark" asp-area="" asp-controller="Stage" asp-action="Index">Этапы</a></td>
-                <td>@theme.Number</td>
-                <td>@theme.Name</td>
-                <td>@theme.FioManager</td>
-                <td>@theme.ExecutiveDepartment</td>
-                <td>@theme.WorkStart</td>
-                <td>@theme.WorkEnd</td>
-                <td>@theme.Amount</td>
-                <td>@theme.Vat</td>
-                <td>@theme.AmountWithoutVat</td>
-                <td>@theme.Decree</td>
-                <td>@theme.DocType</td>
-                <td>@theme.Props</td>
-                <td>@theme.ResearchType</td>
-                <td>@theme.Knowledge</td>
-                <td>@theme.Status</td>
+            {
+                <tr>
+                    <td><a class="nav-link text-dark" asp-area="" asp-controller="Stage" asp-action="Index">Этапы</a></td>
+                    <td>@theme.Number</td>
+                    <td>@theme.Name</td>
+                    <td>@theme.FioManager</td>
+                    <td>@theme.ExecutiveDepartment</td>
+                    <td>@theme.WorkStart</td>
+                    <td>@theme.WorkEnd</td>
+                    <td>@theme.Amount</td>
+                    <td>@theme.Vat</td>
+                    <td>@theme.AmountWithoutVat</td>
+                    <td>@theme.Decree</td>
+                    <td>@theme.DocType</td>
+                    <td>@theme.Props</td>
+                    <td>@theme.ResearchType</td>
+                    <td>@theme.Knowledge</td>
+                    <td>@theme.Status</td>
 
-                <td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
-                <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>
+                    <td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
+                    <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>
 
-            </tr>
-        }*@
+                </tr>
+            }*@
 
 
-        <tbody >
+        <tbody class="labels" style="background-color: #ececec;">
             <tr>
                 <td></td>
                 <td>1</td>
-                <td>Сформулирована фундаментальная концепция технологии и обоснование ее полезности. </td>
+                <td class='expandFRED'>Сформулирована фундаментальная концепция технологии и обоснование ее полезности.  ▼ </td>
                 @*<td><input type="checkbox" id="trl1") /></td>*@
                 <td>
                     <input type="checkbox" id="trl1"
@@ -116,6 +116,61 @@
             </tr>
 
         </tbody>
+
+        <tbody class="hide">
+            <tr>
+                <td class='expandSUB1 expandVALS'></td>
+                <td class='expandSUB1'>2.1</td>
+                <td class='expandSUB1' align='right'>
+                    Существует концепция (идея), которая может быть реализована в разрабатываемом программном обеспечении (ПО)
+                </td>
+                <td class='expandSUB1'>
+                    <input type="checkbox" id="trl1_1"
+                           @(ViewBag.Trls.Trl1_1 ? "checked=\"checked\"" : "")
+                           ) />
+                </td>
+            </tr>
+
+            <tr>
+                <td class='expandSUB1 expandVALS'></td>
+                <td class='expandSUB1'>2.2</td>
+                <td class='expandSUB1' align='right'>
+                    Известно в общих чертах, что должно делать ПО.
+                </td>
+                <td class='expandSUB1'>
+                    <input type="checkbox" id="trl1_2"
+                           @(ViewBag.Trls.Trl1_2 ? "checked=\"checked\"" : "")
+                           ) />
+                </td>
+            </tr>
+            <tr>
+                <td class='expandSUB1 expandVALS'></td>
+                <td class='expandSUB1'>2.3</td>
+                <td class='expandSUB1' align='right'>
+                    Подготовлены математические формулировки концепций (идей), которые могут быть реализованы в разрабатываемом ПО
+                </td>
+                <td class='expandSUB1'>
+                    <input type="checkbox" id="trl1_3"
+                           @(ViewBag.Trls.Trl1_3 ? "checked=\"checked\"" : "") />
+                </td>
+            </tr>
+            <tr>
+                <td class='expandSUB1 expandVALS'></td>
+                <td class='expandSUB1'>2.3</td>
+                <td class='expandSUB1' align='right'>
+                    Имеется идея, которая содержит базовые принципы возможного алгоритма разрабатываемого ПО
+                </td>
+                <td class='expandSUB1'>
+                    <input type="checkbox" id="trl1_3"
+                           @(ViewBag.Trls.Trl1_3 ? "checked=\"checked\"" : "") />
+                </td>
+            </tr>
+
+        </tbody>
+
+
+
+
 
 
 
@@ -143,7 +198,7 @@
                 <td class='expandSUB1 expandVALS'></td>
                 <td class='expandSUB1'>2.1</td>
                 <td class='expandSUB1' align='right'>
-                    Определены (перечислены) базовые (основные) элементы технологии
+                    Выполнено частичное программирование для подтверждения базовых принципов разрабатываемого ПО
                 </td>
                 <td class='expandSUB1'>
                     <input type="checkbox" id="trl1_1"
@@ -156,7 +211,7 @@
                 <td class='expandSUB1 expandVALS'></td>
                 <td class='expandSUB1'>2.2</td>
                 <td class='expandSUB1' align='right'>
-                    Частично определены компоненты технологии и/или подсистемы разрабатываемой системы.
+                    Проведено тестирование разрабатываемого ПО на тестовом наборе данных.
                 </td>
                 <td class='expandSUB1'>
                     <input type="checkbox" id="trl1_2"
@@ -168,24 +223,14 @@
                 <td class='expandSUB1 expandVALS'></td>
                 <td class='expandSUB1'>2.3</td>
                 <td class='expandSUB1' align='right'>
-                    Сделаны предварительные оценки характеристик для каждого элемента системы/технологии.
+                    Известно, какое ПО и оборудование будут использованы в системе.
                 </td>
                 <td class='expandSUB1'>
                     <input type="checkbox" id="trl1_3"
                            @(ViewBag.Trls.Trl1_3 ? "checked=\"checked\"" : "") />
                 </td>
             </tr>
-            <tr>
-                <td class='expandSUB1 expandVALS'></td>
-                <td class='expandSUB1'>2.4</td>
-                <td class='expandSUB1' align='right'>
-                    Для проверки физических принципов технологии использованы только моделирование и симуляция (имитация).
-                </td>
-                <td class='expandSUB1'>
-                    <input type="checkbox" id="trl1_4"
-                           @(ViewBag.Trls.Trl1_4 ? "checked=\"checked\"" : "") />
-                </td>
-            </tr>
+
 
 
 
@@ -211,7 +256,7 @@
             <td class='expandSUB1 expandVALS'></td>
             <td class='expandSUB1'>3.1</td>
             <td class='expandSUB1' align='right'>
-                Аналитическими исследованиями подтверждены прогнозируемые возможности (характеристики) элементов технологий.
+                Аналитические исследования проверены для разрабатываемого ПО и выполняется разработка алгоритмов.
             </td>
             <td class='expandSUB1'>
                 <input type="checkbox" id="trl1_5"
@@ -223,7 +268,7 @@
             <td class='expandSUB1 expandVALS'></td>
             <td class='expandSUB1'>3.2</td>
             <td class='expandSUB1' align='right'>
-                Имеются, известны необходимые для разработки системы/технологии методы математического и/или компьютерного моделирования.
+                Определены общие схемы алгоритмов разрабатываемого ПО.
             </td>
             <td class='expandSUB1'>
                 <input type="checkbox" id="trl1_5"
@@ -235,7 +280,7 @@
             <td class='expandSUB1 expandVALS'></td>
             <td class='expandSUB1'>3.3</td>
             <td class='expandSUB1' align='right'>
-                Были определены и рассчитаны предварительные характеристики и габаритные размеры системы/технологии.
+                На этапе предварительного программирования разрабатываемого ПО проведена проверка, подтверждающая, что ПО может быть применимо.
             </td>
             <td class='expandSUB1'>
                 <input type="checkbox" id="trl1_5"
@@ -247,7 +292,7 @@
             <td class='expandSUB1 expandVALS'></td>
             <td class='expandSUB1'>3.4</td>
             <td class='expandSUB1' align='right'>
-                Моделированием и имитацией подтверждены прогнозируемые характеристики элементов технологии.
+                Проверено в работе разрабатываемое ПО с ограниченным набором фактических данных.
             </td>
             <td class='expandSUB1'>
                 <input type="checkbox" id="trl1_5"
@@ -259,7 +304,7 @@
             <td class='expandSUB1 expandVALS'></td>
             <td class='expandSUB1'>3.5</td>
             <td class='expandSUB1' align='right'>
-                Выполнено моделирование на стандартном лабораторном оборудовании для подтверждения физических принципов разрабатываемой технологии.
+                Выполнена проверка работы алгоритма на процессоре-имитаторе в лабораторной среде.
             </td>
             <td class='expandSUB1'>
                 <input type="checkbox" id="trl1_5"
@@ -271,7 +316,7 @@
             <td class='expandSUB1 expandVALS'></td>
             <td class='expandSUB1'>3.6</td>
             <td class='expandSUB1' align='right'>
-                Предсказанные возможности элементов технологии подтверждены лабораторными экспериментами.
+                Имеется информация о доступном на данный момент ПО, которое решает подобную задачу (100 % - инвентаризация всего ПО завершена).
             </td>
             <td class='expandSUB1'>
                 <input type="checkbox" id="trl1_5"
@@ -283,7 +328,7 @@
             <td class='expandSUB1 expandVALS'></td>
             <td class='expandSUB1'>3.7</td>
             <td class='expandSUB1' align='right'>
-                Определены/разработаны методы проектирования.
+                Проверено существующее ПО на возможность повторного применения для данной технологии.
             </td>
             <td class='expandSUB1'>
                 <input type="checkbox" id="trl1_5"
@@ -295,7 +340,7 @@
             <td class='expandSUB1 expandVALS'></td>
             <td class='expandSUB1'>3.8</td>
             <td class='expandSUB1' align='right'>
-                Выполнена оценка возможностей производства по изготовлению разрабатываемой системы (технологии).
+                Известны ограничения доступного в настоящее время ПО (анализ существующего ПО завершен).
             </td>
             <td class='expandSUB1'>
                 <input type="checkbox" id="trl1_5"
@@ -303,17 +348,7 @@
             </td>
         </tr>
 
-        <tr>
-            <td class='expandSUB1 expandVALS'></td>
-            <td class='expandSUB1'>3.9</td>
-            <td class='expandSUB1' align='right'>
-                Определены возможности изготовления основных компонентов макета системы.
-            </td>
-            <td class='expandSUB1'>
-                <input type="checkbox" id="trl1_5"
-                       @(ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "") />
-            </td>
-        </tr>
+
 
         </tbody>
 
@@ -354,7 +389,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>4.1</td>
                 <td class='expandSUB2' align='right'>
-                    Специальные и стандартные лабораторные компоненты заменяют компоненты разрабатываемой системы.
+                    Начинается разработка формальной архитектуры ПО системы.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_1" @(ViewBag.Trls.Trl2_1 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -362,7 +397,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>4.2</td>
                 <td class='expandSUB2' align='right'>
-                    Отдельные компоненты испытаны в лаборатории разработчика, а покупные компоненты системы испытаны в лаборатории поставщика (прошли приемо-сдаточные испытания).
+                    Результаты анализа дают детальную информацию о конкретных функциях, которые должно выполнять ПО.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_2" @(ViewBag.Trls.Trl2_2 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -370,7 +405,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>4.3</td>
                 <td class='expandSUB2' align='right'>
-                    Существуют макеты отдельных частей и компонентов разрабатываемой системы.
+                    Требования для каждой функции разрабатываемого ПО установлены.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_3" @(ViewBag.Trls.Trl2_3 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -378,7 +413,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>4.4</td>
                 <td class='expandSUB2' align='right'>
-                    Выполнено моделирование для имитации некоторых компонентов и интерфейсов между ними.
+                    Алгоритмы преобразованы в псевдокод.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_4" @(ViewBag.Trls.Trl2_4 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -386,7 +421,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>4.5</td>
                 <td class='expandSUB2' align='right'>
-                    Имеющиеся компоненты собраны в макет системы.
+                    Завершен анализ требований к данным и их форматам.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -394,7 +429,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>4.5</td>
                 <td class='expandSUB2' align='right'>
-                    Лабораторные эксперименты с имеющимися компонентами показывают, что они функционируют вместе в составе макета системы.
+                    Автономные модули соответствуют предварительному плану архитектуры системы.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -402,7 +437,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>4.5</td>
                 <td class='expandSUB2' align='right'>
-                    Проведено программно-аппаратное тестирование/компьютерное моделирование для установления совместимости компонентов.
+                    Проведена проверка дизайна системы в ходе формального процесса инспекции.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -410,7 +445,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>4.5</td>
                 <td class='expandSUB2' align='right'>
-                    Изготовлены масштабные прототипы технологии/системы.
+                    Имеется возможность оценить размер компьютерной программы в строках кода и/или в функциональных модулях (точках).
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -418,7 +453,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>4.5</td>
                 <td class='expandSUB2' align='right'>
-                    Определены методы проектирования для случаев, где могут быть проанализированы/смоделированы малые приложения.
+                    Проведены эксперименты с полномасштабными задачами (требованиями) и фактическими наборами данных.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -426,7 +461,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>4.5</td>
                 <td class='expandSUB2' align='right'>
-                    Определены ключевые производственные процессы.
+                    Продемонстрированы в лабораторной среде отдельные функции или модули ПО.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -434,19 +469,12 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>4.5</td>
                 <td class='expandSUB2' align='right'>
-                    Проведена оценка ключевых производственных процессов в лабораторных условиях.
+                    Проведена частичная интеграция ПО функций или модулей, демонстрирующая их совместную работу.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
             </tr>
-            <tr>
-                <td class='expandSUB2 expandVALS'></td>
-                <td class='expandSUB2'>4.5</td>
-                <td class='expandSUB2' align='right'>
-                    Определена стратегия реагирования при недостатках в технологичности/возможности изготовления.
-                </td>
-                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
-            </tr>
-            
+
+
 
         </tbody>
 
@@ -488,7 +516,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.1</td>
                 <td class='expandSUB2' align='right'>
-                    Доступен макет оборудования для организации производства технологии.
+                    Утверждена архитектура ПО системы.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_1" @(ViewBag.Trls.Trl2_1 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -496,7 +524,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.2</td>
                 <td class='expandSUB2' align='right'>
-                    Установлены цели по улучшению прибыльности производства.
+                    Внешние интерфейсы описаны в части источника, формата, структуры, содержания (контент) и метода поддержки.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_2" @(ViewBag.Trls.Trl2_2 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -504,7 +532,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.3</td>
                 <td class='expandSUB2' align='right'>
-                    В ходе изучения рынка и лабораторных экспериментов определены ключевые производственные процессы.
+                    Завершен анализ требований к внутреннему интерфейсу.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_3" @(ViewBag.Trls.Trl2_3 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -512,7 +540,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.4</td>
                 <td class='expandSUB2' align='right'>
-                    Значительные изменения в конструкции и технологии производства.
+                    Завершена разработка отдельных функций/модулей ПО.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_4" @(ViewBag.Trls.Trl2_4 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -520,7 +548,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.5</td>
                 <td class='expandSUB2' align='right'>
-                    Прототипы созданы.
+                    Функции интегрированы в программные модули.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -528,7 +556,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.5</td>
                 <td class='expandSUB2' align='right'>
-                    Оснастка и оборудование продемонстрированы в лабораторном окружении.
+                    Протестированы отдельные функции ПО для проверки их работоспособности.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -536,7 +564,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.5</td>
                 <td class='expandSUB2' align='right'>
-                    Заданы методы проектирования до точки, где определены наиболее серьезные проблемы.
+                    Проверены на ошибки отдельные модули и функции ПО.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -544,7 +572,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.5</td>
                 <td class='expandSUB2' align='right'>
-                    Форма, соответствие параметрам и функциональность исследуются совместно с разработчиками конечного пользователя (детальное обсуждение ТЗ на соответствие интересов с конечным пользователем системы).
+                    Продемонстрирована в лабораторных условиях интеграция модулей/функций ПО.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -552,7 +580,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.5</td>
                 <td class='expandSUB2' align='right'>
-                    Точность макетирования повышается от макета до экспериментальной модели.
+                    Выполнена и документально оформлена проверка всех модулей/компонентов как часть управления конфигурацией ПО.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -560,66 +588,11 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.5</td>
                 <td class='expandSUB2' align='right'>
-                    Некоторые компоненты специального назначения комбинируются с доступными лабораторными компонентами.
+                    Алгоритмы выполняются на процессоре с характеристиками, близкими к характеристикам целевого окружения.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
             </tr>
-            <tr>
-                <td class='expandSUB2 expandVALS'></td>
-                <td class='expandSUB2'>3.5</td>
-                <td class='expandSUB2' align='right'>
-                    На рассмотрение представлены структурные схемы и схемы соединений.
-                </td>
-                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
-            </tr>
-            <tr>
-                <td class='expandSUB2 expandVALS'></td>
-                <td class='expandSUB2'>3.5</td>
-                <td class='expandSUB2' align='right'>
-                    Выполнена начальная оценка потребностей сборки.
-                </td>
-                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
-            </tr>
-            <tr>
-                <td class='expandSUB2 expandVALS'></td>
-                <td class='expandSUB2'>3.5</td>
-                <td class='expandSUB2' align='right'>
-                    Завершены детальные проектные эскизы технологии.
-                </td>
-                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
-            </tr>
-            <tr>
-                <td class='expandSUB2 expandVALS'></td>
-                <td class='expandSUB2'>3.5</td>
-                <td class='expandSUB2' align='right'>
-                    Определены уровни "сигма", необходимые для достижения целевого уровня затрат (CAIV).
-                </td>
-                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
-            </tr>
-            <tr>
-                <td class='expandSUB2 expandVALS'></td>
-                <td class='expandSUB2'>3.5</td>
-                <td class='expandSUB2' align='right'>
-                    Производственные процессы (технология изготовления) рассмотрены с представителями производства.
-                </td>
-                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
-            </tr>
-            <tr>
-                <td class='expandSUB2 expandVALS'></td>
-                <td class='expandSUB2'>3.5</td>
-                <td class='expandSUB2' align='right'>
-                    Подготовлен черновик SEMP по предварительной разработке технических средств технологической системы (по технологической подготовке производства).
-                </td>
-                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
-            </tr>
-            <tr>
-                <td class='expandSUB2 expandVALS'></td>
-                <td class='expandSUB2'>3.5</td>
-                <td class='expandSUB2' align='right'>
-                    Выполнен анализ режимов отказов и их последствий (FMEA).
-                </td>
-                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
-            </tr>
+
 
         </tbody>
 
@@ -636,8 +609,8 @@
 
             <tr>
                 <td></td>
-                <td>3</td>
-                <td class='expandFRED2'>Определены целевые области применения технологии и ее критические элементы. ▼</td>
+                <td>6</td>
+                <td class='expandFRED2'>Изготовлен полнофункциональный образец на пилотной производственной линии, подтверждены рабочие характеристики в условиях, приближенных к реальности . ▼</td>
                 @*<td><input type="checkbox" id="trl2") /></td>*@
                 <td>
                     <input type="checkbox" id="trl2"
@@ -653,7 +626,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.1</td>
                 <td class='expandSUB2' align='right'>
-                    Концепция технологии/продукта и/или ее применения сформулированы.
+                    Завершена инвентаризация (формирование перечня) внешних устройств (интерфейсов).
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_1" @(ViewBag.Trls.Trl2_1 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -661,7 +634,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.2</td>
                 <td class='expandSUB2' align='right'>
-                    Сформулировано техническое предложение, может быть предложено практическое использование.
+                    Завершен анализ ограничений по времени (сроков исполнения).
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_2" @(ViewBag.Trls.Trl2_2 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -669,7 +642,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.3</td>
                 <td class='expandSUB2' align='right'>
-                    Аналитический обзор, проведенный в рамках патентного исследования, показал реализуемость и отсутствие аналогичных решений.
+                    Завершен анализ структур баз данных и интерфейсов.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_3" @(ViewBag.Trls.Trl2_3 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -677,7 +650,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.4</td>
                 <td class='expandSUB2' align='right'>
-                    Сформулировано предварительное техническое задание, определена архитектура (описание основных компонентов и их связей) продукта: платформа для решения, компоненты, связь и взаимодействие между ними, проведено моделирование продукта, разработан предварительный дизайн.
+                    Прототип ПО реализует большинство требуемых функциональных возможностей.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_4" @(ViewBag.Trls.Trl2_4 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -685,7 +658,47 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.5</td>
                 <td class='expandSUB2' align='right'>
-                    Проведен предварительный патентный анализ, анализ промышленных и технологических рисков.
+                    Алгоритмы частично интегрированы с существующим оборудованием/программными системами.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Испытаны отдельные модули для проверки (верификации) совместной работы их компонентов (функций).
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Разработанное ПО или прототип продемонстрированы в лабораторных условиях.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Разработана часть документации на ПО (например, руководство пользователя, текст программы и т.д.).
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Инициирована процедура верификации, валидации и сертификации (VV&A) разработанного ПО (ГОСТ Р ИСО/МЭК 12207).
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Выпущена "альфа"-версия ПО.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -702,8 +715,8 @@
 
             <tr>
                 <td></td>
-                <td>3</td>
-                <td class='expandFRED2'>Определены целевые области применения технологии и ее критические элементы. ▼</td>
+                <td>7</td>
+                <td class='expandFRED2'>Прототип системы продемонстрирован в составе системы в реальных условиях эксплуатации . ▼</td>
                 @*<td><input type="checkbox" id="trl2") /></td>*@
                 <td>
                     <input type="checkbox" id="trl2"
@@ -719,7 +732,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.1</td>
                 <td class='expandSUB2' align='right'>
-                    Концепция технологии/продукта и/или ее применения сформулированы.
+                    Алгоритмы работают на процессоре(ах) в эксплуатационной среде.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_1" @(ViewBag.Trls.Trl2_1 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -727,7 +740,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.2</td>
                 <td class='expandSUB2' align='right'>
-                    Сформулировано техническое предложение, может быть предложено практическое использование.
+                    Реализуется процедура "верификация, валидация и сертификация" (VV&A) по проверке соответствия ПО заданной спецификации.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_2" @(ViewBag.Trls.Trl2_2 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -735,7 +748,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.3</td>
                 <td class='expandSUB2' align='right'>
-                    Аналитический обзор, проведенный в рамках патентного исследования, показал реализуемость и отсутствие аналогичных решений.
+                    Устранено большинство программных ошибок.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_3" @(ViewBag.Trls.Trl2_3 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -743,18 +756,11 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.4</td>
                 <td class='expandSUB2' align='right'>
-                    Сформулировано предварительное техническое задание, определена архитектура (описание основных компонентов и их связей) продукта: платформа для решения, компоненты, связь и взаимодействие между ними, проведено моделирование продукта, разработан предварительный дизайн.
+                    Выпущена "бета"-версия ПО.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_4" @(ViewBag.Trls.Trl2_4 ? "checked=\"checked\"" : "") /></td>
             </tr>
-            <tr>
-                <td class='expandSUB2 expandVALS'></td>
-                <td class='expandSUB2'>3.5</td>
-                <td class='expandSUB2' align='right'>
-                    Проведен предварительный патентный анализ, анализ промышленных и технологических рисков.
-                </td>
-                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
-            </tr>
+
         </tbody>
 
 
@@ -769,8 +775,8 @@
 
             <tr>
                 <td></td>
-                <td>3</td>
-                <td class='expandFRED2'>Определены целевые области применения технологии и ее критические элементы. ▼</td>
+                <td>8</td>
+                <td class='expandFRED2'>Окончательное подтверждение работоспособности образца. Разработка. функционирующей реальной системы завершена . ▼</td>
                 @*<td><input type="checkbox" id="trl2") /></td>*@
                 <td>
                     <input type="checkbox" id="trl2"
@@ -786,7 +792,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.1</td>
                 <td class='expandSUB2' align='right'>
-                    Концепция технологии/продукта и/или ее применения сформулированы.
+                    Большая часть эксплуатационной документации программного обеспечения завершена и находится под контролем системы управления конфигурацией (Configuration Control).
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_1" @(ViewBag.Trls.Trl2_1 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -794,7 +800,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.2</td>
                 <td class='expandSUB2' align='right'>
-                    Сформулировано техническое предложение, может быть предложено практическое использование.
+                    Программное обеспечение тщательно отлажено.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_2" @(ViewBag.Trls.Trl2_2 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -802,7 +808,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.3</td>
                 <td class='expandSUB2' align='right'>
-                    Аналитический обзор, проведенный в рамках патентного исследования, показал реализуемость и отсутствие аналогичных решений.
+                    Процесс подтверждения по VV&A завершен, ПО работает в реальных условиях.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_3" @(ViewBag.Trls.Trl2_3 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -810,18 +816,11 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.4</td>
                 <td class='expandSUB2' align='right'>
-                    Сформулировано предварительное техническое задание, определена архитектура (описание основных компонентов и их связей) продукта: платформа для решения, компоненты, связь и взаимодействие между ними, проведено моделирование продукта, разработан предварительный дизайн.
+                    Процесс сертификации по VV&A завершен, ПО сертифицировано для использования в предполагаемой системе.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_4" @(ViewBag.Trls.Trl2_4 ? "checked=\"checked\"" : "") /></td>
             </tr>
-            <tr>
-                <td class='expandSUB2 expandVALS'></td>
-                <td class='expandSUB2'>3.5</td>
-                <td class='expandSUB2' align='right'>
-                    Проведен предварительный патентный анализ, анализ промышленных и технологических рисков.
-                </td>
-                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
-            </tr>
+
         </tbody>
 
 
@@ -912,12 +911,25 @@
     }
 </script>
 
-<div id="trl_diagram"></div>
 
-<div>
-<button class="btn btn-primary" onclick="save('@ViewBag.ThemeName')" href="#" style="text-align:center"> Сохранить </button>
-<a class="btn btn-primary" href="/Stages?themeName=@ViewBag.ThemeName" style="text-align:center"> Назад </a>
+<div class="container">
+    <div class="row">
+
+        <div class="col-sm">
+            <div id="trl_diagram"></div>
+        </div>
+
+        <div class="col-sm">
+            <button class="btn btn-primary" onclick="save('@ViewBag.ThemeName')" href="#" style="text-align:center"> Сохранить </button>
+            <a class="btn btn-primary" href="/TRLs?themeName=@ViewBag.ThemeName" style="text-align:center"> Назад </a>
+        </div>
+
+    </div>
 </div>
+
+
+
+
 
 <script type="text/javascript">
     function save(themeName) {

@@ -27,10 +27,10 @@
         $(".expandFRED2").click(function () {
             $(".expandSUB2").toggle();
         });
-         $(".expandFRED3").click(function () {
+        $(".expandFRED3").click(function () {
             $(".expandSUB3").toggle();
-         });
-         $(".expandFRED4").click(function () {
+        });
+        $(".expandFRED4").click(function () {
             $(".expandSUB4").toggle();
         });
         $(".expandVALS").click(function () {
@@ -91,30 +91,30 @@
         </thead>
 
         @*@foreach (var theme in @ViewBag.Themes)
-        {
-            <tr>
-                <td><a class="nav-link text-dark" asp-area="" asp-controller="Stage" asp-action="Index">Этапы</a></td>
-                <td>@theme.Number</td>
-                <td>@theme.Name</td>
-                <td>@theme.FioManager</td>
-                <td>@theme.ExecutiveDepartment</td>
-                <td>@theme.WorkStart</td>
-                <td>@theme.WorkEnd</td>
-                <td>@theme.Amount</td>
-                <td>@theme.Vat</td>
-                <td>@theme.AmountWithoutVat</td>
-                <td>@theme.Decree</td>
-                <td>@theme.DocType</td>
-                <td>@theme.Props</td>
-                <td>@theme.ResearchType</td>
-                <td>@theme.Knowledge</td>
-                <td>@theme.Status</td>
+            {
+                <tr>
+                    <td><a class="nav-link text-dark" asp-area="" asp-controller="Stage" asp-action="Index">Этапы</a></td>
+                    <td>@theme.Number</td>
+                    <td>@theme.Name</td>
+                    <td>@theme.FioManager</td>
+                    <td>@theme.ExecutiveDepartment</td>
+                    <td>@theme.WorkStart</td>
+                    <td>@theme.WorkEnd</td>
+                    <td>@theme.Amount</td>
+                    <td>@theme.Vat</td>
+                    <td>@theme.AmountWithoutVat</td>
+                    <td>@theme.Decree</td>
+                    <td>@theme.DocType</td>
+                    <td>@theme.Props</td>
+                    <td>@theme.ResearchType</td>
+                    <td>@theme.Knowledge</td>
+                    <td>@theme.Status</td>
 
-                <td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
-                <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>
+                    <td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
+                    <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>
 
-            </tr>
-        }*@
+                </tr>
+            }*@
 
 
         <tbody>
@@ -443,7 +443,7 @@
                 </td>
                 <td class='expandSUB3'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
             </tr>
-            
+
 
         </tbody>
 
@@ -633,8 +633,8 @@
 
             <tr>
                 <td></td>
-                <td>3</td>
-                <td class='expandFRED2'>Определены целевые области применения технологии и ее критические элементы. ▼</td>
+                <td>6</td>
+                <td class='expandFRED2'>Изготовлен полнофункциональный образец на пилотной производственной линии, подтверждены рабочие характеристики в условиях, приближенных к реальности . ▼</td>
                 @*<td><input type="checkbox" id="trl2") /></td>*@
                 <td>
                     <input type="checkbox" id="trl2"
@@ -650,7 +650,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.1</td>
                 <td class='expandSUB2' align='right'>
-                    Концепция технологии/продукта и/или ее применения сформулированы.
+                    Установлены показатели качества и надежности.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_1" @(ViewBag.Trls.Trl2_1 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -658,7 +658,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.2</td>
                 <td class='expandSUB2' align='right'>
-                    Сформулировано техническое предложение, может быть предложено практическое использование.
+                    Практически подготовлен комплект эскизной КД на систему.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_2" @(ViewBag.Trls.Trl2_2 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -666,7 +666,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.3</td>
                 <td class='expandSUB2' align='right'>
-                    Аналитический обзор, проведенный в рамках патентного исследования, показал реализуемость и отсутствие аналогичных решений.
+                    Определена потребность в инвестициях для производственных процессов и оборудования разрабатываемой системы.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_3" @(ViewBag.Trls.Trl2_3 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -674,7 +674,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.4</td>
                 <td class='expandSUB2' align='right'>
-                    Сформулировано предварительное техническое задание, определена архитектура (описание основных компонентов и их связей) продукта: платформа для решения, компоненты, связь и взаимодействие между ними, проведено моделирование продукта, разработан предварительный дизайн.
+                    Проведены приемо-сдаточные испытания системы в лабораторных условиях.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_4" @(ViewBag.Trls.Trl2_4 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -682,7 +682,63 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.5</td>
                 <td class='expandSUB2' align='right'>
-                    Проведен предварительный патентный анализ, анализ промышленных и технологических рисков.
+                    Потребителем и разработчиком составлен предварительный план выпуска продукции.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Созданы прототипы критических (определяющих) производственных процессов.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Большая часть изделий соответствует техническим требованиям для передачи в производство.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Материалы, процессы, конструкция и методы интеграции могут быть использованы в производстве.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Компоненты функционально совместимы с действующей системой.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Определены производственные проблемы, основные из которых были решены.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Завершена технологическая подготовка производства (разработана оснастка, технологические процессы, дорожные карты и т.д.).
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Завершена демонстрация производства (компонентов).
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -699,8 +755,8 @@
 
             <tr>
                 <td></td>
-                <td>3</td>
-                <td class='expandFRED2'>Определены целевые области применения технологии и ее критические элементы. ▼</td>
+                <td>7</td>
+                <td class='expandFRED2'>Прототип системы продемонстрирован в составе системы в реальных условиях эксплуатации . ▼</td>
                 @*<td><input type="checkbox" id="trl2") /></td>*@
                 <td>
                     <input type="checkbox" id="trl2"
@@ -716,7 +772,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.1</td>
                 <td class='expandSUB2' align='right'>
-                    Концепция технологии/продукта и/или ее применения сформулированы.
+                    Определены материалы, процессы, методы и техника проектирования.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_1" @(ViewBag.Trls.Trl2_1 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -724,7 +780,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.2</td>
                 <td class='expandSUB2' align='right'>
-                    Сформулировано техническое предложение, может быть предложено практическое использование.
+                    Проведена начальная демонстрация материалов, процессов и процедур производства.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_2" @(ViewBag.Trls.Trl2_2 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -732,7 +788,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.3</td>
                 <td class='expandSUB2' align='right'>
-                    Аналитический обзор, проведенный в рамках патентного исследования, показал реализуемость и отсутствие аналогичных решений.
+                    Используется моделирование для имитации некоторых недоступных элементов системы, но эти случаи редки.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_3" @(ViewBag.Trls.Trl2_3 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -740,7 +796,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.4</td>
                 <td class='expandSUB2' align='right'>
-                    Сформулировано предварительное техническое задание, определена архитектура (описание основных компонентов и их связей) продукта: платформа для решения, компоненты, связь и взаимодействие между ними, проведено моделирование продукта, разработан предварительный дизайн.
+                    Построен прототип производственной системы с использованием программных инструментов.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_4" @(ViewBag.Trls.Trl2_4 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -748,10 +804,99 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.5</td>
                 <td class='expandSUB2' align='right'>
-                    Проведен предварительный патентный анализ, анализ промышленных и технологических рисков.
+                    Одобрены оборудование и оснастка.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
             </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Существенно уменьшились проектные изменения.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Выполнены черновые проектные чертежи.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Практически разработаны и проверены материалы, процессы, методы и методики проектирования.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Доступно предпроизводственное оборудование, но его количество может быть ограничено.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Компоненты являются производимыми.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Подтверждены цели проекта по стоимости.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Установлены начальные уровни "сигма".
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Хорошо понятны в целом процессы производства.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Завершено планирование производства.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Прототип улучшается до качества предпроизводственного образца.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Готов для мелкосерийного начального производства (LRIP - Low Rate Initial Production).
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+
         </tbody>
 
 
@@ -766,8 +911,8 @@
 
             <tr>
                 <td></td>
-                <td>3</td>
-                <td class='expandFRED2'>Определены целевые области применения технологии и ее критические элементы. ▼</td>
+                <td>8</td>
+                <td class='expandFRED2'>Окончательное подтверждение работоспособности образца. Разработка. функционирующей реальной системы завершена . ▼</td>
                 @*<td><input type="checkbox" id="trl2") /></td>*@
                 <td>
                     <input type="checkbox" id="trl2"
@@ -783,7 +928,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.1</td>
                 <td class='expandSUB2' align='right'>
-                    Концепция технологии/продукта и/или ее применения сформулированы.
+                    Оценочные затраты составляют менее 125% от целевых затрат (т.е. достигнутая целевая стоимость соответствует LRIP).
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_1" @(ViewBag.Trls.Trl2_1 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -791,7 +936,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.2</td>
                 <td class='expandSUB2' align='right'>
-                    Сформулировано техническое предложение, может быть предложено практическое использование.
+                    Оборудование и оснастка продемонстрированы в производственном окружении.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_2" @(ViewBag.Trls.Trl2_2 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -799,7 +944,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.3</td>
                 <td class='expandSUB2' align='right'>
-                    Аналитический обзор, проведенный в рамках патентного исследования, показал реализуемость и отсутствие аналогичных решений.
+                    Производственные процессы продемонстрированы на "пилотной линии", мелкосерийном производстве (LRIP) или производстве похожего продукта.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_3" @(ViewBag.Trls.Trl2_3 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -807,7 +952,7 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.4</td>
                 <td class='expandSUB2' align='right'>
-                    Сформулировано предварительное техническое задание, определена архитектура (описание основных компонентов и их связей) продукта: платформа для решения, компоненты, связь и взаимодействие между ними, проведено моделирование продукта, разработан предварительный дизайн.
+                    Производственные процессы демонстрируют приемлемые уровни доходности и производительности.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_4" @(ViewBag.Trls.Trl2_4 ? "checked=\"checked\"" : "") /></td>
             </tr>
@@ -815,10 +960,101 @@
                 <td class='expandSUB2 expandVALS'></td>
                 <td class='expandSUB2'>3.5</td>
                 <td class='expandSUB2' align='right'>
-                    Проведен предварительный патентный анализ, анализ промышленных и технологических рисков.
+                    Производственные процессы контролируются по "4-сигма" или с соответствующим уровнем качества.
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
             </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Все материалы производятся и легко доступны.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Система готова к серийному производству.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+        </tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+        <tbody class="labels" style="background-color: #ececec;">
+
+            <tr>
+                <td></td>
+                <td>9</td>
+                <td class='expandFRED2'>
+                    Изделие удовлетворяет всем требованиям: инженерным, производственным, эксплуатационным, по качеству и надежности.
+                    Возможна модификация по снижению себестоимости, развитию и эволюции системы Функционирующая реальная система подтверждена в ходе реальной
+                    эксплуатации через успешное выполнение испытательных заданий. ▼
+                </td>
+                @*<td><input type="checkbox" id="trl2") /></td>*@
+                <td>
+                    <input type="checkbox" id="trl2"
+                           @(ViewBag.Trls.Trl2_1 && ViewBag.Trls.Trl2_2 && ViewBag.Trls.Trl2_3 && ViewBag.Trls.Trl2_4 && ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") />
+                </td>
+
+            </tr>
+
+        </tbody>
+
+        <tbody class="hide">
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.1</td>
+                <td class='expandSUB2' align='right'>
+                    Оценочные затраты составляют менее 110% от целевых затрат или соответствуют им (т.е. целевая стоимость достигнута).
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_1" @(ViewBag.Trls.Trl2_1 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.2</td>
+                <td class='expandSUB2' align='right'>
+                    Вопросы доступности учтены в планах начального производства и перспективных закупок.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_2" @(ViewBag.Trls.Trl2_2 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.3</td>
+                <td class='expandSUB2' align='right'>
+                    Проектирование стабильно, имеются незначительные изменения или изменения полностью отсутствуют.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_3" @(ViewBag.Trls.Trl2_3 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.4</td>
+                <td class='expandSUB2' align='right'>
+                    Все производственные процессы контролируются по "6-сигма" или с соответствующим уровнем качества.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_4" @(ViewBag.Trls.Trl2_4 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+            <tr>
+                <td class='expandSUB2 expandVALS'></td>
+                <td class='expandSUB2'>3.5</td>
+                <td class='expandSUB2' align='right'>
+                    Производство стабильное.
+                </td>
+                <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
+            </tr>
+
         </tbody>
 
 
@@ -890,12 +1126,21 @@
     }
 </script>
 
-<div id="trl_diagram"></div>
+<div class="container">
+    <div class="row">
 
-<div>
-<button class="btn btn-primary" onclick="save('@ViewBag.ThemeName')" href="#" style="text-align:center"> Сохранить </button>
-<a class="btn btn-primary" href="/Stages?themeName=@ViewBag.ThemeName" style="text-align:center"> Назад </a>
+        <div class="col-sm">
+            <div id="trl_diagram"></div>
+        </div>
+
+        <div class="col-sm">
+            <button class="btn btn-primary" onclick="save('@ViewBag.ThemeName')" href="#" style="text-align:center"> Сохранить </button>
+            <a class="btn btn-primary" href="/TRLs?themeName=@ViewBag.ThemeName" style="text-align:center"> Назад </a>
+        </div>
+
+    </div>
 </div>
+
 
 <script type="text/javascript">
     function save(themeName) {

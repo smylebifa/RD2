@@ -77,33 +77,33 @@
         </thead>
 
         @*@foreach (var theme in @ViewBag.Themes)
-        {
-            <tr>
-                <td><a class="nav-link text-dark" asp-area="" asp-controller="Stage" asp-action="Index">Этапы</a></td>
-                <td>@theme.Number</td>
-                <td>@theme.Name</td>
-                <td>@theme.FioManager</td>
-                <td>@theme.ExecutiveDepartment</td>
-                <td>@theme.WorkStart</td>
-                <td>@theme.WorkEnd</td>
-                <td>@theme.Amount</td>
-                <td>@theme.Vat</td>
-                <td>@theme.AmountWithoutVat</td>
-                <td>@theme.Decree</td>
-                <td>@theme.DocType</td>
-                <td>@theme.Props</td>
-                <td>@theme.ResearchType</td>
-                <td>@theme.Knowledge</td>
-                <td>@theme.Status</td>
+            {
+                <tr>
+                    <td><a class="nav-link text-dark" asp-area="" asp-controller="Stage" asp-action="Index">Этапы</a></td>
+                    <td>@theme.Number</td>
+                    <td>@theme.Name</td>
+                    <td>@theme.FioManager</td>
+                    <td>@theme.ExecutiveDepartment</td>
+                    <td>@theme.WorkStart</td>
+                    <td>@theme.WorkEnd</td>
+                    <td>@theme.Amount</td>
+                    <td>@theme.Vat</td>
+                    <td>@theme.AmountWithoutVat</td>
+                    <td>@theme.Decree</td>
+                    <td>@theme.DocType</td>
+                    <td>@theme.Props</td>
+                    <td>@theme.ResearchType</td>
+                    <td>@theme.Knowledge</td>
+                    <td>@theme.Status</td>
 
-                <td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
-                <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>
+                    <td>@Html.ActionLink("изменить", "User", new { id = user.Id })</td>
+                    <td><a onclick="deleteUser('@user.Id')" href="#"> удалить </a></td>
 
-            </tr>
-        }*@
+                </tr>
+            }*@
 
 
-        <tbody >
+        <tbody>
             <tr>
                 <td></td>
                 <td>1</td>
@@ -446,7 +446,7 @@
                 </td>
                 <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
             </tr>
-            
+
 
         </tbody>
 
@@ -912,12 +912,22 @@
     }
 </script>
 
-<div id="trl_diagram"></div>
 
-<div>
-<button class="btn btn-primary" onclick="save('@ViewBag.ThemeName')" href="#" style="text-align:center"> Сохранить </button>
-<a class="btn btn-primary" href="/Stages?themeName=@ViewBag.ThemeName" style="text-align:center"> Назад </a>
+<div class="container">
+    <div class="row">
+
+        <div class="col-sm">
+            <div id="trl_diagram"></div>
+        </div>
+
+        <div class="col-sm">
+            <button class="btn btn-primary" onclick="save('@ViewBag.ThemeName')" href="#" style="text-align:center"> Сохранить </button>
+            <a class="btn btn-primary" href="/TRLs?themeName=@ViewBag.ThemeName" style="text-align:center"> Назад </a>
+        </div>
+
+    </div>
 </div>
+
 
 <script type="text/javascript">
     function save(themeName) {
