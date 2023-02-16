@@ -4,7 +4,12 @@
     ViewBag.Title = ViewBag.ThemeName;
     Layout = "_Layout";
 
-    List<string> stageLevel1 = new List<string> { "Разработка ТЗ НИР", "Выбор направления исследования", "Теоретические и экспериментальные исследования", "Обобщение и оценка результатов исследований", "Приемка научно-исследовательской работы" };
+    List<string> stageLevel1 = new List<string> {
+        "Разработка ТЗ НИР", "Выбор направления исследования", "Теоретические и экспериментальные исследования", "Обобщение и оценка результатов исследований", "Приемка научно-исследовательской работы",
+        "Разработка ТЗ ОКР", "Разработка эскизного проекта", "Разработка технического проекта ", "Разработка рабочей КД, ТД и проекта ТУ", "Приемка ОКР"
+
+
+    };
 
     var stageLevel2 = new string[][] {
 
@@ -40,14 +45,36 @@
             "Разработка рекомендаций по использованию результатов проведенных НИР.",
             "Формулирование технических требований для технического задания на разработку продукции",
             "Составление и оформление отчета по ГОСТ 7.32-2001 Нормоконтроль отчета по ГОСТ 2.111-68  ",
-            "Рассмотрение результатов проведенных НИР и приѐмка работы в целом. " }
+            "Рассмотрение результатов проведенных НИР и приѐмка работы в целом. " },
+
+           new string[] {},
+
+           new string[] {
+            "выбор направления разработки и его обоснование." ,
+            "определение специальных технологических процессов, подлежащих разработке." ,
+            "макетирование наиболее сложных и ответственных частей изделия (или изделия в целом) в объеме, необходимом для оценки правильности намеченных решений.",
+            "расчетные или экспериментальные работы, подтверждающие правильность выбора конструктивно-технологических решений.",
+            "определение номенклатуры специального технологического оборудования, средств испытаний и измерений, подлежащих разработке, и объема работ по их изготовлению, выдача технических заданий на их разработку.",
+            "составление перечня покупного, в том числе зарубежного, оборудования, необходимого для разработки и последующего освоения.",
+            "выбор основных материалов, необходимых для разработки изделия, выдачу или уточнение предварительных заявок на материалы и комплектующие изделия.",
+            "составление ПОКр (при выполнении ОКР по форме А-ПОКр, которая должна содержать организационно-технические мероприятия, предусматриваемые для ПОКо). ",
+            "проведение патентных исследований (если это установлено в ТЗ).",
+            "Для выбора направления разработки проводят: анализ передового отечественного и зарубежного опыта в области проектирования.",
+            "анализ опыта проектирования изделий-аналогов; анализ и учет механизмов отказов, выявленных при их производстве, применении и эксплуатации"},
+
+        new string[] {},
+        new string[] {},
+        new string[] {},
+        new string[] {}
+       
 
 
     };
 
-    List<string> ExpandFREDS = new List<string> { "expandFRED1", "expandFRED2", "expandFRED3" };
 
-    List<string> ExpandSUBS = new List<string> { "expandSUB1", "expandSUB2", "expandSUB3" };
+    List<string> ExpandFREDS = new List<string> { "expandFRED1", "expandFRED2", "expandFRED3", "expandFRED4", "expandFRED5", "expandFRED6", "expandFRED7", "expandFRED8", "expandFRED9", "expandFRED10" };
+
+    List<string> ExpandSUBS = new List<string> { "expandSUB1", "expandSUB2", "expandSUB3", "expandSUB4", "expandSUB5", "expandSUB6", "expandSUB7", "expandSUB8", "expandSUB9" };
 
 
 
@@ -164,6 +191,28 @@
         $(".expandFRED3").click(function () {
             $(".expandSUB3").toggle();
         });
+        $(".expandFRED4").click(function () {
+            $(".expandSUB4").toggle();
+        });
+        $(".expandFRED5").click(function () {
+            $(".expandSUB5").toggle();
+        });
+        $(".expandFRED6").click(function () {
+            $(".expandSUB6").toggle();
+        });
+        $(".expandFRED7").click(function () {
+            $(".expandSUB7").toggle();
+        });
+        $(".expandFRED8").click(function () {
+            $(".expandSUB8").toggle();
+        });
+        $(".expandFRED9").click(function () {
+            $(".expandSUB9").toggle();
+        });
+        $(".expandFRED10").click(function () {
+            $(".expandSUB10").toggle();
+        });
+
         $(".expandVALS").click(function () {
             $(".expandCAT1").toggle();
         });
@@ -191,6 +240,34 @@
         display: none;
     }
 
+    .expandSUB4 {
+        display: none;
+    }
+
+    .expandSUB5 {
+        display: none;
+    }
+
+    .expandSUB6 {
+        display: none;
+    }
+
+    .expandSUB7 {
+        display: none;
+    }
+
+    .expandSUB8 {
+        display: none;
+    }
+
+    .expandSUB9 {
+        display: none;
+    }
+
+    .expandSUB10 {
+        display: none;
+    }
+
     . {
         display: none;
     }
@@ -199,7 +276,7 @@
             display: none;
         }
 
-        .expandFRED1, .expandFRED2, .expandFRED3 {
+        .expandFRED1, .expandFRED2, .expandFRED3, .expandFRED4 , .expandFRED5, .expandFRED6, .expandFRED7, .expandFRED8, .expandFRED9, .expandFRED10  {
             cursor: pointer;
         }
 </style>
@@ -350,4 +427,16 @@
 
 
     </table>
+</div>
+
+
+<div class="mb-3 row">
+    <div class="col-sm-4"></div>
+
+    <div class="col-sm-4">
+        <a class="btn btn-outline-dark" href="/Themes" style="text-align:center">Назад</a>
+    </div>
+
+    <div class="col-sm-4"></div>
+
 </div>

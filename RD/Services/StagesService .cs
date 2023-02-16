@@ -24,6 +24,11 @@ namespace RD.Services
                 new Stage(2, "Этап 2"),
                 new Stage(3, "Этап 3"),
                 new Stage(4, "Этап 4"),
+                new Stage(5, "Этап 5"),
+                new Stage(6, "Этап 6"),
+                new Stage(7, "Этап 7"),
+                new Stage(8, "Этап 8"),
+                new Stage(9, "Этап 9"),
         };
 
         public IEnumerable<Stage> GetStages()
