@@ -21,12 +21,34 @@
     });
 
     $(document).ready(function () {
-        $(".expandFRED").click(function () {
+        $(".expandFRED1").click(function () {
             $(".expandSUB1").toggle();
         });
         $(".expandFRED2").click(function () {
             $(".expandSUB2").toggle();
         });
+        $(".expandFRED3").click(function () {
+            $(".expandSUB3").toggle();
+        });
+        $(".expandFRED4").click(function () {
+            $(".expandSUB4").toggle();
+        });
+        $(".expandFRED5").click(function () {
+            $(".expandSUB5").toggle();
+        });
+        $(".expandFRED6").click(function () {
+            $(".expandSUB6").toggle();
+        });
+        $(".expandFRED7").click(function () {
+            $(".expandSUB7").toggle();
+        });
+        $(".expandFRED8").click(function () {
+            $(".expandSUB8").toggle();
+        });
+        $(".expandFRED9").click(function () {
+            $(".expandSUB9").toggle();
+        });
+
         $(".expandVALS").click(function () {
             $(".expandCAT1").toggle();
         });
@@ -50,6 +72,33 @@
         display: none;
     }
 
+    .expandSUB3 {
+        display: none;
+    }
+
+    .expandSUB4 {
+        display: none;
+    }
+
+    .expandSUB5 {
+        display: none;
+    }
+
+    .expandSUB6 {
+        display: none;
+    }
+
+    .expandSUB7 {
+        display: none;
+    }
+
+    .expandSUB8 {
+        display: none;
+    }
+    .expandSUB9 {
+        display: none;
+    }
+
     . {
         display: none;
     }
@@ -58,9 +107,10 @@
             display: none;
         }
 
-        .expandFRED, .expandFRED2 {
+        .expandFRED1, .expandFRED2, .expandFRED3, .expandFRED4, .expandFRED5, .expandFRED6, .expandFRED7, .expandFRED8, .expandFRED9 {
             cursor: pointer;
         }
+
 </style>
 
 
@@ -116,8 +166,6 @@
             </tr>
 
         </tbody>
-
-
 
 
 
@@ -324,15 +372,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
         <tbody class="labels" style="background-color: #ececec;">
 
             <tr>
@@ -449,17 +488,6 @@
 
 
         </tbody>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -630,8 +658,6 @@
 
 
 
-
-
         <tbody class="labels" style="background-color: #ececec;">
 
             <tr>
@@ -758,11 +784,7 @@
         </tbody>
 
 
-
-
-
-
-
+        
 
 
         <tbody class="labels" style="background-color: #ececec;">
@@ -823,26 +845,6 @@
                 <td class='expandSUB2'><input type="checkbox" id="trl2_5" @(ViewBag.Trls.Trl2_5 ? "checked=\"checked\"" : "") /></td>
             </tr>
         </tbody>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
