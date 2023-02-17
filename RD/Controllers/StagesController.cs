@@ -25,6 +25,7 @@ namespace RD.Controllers
 
         public IActionResult Index(string themeName)
         {
+         
             var stages = _stageService.GetStages();
             ViewBag.Stages = stages;
             if (themeName == null)

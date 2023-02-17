@@ -47,10 +47,12 @@
             "Составление и оформление отчета по ГОСТ 7.32-2001 Нормоконтроль отчета по ГОСТ 2.111-68  ",
             "Рассмотрение результатов проведенных НИР и приѐмка работы в целом. " },
 
-           new string[] {},
+           new string[] {"Разработку, согласование и утверждение ТЗ проводят в порядке, установленном в разделе 6"},
 
+           // Разработка ТЗ ОКР
+           // level 3 - [5, 0]
            new string[] {
-            "выбор направления разработки и его обоснование." ,
+            "В состав работ, проводимых на данном этапе, в общем случае включают: " ,
             "определение специальных технологических процессов, подлежащих разработке." ,
             "макетирование наиболее сложных и ответственных частей изделия (или изделия в целом) в объеме, необходимом для оценки правильности намеченных решений.",
             "расчетные или экспериментальные работы, подтверждающие правильность выбора конструктивно-технологических решений.",
@@ -62,20 +64,114 @@
             "Для выбора направления разработки проводят: анализ передового отечественного и зарубежного опыта в области проектирования.",
             "анализ опыта проектирования изделий-аналогов; анализ и учет механизмов отказов, выявленных при их производстве, применении и эксплуатации"},
 
+        new string[] {
+            "разработку конструкции изделия с использованием расчетных и расчетно-экспериментальных методов подтверждения надежности изделия и специальных технологических процессов изготовления изделия." ,
+            "необходимые расчетные и экспериментальные работы для проверки обоснованности оптимальных конструктивно-технологических решений." ,
+            "разработку КД и ТД на изделие в объеме, необходимом для изготовления макетов.",
+            "изготовление и испытание макетов.",
+            "разработку программ и методик испытаний по оценке соответствия изделий требованиям надежности, по оценке КТЗ и производственных запасов.",
+            "составление графика подготовки производства изделий для изготовления установочной серии (для формы А).",
+            "разработку в необходимых случаях специального технологического оборудования и средств испытаний.",
+            "разработку методов измерений, если соответствующие методы не установлены НД, а также, при необходимости, разработку и изготовление средств измерений. ",
+            "проведение патентных исследований [если это установлено в договоре и (или) ТЗ].",
+            "составление перечня документов основного комплекта КД изделия (в том числе эксплуатационных документов) и перечня документов на технологические процессы, которые должны быть разработаны на последующем этапе.",
+            "составление ПОКр (при выполнении ОКР по форме А-ПОКр, которая должна содержать организационно-технические мероприятия, предусматриваемые для ПОКо)2).",
+            "КД и ТД для изготовления макетов выполняют, как правило, в виде эскизных конструкторских и технологических документов.",
+            "Испытание макетов проводят с целью проверить основные конструктивно-технологические решения разрабатываемого изделия и его основные характеристики. Результаты испытаний оформляют протоколом.",
+            "Перечни документов основного комплекта КД и документов на технологические процессы используют при проверке комплектности документации.",
+            "График технологической подготовки производства разрабатывает изготовитель совместно с головным исполнителем ОКР и утверждает руководство этих предприятий.",
+            "При отсутствии эскизного проекта обоснование оптимальности выбора конструктивно-технологических решений рассматривают в порядке, аналогичном приведенному в 8.5.2в." },
+
+        new string[] {
+            "разработку рабочей КД и ТД.",
+            "разработку проекта ТУ.",
+            "проведение метрологической экспертизы КД и ТД и проекта ТУ.",
+            "оценку правильности применения покупных комплектующих изделий.",
+            "получение, при необходимости, разрешения на применение материалов. ",
+            "изготовление, при необходимости, специального технологического оборудования и оснастки, средств испытаний и измерений.",
+            "проведение метрологической аттестации разработанных методов и средств измерений.",
+            "обеспечение проведения экологической экспертизы (при необходимости).",
+            "передачу изготовителю КД и ТД и, при необходимости, специального технологического оборудования, оснастки, средств испытаний и измерений в объеме, предусмотренном договором (для формы А).",
+            "проведение работ в соответствии с графиком подготовки производства (для формы А).",
+            "изготовление опытных образцов (опытной партии). ",
+            "разработка программы предварительных испытаний опытных образцов (опытных партий).",
+            "проведение предварительных испытаний опытных образцов (опытной партии).",
+            "оценку производственных запасов и КТЗ.",
+            "оценку соответствия опытных образцов (опытной партии) требованиям ТЗ.",
+            "корректировку рабочей КД и ТД по результатам изготовления и предварительных испытаний с присвоением документации литеры «О». ",
+            "изготовление установочной серии (для формы А) или контрольной партии (для формы Б) для изделий с длительным технологическим процессом изготовления, если это предусмотрено в ТЗ.",
+            "расчет технико-экономических показателей разработанного изделия по результатам изготовления и испытаний опытных образцов, а также контрольной партии или установочной серии и ориентировочный расчет технико-экономических показателей для условий промышленного (серийного) производства.",
+            "составление научно-технического отчета, отчета о патентных исследованиях и информационной карты на выполняемую ОКР.",
+
+           },
+
         new string[] {},
-        new string[] {},
-        new string[] {},
+
         new string[] {}
-       
+
 
 
     };
+
+
+
+
+    var stageLevel3 = new string[][][] {
+
+        new string[][] { },
+
+        new string[][] { },
+
+        new string[][] { },
+
+        new string[][] { },
+
+        new string[][] {  },
+
+        new string[][] {
+            new string[] {
+            "выбор направления разработки и его обоснование.",
+            "определение специальных технологических процессов, подлежащих разработке.",
+            "макетирование наиболее сложных и ответственных частей изделия (или изделия в целом) в объеме, необходимом для оценки правильности намеченных решений",
+            "расчетные или экспериментальные работы, подтверждающие правильность выбора конструктивно-технологических решений"
+            },
+
+            new string[] { },
+            new string[] { },
+            new string[] { },
+            new string[] { },
+            new string[] { },
+            new string[] { },
+            new string[] { },
+            new string[] { },
+            new string[] { },
+            new string[] { }
+
+
+        },
+
+        new string[][] { },
+
+        new string[][] {  },
+
+        new string[][] { },
+
+        new string[][] {  }
+
+
+
+    };
+
+
+
+
 
 
     List<string> ExpandFREDS = new List<string> { "expandFRED1", "expandFRED2", "expandFRED3", "expandFRED4", "expandFRED5", "expandFRED6", "expandFRED7", "expandFRED8", "expandFRED9", "expandFRED10" };
 
     List<string> ExpandSUBS = new List<string> { "expandSUB1", "expandSUB2", "expandSUB3", "expandSUB4", "expandSUB5", "expandSUB6", "expandSUB7", "expandSUB8", "expandSUB9" };
 
+    List<string> ExpandSUBS2 = new List<string> { "expand2SUB1", "expand2SUB2", "expand2SUB3", "expand2SUB4", "expand2SUB5", "expand2SUB6", "expand2SUB7", "expand2SUB8", "expand2SUB9" };
 
 
     //    var stageLevel2_2 = new string[][] {
@@ -213,6 +309,37 @@
             $(".expandSUB10").toggle();
         });
 
+        $(".expandSUB1").click(function () {
+            $(".expand2SUB1").toggle();
+        });
+        $(".expandSUB2").click(function () {
+            $(".expand2SUB2").toggle();
+        });
+        $(".expandSUB3").click(function () {
+            $(".expand2SUB3").toggle();
+        });
+        $(".expandSUB4").click(function () {
+            $(".expand2SUB4").toggle();
+        });
+        $(".expandSUB5").click(function () {
+            $(".expand2SUB5").toggle();
+        });
+        $(".expandSUB6").click(function () {
+            $(".expand2SUB6").toggle();
+        });
+        $(".expandSUB7").click(function () {
+            $(".expand2SUB7").toggle();
+        });
+        $(".expandSUB8").click(function () {
+            $(".expand2SUB8").toggle();
+        });
+        $(".expandSUB9").click(function () {
+            $(".expand2SUB9").toggle();
+        });
+        $(".expandSUB10").click(function () {
+            $(".expand2SUB10").toggle();
+        });
+
         $(".expandVALS").click(function () {
             $(".expandCAT1").toggle();
         });
@@ -268,6 +395,47 @@
         display: none;
     }
 
+
+    .expand2SUB1 {
+        display: none;
+    }
+
+    .expand2SUB2 {
+        display: none;
+    }
+
+    .expand2SUB3 {
+        display: none;
+    }
+
+    .expand2SUB4 {
+        display: none;
+    }
+
+    .expand2SUB5 {
+        display: none;
+    }
+
+    .expand2SUB6 {
+        display: none;
+    }
+
+    .expand2SUB7 {
+        display: none;
+    }
+
+    .expand2SUB8 {
+        display: none;
+    }
+
+    .expand2SUB9 {
+        display: none;
+    }
+
+    .expand2SUB10 {
+        display: none;
+    }
+
     . {
         display: none;
     }
@@ -276,7 +444,11 @@
             display: none;
         }
 
-        .expandFRED1, .expandFRED2, .expandFRED3, .expandFRED4 , .expandFRED5, .expandFRED6, .expandFRED7, .expandFRED8, .expandFRED9, .expandFRED10  {
+        .expandFRED1, .expandFRED2, .expandFRED3, .expandFRED4, .expandFRED5, .expandFRED6, .expandFRED7, .expandFRED8, .expandFRED9, .expandFRED10 {
+            cursor: pointer;
+        }
+
+        .expandSUB1, .expandSUB2, .expandSUB3, .expandSUB4, .expandSUB5, .expandSUB6, .expandSUB7, .expandSUB8, .expandSUB9, .expandSUB10 {
             cursor: pointer;
         }
 </style>
@@ -299,7 +471,7 @@
         </thead>
 
 
-        @{int i = 0; int j = 0; int iView = 0; int jView = 0;}
+        @{int i = 0; int j = 0; int k = 0; int iView = 0; int jView = 0; int kView = 0;}
         @foreach (var stage in @ViewBag.Stages)
         {
             if (i == 0)
@@ -396,21 +568,72 @@
                 {
                     jView = j + 1;
 
-                    <tbody class="hide">
-                        <tr>
-                            <td class='@ExpandSUBS[i - 1] expandVALS'></td>
-                            <td class='@ExpandSUBS[i - 1]'>@iView.@jView </td>
-                            <td class='@ExpandSUBS[i - 1]' align='right'>
-                                @stage2
-                            </td>
-                            <td class='@ExpandSUBS[i - 1]'></td>
-                            <td class='@ExpandSUBS[i - 1]' align='right'></td>
-                            <td class='@ExpandSUBS[i - 1]' align='right'></td>
-                            <td class='@ExpandSUBS[i - 1]' align='right'></td>
-                            <td class='@ExpandSUBS[i - 1]' align='right'></td>
-                        </tr>
+                    if (stageLevel3[i].Length > 0)
+                    {
+                        if (stageLevel3[i][j].Length > 0)
+                        {
+                            <tbody style="background-color: #ececec;">
+                                <tr>
+                                    <td class='@ExpandSUBS[i - 1] expandVALS'></td>
+                                    <td class='@ExpandSUBS[i - 1]'> @iView.@jView </td>
+                                    <td class='@ExpandSUBS[i - 1]' align='right'>
+                                        @stage2 ▼
+                                    </td>
+                                    <td class='@ExpandSUBS[i - 1]'></td>
+                                    <td class='@ExpandSUBS[i - 1]' align='right'></td>
+                                    <td class='@ExpandSUBS[i - 1]' align='right'></td>
+                                    <td class='@ExpandSUBS[i - 1]' align='right'></td>
+                                    <td class='@ExpandSUBS[i - 1]' align='right'></td>
+                                </tr>
 
-                    </tbody>
+                            </tbody>
+
+                            k = 0;
+
+                            @foreach (var stage3 in stageLevel3[i][j])
+                            {
+                                kView = k + 1;
+
+                                <tbody class="hide">
+                                    <tr>
+                                        <td class='@ExpandSUBS2[i - 1] expandVALS'></td>
+                                        <td class='@ExpandSUBS2[i - 1]'> @iView.@jView.@kView </td>
+                                        <td class='@ExpandSUBS2[i - 1]' align='right'>
+                                            @stage3
+                                        </td>
+                                        <td class='@ExpandSUBS2[i - 1]'></td>
+                                        <td class='@ExpandSUBS2[i - 1]' align='right'></td>
+                                        <td class='@ExpandSUBS2[i - 1]' align='right'></td>
+                                        <td class='@ExpandSUBS2[i - 1]' align='right'></td>
+                                        <td class='@ExpandSUBS2[i - 1]' align='right'></td>
+                                    </tr>
+
+                                </tbody>
+
+                                k++;
+                            }
+
+                        }
+                    }
+
+                    else
+                    {
+                        <tbody class="hide">
+                                <tr>
+                                    <td class='@ExpandSUBS[i - 1] expandVALS'></td>
+                                    <td class='@ExpandSUBS[i - 1]'> @iView.@jView </td>
+                                    <td class='@ExpandSUBS[i - 1]' align='right'>
+                                        @stage2
+                                    </td>
+                                    <td class='@ExpandSUBS[i - 1]'></td>
+                                    <td class='@ExpandSUBS[i - 1]' align='right'></td>
+                                    <td class='@ExpandSUBS[i - 1]' align='right'></td>
+                                    <td class='@ExpandSUBS[i - 1]' align='right'></td>
+                                    <td class='@ExpandSUBS[i - 1]' align='right'></td>
+                                </tr>
+
+                            </tbody>
+                    }
 
                     j++;
 
