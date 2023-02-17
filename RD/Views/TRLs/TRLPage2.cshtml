@@ -920,7 +920,7 @@
         </div>
 
         <div class="col-sm">
-            <button class="btn btn-primary" onclick="save('@ViewBag.ThemeName')" href="#" style="text-align:center"> Сохранить </button>
+            <button class="btn btn-primary" onclick="save('@ViewBag.ThemeName')" href="#" style="text-align:center"> Рассчитать </button>
             <a class="btn btn-primary" href="/TRLs?themeName=@ViewBag.ThemeName" style="text-align:center"> Назад </a>
         </div>
 
@@ -949,7 +949,7 @@
         //alert(trl2);
 
         $.ajax({
-            url: '/save/' + themeName + '/' + trl1_1 + '/' + trl1_2 + '/' + trl1_3 + '/' + trl1_4 + '/' + trl1_5
+            url: '/save_trl2/' + themeName + '/' + trl1_1 + '/' + trl1_2 + '/' + trl1_3 + '/' + trl1_4 + '/' + trl1_5
                 + '/' + trl2_1 + '/' + trl2_2 + '/' + trl2_3 + '/' + trl2_4 + '/' + trl2_5,
             type: 'POST',
             contentType: "application/json; charset=utf-8",
