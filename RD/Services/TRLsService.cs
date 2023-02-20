@@ -17,116 +17,168 @@ namespace RD.Services
         //    _dbContext = dbContext;
         //}
 
-        private static readonly List<TRL1> TRLs1 = new List<TRL1>
-        {
-                new TRL1(),
-        };
+        private static readonly List<TRL1> TRLs1 = new List<TRL1>();
 
 
-        public void SaveTRL1(string themeName, bool trl1_1, bool trl1_2, bool trl1_3, bool trl1_4,
-            bool trl2_1, bool trl2_2, bool trl2_3, bool trl2_4, bool trl2_5, bool trl2_6, bool trl2_7, bool trl2_8, bool trl2_9)
+        //public void SaveTRL1(string themeName, bool trl1_1, bool trl1_2, bool trl1_3, bool trl1_4,
+        //    bool trl2_1, bool trl2_2, bool trl2_3, bool trl2_4, bool trl2_5, bool trl2_6, bool trl2_7, bool trl2_8, bool trl2_9,
+        //    bool trl3_1, bool trl3_2, bool trl3_3, bool trl3_4, bool trl3_5, bool trl3_6, bool trl3_7, bool trl3_8, bool trl3_9, bool trl3_10, bool trl3_11, bool trl3_12,
+        //    bool trl4_1, bool trl4_2, bool trl4_3, bool trl4_4, bool trl4_5, bool trl4_6, bool trl4_7, bool trl4_8, bool trl4_9, bool trl4_10, bool trl4_11, bool trl4_12,
+        //    bool trl4_13, bool trl4_14, bool trl4_15, bool trl4_16, bool trl4_17)
+        //{
+
+        //public void SaveTRL1(string themeName, bool[] trl3, bool[] trl4)
+        //{
+            public void SaveTRL1(string themeName, TRL1 trl1)
         {
             //var Trl = _dbContext.TRLs.FirstOrDefault(x => x.StageName == themeName);
 
-            //Trl.Trl1_1 = trl1_1;
-            //Trl.Trl1_2 = trl1_2;
-            //Trl.Trl1_3 = trl1_3;
-            //Trl.Trl1_4 = trl1_4;
-            //Trl.Trl1_5 = trl1_5;
-            //Trl.Trl2_1 = trl2_1;
-            //Trl.Trl2_2 = trl2_2;
-            //Trl.Trl2_3 = trl2_3;
-            //Trl.Trl2_4 = trl2_4;
-            //Trl.Trl2_5 = trl2_5;
-
-            //int count = 0;
-
-            //if (trl1_1 == true)
-            //    count++;
-            //if (trl1_2 == true)
-            //    count++;
-            //if (trl1_3 == true)
-            //    count++;
-            //if (trl1_4 == true)
-            //    count++;
-            //if (trl1_5 == true)
-            //    count++;
-            //if (trl2_1 == true)
-            //    count++;
-            //if (trl2_2 == true)
-            //    count++;
-            //if (trl2_3 == true)
-            //    count++;
-            //if (trl2_4 == true)
-            //    count++;
-            //if (trl2_5 == true)
-            //    count++;
-
-            //Trl.TotalReady = count;
+            //Trl.TotalCount = count;
 
             //_dbContext.SaveChanges();
 
-            var Trl = TRLs1.FirstOrDefault(x => x.ThemeName == themeName);
+            var Trl1 = TRLs1.FirstOrDefault(x => x.ThemeName == themeName);
 
-            if (Trl != null)
+            if (Trl1 != null)
             {
-                Trl.Trl1[0] = trl1_1;
-                Trl.Trl1[1] = trl1_2;
-                Trl.Trl1[2] = trl1_3;
-                Trl.Trl1[3] = trl1_4;
-                
-                Trl.Trl2[0] = trl2_1;
-                Trl.Trl2[1] = trl2_2;
-                Trl.Trl2[2] = trl2_3;
-                Trl.Trl2[3] = trl2_4;
-                Trl.Trl2[4] = trl2_5;
-                Trl.Trl2[5] = trl2_6;
-                Trl.Trl2[6] = trl2_7;
-                Trl.Trl2[7] = trl2_8;
-                Trl.Trl2[8] = trl2_9;
-
-
-                //Trl.Trl1_2 = trl1_2;
-                //Trl.Trl1_3 = trl1_3;
-                //Trl.Trl1_4 = trl1_4;
-                //Trl.Trl1_5 = trl1_5;
-                //Trl.Trl2_1 = trl2_1;
-                //Trl.Trl2_2 = trl2_2;
-                //Trl.Trl2_3 = trl2_3;
-                //Trl.Trl2_4 = trl2_4;
-                //Trl.Trl2_5 = trl2_5;
-
                 int count = 0;
 
-                if (trl1_1 == true)
-                    count++;
-                if (trl1_2 == true)
-                    count++;
-                if (trl1_3 == true)
-                    count++;
-                if (trl1_4 == true)
-                    count++;
-                
-                if (trl2_1 == true)
-                    count++;
-                if (trl2_2 == true)
-                    count++;
-                if (trl2_3 == true)
-                    count++;
-                if (trl2_4 == true)
-                    count++;
-                if (trl2_5 == true)
-                    count++;
-                if (trl2_6 == true)
-                    count++;
-                if (trl2_7 == true)
-                    count++;
-                if (trl2_8 == true)
-                    count++;
-                if (trl2_9 == true)
+                if (trl1.Trl1_1 == true)
+                        count++;
+
+                if (trl1.Trl1_2 == true)
                     count++;
 
-                Trl.TotalCount = count;
+                if (trl1.Trl1_3 == true)
+                    count++;
+
+                if (trl1.Trl1_4 == true)
+                    count++;
+
+                
+                //if (trl1.Trl2_1 == true)
+                //    count++;
+
+                //if (trl1.Trl2_2 == true)
+                //    count++;
+
+                //if (trl1.Trl2_3 == true)
+                //    count++;
+
+                //if (trl1.Trl2_4 == true)
+                //    count++;
+
+                //if (trl1.Trl2_5 == true)
+                //    count++;
+
+                //if (trl1.Trl2_6 == true)
+                //    count++;
+
+                //if (trl1.Trl2_7 == true)
+                //    count++;
+
+                //if (trl1.Trl2_8 == true)
+                //    count++;
+
+                //if (trl1.Trl2_9 == true)
+                //    count++;
+
+              
+                //if (trl1.Trl3_1 == true)
+                //    count++;
+
+                //if (trl1.Trl3_2 == true)
+                //    count++;
+
+                //if (trl1.Trl3_3 == true)
+                //    count++;
+
+                //if (trl1.Trl3_4 == true)
+                //    count++;
+
+                //if (trl1.Trl3_5 == true)
+                //    count++;
+
+                //if (trl1.Trl3_6 == true)
+                //    count++;
+
+                //if (trl1.Trl3_7 == true)
+                //    count++;
+
+                //if (trl1.Trl3_8 == true)
+                //    count++;
+
+                //if (trl1.Trl3_9 == true)
+                //    count++;
+
+                //if (trl1.Trl3_10 == true)
+                //    count++;
+
+                //if (trl1.Trl3_11 == true)
+                //    count++;
+
+                //if (trl1.Trl3_12 == true)
+                //    count++;
+
+               
+                //if (trl1.Trl4_1 == true)
+                //    count++;
+
+                //if (trl1.Trl4_2 == true)
+                //    count++;
+
+                //if (trl1.Trl4_3 == true)
+                //    count++;
+
+                //if (trl1.Trl4_4 == true)
+                //    count++;
+
+                //if (trl1.Trl4_5 == true)
+                //    count++;
+
+                //if (trl1.Trl4_6 == true)
+                //    count++;
+
+                //if (trl1.Trl4_7 == true)
+                //    count++;
+
+                //if (trl1.Trl4_8 == true)
+                //    count++;
+
+                //if (trl1.Trl4_9 == true)
+                //    count++;
+
+                //if (trl1.Trl4_10 == true)
+                //    count++;
+
+                //if (trl1.Trl4_11 == true)
+                //    count++;
+
+                //if (trl1.Trl4_12 == true)
+                //    count++;
+
+                //if (trl1.Trl4_13 == true)
+                //    count++;
+
+                //if (trl1.Trl4_14 == true)
+                //    count++;
+
+                //if (trl1.Trl4_15 == true)
+                //    count++;
+
+                //if (trl1.Trl4_16 == true)
+                //    count++;
+
+                //if (trl1.Trl4_17 == true)
+                //    count++;
+
+
+                trl1.TotalCount = count;
+
+               
+                TRLs1.Remove(Trl1);
+
+                TRLs1.Add(trl1);
 
             }
             
@@ -150,19 +202,31 @@ namespace RD.Services
             //    return existing;
             //}
 
-            var existing = TRLs1.FirstOrDefault(x => x.ThemeName == themeName);
-
-            if (existing == null)
+            if (TRLs1.Count == 0)
             {
-                TRL1 trl = new TRL1(themeName, 0);
-                TRLs1.Add(trl);
-                return trl;
+                TRL1 trl1 = new TRL1(themeName, 0);
+                TRLs1.Add(trl1);
+                return trl1;
             }
 
             else
             {
-                return existing;
+                var existing = TRLs1.FirstOrDefault(x => x.ThemeName == themeName);
+
+                if (existing == null)
+                {
+                    TRL1 trl1 = new TRL1(themeName, 0);
+                    TRLs1.Add(trl1);
+                    return trl1;
+                }
+
+                else
+                {
+                    return existing;
+                }
             }
+
+            
         }      
        
 
