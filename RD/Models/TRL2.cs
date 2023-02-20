@@ -78,7 +78,15 @@ namespace RD.Models
         public bool Trl8_2 { get; set; }
         public bool Trl8_3 { get; set; }
         public bool Trl8_4 { get; set; }
-       
+
+        public bool Trl1 { get; set; }
+        public bool Trl2 { get; set; }
+        public bool Trl3 { get; set; }
+        public bool Trl4 { get; set; }
+        public bool Trl5 { get; set; }
+        public bool Trl6 { get; set; }
+        public bool Trl7 { get; set; }
+        public bool Trl8 { get; set; }
 
         public string ThemeName { get; set; }
 
@@ -162,7 +170,16 @@ namespace RD.Models
             Trl8_2 = false;
             Trl8_3 = false;
             Trl8_4 = false;
-           
+
+            Trl1 = false;
+            Trl2 = false;
+            Trl3 = false;
+            Trl4 = false;
+            Trl5 = false;
+            Trl6 = false;
+            Trl7 = false;
+            Trl8 = false;
+
 
 
             ThemeName = themeName;

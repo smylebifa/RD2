@@ -44,6 +44,122 @@ namespace RD.Services
             {
                 int count = 0;
 
+                if (trl1.Trl1 == true)
+                {
+                    trl1.Trl1_1 = true;
+                    trl1.Trl1_2 = true;
+                    trl1.Trl1_3 = true;
+                    trl1.Trl1_4 = true;
+                }
+
+                if (trl1.Trl2 == true)
+                {
+                    trl1.Trl2_1 = true;
+                    trl1.Trl2_2 = true;
+                    trl1.Trl2_3 = true;
+                    trl1.Trl2_4 = true;
+                    trl1.Trl2_5 = true;
+                    trl1.Trl2_6 = true;
+                    trl1.Trl2_7 = true;
+                    trl1.Trl2_8 = true;
+                    trl1.Trl2_9 = true;
+                }
+
+                if (trl1.Trl3 == true)
+                {
+                    trl1.Trl3_1 = true;
+                    trl1.Trl3_2 = true;
+                    trl1.Trl3_3 = true;
+                    trl1.Trl3_4 = true;
+                    trl1.Trl3_5 = true;
+                    trl1.Trl3_6 = true;
+                    trl1.Trl3_7 = true;
+                    trl1.Trl3_8 = true;
+                    trl1.Trl3_9 = true;
+                    trl1.Trl3_10 = true;
+                    trl1.Trl3_11 = true;
+                    trl1.Trl3_12 = true;
+
+                }
+
+                if (trl1.Trl4 == true)
+                {
+                    trl1.Trl4_1 = true;
+                    trl1.Trl4_2 = true;
+                    trl1.Trl4_3 = true;
+                    trl1.Trl4_4 = true;
+                    trl1.Trl4_5 = true;
+                    trl1.Trl4_6 = true;
+                    trl1.Trl4_7 = true;
+                    trl1.Trl4_8 = true;
+                    trl1.Trl4_9 = true;
+                    trl1.Trl4_10 = true;
+                    trl1.Trl4_11 = true;
+                    trl1.Trl4_12 = true;
+                    trl1.Trl4_13 = true;
+                    trl1.Trl4_14 = true;
+                    trl1.Trl4_15 = true;
+                    trl1.Trl4_16 = true;
+                    trl1.Trl4_17 = true;
+                }
+
+                if (trl1.Trl5 == true)
+                {
+                    trl1.Trl5_1 = true;
+                    trl1.Trl5_2 = true;
+                    trl1.Trl5_3 = true;
+                    trl1.Trl5_4 = true;
+                    trl1.Trl5_5 = true;
+                    trl1.Trl5_6 = true;
+                    trl1.Trl5_7 = true;
+                    trl1.Trl5_8 = true;
+                    trl1.Trl5_9 = true;
+                    trl1.Trl5_10 = true;
+                    trl1.Trl5_11 = true;
+                    trl1.Trl5_12 = true;
+                }
+
+                if (trl1.Trl6 == true)
+                {
+                    trl1.Trl6_1 = true;
+                    trl1.Trl6_2 = true;
+                    trl1.Trl6_3 = true;
+                    trl1.Trl6_4 = true;
+                    trl1.Trl6_5 = true;
+                    trl1.Trl6_6 = true;
+                    trl1.Trl6_7 = true;
+                    trl1.Trl6_8 = true;
+                    trl1.Trl6_9 = true;
+                    trl1.Trl6_10 = true;
+                    trl1.Trl6_11 = true;
+                    trl1.Trl6_12 = true;
+                    trl1.Trl6_13 = true;
+                    trl1.Trl6_14 = true;
+                    trl1.Trl6_15 = true;
+                    trl1.Trl6_16 = true;
+                }
+
+                if (trl1.Trl7 == true)
+                {
+                    trl1.Trl7_1 = true;
+                    trl1.Trl7_2 = true;
+                    trl1.Trl7_3 = true;
+                    trl1.Trl7_4 = true;
+                    trl1.Trl7_5 = true;
+                    trl1.Trl7_6 = true;
+                    trl1.Trl7_7 = true;
+                }
+
+                if (trl1.Trl8 == true)
+                {
+                    trl1.Trl8_1 = true;
+                    trl1.Trl8_2 = true;
+                    trl1.Trl8_3 = true;
+                    trl1.Trl8_4 = true;
+                    trl1.Trl8_5 = true;
+
+                }
+
                 if (trl1.Trl1_1 == true)
                     count++;
 
@@ -300,6 +416,8 @@ namespace RD.Services
                     count++;
 
 
+              
+                
                 trl1.TotalCount = count;
 
 
@@ -325,6 +443,98 @@ namespace RD.Services
 
             if (Trl2 != null)
             {
+                if (trl2.Trl1 == true)
+                {
+                    trl2.Trl1_1 = true;
+                    trl2.Trl1_2 = true;
+                    trl2.Trl1_3 = true;
+                    trl2.Trl1_4 = true;
+                }
+
+                if (trl2.Trl2 == true)
+                {
+                    trl2.Trl2_1 = true;
+                    trl2.Trl2_2 = true;
+                    trl2.Trl2_3 = true;
+                   
+                }
+
+                if (trl2.Trl3 == true)
+                {
+                    trl2.Trl3_1 = true;
+                    trl2.Trl3_2 = true;
+                    trl2.Trl3_3 = true;
+                    trl2.Trl3_4 = true;
+                    trl2.Trl3_5 = true;
+                    trl2.Trl3_6 = true;
+                    trl2.Trl3_7 = true;
+                    trl2.Trl3_8 = true;
+                    
+                }
+
+                if (trl2.Trl4 == true)
+                {
+                    trl2.Trl4_1 = true;
+                    trl2.Trl4_2 = true;
+                    trl2.Trl4_3 = true;
+                    trl2.Trl4_4 = true;
+                    trl2.Trl4_5 = true;
+                    trl2.Trl4_6 = true;
+                    trl2.Trl4_7 = true;
+                    trl2.Trl4_8 = true;
+                    trl2.Trl4_9 = true;
+                    trl2.Trl4_10 = true;
+                    trl2.Trl4_11 = true;
+                  
+                }
+
+                if (trl2.Trl5 == true)
+                {
+                    trl2.Trl5_1 = true;
+                    trl2.Trl5_2 = true;
+                    trl2.Trl5_3 = true;
+                    trl2.Trl5_4 = true;
+                    trl2.Trl5_5 = true;
+                    trl2.Trl5_6 = true;
+                    trl2.Trl5_7 = true;
+                    trl2.Trl5_8 = true;
+                    trl2.Trl5_9 = true;
+                    trl2.Trl5_10 = true;
+                  
+                }
+
+                if (trl2.Trl6 == true)
+                {
+                    trl2.Trl6_1 = true;
+                    trl2.Trl6_2 = true;
+                    trl2.Trl6_3 = true;
+                    trl2.Trl6_4 = true;
+                    trl2.Trl6_5 = true;
+                    trl2.Trl6_6 = true;
+                    trl2.Trl6_7 = true;
+                    trl2.Trl6_8 = true;
+                    trl2.Trl6_9 = true;
+                    trl2.Trl6_10 = true;
+                   
+                }
+
+                if (trl2.Trl7 == true)
+                {
+                    trl2.Trl7_1 = true;
+                    trl2.Trl7_2 = true;
+                    trl2.Trl7_3 = true;
+                    trl2.Trl7_4 = true;
+                   
+                }
+
+                if (trl2.Trl8 == true)
+                {
+                    trl2.Trl8_1 = true;
+                    trl2.Trl8_2 = true;
+                    trl2.Trl8_3 = true;
+                    trl2.Trl8_4 = true;
+                }
+
                 int count = 0;
 
                 if (trl2.Trl1_1 == true)
@@ -410,7 +620,6 @@ namespace RD.Services
 
                 if (trl2.Trl4_11 == true)
                     count++;
-
               
 
 
