@@ -44,7 +44,7 @@ namespace RD.Services
             {
                 int count = 0;
 
-                if (trl1.Trl1 == true)
+                if (trl1.Trl1x == true)
                 {
                     trl1.Trl1_1 = true;
                     trl1.Trl1_2 = true;
@@ -451,7 +451,7 @@ namespace RD.Services
                     trl2.Trl1_4 = true;
                 }
 
-                if (trl2.Trl2 == true)
+                if (trl2.Trl2x == true)
                 {
                     trl2.Trl2_1 = true;
                     trl2.Trl2_2 = true;

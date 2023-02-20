@@ -108,7 +108,7 @@ namespace RD.Models
         public bool Trl8_5 { get; set; }
 
 
-        public bool Trl1 { get; set; }
+        public bool Trl1x { get; set; }
         public bool Trl2 { get; set; }
         public bool Trl3 { get; set; }
         public bool Trl4 { get; set; }
@@ -225,7 +225,7 @@ namespace RD.Models
             Trl8_4 = false;
             Trl8_5 = false;
 
-            Trl1 = false;
+            Trl1x = false;
             Trl2 = false;
             Trl3 = false;
             Trl4 = false;

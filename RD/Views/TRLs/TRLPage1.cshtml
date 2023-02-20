@@ -4,7 +4,7 @@
     ViewBag.Title = "TRL - Оборудование";
     Layout = "_Layout";
 
-    bool Trl1 = false, Trl2 = false, Trl3 = false, Trl4 = false, Trl5 = false, Trl6 = false, Trl7 = false, Trl8 = false;
+    bool Trl1x = false, Trl2 = false, Trl3 = false, Trl4 = false, Trl5 = false, Trl6 = false, Trl7 = false, Trl8 = false;
 
 }
 
@@ -118,9 +118,9 @@
 
 @{ 
     if (ViewBag.Trls1.Trl1_1 && ViewBag.Trls1.Trl1_2 && ViewBag.Trls1.Trl1_3 && ViewBag.Trls1.Trl1_4)
-        Trl1 = true;
+        Trl1x = true;
     else
-        Trl1 = false;
+        Trl1x = false;
 
 
     if (ViewBag.Trls1.Trl2_1 && ViewBag.Trls1.Trl2_2 && ViewBag.Trls1.Trl2_3 && ViewBag.Trls1.Trl2_4 && ViewBag.Trls1.Trl2_5 
@@ -212,7 +212,7 @@
                     <td></td>
                     <td>2</td>
                     <td class='expandFRED1'>Определены целевые области применения технологии и ее критические элементы ▼</td>
-                    <td><input type="checkbox" name="Trl1" checked="@Trl1" value="true" /></td>
+                    <td><input type="checkbox" name="Trl1x" checked="@Trl1x" value="true" /></td>
                 </tr>
 
             </tbody>
