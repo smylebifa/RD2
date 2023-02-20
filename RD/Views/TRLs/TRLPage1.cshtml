@@ -148,6 +148,8 @@
                     <td class='expandFRED1'>Определены целевые области применения технологии и ее критические элементы ▼</td>
                     <td>
                         <input type="checkbox" />
+                        @*<input type="checkbox" checked="
+        @ViewBag.Trls1.Trl1_1 && @ViewBag.Trls1.Trl1_2 && @ViewBag.Trls1.Trl1_3 && @ViewBag.Trls1.Trl1_4 " />*@
                     </td>
                 </tr>
 
@@ -162,7 +164,7 @@
                         Определены (перечислены) базовые (основные) элементы технологии
                     </td>
                     <td class='expandSUB1'>
-                        <input type="checkbox" name="Trl1_1" checked="@ViewBag.Trl1_1" value="true" />
+                        <input type="checkbox" name="Trl1_1" checked="@ViewBag.Trls1.Trl1_1" value="true" />
                     </td>
                 </tr>
 
@@ -173,7 +175,7 @@
                         Частично определены компоненты технологии и/или подсистемы разрабатываемой системы.
                     </td>
                     <td class='expandSUB1'>
-                        <input type="checkbox" name="Trl1_2" checked="@ViewBag.Trl1_2" value="true" />
+                        <input type="checkbox" name="Trl1_2" checked="@ViewBag.Trls1.Trl1_2" value="true" />
                     </td>
                 </tr>
                 <tr>
@@ -183,7 +185,7 @@
                         Сделаны предварительные оценки характеристик для каждого элемента системы/технологии.
                     </td>
                     <td class='expandSUB1'>
-                        <input type="checkbox" name="Trl1_3" checked="@ViewBag.Trl1_3" value="true" />
+                        <input type="checkbox" name="Trl1_3" checked="@ViewBag.Trls1.Trl1_3" value="true" />
                     </td>
                 </tr>
                 <tr>
@@ -193,7 +195,7 @@
                         Для проверки физических принципов технологии использованы только моделирование и симуляция (имитация).
                     </td>
                     <td class='expandSUB1'>
-                        <input type="checkbox" name="Trl1_4" checked="@ViewBag.Trl1_4" value="true" />
+                        <input type="checkbox" name="Trl1_4" checked="@ViewBag.Trls1.Trl1_4" value="true" />
                     </td>
                 </tr>
 
@@ -202,15 +204,16 @@
 
 
 
-            @*<tbody class="labels" style="background-color: #ececec;">
+            <tbody class="labels" style="background-color: #ececec;">
                     <tr>
                         <td></td>
                         <td>3</td>
                         <td class='expandFRED2'>Получен макетный образец и продемонстрированы его ключевые характеристики.  ▼</td>
                         <td>
-                            <input type="checkbox" checked="
+                            <input type="checkbox" />
+                                   @*<input type="checkbox" checked="
                                @ViewBag.Trls1.Trl2_1 && @ViewBag.Trls1.Trl2_2 && @ViewBag.Trls1.Trl2_3 && @ViewBag.Trls1.Trl2_4 && @ViewBag.Trls1.Trl2_5
-                                && @ViewBag.Trls1.Trl2_6 && @ViewBag.Trls1.Trl2_7 && @ViewBag.Trls1.Trl2_8 && @ViewBag.Trls1.Trl2_9" />
+                                && @ViewBag.Trls1.Trl2_6 && @ViewBag.Trls1.Trl2_7 && @ViewBag.Trls1.Trl2_8 && @ViewBag.Trls1.Trl2_9" />*@
                         </td>
                     </tr>
 
@@ -316,24 +319,25 @@
                     </td>
                 </tr>
 
-                </tbody>*@
+                </tbody>
 
 
 
 
 
-            @*<tbody class="labels" style="background-color: #ececec;">
+            <tbody class="labels" style="background-color: #ececec;">
 
                     <tr>
                         <td></td>
                         <td>4</td>
                         <td class='expandFRED3'>Получен лабораторный образец, подготовлен лабораторный стенд, проведены испытания базовых функций связи с другими элементами системы . ▼</td>
                         <td>
-                            <input type="checkbox" id="trl3" checked="
-                               @ViewBag.Trls1.Trl3_1 && @ViewBag.Trls1.Trl3_2 && @ViewBag.Trls1.Trl3_3 && @ViewBag.Trls1.Trl3_4 && @ViewBag.Trls1.Trl3_5
-                                && @ViewBag.Trls1.Trl3_6 && @ViewBag.Trls1.Trl3_7 && @ViewBag.Trls1.Trl3_8 && @ViewBag.Trls1.Trl3_9 && @ViewBag.Trls1.Trl3_10
-                                && @ViewBag.Trls1.Trl3_11 && @ViewBag.Trls1.Trl3_12
-                               " />
+                            @*<input type="checkbox" id="trl3" checked="
+        @ViewBag.Trls1.Trl3_1 && @ViewBag.Trls1.Trl3_2 && @ViewBag.Trls1.Trl3_3 && @ViewBag.Trls1.Trl3_4 && @ViewBag.Trls1.Trl3_5
+         && @ViewBag.Trls1.Trl3_6 && @ViewBag.Trls1.Trl3_7 && @ViewBag.Trls1.Trl3_8 && @ViewBag.Trls1.Trl3_9 && @ViewBag.Trls1.Trl3_10
+         && @ViewBag.Trls1.Trl3_11 && @ViewBag.Trls1.Trl3_12
+        " />*@
+                            <input type="checkbox" id="trl3" />
                         </td>
 
                     </tr>
@@ -363,7 +367,7 @@
                         <td class='expandSUB3' align='right'>
                             Существуют макеты отдельных частей и компонентов разрабатываемой системы.
                         </td>
-                        <td class='expandSUB2'><input type="checkbox" id="Trl3_3" name="Trl3_3" checked="@ViewBag.Trls1.Trl3_3" value="true" /></td>
+                        <td class='expandSUB3'><input type="checkbox" id="Trl3_3" name="Trl3_3" checked="@ViewBag.Trls1.Trl3_3" value="true" /></td>
                     </tr>
                     <tr>
                         <td class='expandSUB3 expandVALS'></td>
@@ -439,7 +443,7 @@
                     </tr>
 
 
-                </tbody>*@
+                </tbody>
 
 
 
@@ -447,7 +451,7 @@
 
 
 
-            @*<tbody class="labels" style="background-color: #ececec;">
+            <tbody class="labels" style="background-color: #ececec;">
 
                     <tr>
                         <td></td>
@@ -599,7 +603,7 @@
                         <td class='expandSUB4'><input type="checkbox" id="trl4_17" name="Trl4_17" checked="@ViewBag.Trls1.Trl4_17" value="true" /></td>
                     </tr>
 
-                </tbody>*@
+                </tbody>
 
 
 
@@ -610,7 +614,7 @@
 
 
 
-            @*<tbody class="labels" style="background-color: #ececec;">
+            <tbody class="labels" style="background-color: #ececec;">
 
                     <tr>
                         <td></td>
@@ -720,7 +724,7 @@
                         </td>
                         <td class='expandSUB5'><input type="checkbox" id="trl5_12" name="Trl5_12" checked="@ViewBag.Trls1.Trl5_12" value="true" /></td>
                     </tr>
-                </tbody>*@
+                </tbody>
 
 
 
@@ -729,7 +733,7 @@
 
 
 
-            @*<tbody class="labels" style="background-color: #ececec;">
+            <tbody class="labels" style="background-color: #ececec;">
 
                     <tr>
                         <td></td>
@@ -874,14 +878,14 @@
                         <td class='expandSUB6'><input type="checkbox" id="trl6_16" name="Trl6_16" checked="@ViewBag.Trls1.Trl6_16" value="true" /></td>
                     </tr>
 
-                </tbody>*@
+                </tbody>
 
 
 
 
 
 
-            @*<tbody class="labels" style="background-color: #ececec;">
+            <tbody class="labels" style="background-color: #ececec;">
 
                     <tr>
                         <td></td>
@@ -953,7 +957,7 @@
                         </td>
                         <td class='expandSUB7'><input type="checkbox" id="trl7_7" name="Trl7_1" checked="@ViewBag.Trls1.Trl7_7" value="true" /></td>
                     </tr>
-                </tbody>*@
+                </tbody>
 
 
 
@@ -962,7 +966,7 @@
 
 
 
-            @*<tbody class="labels" style="background-color: #ececec;">
+            <tbody class="labels" style="background-color: #ececec;">
 
                     <tr>
                         <td></td>
@@ -1023,7 +1027,7 @@
                         <td class='expandSUB8'><input type="checkbox" id="trl8_5" name="Trl8_5" checked="@ViewBag.Trls1.Trl8_5" value="true" /></td>
                     </tr>
 
-                </tbody>*@
+                </tbody>
 
         </table>
     </div>
@@ -1034,43 +1038,18 @@
         @Html.HiddenFor(m => m.ThemeName)*@
 
 
-        <div name="TotalCount" type="number" value="@ViewBag.TotalCount"></div>
+        <div name="TotalCount" type="number" value="@ViewBag.Trls1.TotalCount"></div>
 
         <br>
 
-        <h5 style="color: #3949AC;">Выполненные уровни - @ViewBag.TotalCount</h5>
+        <h5 style="color: #3949AC;">Выполненные уровни - @ViewBag.Trls1.TotalCount</h5>
 
     <br>
 
-    @*<script>
-            google.load("visualization", "1", { packages: ["corechart"] });
-            google.setOnLoadCallback(drawChart);
-            function drawChart() {
 
-                Total = 10;
+    <div id="trl_diagram" style="width: 500px; height: 400px;"></div>
 
-                var ready = @ViewBag.Trls.TotalReady;
-                var notReady = Total - ready;
-
-                var data = google.visualization.arrayToDataTable([
-                    ['Уровни', 'Количество'],
-                    ['Выполненные уровни', ready],
-                    ['Не выполненные уровни', notReady],
-                ]);
-                var options = {
-                    title: 'Готовность проекта',
-                    is3D: true,
-                    //pieResidueSliceLabel: 'Остальное'
-                };
-                var chart = new google.visualization.PieChart(document.getElementById('trl_diagram'));
-                chart.draw(data, options);
-            }
-        </script>*@
-
-
-    @*<div id="trl_diagram" style="width: 500px; height: 400px;"></div>*@
-
-    @*<script type="text/javascript">
+    <script type="text/javascript">
         // Load google charts
         google.charts.load('current', { 'packages': ['corechart'] });
         google.charts.setOnLoadCallback(drawChart);
@@ -1097,7 +1076,7 @@
             var chart = new google.visualization.PieChart(document.getElementById('trl_diagram'));
             chart.draw(data, options);
         }
-        </script>*@
+        </script>
 
     <div class="container">
         <div class="row">

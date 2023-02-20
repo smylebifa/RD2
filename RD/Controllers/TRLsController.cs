@@ -33,12 +33,6 @@ namespace RD.Controllers
         {
             var trls1 = _trlsService.GetTrls1(themeName);
             ViewBag.Trls1 = trls1;
-            ViewBag.Trl1_1 = trls1.Trl1_1;
-            ViewBag.Trl1_2 = trls1.Trl1_2;
-            ViewBag.Trl1_3 = trls1.Trl1_3;
-            ViewBag.Trl1_4 = trls1.Trl1_4;
-            ViewBag.TotalCount = trls1.TotalCount;
-
             ViewBag.ThemeName = themeName;
             return View();
         }

@@ -55,122 +55,248 @@ namespace RD.Services
                 if (trl1.Trl1_4 == true)
                     count++;
 
-                
-                //if (trl1.Trl2_1 == true)
-                //    count++;
 
-                //if (trl1.Trl2_2 == true)
-                //    count++;
+                if (trl1.Trl2_1 == true)
+                    count++;
 
-                //if (trl1.Trl2_3 == true)
-                //    count++;
+                if (trl1.Trl2_2 == true)
+                    count++;
 
-                //if (trl1.Trl2_4 == true)
-                //    count++;
+                if (trl1.Trl2_3 == true)
+                    count++;
 
-                //if (trl1.Trl2_5 == true)
-                //    count++;
+                if (trl1.Trl2_4 == true)
+                    count++;
 
-                //if (trl1.Trl2_6 == true)
-                //    count++;
+                if (trl1.Trl2_5 == true)
+                    count++;
 
-                //if (trl1.Trl2_7 == true)
-                //    count++;
+                if (trl1.Trl2_6 == true)
+                    count++;
 
-                //if (trl1.Trl2_8 == true)
-                //    count++;
+                if (trl1.Trl2_7 == true)
+                    count++;
 
-                //if (trl1.Trl2_9 == true)
-                //    count++;
+                if (trl1.Trl2_8 == true)
+                    count++;
 
-              
-                //if (trl1.Trl3_1 == true)
-                //    count++;
+                if (trl1.Trl2_9 == true)
+                    count++;
 
-                //if (trl1.Trl3_2 == true)
-                //    count++;
 
-                //if (trl1.Trl3_3 == true)
-                //    count++;
+                if (trl1.Trl3_1 == true)
+                    count++;
 
-                //if (trl1.Trl3_4 == true)
-                //    count++;
+                if (trl1.Trl3_2 == true)
+                    count++;
 
-                //if (trl1.Trl3_5 == true)
-                //    count++;
+                if (trl1.Trl3_3 == true)
+                    count++;
 
-                //if (trl1.Trl3_6 == true)
-                //    count++;
+                if (trl1.Trl3_4 == true)
+                    count++;
 
-                //if (trl1.Trl3_7 == true)
-                //    count++;
+                if (trl1.Trl3_5 == true)
+                    count++;
 
-                //if (trl1.Trl3_8 == true)
-                //    count++;
+                if (trl1.Trl3_6 == true)
+                    count++;
 
-                //if (trl1.Trl3_9 == true)
-                //    count++;
+                if (trl1.Trl3_7 == true)
+                    count++;
 
-                //if (trl1.Trl3_10 == true)
-                //    count++;
+                if (trl1.Trl3_8 == true)
+                    count++;
 
-                //if (trl1.Trl3_11 == true)
-                //    count++;
+                if (trl1.Trl3_9 == true)
+                    count++;
 
-                //if (trl1.Trl3_12 == true)
-                //    count++;
+                if (trl1.Trl3_10 == true)
+                    count++;
 
-               
-                //if (trl1.Trl4_1 == true)
-                //    count++;
+                if (trl1.Trl3_11 == true)
+                    count++;
 
-                //if (trl1.Trl4_2 == true)
-                //    count++;
+                if (trl1.Trl3_12 == true)
+                    count++;
 
-                //if (trl1.Trl4_3 == true)
-                //    count++;
 
-                //if (trl1.Trl4_4 == true)
-                //    count++;
+                if (trl1.Trl4_1 == true)
+                    count++;
 
-                //if (trl1.Trl4_5 == true)
-                //    count++;
+                if (trl1.Trl4_2 == true)
+                    count++;
 
-                //if (trl1.Trl4_6 == true)
-                //    count++;
+                if (trl1.Trl4_3 == true)
+                    count++;
 
-                //if (trl1.Trl4_7 == true)
-                //    count++;
+                if (trl1.Trl4_4 == true)
+                    count++;
 
-                //if (trl1.Trl4_8 == true)
-                //    count++;
+                if (trl1.Trl4_5 == true)
+                    count++;
 
-                //if (trl1.Trl4_9 == true)
-                //    count++;
+                if (trl1.Trl4_6 == true)
+                    count++;
 
-                //if (trl1.Trl4_10 == true)
-                //    count++;
+                if (trl1.Trl4_7 == true)
+                    count++;
 
-                //if (trl1.Trl4_11 == true)
-                //    count++;
+                if (trl1.Trl4_8 == true)
+                    count++;
 
-                //if (trl1.Trl4_12 == true)
-                //    count++;
+                if (trl1.Trl4_9 == true)
+                    count++;
 
-                //if (trl1.Trl4_13 == true)
-                //    count++;
+                if (trl1.Trl4_10 == true)
+                    count++;
 
-                //if (trl1.Trl4_14 == true)
-                //    count++;
+                if (trl1.Trl4_11 == true)
+                    count++;
 
-                //if (trl1.Trl4_15 == true)
-                //    count++;
+                if (trl1.Trl4_12 == true)
+                    count++;
 
-                //if (trl1.Trl4_16 == true)
-                //    count++;
+                if (trl1.Trl4_13 == true)
+                    count++;
 
-                //if (trl1.Trl4_17 == true)
-                //    count++;
+                if (trl1.Trl4_14 == true)
+                    count++;
+
+                if (trl1.Trl4_15 == true)
+                    count++;
+
+                if (trl1.Trl4_16 == true)
+                    count++;
+
+                if (trl1.Trl4_17 == true)
+                    count++;
+
+
+                if (trl1.Trl5_1 == true)
+                    count++;
+
+                if (trl1.Trl5_2 == true)
+                    count++;
+
+                if (trl1.Trl5_3 == true)
+                    count++;
+
+                if (trl1.Trl5_4 == true)
+                    count++;
+
+                if (trl1.Trl5_5 == true)
+                    count++;
+
+                if (trl1.Trl5_6 == true)
+                    count++;
+
+                if (trl1.Trl5_7 == true)
+                    count++;
+
+                if (trl1.Trl5_8 == true)
+                    count++;
+
+                if (trl1.Trl5_9 == true)
+                    count++;
+
+                if (trl1.Trl5_10 == true)
+                    count++;
+
+                if (trl1.Trl5_11 == true)
+                    count++;
+
+                if (trl1.Trl5_12 == true)
+                    count++;
+
+
+
+                if (trl1.Trl6_1 == true)
+                    count++;
+
+                if (trl1.Trl6_2 == true)
+                    count++;
+
+                if (trl1.Trl6_3 == true)
+                    count++;
+
+                if (trl1.Trl6_4 == true)
+                    count++;
+
+                if (trl1.Trl6_5 == true)
+                    count++;
+
+                if (trl1.Trl6_6 == true)
+                    count++;
+
+                if (trl1.Trl6_7 == true)
+                    count++;
+
+                if (trl1.Trl6_8 == true)
+                    count++;
+
+                if (trl1.Trl6_9 == true)
+                    count++;
+
+                if (trl1.Trl6_10 == true)
+                    count++;
+
+                if (trl1.Trl6_11 == true)
+                    count++;
+
+                if (trl1.Trl6_12 == true)
+                    count++;
+
+                if (trl1.Trl6_13 == true)
+                    count++;
+
+                if (trl1.Trl6_14 == true)
+                    count++;
+
+                if (trl1.Trl6_15 == true)
+                    count++;
+
+                if (trl1.Trl6_16 == true)
+                    count++;
+
+
+                if (trl1.Trl7_1 == true)
+                    count++;
+
+                if (trl1.Trl7_2 == true)
+                    count++;
+
+                if (trl1.Trl7_3 == true)
+                    count++;
+
+                if (trl1.Trl7_4 == true)
+                    count++;
+
+                if (trl1.Trl7_5 == true)
+                    count++;
+
+                if (trl1.Trl7_6 == true)
+                    count++;
+
+                if (trl1.Trl7_7 == true)
+                    count++;
+
+
+
+                if (trl1.Trl8_1 == true)
+                    count++;
+
+                if (trl1.Trl8_2 == true)
+                    count++;
+
+                if (trl1.Trl8_3 == true)
+                    count++;
+
+                if (trl1.Trl8_4 == true)
+                    count++;
+
+                if (trl1.Trl8_5 == true)
+                    count++;
 
 
                 trl1.TotalCount = count;
