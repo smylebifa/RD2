@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace RD.Services
 {
     //public class TRLsService : ITRLsService
-    public class TRLsService 
+    public class TRLsService
     {
         //private readonly TestDbContext _dbContext;
 
@@ -18,6 +18,7 @@ namespace RD.Services
         //}
 
         private static readonly List<TRL1> TRLs1 = new List<TRL1>();
+        private static readonly List<TRL2> TRLs2 = new List<TRL2>();
 
 
         //public void SaveTRL1(string themeName, bool trl1_1, bool trl1_2, bool trl1_3, bool trl1_4,
@@ -29,7 +30,7 @@ namespace RD.Services
 
         //public void SaveTRL1(string themeName, bool[] trl3, bool[] trl4)
         //{
-            public void SaveTRL1(string themeName, TRL1 trl1)
+        public void SaveTRL1(string themeName, TRL1 trl1)
         {
             //var Trl = _dbContext.TRLs.FirstOrDefault(x => x.StageName == themeName);
 
@@ -44,7 +45,7 @@ namespace RD.Services
                 int count = 0;
 
                 if (trl1.Trl1_1 == true)
-                        count++;
+                    count++;
 
                 if (trl1.Trl1_2 == true)
                     count++;
@@ -301,16 +302,227 @@ namespace RD.Services
 
                 trl1.TotalCount = count;
 
-               
+
                 TRLs1.Remove(Trl1);
 
                 TRLs1.Add(trl1);
 
             }
-            
+
         }
 
-        
+
+
+        public void SaveTRL2(string themeName, TRL2 trl2)
+        {
+            //var Trl = _dbContext.TRLs.FirstOrDefault(x => x.StageName == themeName);
+
+            //Trl.TotalCount = count;
+
+            //_dbContext.SaveChanges();
+
+            var Trl2 = TRLs2.FirstOrDefault(x => x.ThemeName == themeName);
+
+            if (Trl2 != null)
+            {
+                int count = 0;
+
+                if (trl2.Trl1_1 == true)
+                    count++;
+
+                if (trl2.Trl1_2 == true)
+                    count++;
+
+                if (trl2.Trl1_3 == true)
+                    count++;
+
+                if (trl2.Trl1_4 == true)
+                    count++;
+
+
+                if (trl2.Trl2_1 == true)
+                    count++;
+
+                if (trl2.Trl2_2 == true)
+                    count++;
+
+                if (trl2.Trl2_3 == true)
+                    count++;
+
+              
+
+                if (trl2.Trl3_1 == true)
+                    count++;
+
+                if (trl2.Trl3_2 == true)
+                    count++;
+
+                if (trl2.Trl3_3 == true)
+                    count++;
+
+                if (trl2.Trl3_4 == true)
+                    count++;
+
+                if (trl2.Trl3_5 == true)
+                    count++;
+
+                if (trl2.Trl3_6 == true)
+                    count++;
+
+                if (trl2.Trl3_7 == true)
+                    count++;
+
+                if (trl2.Trl3_8 == true)
+                    count++;
+
+              
+
+
+                if (trl2.Trl4_1 == true)
+                    count++;
+
+                if (trl2.Trl4_2 == true)
+                    count++;
+
+                if (trl2.Trl4_3 == true)
+                    count++;
+
+                if (trl2.Trl4_4 == true)
+                    count++;
+
+                if (trl2.Trl4_5 == true)
+                    count++;
+
+                if (trl2.Trl4_6 == true)
+                    count++;
+
+                if (trl2.Trl4_7 == true)
+                    count++;
+
+                if (trl2.Trl4_8 == true)
+                    count++;
+
+                if (trl2.Trl4_9 == true)
+                    count++;
+
+                if (trl2.Trl4_10 == true)
+                    count++;
+
+                if (trl2.Trl4_11 == true)
+                    count++;
+
+              
+
+
+                if (trl2.Trl5_1 == true)
+                    count++;
+
+                if (trl2.Trl5_2 == true)
+                    count++;
+
+                if (trl2.Trl5_3 == true)
+                    count++;
+
+                if (trl2.Trl5_4 == true)
+                    count++;
+
+                if (trl2.Trl5_5 == true)
+                    count++;
+
+                if (trl2.Trl5_6 == true)
+                    count++;
+
+                if (trl2.Trl5_7 == true)
+                    count++;
+
+                if (trl2.Trl5_8 == true)
+                    count++;
+
+                if (trl2.Trl5_9 == true)
+                    count++;
+
+                if (trl2.Trl5_10 == true)
+                    count++;
+
+              
+
+
+
+                if (trl2.Trl6_1 == true)
+                    count++;
+
+                if (trl2.Trl6_2 == true)
+                    count++;
+
+                if (trl2.Trl6_3 == true)
+                    count++;
+
+                if (trl2.Trl6_4 == true)
+                    count++;
+
+                if (trl2.Trl6_5 == true)
+                    count++;
+
+                if (trl2.Trl6_6 == true)
+                    count++;
+
+                if (trl2.Trl6_7 == true)
+                    count++;
+
+                if (trl2.Trl6_8 == true)
+                    count++;
+
+                if (trl2.Trl6_9 == true)
+                    count++;
+
+                if (trl2.Trl6_10 == true)
+                    count++;
+
+               
+
+
+                if (trl2.Trl7_1 == true)
+                    count++;
+
+                if (trl2.Trl7_2 == true)
+                    count++;
+
+                if (trl2.Trl7_3 == true)
+                    count++;
+
+                if (trl2.Trl7_4 == true)
+                    count++;
+
+             
+
+
+
+                if (trl2.Trl8_1 == true)
+                    count++;
+
+                if (trl2.Trl8_2 == true)
+                    count++;
+
+                if (trl2.Trl8_3 == true)
+                    count++;
+
+                if (trl2.Trl8_4 == true)
+                    count++;
+
+               
+
+                trl2.TotalCount = count;
+
+
+                TRLs2.Remove(Trl2);
+
+                TRLs2.Add(trl2);
+
+            }
+
+        }
+
+
 
         public TRL1 GetTrls1(string themeName)
         {
@@ -352,9 +564,40 @@ namespace RD.Services
                 }
             }
 
+
+        }
+
+
+        public TRL2 GetTrls2(string themeName)
+        {
             
-        }      
-       
+            if (TRLs2.Count == 0)
+            {
+                TRL2 trl2 = new TRL2(themeName, 0);
+                TRLs2.Add(trl2);
+                return trl2;
+            }
+
+            else
+            {
+                var existing = TRLs2.FirstOrDefault(x => x.ThemeName == themeName);
+
+                if (existing == null)
+                {
+                    TRL2 trl2 = new TRL2(themeName, 0);
+                    TRLs2.Add(trl2);
+                    return trl2;
+                }
+
+                else
+                {
+                    return existing;
+                }
+            }
+
+
+        }
+
 
     }
 }

@@ -1,4 +1,4 @@
-﻿@model RD.Models.TRL1;
+﻿@model RD.Models.TRL2;
 
 @{
     ViewBag.Title = "TRL - Оборудование";
@@ -456,7 +456,7 @@
                     <tr>
                         <td></td>
                         <td>5</td>
-                        <td class='expandFRED4'>Изготовлен экспериментальный образец в реальном масштабе по полупромышленной технологии и испытан, проведена эмуляция основных внешних условий. . ▼</td>
+                        <td class='expandFRED4'>Изготовлен экспериментальный образец в реальном масштабе по полупромышленной технологии и испытан, проведена эмуляция основных внешних условий. ▼</td>
                         <td>
                             <input type="checkbox" id="trl4" />
                         </td>
@@ -1095,96 +1095,3 @@
     </div>
 
 </form>
-
-    <script type="text/javascript">
-        function save(themeName) {
-
-            //var trl1_1 = document.getElementById('trl1_1').checked;
-            //var trl1_2 = document.getElementById('trl1_2').checked;
-            //var trl1_3 = document.getElementById('trl1_3').checked;
-            //var trl1_4 = document.getElementById('trl1_4').checked;
-
-            //var trl1 = [trl1_1, trl1_2, trl1_3, trl1_4];
-
-
-            //var trl2_1 = document.getElementById('trl2_1').checked;
-            //var trl2_2 = document.getElementById('trl2_2').checked;
-            //var trl2_3 = document.getElementById('trl2_3').checked;
-            //var trl2_4 = document.getElementById('trl2_4').checked;
-            //var trl2_5 = document.getElementById('trl2_5').checked;
-            //var trl2_6 = document.getElementById('trl2_6').checked;
-            //var trl2_7 = document.getElementById('trl2_7').checked;
-            //var trl2_8 = document.getElementById('trl2_8').checked;
-            //var trl2_9 = document.getElementById('trl2_9').checked;
-
-            //var trl2 = [trl2_1, trl2_2, trl2_3, trl2_4, trl2_5, trl2_6, trl2_7, trl2_8, trl2_9];
-
-            //var trl3_1 = document.getElementById('trl3_1').checked;
-            //var trl3_2 = document.getElementById('trl3_2').checked;
-            //var trl3_3 = document.getElementById('trl3_3').checked;
-            //var trl3_4 = document.getElementById('trl3_4').checked;
-            //var trl3_5 = document.getElementById('trl3_5').checked;
-            //var trl3_6 = document.getElementById('trl3_6').checked;
-            //var trl3_7 = document.getElementById('trl3_7').checked;
-            //var trl3_8 = document.getElementById('trl3_8').checked;
-            //var trl3_9 = document.getElementById('trl3_9').checked;
-            //var trl3_10 = document.getElementById('trl3_10').checked;
-            //var trl3_11 = document.getElementById('trl3_11').checked;
-            //var trl3_12 = document.getElementById('trl3_12').checked;
-
-            //var trl3 = [trl3_1, trl3_2, trl3_3, trl3_4, trl3_5, trl3_6, trl3_7, trl3_8, trl3_9, trl3_10, trl3_11, trl3_12];
-
-
-            //var trl4_1 = document.getElementById('trl4_1').checked;
-            //var trl4_2 = document.getElementById('trl4_2').checked;
-            //var trl4_3 = document.getElementById('trl4_3').checked;
-            //var trl4_4 = document.getElementById('trl4_4').checked;
-            //var trl4_5 = document.getElementById('trl4_5').checked;
-            //var trl4_6 = document.getElementById('trl4_6').checked;
-            //var trl4_7 = document.getElementById('trl4_7').checked;
-            //var trl4_8 = document.getElementById('trl4_8').checked;
-            //var trl4_9 = document.getElementById('trl4_9').checked;
-            //var trl4_10 = document.getElementById('trl4_10').checked;
-            //var trl4_11 = document.getElementById('trl4_11').checked;
-            //var trl4_12 = document.getElementById('trl4_12').checked;
-            //var trl4_13 = document.getElementById('trl4_13').checked;
-            //var trl4_14 = document.getElementById('trl4_14').checked;
-            //var trl4_15 = document.getElementById('trl4_15').checked;
-            //var trl4_16 = document.getElementById('trl4_16').checked;
-            //var trl4_17 = document.getElementById('trl4_17').checked;
-
-            //var trl4 = [trl4_1, trl4_2, trl4_3, trl4_4, trl4_5, trl4_6, trl4_7, trl4_8, trl4_9, trl4_10, trl4_11, trl4_12, trl4_13, trl4_14, trl4_15, trl4_16, trl4_17];
-
-
-            //alert(trl1);
-            //alert(trl2);
-
-            $.ajax({
-
-                url: '/save_trl1/' + themeName ,
-                //url: '/save_trl1/' + themeName + '/' + trl1 + '/' + trl2 + '/' + trl3 + '/' + trl4,
-
-
-                //url: '/save_trl1/' + themeName + '/' + trl1_1 + '/' + trl1_2 + '/' + trl1_3 + '/' + trl1_4
-
-                //    + '/' + trl2_1 + '/' + trl2_2 + '/' + trl2_3 + '/' + trl2_4 + '/' + trl2_5 + '/' + trl2_6 + '/' + trl2_7 + '/' + trl2_8 + '/' + trl2_9
-
-                //    + '/' + trl3_1 + '/' + trl3_2 + '/' + trl3_3 + '/' + trl3_4 + '/' + trl3_5 + '/' + trl3_6 + '/' + trl3_7 + '/' + trl3_8 + '/' + trl3_9
-                //    + '/' + trl3_10 + '/' + trl3_11 + '/' + trl3_12
-
-                //    + '/' + trl4_1 + '/' + trl4_2 + '/' + trl4_3 + '/' + trl4_4 + '/' + trl4_5 + '/' + trl4_6 + '/' + trl4_7 + '/' + trl4_8 + '/' + trl4_9
-                //    + '/' + trl4_10 + '/' + trl4_11 + '/' + trl4_12 + '/' + trl4_13 + '/' + trl4_14 + '/' + trl4_15 + '/' + trl4_16 + '/' + trl4_17 ,
-
-                //url: '/save_trl1/' + themeName + '/' + trl1_1 + '/' + trl1_2 + '/' + trl1_3 + '/' + trl1_4 + '/' + trl1_5
-                //    + '/' + trl2_1 + '/' + trl2_2 + '/' + trl2_3 + '/' + trl2_4 + '/' + trl2_5,
-                type: 'POST',
-                contentType: "application/json; charset=utf-8",
-                success: function () {
-                    location.reload()
-                },
-                error: function () {
-                    alert("Ошибка выполнения!")
-                }
-            })
-        }
-    </script>
