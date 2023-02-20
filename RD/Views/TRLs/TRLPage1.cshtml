@@ -123,16 +123,16 @@
         Trl1 = false;
 
 
-    if (@ViewBag.Trls1.Trl2_1 && @ViewBag.Trls1.Trl2_2 && @ViewBag.Trls1.Trl2_3 && @ViewBag.Trls1.Trl2_4 && @ViewBag.Trls1.Trl2_5 
-        && @ViewBag.Trls1.Trl2_6 && @ViewBag.Trls1.Trl2_7 && @ViewBag.Trls1.Trl2_8 && @ViewBag.Trls1.Trl2_9)
+    if (ViewBag.Trls1.Trl2_1 && ViewBag.Trls1.Trl2_2 && ViewBag.Trls1.Trl2_3 && ViewBag.Trls1.Trl2_4 && ViewBag.Trls1.Trl2_5 
+        && ViewBag.Trls1.Trl2_6 && ViewBag.Trls1.Trl2_7 && ViewBag.Trls1.Trl2_8 && ViewBag.Trls1.Trl2_9)
         Trl2 = true;
     else
         Trl2 = false;
 
 
-    if (@ViewBag.Trls1.Trl3_1 && @ViewBag.Trls1.Trl3_2 && @ViewBag.Trls1.Trl3_3 && @ViewBag.Trls1.Trl3_4 && @ViewBag.Trls1.Trl3_5
-         && @ViewBag.Trls1.Trl3_6 && @ViewBag.Trls1.Trl3_7 && @ViewBag.Trls1.Trl3_8 && @ViewBag.Trls1.Trl3_9 && @ViewBag.Trls1.Trl3_10
-         && @ViewBag.Trls1.Trl3_11 && @ViewBag.Trls1.Trl3_12)
+    if (ViewBag.Trls1.Trl3_1 && ViewBag.Trls1.Trl3_2 && ViewBag.Trls1.Trl3_3 && ViewBag.Trls1.Trl3_4 && ViewBag.Trls1.Trl3_5
+         && ViewBag.Trls1.Trl3_6 && ViewBag.Trls1.Trl3_7 && ViewBag.Trls1.Trl3_8 && ViewBag.Trls1.Trl3_9 && ViewBag.Trls1.Trl3_10
+         && ViewBag.Trls1.Trl3_11 && ViewBag.Trls1.Trl3_12)
         Trl3 = true;
     else
         Trl3 = false;
@@ -212,9 +212,7 @@
                     <td></td>
                     <td>2</td>
                     <td class='expandFRED1'>Определены целевые области применения технологии и ее критические элементы ▼</td>
-                    <td>
-                        <input type="checkbox" name="Trl1" checked="@Trl1" value="true"/>
-                    </td>
+                    <td><input type="checkbox" name="Trl1" checked="@Trl1" value="true" /></td>
                 </tr>
 
             </tbody>
