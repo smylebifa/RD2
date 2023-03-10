@@ -70,5 +70,12 @@ namespace RD.Controllers
             return RedirectToAction("Index", "Stages", ThemeName);
         }
 
+        [HttpDelete("/delete_stage/{id}")]
+        public IActionResult Delete(int id)
+        {
+            _stageService.DeleteStage(id);
+            return Ok();
+        }
+
     }
 }

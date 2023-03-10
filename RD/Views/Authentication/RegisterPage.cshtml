@@ -160,14 +160,14 @@
 
                 }
 
-                else if (email == "") {
-                    e.preventDefault();
-                    $.get(this.href, function (data) {
-                        $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Для регистрации нужно ввести пароль</dd> </dl> </div> </div>');
-                        $('#modDialog').modal('show');
-                    });
+                //else if (email == "") {
+                //    e.preventDefault();
+                //    $.get(this.href, function (data) {
+                //        $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Для регистрации нужно ввести пароль</dd> </dl> </div> </div>');
+                //        $('#modDialog').modal('show');
+                //    });
 
-                }
+                //}
 
                 else if (password1 == "") {
                     e.preventDefault();

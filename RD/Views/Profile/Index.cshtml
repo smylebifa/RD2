@@ -8,36 +8,9 @@
 
 <h4>Профиль пользователя</h4>
 
-@*<form method="post" asp-action="ChangeLogin" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
-    <table>
-        <h4>Профиль пользователя</h4>
-
-        <tr>
-            <td style="padding: 4px;" id="username">
-                @ViewBag.UserName
-            </td>
-        </tr>
-
-        <tr>
-            <td style="padding: 4px;">
-                <input type="text" id="newLogin" />
-            </td>
-        </tr>
-
-        <tr>
-            <td style="padding: 2px;">
-                <a onclick="changeLogin()" href="#">Изменить логин</a>
-            </td>
-            <td></td>
-        </tr>
-
-    </table>
-</form>*@
-
-
 <form method="post" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
     <table>
-        
+
         <h5>Смена пароля</h5>
 
         <tr>
@@ -59,17 +32,17 @@
         </tr>
 
         <tr>
-            <td style="padding: 2px;">
-                <a onclick="changePassword()" href="#">Изменить пароль</a>
+            <td style="padding: 4px;">
+                <a class="btn btn-outline-dark" href="/" style="text-align:center">Отмена</a>
+                <a onclick="changePassword()" class="btn btn-outline-primary">Изменить пароль</a>
             </td>
-            <td></td>
         </tr>
 
     </table>
 </form>
 
 
-<script type="text/javascript">
+@*<script type="text/javascript">
     function changeLogin() {
         var newLogin = document.getElementById('newLogin').value;
         $.ajax({
@@ -84,7 +57,7 @@
             }
         })
     }
-</script>
+</script>*@
 
 <script type="text/javascript">
     function changePassword() {

@@ -46,25 +46,25 @@ namespace RD.Controllers
 
             if (!form.ContainsKey("login"))
             {
-                return RedirectToAction("Index", "Authentication", new { status = "errorWithLogin", login = login });
+                return RedirectToAction("Index", "Authentication", new { status = "errorWithLogin", login });
             }
 
             if (!form.ContainsKey("password"))
             {
-                return RedirectToAction("Index", "Authentication", new { status = "errorWithPassword", login = login });
+                return RedirectToAction("Index", "Authentication", new { status = "errorWithPassword",login });
             }
 
             if (_authenticationService.IsUserExist(login))
             {
                 if (!_authenticationService.Login(login, password))
                 {
-                    return RedirectToAction("Index", "Authentication", new { status = "errorWithPassword", login = login, password = password });
+                    return RedirectToAction("Index", "Authentication", new { status = "errorWithPassword", login,password });
                 }
             }
 
             else
             {
-                return RedirectToAction("Index", "Authentication", new { status = "errorWithLogin", login = login, password = password });
+                return RedirectToAction("Index", "Authentication", new { status = "errorWithLogin", login, password });
             }
 
           
@@ -119,14 +119,14 @@ namespace RD.Controllers
         {
             if (login == "" || login == null || _authenticationService.IsUserExist(login))
             {
-                return RedirectToAction("RegisterPage", "Authentication", new { status = "errorWithLogin", login = login });
+                return RedirectToAction("RegisterPage", "Authentication", new { status = "errorWithLogin", login });
             }
 
             else
             {               
                 if (password == null || password == "")
                 {
-                    return RedirectToAction("RegisterPage", "Authentication", new { status = "success" , login = login});
+                    return RedirectToAction("RegisterPage", "Authentication", new { status = "success" , login});
                 }
 
                 else

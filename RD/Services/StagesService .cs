@@ -20,15 +20,7 @@ namespace RD.Services
 
         private static readonly List<Stage> Stages = new List<Stage>
         {
-                new Stage(1, "1"),
-                new Stage(2, "2"),
-                new Stage(3, "3"),
-                new Stage(4, "4"),
-                new Stage(5, "5"),
-                new Stage(6, "6"),
-                new Stage(7, "7"),
-                new Stage(8, "8"),
-                new Stage(9, "9"),
+                new Stage(1, "Этап 1"),
         };
 
         public IEnumerable<Stage> GetStages()
@@ -47,7 +39,7 @@ namespace RD.Services
             //_dbContext.SaveChanges();
 
 
-            if (Stages.Any(x => x.NumStage == stage.NumStage))
+            if (Stages.Any(x => x.StageName == stage.StageName))
                 throw new ArgumentException("This stage already exists.");
 
             Stages.Add(stage);
@@ -67,11 +59,31 @@ namespace RD.Services
             if (existing == null)
                 return;
 
+            existing.StageName = stage.StageName;
             existing.WorkStart = stage.WorkStart;
             existing.WorkEnd = stage.WorkEnd;
             existing.Amount = stage.Amount;
             existing.CompletionAct = stage.CompletionAct;
             existing.Status = stage.Status;
+        }
+
+        public void DeleteStage(int id)
+        {
+            //var existing = _dbContext.Users.FirstOrDefault(x => x.Id == id);
+            //var person = _dbContext.Persons.FirstOrDefault(x => x.Id == id);
+
+            //if (existing == null)
+            //    return;
+
+            //_dbContext.Users.Remove(existing);
+            //_dbContext.Persons.Remove(person);
+
+            //_dbContext.SaveChanges();
+
+            var existing = Stages.FirstOrDefault(x => x.Id == id);
+            if (existing == null)
+                return;
+            Stages.Remove(existing);
         }
 
     }

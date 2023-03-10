@@ -59,7 +59,7 @@
 <script type="text/javascript">
     function deleteUser(userId) {
         $.ajax({
-            url: '/delete/' + userId,
+            url: '/delete_user/' + userId,
             type: 'DELETE',
             contentType: "application/json; charset=utf-8",
             success: function () {

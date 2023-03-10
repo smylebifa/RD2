@@ -8,7 +8,7 @@ namespace RD.Models
     public class Stage
     {
         public int Id { get; set; }
-        public string? NumStage { get; set; }
+        public string? StageName { get; set; }
         public DateTime? WorkStart { get; set; }
         public DateTime? WorkEnd { get; set; }
         public int? Amount { get; set; }
@@ -21,10 +21,10 @@ namespace RD.Models
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
 
-        public Stage(int id, string? numStage)
+        public Stage(int id, string? stageName)
         {
             Id = id;
-            NumStage = numStage;
+            StageName = stageName;
         }
 
         public Stage()

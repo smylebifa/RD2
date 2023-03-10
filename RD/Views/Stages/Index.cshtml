@@ -4,251 +4,27 @@
     ViewBag.Title = ViewBag.ThemeName;
     Layout = "_Layout";
 
-    List<string> stageLevel1 = new List<string> {
-        "Разработка ТЗ НИР", "Выбор направления исследования", "Теоретические и экспериментальные исследования", "Обобщение и оценка результатов исследований", "Приемка научно-исследовательской работы",
-        "Разработка ТЗ ОКР", "Разработка эскизного проекта", "Разработка технического проекта ", "Разработка рабочей КД, ТД и проекта ТУ", "Приемка ОКР"
-
-
-    };
-
-    var stageLevel2 = new string[][] {
-
-        new string[] {},
-
-        new string[] {
-            "Сбор и изучение научно-технической литературы, нормативно-технической документации,  эксплуатационной информации об аналоговых и других материалах, относящихся к разрабатываемой теме." ,
-            "Проведение патентных исследований. Составление отчета по патентным исследованиям в соответствии с ГОСТ 15.011",
-            "Формулирование возможных направлений решения задач, поставленных в ТЗ НИР, и их сравнительная оценка",
-            "Выбор и обоснование принятого направления исследований и способов решения поставленных задач",
-            "Метрологическая проработка и заполнение соответствующего акта",
-            "Сопоставление ожидаемых показателей новой продукции после внедрения результатов НИР с существующими показателями изделий-аналогов или с действующей нормативно-технической документацией.",
-            "Расчет ориентировочной экономической эффективности от внедрения новой продукции с ожидаемыми показателями НИР на основе научного прогнозирования на время разработки, освоения и срока морального старения выпускаемой продукции.",
-            "Разработка общей методики проведения исследований",
-            "Составление промежуточного отчета и его рассмотрение." },
-
-           new string[] {
-            "Разработка рабочих гипотез, построение моделей объекта исследований, обоснование допущений." ,
-            "Выявление необходимости проведения экспериментов для подтверждения отдельных положений теоретических исследований для получения конкретных значений параметров (коэффициентов, необходимых для проведения расчетов)." ,
-            "Разработка методики экспериментальных исследований, подготовка моделей (макетов экспериментальных образцов), а также испытательных стендов (установок).",
-            "Определение номенклатур технической документации на макеты (модели, экспериментальные образцы) в соответствии с ГОСТ 2.102-68 и ее разработка.",
-            "Проведение экспериментов, обработка данных.",
-            "Сопоставление результатов эксперимента с теоретическими исследованиями.",
-            "Корректировка теоретических моделей объекта, корректировка технической документации по результатам эксперимента.",
-            "Проведение дополнительных экспериментов. ",
-            "Проведение технико-экономических исследований эффективности внедрения исследования в народное хозяйство.",
-            "Составление промежуточного отчета и его рассмотрение." },
-
-           new string[] {
-            "Обобщение результатов предыдущих этапов работ. Оценка полноты решения задач." ,
-            "Проведение дополнительных исследований, в том числе патентных." ,
-            "Метрологическая проработка. Составление акта метрологической проработки.",
-            "Разработка рекомендаций по использованию результатов проведенных НИР.",
-            "Формулирование технических требований для технического задания на разработку продукции",
-            "Составление и оформление отчета по ГОСТ 7.32-2001 Нормоконтроль отчета по ГОСТ 2.111-68  ",
-            "Рассмотрение результатов проведенных НИР и приемка работы в целом. " },
-
-            new string[] {},
-
-
-
-
-            // Разработка ТЗ ОКР
-            // level 3 - [5, 0]
-
-           new string[] {"Разработку, согласование и утверждение ТЗ проводят в порядке, установленном в разделе 6"},
-
-
-           new string[] {
-               "В состав работ, проводимых на данном этапе, в общем случае включают:",
-               "Результаты разработки эскизного проекта рассматривают специалисты головного исполнителя ОКР в порядке, установленном у головного исполнителя (на НТС, секции НТС или совещании), с участием, при необходимости, заказчика, изготовителя и представителей соисполнителей и других заинтересованных предприятий и организаций по усмотрению заказчика и головного исполнителя ОКР с учетом обеспечения сохранения коммерческой тайны."
-           },
-
-
-           new string[] {
-               "В состав работ, проводимых на данном этапе, в общем случае включают:",
-               "При отсутствии эскизного проекта обоснование оптимальности выбора конструктивно-технологических решений рассматривают в порядке, аналогичном приведенному в 8.5.2в."
-           },
-
-
-        new string[] {"В состав работ, проводимых на данном этапе, в общем случае включают:"},
-
-
-        new string[] {}
-
-
-
-    };
-
-
-
-
-    var stageLevel3 = new string[][][] {
-
-        new string[][] { },
-
-        new string[][] { },
-
-        new string[][] { },
-
-        new string[][] { },
-
-        new string[][] {  },
-
-        new string[][] {  },
-
-        new string[][] {
-            new string[] {
-            "выбор направления разработки и его обоснование",
-            "определение специальных технологических процессов, подлежащих разработке." ,
-            "макетирование наиболее сложных и ответственных частей изделия (или изделия в целом) в объеме, необходимом для оценки правильности намеченных решений.",
-            "расчетные или экспериментальные работы, подтверждающие правильность выбора конструктивно-технологических решений.",
-            "определение номенклатуры специального технологического оборудования, средств испытаний и измерений, подлежащих разработке, и объема работ по их изготовлению, выдача технических заданий на их разработку.",
-            "составление перечня покупного, в том числе зарубежного, оборудования, необходимого для разработки и последующего освоения.",
-            "выбор основных материалов, необходимых для разработки изделия, выдачу или уточнение предварительных заявок на материалы и комплектующие изделия.",
-            "составление ПОКр (при выполнении ОКР по форме А-ПОКр, которая должна содержать организационно-технические мероприятия, предусматриваемые для ПОКо). ",
-            "проведение патентных исследований (если это установлено в ТЗ).",
-            "анализ передового отечественного и зарубежного опыта в области проектирования.",
-            "анализ опыта проектирования изделий-аналогов; анализ и учет механизмов отказов, выявленных при их производстве, применении и эксплуатации"
-            },
-
-            new string[] {}
-        },
-
-            new string[][] {
-
-                new string[] {
-                    "разработку конструкции изделия с использованием расчетных и расчетно-экспериментальных методов подтверждения надежности изделия и специальных технологических процессов изготовления изделия." ,
-            "необходимые расчетные и экспериментальные работы для проверки обоснованности оптимальных конструктивно-технологических решений." ,
-            "разработку КД и ТД на изделие в объеме, необходимом для изготовления макетов.",
-            "изготовление и испытание макетов.",
-            "разработку программ и методик испытаний по оценке соответствия изделий требованиям надежности, по оценке КТЗ и производственных запасов.",
-            "составление графика подготовки производства изделий для изготовления установочной серии (для формы А).",
-            "разработку в необходимых случаях специального технологического оборудования и средств испытаний.",
-            "разработку методов измерений, если соответствующие методы не установлены НД, а также, при необходимости, разработку и изготовление средств измерений. ",
-            "проведение патентных исследований [если это установлено в договоре и (или) ТЗ].",
-            "составление перечня документов основного комплекта КД изделия (в том числе эксплуатационных документов) и перечня документов на технологические процессы, которые должны быть разработаны на последующем этапе.",
-            "составление ПОКр (при выполнении ОКР по форме А-ПОКр, которая должна содержать организационно-технические мероприятия, предусматриваемые для ПОКо)2).",
-            "КД и ТД для изготовления макетов выполняют, как правило, в виде эскизных конструкторских и технологических документов.",
-            "Испытание макетов проводят с целью проверить основные конструктивно-технологические решения разрабатываемого изделия и его основные характеристики. Результаты испытаний оформляют протоколом.",
-            "Перечни документов основного комплекта КД и документов на технологические процессы используют при проверке комплектности документации.",
-            "График технологической подготовки производства разрабатывает изготовитель совместно с головным исполнителем ОКР и утверждает руководство этих предприятий."
-
-                },
-
-            new string[] {}
-
-            },
-
-
-             new string[][] {
-
-                new string[] {
-                                         "разработку рабочей КД и ТД.",
-            "разработку проекта ТУ.",
-            "проведение метрологической экспертизы КД и ТД и проекта ТУ.",
-            "оценку правильности применения покупных комплектующих изделий.",
-            "получение, при необходимости, разрешения на применение материалов. ",
-            "изготовление, при необходимости, специального технологического оборудования и оснастки, средств испытаний и измерений.",
-            "проведение метрологической аттестации разработанных методов и средств измерений.",
-            "обеспечение проведения экологической экспертизы (при необходимости).",
-            "передачу изготовителю КД и ТД и, при необходимости, специального технологического оборудования, оснастки, средств испытаний и измерений в объеме, предусмотренном договором (для формы А).",
-            "проведение работ в соответствии с графиком подготовки производства (для формы А).",
-            "изготовление опытных образцов (опытной партии). ",
-            "разработка программы предварительных испытаний опытных образцов (опытных партий).",
-            "проведение предварительных испытаний опытных образцов (опытной партии).",
-            "оценку производственных запасов и КТЗ.",
-            "оценку соответствия опытных образцов (опытной партии) требованиям ТЗ.",
-            "корректировку рабочей КД и ТД по результатам изготовления и предварительных испытаний с присвоением документации литеры «О». ",
-            "изготовление установочной серии (для формы А) или контрольной партии (для формы Б) для изделий с длительным технологическим процессом изготовления, если это предусмотрено в ТЗ.",
-            "расчет технико-экономических показателей разработанного изделия по результатам изготовления и испытаний опытных образцов, а также контрольной партии или установочной серии и ориентировочный расчет технико-экономических показателей для условий промышленного (серийного) производства.",
-            "составление научно-технического отчета, отчета о патентных исследованиях и информационной карты на выполняемую ОКР."
-
-
-                }
-
-            },
-
-
-             new string[][] {  }
-
-
-};
-
-
-
-
-
-
-    List<string>
-    ExpandFREDS = new List<string>
-        { "expandFRED1", "expandFRED2", "expandFRED3", "expandFRED4", "expandFRED5", "expandFRED6", "expandFRED7", "expandFRED8", "expandFRED9", "expandFRED10" };
-
-    List<string>
-        ExpandSUBS = new List<string>
-            { "expandSUB1", "expandSUB2", "expandSUB3", "expandSUB4", "expandSUB5", "expandSUB6", "expandSUB7", "expandSUB8", "expandSUB9" };
-
-    List<string>
-        ExpandSUBS2 = new List<string>
-            { "expand2SUB1", "expand2SUB2", "expand2SUB3", "expand2SUB4", "expand2SUB5", "expand2SUB6", "expand2SUB7", "expand2SUB8", "expand2SUB9" };
-
-
-    //    var stageLevel2_2 = new string[][] {
-    //    new string[] {
-    //        "Сбор и изучение научно-технической литературы, нормативно-технической документации,  эксплуатационной информации об аналоговых и других материалах, относящихся к разрабатываемой теме." ,
-    //        "Проведение патентных исследований. Составление отчета по патентным исследованиям в соответствии с ГОСТ 15.011",
-    //        "Формулирование возможных направлений решения задач, поставленных в ТЗ НИР, и их сравнительная оценка",
-    //        "Выбор и обоснование принятого направления исследований и способов решения поставленных задач",
-    //        "Метрологическая проработка и заполнение соответствующего акта",
-    //        "Сопоставление ожидаемых показателей новой продукции после внедрения результатов НИР с существующими показателями изделий-аналогов или с действующей нормативно-технической документацией.",
-    //        "Расчет ориентировочной экономической эффективности от внедрения новой продукции с ожидаемыми показателями НИР на основе научного прогнозирования на время разработки, освоения и срока морального старения выпускаемой продукции.",
-    //        "Разработка общей методики проведения исследований",
-    //        "Составление промежуточного отчета и его рассмотрение." }
-
-    //};
-
-    //var stageLevel2_3 = new string[][] {
-
-    //    new string[] {
-    //        "Разработка рабочих гипотез, построение моделей объекта исследований, обоснование допущений." ,
-    //        "Выявление необходимости проведения экспериментов для подтверждения отдельных положений теоретических исследований для получения конкретных значений параметров (коэффициентов, необходимых для проведения расчетов)." ,
-    //        "Разработка методики экспериментальных исследований, подготовка моделей (макетов экспериментальных образцов), а также испытательных стендов (установок).",
-    //        "Определение номенклатур технической документации на макеты (модели, экспериментальные образцы) в соответствии с ГОСТ 2.102-68 и ее разработка.",
-    //        "Проведение экспериментов, обработка данных.",
-    //        "Сопоставление результатов эксперимента с теоретическими исследованиями.",
-    //        "Корректировка теоретических моделей объекта, корректировка технической документации по результатам эксперимента.",
-    //        "Проведение дополнительных экспериментов. ",
-    //        "Проведение технико-экономических исследований эффективности внедрения исследования в народное хозяйство.",
-    //        "Составление промежуточного отчѐта и его рассмотрение." }
-    //};
-
-    //var stageLevel2_4 = new string[][] {
-
-    //    new string[] {
-    //        "Обобщение результатов предыдущих этапов работ. Оценка полноты решения задач." ,
-    //        "Проведение дополнительных исследований, в том числе патентных." ,
-    //        "Метрологическая проработка. Составление акта метрологической проработки.",
-    //        "Разработка рекомендаций по использованию результатов проведенных НИР.",
-    //        "Формулирование технических требований для технического задания на разработку продукции",
-    //        "Составление и оформление отчѐта по ГОСТ 7.32-2001 Нормоконтроль отчета по ГОСТ 2.111-68  ",
-    //        "Рассмотрение результатов проведенных НИР и приѐмка работы в целом. " }
-    //};
 }
 
+
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm">
+    <div class="row" style="align-items:center">
+        <div class="col-sm-2">
             <h3 style="color: #343a40;">Тема - @ViewBag.ThemeName</h3>
         </div>
+        
+        <div class="col-sm-1">
+            <h3> <a class="nav-link text-primary" asp-controller="Stage" asp-action="Stage" style="float:left">+</a> </h3>
+        </div>
+        
+        <div class="col-sm-9"></div>
     </div>
 
-    <div class="row">
+    <div class="row" style="align-items:center">
 
         @*<div class="col-sm">*@
         @*<h5> <a class="nav-link" asp-route-themeName="@ViewBag.ThemeName" asp-controller="Stages" asp-action="Stage">Добавить этап</a> </h5>
             </div>*@
-
-        @* <h4> <a class="nav-link text-primary" asp-controller="Stage" asp-action="Stage">Добавить этап</a> </h4>*@
-
 
 
 
@@ -288,291 +64,13 @@
     </div>
 </div>
 
-<script>
-    $(document).ready(function () {
-        $('[data-toggle="toggle"]').change(function () {
-            $(this).parents().next('.hide').toggle();
-        });
-    });
-
-    $(document).ready(function () {
-        $(".expandFRED1").click(function () {
-           $(".expandSUB1").toggle();
-            
-        });
-        $(".expandFRED2").click(function () {
-            $(".expandSUB2").toggle();
-           
-        });
-        $(".expandFRED3").click(function () {
-            $(".expandSUB3").toggle();
-            
-        });
-        $(".expandFRED4").click(function () {
-            $(".expandSUB4").toggle();
-          
-        });
-        $(".expandFRED5").click(function () {
-            $(".expandSUB5").toggle();
-           
-        });
-
-        $(".expandFRED6").click(function () {
-           if (!$(".expandSUB6").is(':visible') && !$(".expand2SUB6").is(':visible'))
-            {
-                $(".expandSUB6").toggle();
-                
-            }
-
-            else if ($(".expandSUB6").is(':visible') && !$(".expand2SUB6").is(':visible'))
-            {
-                $(".expandSUB6").toggle();
-            }
-
-            else if ($(".expandSUB6").is(':visible') && $(".expand2SUB6").is(':visible'))
-            {
-                $(".expandSUB6").toggle();
-                $(".expand2SUB6").toggle();
-            }
-        });
-
-        $(".expandFRED7").click(function () {
-
-            if (!$(".expandSUB7").is(':visible') && !$(".expand2SUB7").is(':visible'))
-            {
-                $(".expandSUB7").toggle();
-                
-            }
-
-            else if ($(".expandSUB7").is(':visible') && !$(".expand2SUB7").is(':visible'))
-            {
-                $(".expandSUB7").toggle();
-            }
-
-            else if ($(".expandSUB7").is(':visible') && $(".expand2SUB7").is(':visible'))
-            {
-                $(".expandSUB7").toggle();
-                $(".expand2SUB7").toggle();
-            }
-
-
-        });
-
-        $(".expandFRED8").click(function () {
-
-            if (!$(".expandSUB8").is(':visible') && !$(".expand2SUB8").is(':visible'))
-            {
-                $(".expandSUB8").toggle();
-                
-            }
-
-            else if ($(".expandSUB8").is(':visible') && !$(".expand2SUB8").is(':visible'))
-            {
-                $(".expandSUB8").toggle();
-            }
-
-            else if ($(".expandSUB8").is(':visible') && $(".expand2SUB8").is(':visible'))
-            {
-                $(".expandSUB8").toggle();
-                $(".expand2SUB8").toggle();
-            }
-
-        });
-
-        $(".expandFRED9").click(function () {
-
-            if (!$(".expandSUB9").is(':visible') && !$(".expand2SUB9").is(':visible'))
-            {
-                $(".expandSUB9").toggle();
-                
-            }
-
-            else if ($(".expandSUB9").is(':visible') && !$(".expand2SUB9").is(':visible'))
-            {
-                $(".expandSUB9").toggle();
-            }
-
-            else if ($(".expandSUB9").is(':visible') && $(".expand2SUB9").is(':visible'))
-            {
-                $(".expandSUB9").toggle();
-                $(".expand2SUB9").toggle();
-            }
-
-        });
-
-        $(".expandFRED10").click(function () {
-
-            if (!$(".expandSUB10").is(':visible') && !$(".expand2SUB10").is(':visible'))
-            {
-                $(".expandSUB10").toggle();
-                
-            }
-
-            else if ($(".expandSUB10").is(':visible') && !$(".expand2SUB10").is(':visible'))
-            {
-                $(".expandSUB10").toggle();
-            }
-
-            else if ($(".expandSUB10").is(':visible') && $(".expand2SUB10").is(':visible'))
-            {
-                $(".expandSUB10").toggle();
-                $(".expand2SUB10").toggle();
-            }
-            
-        });
-
-
-
-        $(".expandSUB1.expandVALS").click(function () {
-            $(".expand2SUB1").toggle();
-        });
-        $(".expandSUB2.expandVALS").click(function () {
-            $(".expand2SUB2").toggle();
-        });
-        $(".expandSUB3.expandVALS").click(function () {
-            $(".expand2SUB3").toggle();
-        });
-        $(".expandSUB4.expandVALS").click(function () {
-            $(".expand2SUB4").toggle();
-        });
-        $(".expandSUB5.expandVALS").click(function () {
-            $(".expand2SUB5").toggle();
-        });
-        $(".expandSUB6.expandVALS").click(function () {
-            $(".expand2SUB6").toggle();
-        });
-        $(".expandSUB7.expandVALS").click(function () {
-            $(".expand2SUB7").toggle();
-        });
-        $(".expandSUB8.expandVALS").click(function () {
-            $(".expand2SUB8").toggle();
-        });
-        $(".expandSUB9.expandVALS").click(function () {
-            $(".expand2SUB9").toggle();
-        });
-        $(".expandSUB10.expandVALS").click(function () {
-            $(".expand2SUB10").toggle();
-        });
-
-        $(".expandVALS").click(function () {
-            $(".expandCAT1").toggle();
-        });
-    })
-</script>
-
-<style>
-    .label tr td label {
-        display: block;
-    }
-
-    [data-toggle='toggle'] {
-        display: none;
-    }
-
-    .expandSUB1 {
-        display: none;
-    }
-
-    .expandSUB2 {
-        display: none;
-    }
-
-    .expandSUB3 {
-        display: none;
-    }
-
-    .expandSUB4 {
-        display: none;
-    }
-
-    .expandSUB5 {
-        display: none;
-    }
-
-    .expandSUB6 {
-        display: none;
-    }
-
-    .expandSUB7 {
-        display: none;
-    }
-
-    .expandSUB8 {
-        display: none;
-    }
-
-    .expandSUB9 {
-        display: none;
-    }
-
-    .expandSUB10 {
-        display: none;
-    }
-
-
-    .expand2SUB1 {
-        display: none;
-    }
-
-    .expand2SUB2 {
-        display: none;
-    }
-
-    .expand2SUB3 {
-        display: none;
-    }
-
-    .expand2SUB4 {
-        display: none;
-    }
-
-    .expand2SUB5 {
-        display: none;
-    }
-
-    .expand2SUB6 {
-        display: none;
-    }
-
-    .expand2SUB7 {
-        display: none;
-    }
-
-    .expand2SUB8 {
-        display: none;
-    }
-
-    .expand2SUB9 {
-        display: none;
-    }
-
-    .expand2SUB10 {
-        display: none;
-    }
-
-    . {
-        display: none;
-    }
-
-        .expandCAT1 {
-            display: none;
-        }
-
-        .expandFRED1, .expandFRED2, .expandFRED3, .expandFRED4, .expandFRED5, .expandFRED6, .expandFRED7, .expandFRED8, .expandFRED9, .expandFRED10 {
-            cursor: pointer;
-        }
-
-        .expandSUB6, .expandSUB7, .expandSUB8 {
-            cursor: pointer;
-        }
-</style>
-
 
 <div style="overflow-x:auto;">
     <table class="table table-hover table-bordered" style="text-align: center; ">
 
         <thead>
             <tr>
+                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;"></th>
                 <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;"></th>
                 <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">№ этапа</th>
                 <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Этап</th>
@@ -585,251 +83,52 @@
         </thead>
 
 
-        @{int i = 0; int j = 0; int k = 0; int iView = 0; int jView = 0; int kView = 0;}
+        @{int i = 1;}
         @foreach (var stage in @ViewBag.Stages)
         {
-            if (i == 0)
-            {
-                <tbody>
-                    <tr>
-                        <td>@Html.ActionLink("Изменить этап", "ChangingStage", new { id = stage.Id })</td>
-                        <td>@stage.NumStage</td>
-                        <td>@stageLevel1[i]</td>
-                        @*<td>@stage.WorkStart</td>
-                        <td>@stage.WorkEnd</td>*@
 
-                        @if (@stage.WorkStart != null)
+            <tbody>
+                <tr>
+                    <td style="vertical-align:middle"><a asp-controller="Stages" asp-action="ChangingStage" asp-route-id="@stage.Id"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                    <td style="vertical-align:middle"><a onclick="deleteStage('@stage.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                    <td>@i</td>
+                    <td>@stage.StageName</td>
+
+                    @if (@stage.WorkStart != null)
+                    {
+                        if (@stage.WorkEnd != null)
                         {
-                            if (@stage.WorkEnd != null)
-                            {
-                                <td>@stage.WorkStart.ToString("dd/MM/yyyy")</td>
-                                <td>@stage.WorkEnd.ToString("dd/MM/yyyy")</td>
-                            }
-                            else
-                            {
-                                <td>@stage.WorkStart.ToString("dd/MM/yyyy")</td>
-                                <td>@stage.WorkEnd</td>
-                            }
-                        }
-                        else if (@stage.WorkEnd != null)
-                        {
-                            <td>@stage.WorkStart</td>
+                            <td>@stage.WorkStart.ToString("dd/MM/yyyy")</td>
                             <td>@stage.WorkEnd.ToString("dd/MM/yyyy")</td>
                         }
                         else
                         {
-                            <td>@stage.WorkStart</td>
+                            <td>@stage.WorkStart.ToString("dd/MM/yyyy")</td>
                             <td>@stage.WorkEnd</td>
                         }
-
-                        <td>@stage.Amount</td>
-                        <td>@stage.CompletionAct</td>
-                        <td>@stage.Status</td>
-
-
-                    </tr>
-                </tbody>
-
-            }
-
-            else
-            {
-                if (stageLevel2[i].Length > 0)
-                {
-                    <tbody style="background-color: #ececec;">
-                        <tr>
-                            <td>@Html.ActionLink("Изменить этап", "ChangingStage", new { id = stage.Id })</td>
-                            <td>@stage.NumStage</td>
-                            <td class='@ExpandFREDS[i - 1]'>@stageLevel1[i] ▼</td>
-                            @*<td>@stage.WorkStart</td>
-                            <td>@stage.WorkEnd</td>*@
-
-                            @if (@stage.WorkStart != null)
-                            {
-                                if (@stage.WorkEnd != null)
-                                {
-                                    <td>@stage.WorkStart.ToString("dd/MM/yyyy")</td>
-                                    <td>@stage.WorkEnd.ToString("dd/MM/yyyy")</td>
-                                }
-                                else
-                                {
-                                    <td>@stage.WorkStart.ToString("dd/MM/yyyy")</td>
-                                    <td>@stage.WorkEnd</td>
-                                }
-                            }
-                            else if (@stage.WorkEnd != null)
-                            {
-                                <td>@stage.WorkStart</td>
-                                <td>@stage.WorkEnd.ToString("dd/MM/yyyy")</td>
-                            }
-                            else
-                            {
-                                <td>@stage.WorkStart</td>
-                                <td>@stage.WorkEnd</td>
-                            }
-
-                            <td>@stage.Amount</td>
-                            <td>@stage.CompletionAct</td>
-                            <td>@stage.Status</td>
-
-
-                        </tr>
-                    </tbody>
-                }
-
-                else
-                {
-                    <tbody>
-                        <tr>
-                            <td>@Html.ActionLink("Изменить этап", "ChangingStage", new { id = stage.Id })</td>
-                            <td>@stage.NumStage</td>
-                            <td>@stageLevel1[i]</td>
-                            @*<td>@stage.WorkStart</td>
-                            <td>@stage.WorkEnd</td>*@
-
-                            @if (@stage.WorkStart != null)
-                            {
-                                if (@stage.WorkEnd != null)
-                                {
-                                    <td>@stage.WorkStart.ToString("dd/MM/yyyy")</td>
-                                    <td>@stage.WorkEnd.ToString("dd/MM/yyyy")</td>
-                                }
-                                else
-                                {
-                                    <td>@stage.WorkStart.ToString("dd/MM/yyyy")</td>
-                                    <td>@stage.WorkEnd</td>
-                                }
-                            }
-                            else if (@stage.WorkEnd != null)
-                            {
-                                <td>@stage.WorkStart</td>
-                                <td>@stage.WorkEnd.ToString("dd/MM/yyyy")</td>
-                            }
-                            else
-                            {
-                                <td>@stage.WorkStart</td>
-                                <td>@stage.WorkEnd</td>
-                            }
-
-                            <td>@stage.Amount</td>
-                            <td>@stage.CompletionAct</td>
-                            <td>@stage.Status</td>
-
-
-                        </tr>
-                    </tbody>
-
-                }
-
-
-
-                j = 0;
-
-                iView = i + 1;
-
-                @foreach (var stage2 in stageLevel2[i])
-                {
-                    jView = j + 1;
-
-                    // ОКР
-                    if (stageLevel3[i].Length > 0)
-                    {
-                        if (stageLevel3[i][j].Length > 0)
-                        {
-                            <tbody style="background-color: #f5f3f3;">
-                                <tr>
-                                    <td class='@ExpandSUBS[i - 1]'></td>
-                                    <td class='@ExpandSUBS[i - 1]'> @iView.@jView </td>
-                                    <td class='@ExpandSUBS[i - 1] expandVALS' align='right'>
-                                        @stage2 ▼
-                                    </td>
-                                    <td class='@ExpandSUBS[i - 1]'></td>
-                                    <td class='@ExpandSUBS[i - 1]' align='right'></td>
-                                    <td class='@ExpandSUBS[i - 1]' align='right'></td>
-                                    <td class='@ExpandSUBS[i - 1]' align='right'></td>
-                                    <td class='@ExpandSUBS[i - 1]' align='right'></td>
-                                </tr>
-
-                            </tbody>
-
-                            k = 0;
-
-                            @foreach (var stage3 in stageLevel3[i][j])
-                            {
-                                kView = k + 1;
-
-                                <tbody>
-                                    <tr>
-                                        <td class='@ExpandSUBS2[i - 1] '></td>
-                                        <td class='@ExpandSUBS2[i - 1]'> @iView.@jView.@kView </td>
-                                        <td class='@ExpandSUBS2[i - 1]' align='right'>
-                                            @stage3
-                                        </td>
-                                        <td class='@ExpandSUBS2[i - 1]'></td>
-                                        <td class='@ExpandSUBS2[i - 1]' align='right'></td>
-                                        <td class='@ExpandSUBS2[i - 1]' align='right'></td>
-                                        <td class='@ExpandSUBS2[i - 1]' align='right'></td>
-                                        <td class='@ExpandSUBS2[i - 1]' align='right'></td>
-                                    </tr>
-
-                                </tbody>
-
-                                k++;
-                            }
-
-                        }
-
-                        else
-                        {
-                            <tbody style="background-color: #f5f3f3;">
-                                <tr>
-                                    <td class='@ExpandSUBS[i - 1]'></td>
-                                    <td class='@ExpandSUBS[i - 1]'> @iView.@jView </td>
-                                    <td class='@ExpandSUBS[i - 1]' align='right'>
-                                        @stage2
-                                    </td>
-                                    <td class='@ExpandSUBS[i - 1]'></td>
-                                    <td class='@ExpandSUBS[i - 1]' align='right'></td>
-                                    <td class='@ExpandSUBS[i - 1]' align='right'></td>
-                                    <td class='@ExpandSUBS[i - 1]' align='right'></td>
-                                    <td class='@ExpandSUBS[i - 1]' align='right'></td>
-                                </tr>
-
-                            </tbody>
-                        }
                     }
-
+                    else if (@stage.WorkEnd != null)
+                    {
+                        <td>@stage.WorkStart</td>
+                        <td>@stage.WorkEnd.ToString("dd/MM/yyyy")</td>
+                    }
                     else
                     {
-                        <tbody style="background-color: #f5f3f3;">
-                            <tr>
-                                <td class='@ExpandSUBS[i - 1]'></td>
-                                <td class='@ExpandSUBS[i - 1]'> @iView.@jView </td>
-                                <td class='@ExpandSUBS[i - 1]' align='right'>
-                                    @stage2
-                                </td>
-                                <td class='@ExpandSUBS[i - 1]'></td>
-                                <td class='@ExpandSUBS[i - 1]' align='right'></td>
-                                <td class='@ExpandSUBS[i - 1]' align='right'></td>
-                                <td class='@ExpandSUBS[i - 1]' align='right'></td>
-                                <td class='@ExpandSUBS[i - 1]' align='right'></td>
-                            </tr>
-
-                        </tbody>
+                        <td>@stage.WorkStart</td>
+                        <td>@stage.WorkEnd</td>
                     }
 
+                    <td>@stage.Amount</td>
+                    <td>@stage.CompletionAct</td>
+                    <td>@stage.Status</td>
 
-                    j++;
 
-                }
-
-
-            }
+                </tr>
+            </tbody>
 
             i++;
 
         }
-
 
     </table>
 </div>
@@ -845,3 +144,20 @@
     <div class="col-sm-4"></div>
 
 </div>
+
+
+<script type="text/javascript">
+    function deleteUser(stageId) {
+        $.ajax({
+            url: '/delete_stage/' + stageId,
+            type: 'DELETE',
+            contentType: "application/json; charset=utf-8",
+            success: function () {
+                location.reload()
+            },
+            error: function () {
+                alert("Ошибка выполнения!")
+            }
+        })
+    }
+</script>
