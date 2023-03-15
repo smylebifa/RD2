@@ -8,6 +8,7 @@ namespace RD.Models
     public class Stage
     {
         public int Id { get; set; }
+        public string? StageNumber { get; set; }
         public string? StageName { get; set; }
         public DateTime? WorkStart { get; set; }
         public DateTime? WorkEnd { get; set; }
@@ -24,6 +25,13 @@ namespace RD.Models
         public Stage(int id, string? stageName)
         {
             Id = id;
+            StageName = stageName;
+        }
+
+        public Stage(int id, string? stageNumber, string? stageName)
+        {
+            Id = id;
+            StageNumber = stageNumber;
             StageName = stageName;
         }
 

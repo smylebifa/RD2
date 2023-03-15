@@ -20,7 +20,7 @@ namespace RD.Services
 
         private static readonly List<Stage> Stages = new List<Stage>
         {
-                new Stage(1, "Этап 1"),
+                new Stage(1, "1", "Этап 1"),
         };
 
         public IEnumerable<Stage> GetStages()
@@ -59,6 +59,7 @@ namespace RD.Services
             if (existing == null)
                 return;
 
+            existing.StageNumber = stage.StageNumber;
             existing.StageName = stage.StageName;
             existing.WorkStart = stage.WorkStart;
             existing.WorkEnd = stage.WorkEnd;

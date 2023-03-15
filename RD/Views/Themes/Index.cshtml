@@ -87,7 +87,7 @@
             @foreach (var theme in @ViewBag.Themes)
             {
             <tr>
-                <td><a class="nav-link" asp-area="" asp-route-themeName="@theme.Name" asp-controller="Stages" asp-action="Index">Этапы</a></td>
+                <td><a class="nav-link" asp-area="" asp-route-id="@theme.Id" asp-route-themeName="@theme.Name"  asp-controller="Stages" asp-action="Index">Этапы</a></td>
 
              @*   <td>@Html.ActionLink("Изменить тему", "ChangingTheme", new { id = theme.Id })</td>*@
                 

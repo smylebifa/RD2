@@ -5,35 +5,62 @@
     Layout = "_Layout";
 }
 
+<h3>Новый этап</h3>
 
-<form method="post" asp-action="AddStage" class="my-2 col-10" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
+<form method="post" asp-action="AddStage" style="border-color: #343a40;">
+
     <table>
-        <h2>Новый этап</h2>
 
         <tr>
+            <td style="padding: 4px;">№ этапа:</td>
             <td style="padding: 4px;">
-                <input type="text" placeholder="№ этапа" name="Number" />
-            </td>
-            <td style="padding: 4px;">
-                <input type="text" placeholder="Срок - начало" name="Name" />
-            </td>
-            <td style="padding: 4px;">
-                <input type="text" placeholder="Срок - конец" name="" />
+                <input type="text" name="StageNumber" />
             </td>
         </tr>
 
         <tr>
+            <td style="padding: 4px;">Наименование этапа:</td>
             <td style="padding: 4px;">
-                <input type="text" placeholder="Сумма этапа" name="" />
-            </td>
-            <td style="padding: 4px;">
-                <input type="text" placeholder="Акт о завершении" name="" />
-            </td>
-            <td style="padding: 4px;">
-                <input type="text" placeholder="Статус" name="" />
+                <input type="text" name="StageName" />
             </td>
         </tr>
 
+        <tr>
+            <td style="padding: 4px;">Срок - начало:</td>
+            <td style="padding: 4px;">
+                <input type="date" id="WorkStart" name="WorkStart" min="1950-01-01" />
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">Срок - конец:</td>
+            <td style="padding: 4px;">
+                <input type="date" id="WorkEnd" name="WorkEnd" min="1950-01-01" />
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">Сумма этапа:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="Number" />
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">Акт о завершении:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="Number" />
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">Статус:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="Number" />
+            </td>
+        </tr>
+
+        <br />
 
         <tr>
 
@@ -41,10 +68,10 @@
             </td>
 
             <td style="padding: 4px;">
-                <a class="btn" href="/Stages?themeName=@ViewBag.ThemeName" style="text-align:center">Отмена</a>
+                <a class="nav-link" href="/Stages/Index/@ViewBag.ThemeId?themeName=@ViewBag.ThemeName">Отмена</a>
                 <input type="submit" class="btn btn-primary" value="Добавить этап" />
             </td>
-
+            
             <td style="padding: 4px;">
             </td>
 
@@ -52,4 +79,6 @@
         </tr>
 
     </table>
+
+
 </form>

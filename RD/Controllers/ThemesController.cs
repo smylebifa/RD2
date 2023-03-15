@@ -35,19 +35,19 @@ namespace RD.Controllers
             return View();
         }
 
-        [HttpGet("/edit_theme/{id}")]
-        public IActionResult ChangingTheme(int id)
-        {
-            var theme = _themeService.GetThemes().FirstOrDefault(x => x.Id == id);
-            ViewBag.CurrentTheme = theme;
-            return View(theme);
-        }
+        //[HttpGet("/edit_theme/{id}")]
+        //public IActionResult ChangingTheme(int id)
+        //{
+        //    var theme = _themeService.GetThemes().FirstOrDefault(x => x.Id == id);
+        //    ViewBag.CurrentTheme = theme;
+        //    return View(theme);
+        //}
 
         [HttpPost("/edit_theme")]
         public IActionResult Edit(Theme theme)
         {
             _themeService.UpdateTheme(theme);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Stages", new { id = theme.Id, themeName = theme.Name });
         }
 
         [HttpPost]

@@ -32,7 +32,7 @@ namespace RD.Controllers
         }
 
         [HttpPost]
-        public IActionResult AnnualFinancings(AnnualFinancing annualFinancing)
+        public IActionResult AddAnnualFinancings(AnnualFinancing annualFinancing)
         {
             _annualFinancingsService.AddAnnualFinancing(annualFinancing);
             return RedirectToAction(nameof(Index));
