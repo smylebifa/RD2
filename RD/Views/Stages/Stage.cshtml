@@ -42,21 +42,21 @@
         <tr>
             <td style="padding: 4px;">Сумма этапа:</td>
             <td style="padding: 4px;">
-                <input type="text" name="Number" />
+                <input type="number" name="Amount" />
             </td>
         </tr>
 
         <tr>
             <td style="padding: 4px;">Акт о завершении:</td>
             <td style="padding: 4px;">
-                <input type="text" name="Number" />
+                <input type="text" name="CompletionAct" />
             </td>
         </tr>
 
         <tr>
             <td style="padding: 4px;">Статус:</td>
             <td style="padding: 4px;">
-                <input type="text" name="Number" />
+                <input type="text" name="Status" />
             </td>
         </tr>
 
@@ -65,16 +65,12 @@
         <tr>
 
             <td style="padding: 4px;">
+                <a class="nav-link btn btn-outline-dark" href="/Stages/Index/@ViewBag.ThemeId?themeName=@ViewBag.ThemeName">Отмена</a>
             </td>
 
             <td style="padding: 4px;">
-                <a class="nav-link" href="/Stages/Index/@ViewBag.ThemeId?themeName=@ViewBag.ThemeName">Отмена</a>
-                <input type="submit" class="btn btn-primary" value="Добавить этап" />
+                <input type="submit" class="btn btn-outline-primary" value="Добавить этап" />
             </td>
-            
-            <td style="padding: 4px;">
-            </td>
-
 
         </tr>
 

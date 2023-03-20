@@ -134,7 +134,6 @@
 
         <br />
 
-
         <tr>
             <td style="padding: 4px;">
             </td>
@@ -152,3 +151,93 @@
 
 </form>
 
+
+<select id="firm" onchange="onchangeFirmSelect();">
+    <option value="">-- бренд не выбран --</option>
+</select>
+
+<div id="modelCont" style="display: none;">
+    Выберите модель картриджа:
+    <select id="model">
+        <option value="">-- модель не выбрана --</option>
+    </select>
+</div>
+
+
+@*<div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+    <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+</div>*@
+
+@*<div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+    <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+</div>*@
+
+<div class="custom-control custom-switch">
+    <input type="checkbox" class="custom-control-input" onclick="showCustomInput()" id="customSwitch1">
+    <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+</div>
+
+<td style="padding: 4px;">
+    <input type="text" id="customValue" style="display:none;"/>
+</td>
+
+<script type="text/javascript">
+
+//var priceData = [ { "firm": "Brother", "device": "Brother HL-1030/1230/1240/1250/1270", "cart": "TN6300/6600", "p": "380" }, 
+//{ "firm": "Brother", "device": "Brother HL-1430/1440/1450/1470", "cart": "TN6300/6600", "p": "360"}, 
+//{ "firm": "Brother", "device": "Brother MFC-8350/8750/9650/9660/9750/9760", "cart": "TN6300/6600", "p": "400"},
+//{ "firm": "Brother", "device": "Brother MFC-9850/9860/9870/9880", "cart": "TN6300/6600", "p": "420"}, ];
+
+    function showCustomInput() {
+        console.log("change");
+       var customValueObj = document.getElementById('customValue');
+        if (customValueObj.style.display == '')
+            customValueObj.style.display = 'none';
+        else
+            customValueObj.style.display = '';
+    }
+
+
+    //function firm_init() {
+    //    var firmSelObj = document.getElementById('firm');
+    //    var priceLen = priceData.length;
+    //    var selLen = firmSelObj.options.length;
+    //    var lastFirm = "";
+    //    for (var i = 0; i < priceLen; i++) {
+    //        var t = priceData[i];
+    //        if (lastFirm != t.firm)
+    //        {
+    //            firmSelObj.options[selLen++] = new Option(t.firm, t.firm);
+    //            lastFirm = t.firm;
+    //        }
+    //    }
+    //},
+
+    //function onchangeFirmSelect() {
+    //    var firmSelObj = document.getElementById('firm');
+    //    var modelContainer = document.getElementById('modelCont');
+    //    var currentFirm = firmSelObj.value;
+    //    if (currentFirm == "") {
+    //        modelContainer.style.display = "none"; //бренд не выбран 
+    //    }
+
+    //    else {
+    //        var modelSelObj = document.getElementById('model'); //очистим список моделей - все, кроме первого элемента 
+    //        for (var i = modelSelObj.options.length - 1; i > 0; i--)
+    //            devElm.remove(i);
+    //        //загрузим список моделей соответствующего бренда
+    //        var priceLen = priceData.length; //число строк прайса
+    //        var selLen = modelSelObj.options.length; //текущее число строк будет равно единице
+    //        for (var i = 0; i < priceLen; i++) {
+    //            var t = priceData[i];
+    //            if (currentFirm == t.firm)
+    //                modelSelObj.options[selLen++] = new Option(t.device + " (" + t.cart + ")", t.p); //модель устройства (картридж), цена заправки в рублях
+    //        }
+    //        modelContainer.style.display = "block"; //бренд выбран, покажем список
+    //    }
+    //},
+
+    //firm_init();
+</script>

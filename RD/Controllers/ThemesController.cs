@@ -3,10 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RD.Models;
 using RD.Services;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace RD.Controllers
 {
@@ -35,13 +32,13 @@ namespace RD.Controllers
             return View();
         }
 
-        //[HttpGet("/edit_theme/{id}")]
-        //public IActionResult ChangingTheme(int id)
-        //{
-        //    var theme = _themeService.GetThemes().FirstOrDefault(x => x.Id == id);
-        //    ViewBag.CurrentTheme = theme;
-        //    return View(theme);
-        //}
+        [HttpGet("/edit_theme/{id}")]
+        public IActionResult ChangingTheme(int id)
+        {
+            var theme = _themeService.GetThemes().FirstOrDefault(x => x.Id == id);
+            ViewBag.CurrentTheme = theme;
+            return View(theme);
+        }
 
         [HttpPost("/edit_theme")]
         public IActionResult Edit(Theme theme)

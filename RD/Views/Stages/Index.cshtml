@@ -167,13 +167,13 @@
 
 
                     @*<td style="padding: 4px;">
-                    <select name="DocType" size="1">
-                        <option @{if (el= =0) { @("selected") } } value="Гос. Контракт">Гос. Контракт</option>
-                        <option @{if (el= =1) "selected" } value="Договор">Договор</option>
-                        <option @{if (el= =2) "selected" } value="Контракт">Контракт</option>
-                        <option @{if (el= =3) "selected" } value="Хоз. договора">Хоз. договора</option>
-                    </select>
-                </td>*@
+            <select name="DocType" size="1">
+                <option @{if (el= =0) { @("selected") } } value="Гос. Контракт">Гос. Контракт</option>
+                <option @{if (el= =1) "selected" } value="Договор">Договор</option>
+                <option @{if (el= =2) "selected" } value="Контракт">Контракт</option>
+                <option @{if (el= =3) "selected" } value="Хоз. договора">Хоз. договора</option>
+            </select>
+        </td>*@
 
 
                     <tr>
@@ -193,7 +193,13 @@
                     <tr>
                         <td style="padding: 4px;">Область знания:</td>
                         <td style="padding: 4px;">
-                            <input type="text" name="Knowledge" value="@ViewBag.CurrentTheme.Knowledge" />
+                            <select name="Knowledge" size="1">
+                                <option value="Общественные науки в целом">Общественные науки в целом</option>
+                                <option value="Философия">Философия</option>
+                                <option value="История">История</option>
+                                <option value="Социология">Социология</option>
+                                <option value="Демография">Демография</option>
+                            </select>
                         </td>
                     </tr>
 
@@ -207,11 +213,11 @@
 
                     @*@(ViewBag.Trls.Trl1_1 && ViewBag.Trls.Trl1_2 && ViewBag.Trls.Trl1_3 && ViewBag.Trls.Trl1_4 && ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "")
 
-                <td style="padding: 4px;">
-                        @Html.TextBoxFor(m => m.ResearchType)
-                    </td>*@
+        <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.ResearchType)
+            </td>*@
 
-                
+
 
                     <tr style="margin-top: 10px;">
                         <td style="padding: 4px;">
@@ -230,204 +236,212 @@
             </form>
         </div>
 
-        <div class="col-sm-7" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
+        <div class="col-sm-7">
+            <div style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <h3 style="color: #343a40;">Этапы</h3>
+                    </div>
 
-            <div class="row">
-                <div class="col-sm-2">
-                    <h3 style="color: #343a40;">Этапы</h3>
+                    <div class="col-sm-1">
+                        <h3> <a class="nav-link text-primary" asp-controller="Stages" asp-action="Stage" style="float:left">+</a> </h3>
+                    </div>
+
+                    <div class="col-sm-9"></div>
                 </div>
 
-                <div class="col-sm-1">
-                    <h3> <a class="nav-link text-primary" asp-controller="Stages" asp-action="Stage" style="float:left">+</a> </h3>
+                <div class="row" style="align-items:center">
+
+                    @*<div class="col-sm">*@
+                    @*<h5> <a class="nav-link" asp-route-themeName="@ViewBag.ThemeName" asp-controller="Stages" asp-action="Stage">Добавить этап</a> </h5>
+                </div>*@
+
+
+
+                    <div class="col-sm">
+                        <h5> <a class="nav-link" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="AnnualFinancings" asp-action="Index">Финансирование</a> </h5>
+                    </div>
+
+                    @*<div class="col-sm">
+                    <h5> <a class="nav-link" href="#">Договоры</a> </h5>
+                </div>*@
+
+                    <div class="col-sm">
+                        <h5> <a class="nav-link" asp-controller="Files" asp-action="Index">Файлы</a> </h5>
+                    </div>
+
+                    <div class="col-sm">
+                        <h5> <a class="nav-link" asp-controller="Contracts" asp-action="Index">Договоры</a></h5>
+                    </div>
+
+                    @*<div class="col-sm">
+                    <h5> <a class="nav-link" asp-area="" asp-controller="RIAs" asp-action="Index">РИД</a> </h5>
                 </div>
-
-                <div class="col-sm-9"></div>
-            </div>
-
-            <div class="row" style="align-items:center">
-
-                @*<div class="col-sm">*@
-                @*<h5> <a class="nav-link" asp-route-themeName="@ViewBag.ThemeName" asp-controller="Stages" asp-action="Stage">Добавить этап</a> </h5>
-            </div>*@
-
-
 
                 <div class="col-sm">
-                    <h5> <a class="nav-link" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="AnnualFinancings" asp-action="Index">Финансирование</a> </h5>
-                </div>
-
-                @*<div class="col-sm">
-                <h5> <a class="nav-link" href="#">Договоры</a> </h5>
-            </div>*@
-
-                <div class="col-sm">
-                    <h5> <a class="nav-link" asp-controller="Files" asp-action="Index">Файлы</a> </h5>
+                    <h5> <a class="nav-link" asp-area="" asp-controller="Products" asp-action="Index">Продукты</a> </h5>
                 </div>
 
                 <div class="col-sm">
-                    <h5> <a class="nav-link" asp-controller="Contracts" asp-action="Index">Договоры</a></h5>
-                </div>
+                    <h5> <a class="nav-link" asp-area="" asp-controller="ScientificDocs" asp-action="Index">Научно-техническая документация</a> </h5>
+                </div>*@
 
-                @*<div class="col-sm">
-                <h5> <a class="nav-link" asp-area="" asp-controller="RIAs" asp-action="Index">РИД</a> </h5>
-            </div>
+                    <div class="col-sm">
+                        <h5> <a class="nav-link" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="TRLs" asp-action="Index">TRL</a> </h5>
+                    </div>
 
-            <div class="col-sm">
-                <h5> <a class="nav-link" asp-area="" asp-controller="Products" asp-action="Index">Продукты</a> </h5>
-            </div>
 
-            <div class="col-sm">
-                <h5> <a class="nav-link" asp-area="" asp-controller="ScientificDocs" asp-action="Index">Научно-техническая документация</a> </h5>
-            </div>*@
-
-                <div class="col-sm">
-                    <h5> <a class="nav-link" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="TRLs" asp-action="Index">TRL</a> </h5>
                 </div>
 
 
-            </div>
 
+                <div style="overflow-x:auto;">
+                    <table class="table table-hover table-bordered" style="text-align: center; ">
 
-
-            <div style="overflow-x:auto;">
-                <table class="table table-hover table-bordered" style="text-align: center; ">
-
-                    <thead>
-                        <tr>
-                            <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;"></th>
-                            <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;"></th>
-                            <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">№ этапа</th>
-                            <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Этап</th>
-                            <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Срок выполнения - начало</th>
-                            <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Срок выполнения - конец</th>
-                            <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Сумма этапа</th>
-                            <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Акт о завершении</th>
-                            <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Статус</th>
-                        </tr>
-                    </thead>
-
-
-                    @{int i = 1;}
-                    @foreach (var stage in @ViewBag.Stages)
-                    {
-
-                        <tbody>
+                        <thead>
                             <tr>
-                                <td style="vertical-align:middle"><a asp-controller="Stages" asp-action="ChangingStage" asp-route-id="@stage.Id"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
-                                <td style="vertical-align:middle"><a onclick="deleteStage('@stage.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i></a></td>
-                                <td>@i</td>
-                                <td>@stage.StageName</td>
+                                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;"></th>
+                                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;"></th>
+                                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">№ этапа</th>
+                                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Этап</th>
+                                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Срок выполнения - начало</th>
+                                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Срок выполнения - конец</th>
+                                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Сумма этапа</th>
+                                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Акт о завершении</th>
+                                <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Статус</th>
+                            </tr>
+                        </thead>
 
-                                @if (@stage.WorkStart != null)
-                                {
-                                    if (@stage.WorkEnd != null)
+
+                        @{int i = 1;}
+                        @foreach (var stage in @ViewBag.Stages)
+                        {
+
+                            <tbody>
+                                <tr>
+                                    <td style="vertical-align:middle"><a asp-controller="Stages" asp-action="ChangingStage" asp-route-id="@stage.Id"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                                    <td style="vertical-align:middle"><a onclick="deleteStage('@stage.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                                    <td>@i</td>
+                                    <td>@stage.StageName</td>
+
+                                    @if (@stage.WorkStart != null)
                                     {
-                                        <td>@stage.WorkStart.ToString("dd/MM/yyyy")</td>
+                                        if (@stage.WorkEnd != null)
+                                        {
+                                            <td>@stage.WorkStart.ToString("dd/MM/yyyy")</td>
+                                            <td>@stage.WorkEnd.ToString("dd/MM/yyyy")</td>
+                                        }
+                                        else
+                                        {
+                                            <td>@stage.WorkStart.ToString("dd/MM/yyyy")</td>
+                                            <td>@stage.WorkEnd</td>
+                                        }
+                                    }
+                                    else if (@stage.WorkEnd != null)
+                                    {
+                                        <td>@stage.WorkStart</td>
                                         <td>@stage.WorkEnd.ToString("dd/MM/yyyy")</td>
                                     }
                                     else
                                     {
-                                        <td>@stage.WorkStart.ToString("dd/MM/yyyy")</td>
+                                        <td>@stage.WorkStart</td>
                                         <td>@stage.WorkEnd</td>
                                     }
-                                }
-                                else if (@stage.WorkEnd != null)
-                                {
-                                    <td>@stage.WorkStart</td>
-                                    <td>@stage.WorkEnd.ToString("dd/MM/yyyy")</td>
-                                }
-                                else
-                                {
-                                    <td>@stage.WorkStart</td>
-                                    <td>@stage.WorkEnd</td>
-                                }
 
-                                <td>@stage.Amount</td>
-                                <td>@stage.CompletionAct</td>
-                                <td>@stage.Status</td>
+                                    <td>@stage.Amount</td>
+                                    <td>@stage.CompletionAct</td>
+                                    <td>@stage.Status</td>
 
 
-                            </tr>
-                        </tbody>
+                                </tr>
+                            </tbody>
 
-                        i++;
+                            i++;
 
-                    }
+                        }
 
-                </table>
-            </div>
-
-
-
-            <h3>Финансирование по годам</h3>
-
-            @*<table class="table table-hover " style="text-align: center;">
-
-                <thead>
-                    <tr>
-                        <th scope="col"></th>
-                        <th scope="col">Год</th>
-                        <th scope="col">Сумма</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-
-                    </tr>
-                </thead>
-
-                <tbody>
-                    @foreach (var annualFinancing in @ViewBag.AnnualFinancings)
-                    {
-                        <tr>
-                            <td></td>
-                            <td>@annualFinancing.Year</td>
-                            <td>@annualFinancing.Amount</td>
-
-                            <td>@Html.ActionLink("изменить", "AnnualFinancing", new { id = annualFinancing.Id })</td>
-                            <td><a onclick="deleteUser('@annualFinancing.Id')" href="#"> удалить </a></td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-
-            <form method="post" asp-controller="AnnualFinancings" asp-action="AddAnnualFinancings" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
-                <table>
-                    <h4>Финансирование по годам</h4>
-
-                    <tr>
-                        <td style="padding: 4px;">Год:</td>
-                        <td style="padding: 4px;">
-                            <input type="text" name="Year" value="@ViewBag.AnnualFinancings.Year" />
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td style="padding: 4px;">Сумма:</td>
-                        <td style="padding: 4px;">
-                            <input type="text" name="Amount" value="@ViewBag.AnnualFinancings.Amount" />
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td style="padding: 2px;">
-                            <input type="submit" class="btn btn-primary" value="Добавить" />
-                        </td>
-                        <td></td>
-                    </tr>
-
-                </table>
-            </form>*@
-
-
-            <div class="mb-3 row">
-                <div class="col-sm-4"></div>
-
-                <div class="col-sm-4">
-                    <a class="btn btn-outline-dark" href="/Themes" style="text-align:center">Назад</a>
+                    </table>
                 </div>
 
-                <div class="col-sm-4"></div>
+            </div>
+
+
+            <br />
+            <br />
+
+
+            <div style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
+                <h3>Финансирование по годам</h3>
+
+                <table class="table table-hover " style="text-align: center;">
+
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Год</th>
+                            <th scope="col">Сумма</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                            <tr>
+                                <td></td>
+                                <td>@ViewBag.AnnualFinancings.Year</td>
+                                <td>@ViewBag.AnnualFinancings.Amount</td>
+
+                                <td>
+                                    <a asp-controller="AnnualFinancings" asp-action="AnnualFinancing" asp-route-id="@ViewBag.AnnualFinancings.Id"  asp-route-themeName="@ViewBag.ThemeName"> <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                </td>
+                                <td><a onclick="deleteAnnualFinancing('@ViewBag.AnnualFinancings.Id')" href="#"> удалить </a></td>
+                            </tr>
+                    </tbody>
+                </table>
+
 
             </div>
+
+            @*<form method="post" asp-controller="AnnualFinancings" asp-action="AddAnnualFinancing" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
+            <table>
+                <h4>Финансирование по годам</h4>
+
+                <tr>
+                    <td style="padding: 4px;">Год:</td>
+                    <td style="padding: 4px;">
+                        <input type="text" name="Year" value="@ViewBag.AnnualFinancings.Year" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="padding: 4px;">Сумма:</td>
+                    <td style="padding: 4px;">
+                        <input type="text" name="Amount" value="@ViewBag.AnnualFinancings.Amount" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="padding: 2px;">
+                        <input type="submit" class="btn btn-primary" value="Добавить" />
+                    </td>
+                    <td></td>
+                </tr>
+
+            </table>
+        </form>*@
+
+
+            @*<div class="mb-3 row">
+            <div class="col-sm-4"></div>
+
+            <div class="col-sm-4">
+                <a class="btn btn-outline-dark" href="/Themes" style="text-align:center">Назад</a>
+            </div>
+
+            <div class="col-sm-4"></div>
+
+        </div>*@
 
 
         </div>
@@ -437,9 +451,25 @@
 
 
 <script type="text/javascript">
-    function deleteUser(stageId) {
+    function deleteStage(stageId) {
         $.ajax({
             url: '/delete_stage/' + stageId,
+            type: 'DELETE',
+            contentType: "application/json; charset=utf-8",
+            success: function () {
+                location.reload()
+            },
+            error: function () {
+                alert("Ошибка выполнения!")
+            }
+        })
+    }
+</script>
+
+<script type="text/javascript">
+    function deleteUser(userId) {
+        $.ajax({
+            url: '/delete_annual_financing/' + userId,
             type: 'DELETE',
             contentType: "application/json; charset=utf-8",
             success: function () {

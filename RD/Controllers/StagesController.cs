@@ -37,7 +37,7 @@ namespace RD.Controllers
             var theme = _themeService.GetThemes().FirstOrDefault(x => x.Id == id);
             ViewBag.CurrentTheme = theme;
 
-            var annualFinancings = _annualFinancingsService.GetAnnualFinancings();
+            var annualFinancings = _annualFinancingsService.GetAnnualFinancings().FirstOrDefault(x => x.ThemeId == theme.Id);
             ViewBag.AnnualFinancings = annualFinancings;
 
             if (themeName == null)
