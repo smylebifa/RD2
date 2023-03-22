@@ -45,7 +45,8 @@ namespace RD.Models
 
         public Theme()
         {
-            //Id = Guid.NewGuid();
+            Id = 0;
         }
+
     }
 }

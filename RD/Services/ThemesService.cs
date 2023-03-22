@@ -29,12 +29,28 @@ namespace RD.Services
             //return _dbContext.Themes.ToArray();
         }
 
-        public void AddTheme(Theme theme)
+        public bool AddTheme(Theme theme)
         {
-            if (Themes.Any(x => x.Name == theme.Name))
-                throw new ArgumentException("Theme with such login already exists.");
+
+            if (Themes.Any(x => x.Name == theme.Name || x.Number == theme.Number))
+            {
+                throw new ArgumentException("Theme with such name or number already exists.");
+                //return false;
+            }
+
+            if (theme.Id == 0)
+            {
+                int LastId = Themes.Max(theme => theme.Id);
+                if (LastId is int)
+                {
+                    theme.Id = LastId + 1;
+                }
+            }
+
 
             Themes.Add(theme);
+
+            return true;
 
             //if (_dbContext.Themes.Any(x => x.Name == theme.Name))
             //    throw new ArgumentException("Theme with such name already exists.");

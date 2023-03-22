@@ -10,7 +10,7 @@ namespace RD.Services
     {
         public IEnumerable<Theme> GetThemes();
 
-        public void AddTheme(Theme theme);
+        public bool AddTheme(Theme theme);
         
     }
 }

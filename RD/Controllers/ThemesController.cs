@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RD.Models;
 using RD.Services;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace RD.Controllers
@@ -13,22 +14,31 @@ namespace RD.Controllers
         private readonly ILogger<ThemesController> _logger;
         //private readonly IThemesService _themeService;
         private readonly ThemesService _themeService;
+        private readonly CounterpartiesService _counterpartiesService;
 
-        public ThemesController(ILogger<ThemesController> logger, ThemesService themesService)
+        private static IEnumerable <Counterparty> Counterparties;
+
+        public ThemesController(ILogger<ThemesController> logger, ThemesService themesService, CounterpartiesService counterpartiesService)
         {
             _logger = logger;
             _themeService = themesService;
+            _counterpartiesService = counterpartiesService;
         }
-        public IActionResult Index()
+        public IActionResult Index(string status = "")
         {
             var themes = _themeService.GetThemes();
             ViewBag.Themes = themes;
+            ViewBag.Status = status;
+
+            Counterparties = _counterpartiesService.GetCounterparties();
+            
             return View();
         }
 
         [HttpGet("/add_theme")]
         public IActionResult Theme()
         {
+            ViewBag.Counterparties = Counterparties;
             return View();
         }
 
@@ -50,8 +60,11 @@ namespace RD.Controllers
         [HttpPost]
         public IActionResult AddTheme(Theme theme)
         {
-            _themeService.AddTheme(theme);
-            return RedirectToAction(nameof(Index));
+            bool themeWasAdded = _themeService.AddTheme(theme);
+            if (themeWasAdded)
+                return RedirectToAction(nameof(Index));
+            else
+                return RedirectToAction(nameof(Index));
         }
 
         [HttpDelete("/delete_theme/{id}")]
