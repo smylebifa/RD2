@@ -21,6 +21,8 @@
     string WorkStart = "";
     string WorkEnd = "";
 
+    bool customOption = true;
+
 }
 
 @{
@@ -165,20 +167,40 @@
         </td>*@
 
 
-    <tr>
-        <td style="padding: 4px;">Тип исследования:</td>
-        <td style="padding: 4px;">
-            <select name="ResearchType" size="1">
-                <option value="Прикладное">Прикладное</option>
-                <option value="Фундаментальное">Фундаментальное</option>
-                <option value="Разработка">Разработка</option>
-                <option value="Поисковое">Поисковое</option>
-                <option value="ОКР">ОКР</option>
-            </select>
-        </td>
-    </tr>
+<tr>
+    <td style="padding: 4px;">Тип исследования:</td>
+    <td style="padding: 4px;">
+        <select name="ResearchType" id="ResearchType" size="1">
+            <option value="Прикладное">Прикладное</option>
+            <option value="Фундаментальное">Фундаментальное</option>
+            <option value="Разработка">Разработка</option>
+            <option value="Поисковое">Поисковое</option>
+            <option value="ОКР">ОКР</option>
+            <option value="Пользовательское" id="selectCustom"> </option>
+        </select>
+    </td>
+
+    <td style="padding: 4px;">
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" onclick="showCustomInput()" id="customSwitch1">
+            <label class="custom-control-label" for="customSwitch1">Ввести свое значение</label>
+        </div>
+    </td>
 
 
+    <td style="padding: 4px;">
+        <div id="customObj" style="display:none;">
+            <input type="text" id="inputCustom">
+            <button class="btn btn-primary" type="button" onclick="useCustomText()">Выбрать</button>
+        </div>
+    </td>
+
+    <td>
+        <input type="text" hidden id="researchType" value="@ViewBag.CurrentTheme.ResearchType" />
+    </td>
+
+</tr>
+    
     <tr>
         <td style="padding: 4px;">Область знания:</td>
         <td style="padding: 4px;">
@@ -219,4 +241,49 @@
 </table>
 
 }
+
+<script>
+    $(document).ready( function(){
+    var option, selectedOption;
+        for (let i = 0; i < 5; i++) {
+            option = document.getElementById('ResearchType').options[i];
+            selectedOption = document.getElementById('researchType').value;
+            if (option.value == selectedOption) {
+                document.getElementById('ResearchType').value = option.value;
+                break;
+            }
+        }
+    });
+</script>
+
+@if (@customOption)
+{
+    <script>
+        var selectCustom = document.getElementById("selectCustom");
+        selectCustom.selected = true;
+
+        var selectedOption = document.getElementById('researchType').value;
+        selectCustom.text = selectedOption;
+        selectCustom.value = selectedOption;
+    </script>
+}
+
+<script>
+        function showCustomInput() {
+        var customObj = document.getElementById('customObj');
+        if (customObj.style.display == '')
+            customObj.style.display = 'none';
+        else
+            customObj.style.display = '';
+    }
+
+    function useCustomText() {
+        var selectCustom = document.getElementById("selectCustom");
+        var inputCustom = document.getElementById("inputCustom");
+        selectCustom.selected = true;
+        selectCustom.text = inputCustom.value;
+        selectCustom.value = inputCustom.value;
+    }
+
+</script>
 

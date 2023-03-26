@@ -14,15 +14,15 @@ namespace RD.Controllers
         private readonly ILogger<ThemesController> _logger;
         //private readonly IThemesService _themeService;
         private readonly ThemesService _themeService;
-        private readonly CounterpartiesService _counterpartiesService;
+        private readonly CustomersService _customersService;
 
-        private static IEnumerable <Counterparty> Counterparties;
+        private static IEnumerable <Customer> Customers;
 
-        public ThemesController(ILogger<ThemesController> logger, ThemesService themesService, CounterpartiesService counterpartiesService)
+        public ThemesController(ILogger<ThemesController> logger, ThemesService themesService, CustomersService customersService)
         {
             _logger = logger;
             _themeService = themesService;
-            _counterpartiesService = counterpartiesService;
+            _customersService = customersService;
         }
         public IActionResult Index(string status = "")
         {
@@ -30,15 +30,16 @@ namespace RD.Controllers
             ViewBag.Themes = themes;
             ViewBag.Status = status;
 
-            Counterparties = _counterpartiesService.GetCounterparties();
+            Customers = _customersService.GetCustomers();
             
             return View();
         }
 
         [HttpGet("/add_theme")]
-        public IActionResult Theme()
+        public IActionResult Theme(string status = "")
         {
-            ViewBag.Counterparties = Counterparties;
+            ViewBag.Status = status;
+            ViewBag.Customers = Customers;
             return View();
         }
 
@@ -54,17 +55,17 @@ namespace RD.Controllers
         public IActionResult Edit(Theme theme)
         {
             _themeService.UpdateTheme(theme);
-            return RedirectToAction("Index", "Stages", new { id = theme.Id, themeName = theme.Name });
+            return RedirectToAction("Index", "Themes");
         }
 
         [HttpPost]
         public IActionResult AddTheme(Theme theme)
         {
             bool themeWasAdded = _themeService.AddTheme(theme);
-            if (themeWasAdded)
-                return RedirectToAction(nameof(Index));
+            if (!themeWasAdded)
+                return RedirectToAction("Theme", "Themes", new { status = "errorWithNameOrNumberTheme" });
             else
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Themes");
         }
 
         [HttpDelete("/delete_theme/{id}")]

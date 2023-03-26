@@ -31,11 +31,18 @@ namespace RD.Services
 
         public bool AddTheme(Theme theme)
         {
+            if (theme.Id == 0)
+            {
+                int LastId = Themes.Max(theme => theme.Id);
+                if (LastId is int)
+                {
+                    theme.Id = LastId + 1;
+                }
+            }
 
             if (Themes.Any(x => x.Name == theme.Name || x.Number == theme.Number))
             {
-                throw new ArgumentException("Theme with such name or number already exists.");
-                //return false;
+                return false;
             }
 
             if (theme.Id == 0)
