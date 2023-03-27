@@ -10,7 +10,8 @@ namespace RD.Services
     {
         public static List<Doc> Docs = new List<Doc>
         {
-                new Doc(1, "Документ 1"),
+                new Doc(1, "Документ 1", "txt"),
+                new Doc(2, "Документ 2", "txt"),
         };
 
         public IEnumerable<Doc> GetDocs()

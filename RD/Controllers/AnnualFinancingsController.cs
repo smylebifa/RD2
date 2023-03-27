@@ -38,8 +38,8 @@ namespace RD.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult AddAnnualFinancings(AnnualFinancing annualFinancing)
+        [HttpPost("/add_annual_financing")]
+        public IActionResult AddAnnualFinancing(AnnualFinancing annualFinancing)
         {
             _annualFinancingsService.AddAnnualFinancing(annualFinancing);
             return RedirectToAction(nameof(Index));

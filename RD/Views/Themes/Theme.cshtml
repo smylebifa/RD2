@@ -135,7 +135,7 @@
                         <option value="Разработка">Разработка</option>
                         <option value="Поисковое">Поисковое</option>
                         <option value="ОКР">ОКР</option>
-                        <option value="Пользовательское" id="selectCustom" > </option>
+                        <option value="Пользовательское" id="selectCustom"> </option>
                     </select>
                 </div>
 
@@ -175,6 +175,15 @@
 
         <br />
 
+        @*<tr>
+                <td style="padding: 4px;">Документы:</td>
+                <td style="padding: 4px;">
+                    <input type="file" name="upload" />
+                </td>
+            </tr>*@
+
+        <br />
+
         <tr>
             <td style="padding: 4px;">
             </td>
@@ -191,6 +200,20 @@
     </table>
 
 </form>
+
+
+<form asp-action="AddFile" asp-controller="Themes" method="post" enctype="multipart/form-data">
+    <input type="file" name="uploadedFile" /><br>
+    <input type="submit" value="Загрузить" />
+</form>
+
+
+@*<h3>Все файлы</h3>
+@foreach (var f in ViewBag.Docs)
+{
+    <p><img src="@Url.Content(f.Path)"></p>
+}*@
+
 
 
 <script>

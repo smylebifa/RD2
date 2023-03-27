@@ -21,35 +21,35 @@
     <tbody>
         @foreach (var file in @ViewBag.Files)
         {
-        <tr>
-            <td>@file.Filename.@file.EntityType</td>
-            @*            <td>@Html.ActionLink("Load", "Files", new { FileName = file.Filename })</td>*@
-            <td><a href="#">Загрузить</a></td>
-            
-
-            @*<td>
-        <a href="file_name.jpg" download=@file.Filename.@file.EntityType>
-            Загрузить
-        </a>*@
-
-            @*<button class="btn btn-primary" type="submit" asp-route-file="@file.Filename"
-                asp-route-mode="virtual" style="background: rgb(0,0,255);">
-            Virtual
-        </button>
-        <button class="btn btn-primary" type="submit" asp-route-file="@file.Filename"
-                asp-route-mode="stream" style="background: rgb(0,0,255);">
-            Stream
-        </button>
-        <button class="btn btn-primary" type="submit" asp-route-file="@file.Filename"
-                asp-route-mode="bytes" style="background: rgb(0,0,255);">
-            Bytes
-        </button>*@
+            <tr>
+                <td>@file.Filename.@file.EntityType</td>
+                @*            <td>@Html.ActionLink("Load", "Files", new { FileName = file.Filename })</td>*@
+                <td><a href="#">Загрузить</a></td>
 
 
-            @*</td>*@
+                @*<td>
+                    <a href="file_name.jpg" download=@file.Filename.@file.EntityType>
+                        Загрузить
+                    </a>*@
 
-            <td><a onclick="deleteFile('@file.Id')" href="#"> Удалить </a></td>
-        </tr>
+                @*<button class="btn btn-primary" type="submit" asp-route-file="@file.Filename"
+                            asp-route-mode="virtual" style="background: rgb(0,0,255);">
+                        Virtual
+                    </button>
+                    <button class="btn btn-primary" type="submit" asp-route-file="@file.Filename"
+                            asp-route-mode="stream" style="background: rgb(0,0,255);">
+                        Stream
+                    </button>
+                    <button class="btn btn-primary" type="submit" asp-route-file="@file.Filename"
+                            asp-route-mode="bytes" style="background: rgb(0,0,255);">
+                        Bytes
+                    </button>*@
+
+
+                @*</td>*@
+
+                <td><a onclick="deleteFile('@file.Id')" href="#"> Удалить </a></td>
+            </tr>
         }
     </tbody>
 </table>
@@ -70,42 +70,41 @@
     </form>*@
 
 
-@using (Html.BeginForm("Upload", "Files", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@*@using (Html.BeginForm("Upload", "Files", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <input type="file" name="upload" />
-    <input type="submit"  class="btn btn-primary" value="Добавить" />
-}
-
+    <input type="submit" class="btn btn-primary" value="Добавить" />
+}*@
 
 
 
 
 @*<form method="post" asp-action="Files" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
-    <table>
-        <h4>Загрузить файл</h4>
+        <table>
+            <h4>Загрузить файл</h4>
 
-        <tr>
-            <td style="padding: 4px;">
-                <button>Открыть</button>
-            </td>
-            <td style="padding: 4px;">
-                <input name="Login" placeholder="Загрузка файлов" />
-            </td>
-            <td style="padding: 2px;">
-                <input type="submit" value="Добавить" />
-            </td>
-
-
-            <form asp-action="AddFile" asp-controller="Home" method="post" enctype="multipart/form-data">
-                <input type="file" name="uploadedFile" /><br>
-                <input type="submit" value="Загрузить" />
-            </form>
+            <tr>
+                <td style="padding: 4px;">
+                    <button>Открыть</button>
+                </td>
+                <td style="padding: 4px;">
+                    <input name="Login" placeholder="Загрузка файлов" />
+                </td>
+                <td style="padding: 2px;">
+                    <input type="submit" value="Добавить" />
+                </td>
 
 
-        </tr>
+                <form asp-action="AddFile" asp-controller="Home" method="post" enctype="multipart/form-data">
+                    <input type="file" name="uploadedFile" /><br>
+                    <input type="submit" value="Загрузить" />
+                </form>
 
-    </table>
-</form>*@
+
+            </tr>
+
+        </table>
+    </form>*@
 
 
 <script type="text/javascript">

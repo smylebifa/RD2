@@ -8,7 +8,9 @@ namespace RD.Models
     public class Doc
     {
         public int Id { get; set; }
-        public int ScientificDocId { get; set; }
+        //public int ScientificDocId { get; set; }
+        public int ThemeId { get; set; }
+        public string Path { get; set; }
         public string? InventoryNum { get; set; }
         public DateTime? ReceiptDate { get; set; }
         public string? DocType { get; set; }
@@ -29,6 +31,14 @@ namespace RD.Models
             Id = id;
             NameDoc = nameDoc;
         }
+
+        public Doc(int id, string? nameDoc, string docType)
+        {
+            Id = id;
+            NameDoc = nameDoc;
+            DocType = docType;
+        }
+
 
         public Doc()
         {

@@ -14,7 +14,7 @@
 
 <div class="row" style="align-items:center">
     <div class="col-sm-1">
-        <h3 style="text-decoration: underline">Темы</h3>
+        <h3>Темы</h3>
     </div>
     <div class="col-sm-1">
         <h3> <a class="nav-link" asp-controller="Themes" asp-action="Theme" >+</a> </h3>
@@ -80,6 +80,7 @@
                 <th scope="col" style="padding-bottom:0; padding-top:0rem;padding-left: 1.5rem;vertical-align: middle;">Вид исследования</th>
                 <th scope="col" style="padding-bottom:0; padding-top:0rem;padding-left: 1.5rem;vertical-align: middle;">Область знания</th>
                 <th scope="col" style="padding-bottom:0; padding-top:0rem;padding-left: 1.5rem;vertical-align: middle;">Статус</th>
+                <th scope="col" style="padding-bottom:0; padding-top:0rem;padding-left: 1.5rem;vertical-align: middle;">Документы</th>
             </tr>
         </thead>
 
@@ -87,10 +88,10 @@
             @foreach (var theme in @ViewBag.Themes)
             {
             <tr>
-                <td><a class="nav-link" asp-area="" asp-route-id="@theme.Id" asp-route-themeName="@theme.Name"  asp-controller="Stages" asp-action="Index">Этапы</a></td>
+                <td><a class="nav-link" asp-area="" asp-route-id="@theme.Id" asp-route-themeName="@theme.Name" asp-controller="Stages" asp-action="Index">Этапы</a></td>
 
-             @*   <td>@Html.ActionLink("Изменить тему", "ChangingTheme", new { id = theme.Id })</td>*@
-                
+                @*   <td>@Html.ActionLink("Изменить тему", "ChangingTheme", new { id = theme.Id })</td>*@
+
                 <td style="vertical-align:middle"><a asp-controller="Themes" asp-action="ChangingTheme" asp-route-id="@theme.Id"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
 
                 <td style="vertical-align:middle"><a onclick="deleteTheme('@theme.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i></a></td>
@@ -160,6 +161,19 @@
 
                 <td>@theme.Knowledge</td>
                 <td>@theme.Status</td>
+
+                <td>
+
+                    @foreach (var file in ViewBag.Docs)
+                    {
+                    <a href="docs/@file.NameDoc.@file.DocType" download="@file.NameDoc.@file.DocType">
+                        @file.NameDoc
+                    </a>
+                    }
+
+                </td>
+
+                @* <td>@ViewBag.Docs</td>*@
 
             </tr>
             }
