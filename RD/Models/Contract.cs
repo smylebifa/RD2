@@ -9,6 +9,7 @@ namespace RD.Models
     {
         public int Id { get; set; }
         public int CounterpartyId { get; set; }
+        public int ThemeId { get; set; }
         public string? NameContract { get; set; }
         public DateTime? WorkStart { get; set; }
         public DateTime? WorkEnd { get; set; }

@@ -88,7 +88,7 @@
 
             <form method="post" asp-action="Edit" asp-controller="Themes" class="my-2 col-10" style="box-shadow: 0 1px 2px 3px #e9e8e8; padding: 8px; ">
 
-                <h3 style="color: #343a40;">Тема - @ViewBag.ThemeName </h3>
+                <h3 style="color: #343a40; padding: 8px;">Тема - @ViewBag.ThemeName </h3>
 
                 <table>
 
@@ -193,21 +193,6 @@
                     </tr>
 
 
-
-
-                    @*@Html.DropDownListFor(model => model.TeamId, ViewBag.Teams as SelectList)*@
-
-
-                    @*<td style="padding: 4px;">
-                            <select name="DocType" size="1">
-                                <option @{if (el= =0) { @("selected") } } value="Гос. Контракт">Гос. Контракт</option>
-                                <option @{if (el= =1) "selected" } value="Договор">Договор</option>
-                                <option @{if (el= =2) "selected" } value="Контракт">Контракт</option>
-                                <option @{if (el= =3) "selected" } value="Хоз. договора">Хоз. договора</option>
-                            </select>
-                        </td>*@
-
-
                     <tr>
                         <td style="padding: 4px;">Тип исследования:</td>
                         <td style="padding: 4px;">
@@ -271,33 +256,21 @@
 
         <div class="col-sm-7">
             <div style="box-shadow: 0 1px 2px 3px #e9e8e8; padding: 8px; ">
-                <div class="tab" style="border:none;;">
+                <div class="tab" style="border:none;">
                     <button class="tablinks active" onclick="openTab(event, 'Stages')">Этапы</button>
                     <button class="tablinks" onclick="openTab(event, 'Contracts')">Договоры</button>
                     <button class="tablinks" onclick="openTab(event, 'Files')">Файлы</button>
                 </div>
 
                 <!-- Tab content -->
-                <div id="Stages" class="tabcontent row" style="display:block; border:none;">
+                <div id="Stages" class="tabcontent" style="display:block; border:none;">
 
-                    <div class="col-sm-2">
-                        <h3 style="color: #343a40; padding: 8px;">Этапы</h3>
-                    </div>
+                    <h3 style="padding: 8px;">Этапы <a asp-controller="Stages" asp-action="Stage"> + </a> </h3>
 
-                    <div class="col-sm-1">
-                        <h3> <a class="nav-link text-primary" asp-controller="Stages" asp-action="Stage" style="float:left">+</a> </h3>
-                    </div>
 
-                    @*<div class="col-sm-3">
-                            <h3> <a class="nav-link" asp-controller="Files" asp-action="Index">Файлы</a> </h3>
-                        </div>
-
-                        <div class="col-sm-3">
-                            <h3> <a class="nav-link" asp-controller="Contracts" asp-action="Index">Договоры</a></h3>
-                        </div>
-                        <div class="col-sm-3">
-                            <h3> <a class="nav-link" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="TRLs" asp-action="Index">TRL</a> </h3>
-                        </div>*@
+                @*<div class="col-sm-3">
+                    <h3> <a class="nav-link" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="TRLs" asp-action="Index">TRL</a> </h3>
+                </div>*@
 
 
                     <div style="overflow-x:auto;">
@@ -305,6 +278,7 @@
 
                             <thead>
                                 <tr>
+                                    <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;"></th>
                                     <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;"></th>
                                     <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;"></th>
                                     <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">№ этапа</th>
@@ -324,6 +298,7 @@
 
                                 <tbody>
                                     <tr>
+                                        <td style="vertical-align:middle"><a asp-controller="Stages" asp-action="StageDetail" asp-route-id="@stage.Id" style="font-weight: 700;"> >>> </a></td>
                                         <td style="vertical-align:middle"><a asp-controller="Stages" asp-action="ChangingStage" asp-route-id="@stage.Id"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
                                         <td style="vertical-align:middle"><a onclick="deleteStage('@stage.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i></a></td>
                                         <td>@i</td>
@@ -357,7 +332,6 @@
                                         <td>@stage.CompletionAct</td>
                                         <td>@stage.Status</td>
 
-
                                     </tr>
                                 </tbody>
 
@@ -370,70 +344,154 @@
                         <br />
                         <br />
 
-
-                        <div style="box-shadow: 0 1px 2px 3px #e9e8e8; padding: 8px; ">
-
-                            <div class="row">
-                                <div class="col-sm-5">
-                                    <h3 style="padding: 8px;">Финансирование по годам</h3>
-                                </div>
-
-                                <div class="col-sm-1">
-                                    <h3> <a class="nav-link text-primary" asp-controller="AnnualFinancings" asp-action="AddAnnualFinancing" style="float:left">+</a> </h3>
-                                </div>
-
-                                <div class="col-sm-6"></div>
-
-                            </div>
-
-
-                            <table class="table table-hover " style="text-align: center;">
-
-                                <thead>
-                                    <tr>
-                                        <th scope="col"></th>
-                                        <th scope="col">Год</th>
-                                        <th scope="col">Сумма</th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td>@ViewBag.AnnualFinancings.Year</td>
-                                        <td>@ViewBag.AnnualFinancings.Amount</td>
-
-                                        <td>
-                                            <a asp-controller="AnnualFinancings" asp-action="AnnualFinancing" asp-route-id="@ViewBag.AnnualFinancings.Id" asp-route-themeName="@ViewBag.ThemeName"> <i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                        </td>
-                                        <td><a onclick="deleteAnnualFinancing('@ViewBag.AnnualFinancings.Id')" href="#"> удалить </a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                        </div>
                     </div>
                 </div>
+
+                    <div id="Contracts" class="tabcontent" style="border:none;">
+
+                        <h3 style="padding: 8px;">Договоры <a asp-controller="Contracts" asp-action="Contract"> + </a> </h3>
+
+                        <table class="table table-hover" style="text-align: center;">
+
+                            <thead>
+                                <tr>
+                                    <th scope="col">Наменование договора</th>
+                                    <th scope="col">Срок выполнения - начало</th>
+                                    <th scope="col">Срок выполнения - конец</th>
+                                    <th scope="col">Реквизиты договора</th>
+                                    <th scope="col">Статус</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var contract in @ViewBag.Contracts)
+                                {
+                                    <tr>
+                                        <td>@contract.NameContract</td>
+                                        <td>@contract.WorkStart</td>
+                                        <td>@contract.WorkEnd</td>
+                                        <td>@contract.Props</td>
+                                        <td>@contract.Amount</td>
+                                        <td>@contract.Status</td>
+
+                                        <td> <a class="nav-link text-primary" asp-controller="Contracts" asp-action="ChangingContract" asp-route-id="@contract.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                                        <td><a onclick="deleteContract('@contract.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="Files" class="tabcontent" style="border:none;">
+                        <h3 style="padding: 8px;">Файлы</h3>
+
+                        <table class="table table-hover " style="text-align: center;">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Имя файла</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var file in @ViewBag.Files)
+                                {
+                                    <tr>
+                                        <td>@file.Filename.@file.FileType</td>
+                                        <td><a href="#">  </a></td>
+                                        <td><a onclick="deleteFile('@file.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                        <form asp-action="AddFile" asp-controller="Files" method="post" enctype="multipart/form-data">
+                            <input type="file" name="uploadedFile" />
+                            <input type="submit" value="Сохранить">
+                        </form>
+                    </div>
+            </div>
+
+            <br /><br />
+
+            <div style="box-shadow: 0 1px 2px 3px #e9e8e8; padding: 8px; ">
 
                 <div class="row">
-                    <div id="Contracts" class="tabcontent">
-                        Контракты
+                    <div class="col-sm-5">
+                        <h3 style="padding: 8px;">Финансирование по годам</h3>
                     </div>
+
+                    <div class="col-sm-1">
+                        <h3> <a class="nav-link text-primary" asp-controller="AnnualFinancings" asp-action="AddAnnualFinancing" style="float:left">+</a> </h3>
+                    </div>
+
+                    <div class="col-sm-6"></div>
+
                 </div>
 
-                <div class="row">
-                    <div id="Files" class="tabcontent">
-                        Файлы
-                    </div>
-                </div>
 
+                <table class="table table-hover " style="text-align: center;">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Год</th>
+                            <th scope="col">Сумма</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>@ViewBag.AnnualFinancings.Year</td>
+                            <td>@ViewBag.AnnualFinancings.Amount</td>
+                            <td>
+                                <a asp-controller="AnnualFinancings" asp-action="AnnualFinancing" asp-route-id="@ViewBag.AnnualFinancings.Id" asp-route-themeName="@ViewBag.ThemeName"> <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                            </td>
+                            <td><a onclick="deleteAnnualFinancing('@ViewBag.AnnualFinancings.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 </div>
+
+
+<script type="text/javascript">
+    function deleteFile(fileId) {
+        $.ajax({
+            url: '/delete_file/' + fileId,
+            type: 'DELETE',
+            contentType: "application/json; charset=utf-8",
+            success: function () {
+                location.reload()
+            },
+            error: function () {
+                alert("Ошибка выполнения!")
+            }
+        })
+    }
+</script>
+
+<script type="text/javascript">
+    function deleteContract(contractId) {
+        $.ajax({
+            url: '/delete_contract/' + contractId,
+            type: 'DELETE',
+            contentType: "application/json; charset=utf-8",
+            success: function () {
+                location.reload()
+            },
+            error: function () {
+                alert("Ошибка выполнения!")
+            }
+        })
+    }
+</script>
 
 
 <script type="text/javascript">

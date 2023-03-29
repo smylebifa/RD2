@@ -38,9 +38,9 @@ namespace RD.Controllers
        
 
         [HttpPost]
-        public IActionResult Docs(Doc ria)
+        public IActionResult Docs(Doc doc)
         {
-            _docsService.AddDoc(ria);
+            _docsService.AddDoc(doc);
             return RedirectToAction(nameof(Index));
         }
 

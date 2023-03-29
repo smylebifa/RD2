@@ -21,42 +21,56 @@ namespace RD.Services
             //return _dbContext.Users.ToArray();
         }
 
-        public void AddFile(string fileName)
+        public void AddFile(File file)
         {
-            string[] subs = fileName.Split('.');
 
-            if (subs.Count() > 0)
+            if (Files.Any(x => x.Id == file.Id))
+                throw new ArgumentException("File already exists.");
+
+            int LastId = Files.Max(file => file.Id);
+            if (LastId is int)
             {
-                if (Files.Any(x => x.Filename == subs[0]))
-                    throw new ArgumentException("User with such login already exists.");
+                file.Id = LastId + 1;
 
-                File file = new File();
-
-                if (subs.Count() > 1)
-                {
-                    int LastId = Files.Max(user => user.Id);
-                    if (LastId is int)
-                    {
-                        file.Id = LastId + 1;
-                        file.Filename = subs[0];
-                        file.EntityType = subs[1];
-
-                        Files.Add(file);
-                    }
-                }
-                else
-                {
-                    int LastId = Files.Max(user => user.Id);
-                    if (LastId is int)
-                    {
-                        file.Id = LastId + 1;
-                        file.Filename = subs[0];
-                       
-                        Files.Add(file);
-                    }
-                }
-
+                Files.Add(file);
             }
+
+            //string[] subs = fileName.Split('.');
+
+            //if (subs.Count() > 0)
+            //{
+            //    if (Files.Any(x => x.Filename == subs[0]))
+            //        throw new ArgumentException("User with such login already exists.");
+
+            //    File file = new File();
+
+            //    if (subs.Count() > 1)
+            //    {
+            //        int LastId = Files.Max(user => user.Id);
+            //        if (LastId is int)
+            //        {
+            //            file.Id = LastId + 1;
+            //            file.Filename = subs[0];
+            //            file.EntityType = subs[1];
+
+            //            Files.Add(file);
+            //        }
+            //    }
+            //    else
+            //    {
+            //        int LastId = Files.Max(user => user.Id);
+            //        if (LastId is int)
+            //        {
+            //            file.Id = LastId + 1;
+            //            file.Filename = subs[0];
+
+            //            Files.Add(file);
+            //        }
+            //    }
+
+            //}
+
+
 
             //if (_dbContext.Users.Any(x => x.Login == user.Login))
             //    throw new ArgumentException("User with such name already exists.");
@@ -99,6 +113,10 @@ namespace RD.Services
             //existing.FullName = user.FullName;
             //existing.IsActive = user.IsActive;
             //existing.IsAdmin = user.IsAdmin;
+
+            var existing = Files.FirstOrDefault(x => x.Id == file.Id);
+            if (existing == null)
+                return;
         }
 
         public void DeleteFile(int id)

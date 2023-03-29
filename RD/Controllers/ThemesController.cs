@@ -101,7 +101,14 @@ namespace RD.Controllers
                 {
                     await uploadedFile.CopyToAsync(fileStream);
                 }
-                Doc doc = new Doc { NameDoc = uploadedFile.FileName, DocType = "txt", Path = filePath };
+
+                int LastId = Docs.Max(file => file.Id);
+                if (LastId is int)
+                {
+                    LastId++;
+                }
+
+                Doc doc = new Doc { Id = LastId, NameDoc = uploadedFile.FileName, DocType = "txt", Path = filePath };
                 _docService.AddDoc(doc);
             }
 

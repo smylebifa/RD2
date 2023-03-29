@@ -39,6 +39,14 @@ namespace RD.Models
             DocType = docType;
         }
 
+        public Doc(int id, string? nameDoc, string docType, string path)
+        {
+            Id = id;
+            NameDoc = nameDoc;
+            DocType = docType;
+            Path = path;
+        }
+
 
         public Doc()
         {

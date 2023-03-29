@@ -1,0 +1,389 @@
+﻿@model RD.Models.Stage;
+
+@{
+    ViewBag.Title = ViewBag.Stage.StageName;
+    Layout = "_Layout";
+
+    string WorkStart = "";
+    string WorkEnd = "";
+}
+
+@{
+    @if (ViewBag.Stage.WorkStart != null)
+    {
+        WorkStart = @ViewBag.Stage.WorkStart.ToString("yyyy-MM-dd");
+    }
+    else
+    {
+        WorkStart = @ViewBag.Stage.WorkStart;
+    }
+
+    @if (ViewBag.Stage.WorkEnd != null)
+    {
+        WorkEnd = @ViewBag.Stage.WorkEnd.ToString("yyyy-MM-dd");
+    }
+    else
+    {
+        WorkEnd = @ViewBag.Stage.WorkEnd;
+    }
+}
+<style>
+    .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+    }
+
+        /* Style the buttons that are used to open the tab content */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+        }
+
+            /* Change background color of buttons on hover */
+            .tab button:hover {
+                background-color: #ddd;
+            }
+
+            /* Create an active/current tablink class */
+            .tab button.active {
+                background-color: #ccc;
+            }
+
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
+</style>
+
+
+<div class="container-fluid">
+    <div class="row" style="align-items:center">
+        <div class="col-sm-5">
+
+            <form method="post" asp-action="Edit" asp-controller="Stages" class="my-2 col-10" style="box-shadow: 0 1px 2px 3px #e9e8e8; padding: 8px; ">
+
+                <h3 style="color: #343a40; padding: 8px;">Этап - @ViewBag.Stage.StageName </h3>
+
+                <table>
+
+                    <input name="Id" type="id" hidden value="@ViewBag.Stage.StageNumber" />
+
+                    <tr>
+                        <td style="padding: 4px;">№ этапа:</td>
+                        <td style="padding: 4px;">
+                            <input type="text" name="StageNumber" value="@ViewBag.Stage.StageNumber" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 4px;">Наименование этапа:</td>
+                        <td style="padding: 4px;">
+                            <input type="text" name="StageName" value="@ViewBag.Stage.StageName" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 4px;">Срок - начало:</td>
+                        <td style="padding: 4px;">
+                            <input type="date" id="WorkStart" name="WorkStart" value="@WorkStart" min="1950-01-01" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 4px;">Срок - конец:</td>
+                        <td style="padding: 4px;">
+                            <input type="date" id="WorkEnd" name="WorkEnd" min="1950-01-01" value="@WorkEnd" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 4px;">Сумма этапа:</td>
+                        <td style="padding: 4px;">
+                            <input type="text" name="Amount" value="@ViewBag.Stage.Amount" />
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td style="padding: 4px;">Акт о завершении:</td>
+                        <td style="padding: 4px;">
+                            <input type="text" name="CompletionAct" value="@ViewBag.Stage.CompletionAct" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 4px;">Статус:</td>
+                        <td style="padding: 4px;">
+                            <input type="text" name="Status" value="@ViewBag.Stage.Status" />
+                        </td>
+                    </tr>
+
+
+                    <tr><br></tr>
+
+                    <tr>
+                        <td style="padding: 4px;">
+                            <input type="submit" class="btn btn-primary submitBtn" value="Сохранить изменения" />
+                        </td>
+                    </tr>
+
+
+                </table>
+
+            </form>
+        </div>
+
+        <div class="col-sm-7">
+            <div style="box-shadow: 0 1px 2px 3px #e9e8e8; padding: 8px; ">
+                <div class="tab" style="border:none;">
+                    <button class="tablinks active" onclick="openTab(event, 'ScientificDoc')">Научно-техническая документация</button>
+                    <button class="tablinks" onclick="openTab(event, 'Product')">Продукт</button>
+                    <button class="tablinks" onclick="openTab(event, 'RIA')">Рид</button>
+                    <button class="tablinks" onclick="openTab(event, 'Files')">Файлы</button>
+                </div>
+
+                <!-- Tab content -->
+                <div id="ScientificDoc" class="tabcontent" style="display:block; border:none;">
+
+                    <h3 style="padding: 8px;">Научно-техническая документация <a asp-controller="ScientificDocs" asp-action="ScientificDoc"> + </a> </h3>
+
+
+                    <table class="table table-hover " style="text-align: center;">
+
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Наименование</th>
+                                <th scope="col">Результат</th>
+                                <th scope="col">Расположение</th>
+                                <th scope="col">Записи</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach (var scientificDoc in @ViewBag.ScientificDocs)
+                            {
+                                <tr>
+                                    <td><a class="nav-link" asp-controller="Docs" asp-action="Index">Документы</a> </td>
+
+                                    <td>@scientificDoc.Name</td>
+                                    <td>@scientificDoc.Result</td>
+                                    <td>@scientificDoc.Location</td>
+                                    <td>@scientificDoc.Note</td>
+
+                                    <td>@Html.ActionLink("изменить", "ChangingScientificDoc", new { id = scientificDoc.Id })</td>
+                                    <td><a onclick="deleteScientificDoc('@scientificDoc.Id')" href="#"> удалить </a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+
+
+
+                    <div id="Product" class="tabcontent" style="border:none;">
+
+                        <h3 style="padding: 8px;">Продукт <a asp-controller="Products" asp-action="Product"> + </a> </h3>
+
+
+                        <table class="table table-hover " style="text-align: center;">
+
+                            <thead>
+                                <tr>
+                                    <th scope="col">Имя</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var product in @ViewBag.Products)
+                                {
+                                    <tr>
+                                        <td>@product.Name</td>
+                                        <td>@Html.ActionLink("изменить", "Product", new { id = product.Id })</td>
+                                        <td><a onclick="deleteProduct('@product.Id')" href="#"> удалить </a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                </div>
+
+
+                    <div id="RIA" class="tabcontent" style="border:none;">
+                       
+                        <h3 style="padding: 8px;">РИД</h3>
+
+                        <table class="table table-hover " style="text-align: center;">
+
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Результат</th>
+                                    <th scope="col">Реквизиты</th>
+                                    <th scope="col">Авторы</th>
+                                    <th scope="col">Местоположение</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var ria in @ViewBag.RIAs)
+                                {
+                                    <tr>
+                                        <td></td>
+                                        <td>@ria.Result</td>
+                                        <td>@ria.Props</td>
+                                        <td>@ria.Authors</td>
+                                        <td>@ria.Location</td>
+
+                                        <td>@Html.ActionLink("изменить", "ChangingRIA", new { id = ria.Id })</td>
+                                        <td><a onclick="deleteRIA('@ria.Id')" href="#"> удалить </a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+
+
+                    <div id="Files" class="tabcontent" style="border:none;">
+                        <h3 style="padding: 8px;">Файлы</h3>
+
+                        <table class="table table-hover " style="text-align: center;">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Имя файла</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var file in @ViewBag.Files)
+                                {
+                                    <tr>
+                                        <td>@file.Filename.@file.FileType</td>
+                                        <td><a href="#">  </a></td>
+                                        <td><a onclick="deleteFile('@file.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                        <form asp-action="AddFile" asp-controller="Files" method="post" enctype="multipart/form-data">
+                            <input type="file" name="uploadedFile" />
+                            <input type="submit" value="Сохранить">
+                        </form>
+
+                    </div>
+            </div>
+
+            <br /><br />
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    function deleteRIA(riaId) {
+        $.ajax({
+            url: '/delete_ria/' + riaId,
+            type: 'DELETE',
+            contentType: "application/json; charset=utf-8",
+            success: function () {
+                location.reload()
+            },
+            error: function () {
+                alert("Ошибка выполнения!")
+            }
+        })
+    }
+</script>
+
+<script type="text/javascript">
+    function deleteFile(fileId) {
+        $.ajax({
+            url: '/delete_file/' + fileId,
+            type: 'DELETE',
+            contentType: "application/json; charset=utf-8",
+            success: function () {
+                location.reload()
+            },
+            error: function () {
+                alert("Ошибка выполнения!")
+            }
+        })
+    }
+
+
+    function deleteProduct(productId) {
+        $.ajax({
+            url: '/delete_product/' + productId,
+            type: 'DELETE',
+            contentType: "application/json; charset=utf-8",
+            success: function () {
+                location.reload()
+            },
+            error: function () {
+                alert("Ошибка выполнения!")
+            }
+        })
+    }
+</script>
+
+
+<script type="text/javascript">
+    function deleteScientificDoc(scientificDocId) {
+        $.ajax({
+            url: '/delete_scientific_doc/' + scientificDocId,
+            type: 'DELETE',
+            contentType: "application/json; charset=utf-8",
+            success: function () {
+                location.reload()
+            },
+            error: function () {
+                alert("Ошибка выполнения!")
+            }
+        })
+    }
+</script>
+
+<script type="text/javascript">
+    function openTab(evt, tabName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+

@@ -1,0 +1,18 @@
+﻿@model RD.Models.File;
+
+@{
+    ViewBag.Title = "Изменение файлов";
+    Layout = "_Layout";
+}
+
+@foreach (var file in ViewBag.Files)
+{
+    <a href="docs/@file.NameDoc.@file.DocType" download="@file.NameDoc.@file.DocType">
+        @file.NameDoc
+    </a>
+}
+
+<form asp-action="AddFile" asp-controller="Files" method="post" enctype="multipart/form-data">
+    <input type="file" name="uploadedFile" /><br>
+    <input type="submit" value="Загрузить" />
+</form>

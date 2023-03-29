@@ -17,20 +17,35 @@ namespace RD.Controllers
         private readonly ThemesService _themeService;
         private readonly StagesService _stageService;
         private readonly AnnualFinancingsService _annualFinancingsService;
+        private readonly ContractsService _сontractsService;
+        private readonly FilesService _filesService;
+
+        private readonly ScientificDocsService _scientificDocsService;
+        private readonly ProductsService _productsService;
+        private readonly RIAsService _riasService;
+
         private static int ThemeId;
         private static string ThemeName;
 
-        public StagesController(ILogger<StagesController> logger, StagesService stageService, ThemesService themeService, AnnualFinancingsService annualFinancings)
+        public StagesController(ILogger<StagesController> logger, StagesService stageService, 
+            ThemesService themeService, AnnualFinancingsService annualFinancings, ContractsService сontractsService, FilesService filesService,
+            ScientificDocsService scientificDocsService, ProductsService productsService, RIAsService riasService)
         {
             _logger = logger;
             _stageService = stageService;
             _themeService = themeService;
             _annualFinancingsService = annualFinancings;
+            _сontractsService = сontractsService;
+            _filesService = filesService;
+
+            _scientificDocsService = scientificDocsService;
+            _productsService = productsService;
+            _riasService = riasService;
+
         }
 
         public IActionResult Index(int id, string themeName)
         {
-         
             var stages = _stageService.GetStages();
             ViewBag.Stages = stages;
 
@@ -39,6 +54,13 @@ namespace RD.Controllers
 
             var annualFinancings = _annualFinancingsService.GetAnnualFinancings().FirstOrDefault(x => x.ThemeId == theme.Id);
             ViewBag.AnnualFinancings = annualFinancings;
+
+            var сontracts = _сontractsService.GetContracts();
+            ViewBag.Contracts = сontracts;
+
+            var files = _filesService.GetFiles();
+            ViewBag.Files = files;
+            
 
             if (themeName == null)
             {
@@ -53,6 +75,27 @@ namespace RD.Controllers
                 ThemeName = themeName;
                 ThemeId = id;
             }
+
+            return View();
+        }
+
+
+        public IActionResult StageDetail(int id)
+        {
+            var stage = _stageService.GetStages().FirstOrDefault(x => x.Id == id);
+            ViewBag.Stage = stage;
+
+            var scientificDocs = _scientificDocsService.GetScientificDocs();
+            ViewBag.ScientificDocs = scientificDocs;
+            
+            var products = _productsService.GetProducts();
+            ViewBag.Products = products;
+           
+            var rias = _riasService.GetRIAs();
+            ViewBag.RIAs = rias;
+
+            var files = _filesService.GetFiles();
+            ViewBag.Files = files;
 
             return View();
         }
