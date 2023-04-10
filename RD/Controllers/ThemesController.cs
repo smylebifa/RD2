@@ -61,9 +61,9 @@ namespace RD.Controllers
         }
 
         [HttpGet("/edit_theme/{id}")]
-        public IActionResult ChangingTheme(int id)
+        public IActionResult ChangingTheme(int themeId)
         {
-            var theme = _themeService.GetThemes().FirstOrDefault(x => x.Id == id);
+            var theme = _themeService.GetThemes().FirstOrDefault(x => x.Id == themeId);
             ViewBag.CurrentTheme = theme;
             return View(theme);
         }

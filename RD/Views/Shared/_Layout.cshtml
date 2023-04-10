@@ -19,7 +19,7 @@
             <div class="container-fluid" style="background-color: #3949AC;">
                 <div class="navbar-collapse collapse d-sm-inline-flex ">
 
-                    @if (User.Identity.Name == "admin")
+                    @*@if (User.Identity.Name == "admin")
                     {
 
                     <ul class="navbar-nav flex-grow-1">
@@ -57,10 +57,10 @@
                             </li>
                         </ul>
 
-                    }
+                    }*@
 
-                    else if (User.Identity.Name != "" && User.Identity.Name != null)
-                    {
+                    @*else if (User.Identity.Name != "" && User.Identity.Name != null)
+                    {*@
 
                         <ul class="navbar-nav flex-grow-1">
                             <li class="navbar-brand">
@@ -93,9 +93,9 @@
                             </li>
                         </ul>
 
-                        }
+                        @*}*@
 
-                    else
+                    @*else
                     {
                 <ul class="navbar-nav flex-grow-1">
                     <li class="navbar-brand">
@@ -107,7 +107,6 @@
 
                             <li class="dropdown nav-item" style="margin-left: auto; padding-right: 90px;">
                                 <a href="#" class="nav-link" id="menu-login" data-toggle="dropdown" style="color:white"><i class="fa fa-bars" aria-hidden="true"></i></a>
-                               @* <a href="#" class="dropdown-toggle nav-link" id="menu-login" data-toggle="dropdown" style="color:white">Вход<b class="caret"></b></a>*@
                                 <ul class="dropdown-menu">
                                     <li><h6><a class="nav-link" id="profile" asp-area="" asp-controller="Profile" asp-action="Index" style="color: #343a40;">Профиль</a></h6></li>
                                     <li><h6><a class="nav-link" id="login-link" asp-area="" asp-controller="Authentication" asp-action="Index" style="color: #343a40;">Вход</a></h6></li>
@@ -117,7 +116,7 @@
                             </li>
                         </ul>
 
-                    }
+                    }*@
 
                 </div>
             </div>

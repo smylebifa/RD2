@@ -530,3 +530,6 @@ C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Release\netcoreapp3.0\win-x64\Razor\Vie
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Release\netcoreapp3.0\win-x64\Razor\Views\TRLs\TRLPage2.cshtml.g.cs
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Release\netcoreapp3.0\win-x64\Razor\Views\TRLs\TRLPage3.cshtml.g.cs
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Release\netcoreapp3.0\win-x64\Razor\Views\Users\ChangingUser.cshtml.g.cs
+C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Release\netcoreapp3.0\win-x64\Razor\Views\Files\ChangingFile.cshtml.g.cs
+C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Release\netcoreapp3.0\win-x64\Razor\Views\Files\File.cshtml.g.cs
+C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Release\netcoreapp3.0\win-x64\Razor\Views\Stages\StageDetail.cshtml.g.cs

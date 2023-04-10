@@ -44,12 +44,12 @@ namespace RD.Controllers
 
         }
 
-        public IActionResult Index(int id, string themeName)
+        public IActionResult Index(int themeId, string themeName)
         {
             var stages = _stageService.GetStages();
             ViewBag.Stages = stages;
 
-            var theme = _themeService.GetThemes().FirstOrDefault(x => x.Id == id);
+            var theme = _themeService.GetThemes().FirstOrDefault(x => x.Id == themeId);
             ViewBag.CurrentTheme = theme;
 
             var annualFinancings = _annualFinancingsService.GetAnnualFinancings().FirstOrDefault(x => x.ThemeId == theme.Id);
@@ -70,10 +70,10 @@ namespace RD.Controllers
 
             else
             {
-                ViewBag.ThemeId = ThemeId;
+                ViewBag.ThemeId = themeId;
                 ViewBag.ThemeName = themeName;
                 ThemeName = themeName;
-                ThemeId = id;
+                ThemeId = themeId;
             }
 
             return View();
