@@ -13,17 +13,36 @@ namespace RD.Controllers
     {
         private readonly ILogger<ContractsController> _logger;
         private readonly ContractsService _contractsService;
+        private readonly StagesService _stageService;
+        private readonly FilesService _filesService;
 
-        public ContractsController(ILogger<ContractsController> logger, ContractsService contractsService)
+        public ContractsController(ILogger<ContractsController> logger, ContractsService contractsService, StagesService stageService, FilesService filesService)
         {
             _logger = logger;
             _contractsService = contractsService;
+
+            _stageService = stageService;
+            _filesService = filesService;
         }
 
         public ActionResult Index()
         {
             var contracts = _contractsService.GetContracts();
             ViewBag.Contracts = contracts;
+            return View();
+        }
+
+        public ActionResult ContractDetail(int themId)
+        {
+            var contracts = _contractsService.GetContracts().FirstOrDefault(x => x.ThemeId == themId);
+            ViewBag.CurrentContract = contracts;
+
+            var stages = _stageService.GetStages();
+            ViewBag.Stages = stages;
+
+            var files = _filesService.GetFiles();
+            ViewBag.Files = files;
+
             return View();
         }
 

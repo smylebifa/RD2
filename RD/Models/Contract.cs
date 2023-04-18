@@ -8,6 +8,7 @@ namespace RD.Models
     public class Contract
     {
         public int Id { get; set; }
+        public string CounterpartyName { get; set; }
         public int CounterpartyId { get; set; }
         public int ThemeId { get; set; }
         public string? NameContract { get; set; }
@@ -15,6 +16,7 @@ namespace RD.Models
         public DateTime? WorkEnd { get; set; }
         public string? Props { get; set; }
         public float? Amount { get; set; }
+        public string? Act { get; set; }
         public string? Status { get; set; }
 
         public Contract()

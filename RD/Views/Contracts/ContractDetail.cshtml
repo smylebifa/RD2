@@ -1,0 +1,377 @@
+﻿@model RD.Models.Contract;
+
+@{
+    //ViewBag.Title = ViewBag.ThemeName;
+    Layout = "_Layout";
+
+    string WorkStart = "";
+    string WorkEnd = "";
+}
+
+@{
+    @if (ViewBag.CurrentContract.WorkStart != null)
+    {
+        WorkStart = @ViewBag.CurrentContract.WorkStart.ToString("yyyy-MM-dd");
+    }
+    else
+    {
+        WorkStart = @ViewBag.CurrentContract.WorkStart;
+    }
+
+    @if (ViewBag.CurrentContract.WorkEnd != null)
+    {
+        WorkEnd = @ViewBag.CurrentContract.WorkEnd.ToString("yyyy-MM-dd");
+    }
+    else
+    {
+        WorkEnd = @ViewBag.CurrentContract.WorkEnd;
+    }
+}
+
+
+<style>
+    .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+    }
+
+        /* Style the buttons that are used to open the tab content */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+        }
+
+            /* Change background color of buttons on hover */
+            .tab button:hover {
+                background-color: #ddd;
+            }
+
+            /* Create an active/current tablink class */
+            .tab button.active {
+                background-color: #ccc;
+            }
+
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
+</style>
+
+
+<div class="container-fluid">
+    <div class="row" style="align-items:center">
+        <div class="col-sm-5">
+
+            <form method="post" asp-action="Edit" asp-controller="Contracts" class="my-2 col-10" style="box-shadow: 0 1px 2px 3px #e9e8e8; padding: 8px; ">
+
+                <table>
+                    <tr>
+                        <td style="padding: 4px;">Наменование соисполнителя:</td>
+                        <td style="padding: 4px;">
+                            <input type="text" name="CounterpartyName" value="@ViewBag.CurrentContract.CounterpartyName" />
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td style="padding: 4px;">Наменование договора:</td>
+                        <td style="padding: 4px;">
+                            <input type="text" name="NameContract" value="@ViewBag.CurrentContract.NameContract" />
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td style="padding: 4px;">Срок выполнения - начало:</td>
+                        <td style="padding: 4px;">
+                            <input type="date" id="WorkStart" name="WorkStart" value="@WorkStart" min="1950-01-01" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 4px;">Срок выполнения - конец:</td>
+                        <td style="padding: 4px;">
+                            <input type="date" id="WorkEnd" name="WorkEnd" min="1950-01-01" value="@WorkEnd" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 4px;">Реквизиты договора:</td>
+                        <td style="padding: 4px;">
+                            <input type="text" name="Props" value="@ViewBag.CurrentContract.Props" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 4px;">Общий объем финансирования:</td>
+                        <td style="padding: 4px;">
+                            <input type="text" name="Amount" value="@ViewBag.CurrentContract.Amount" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 4px;">Акт о завершении работ:</td>
+                        <td style="padding: 4px;">
+                            <input type="text" name="Act" value="@ViewBag.CurrentContract.Act" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 4px;">Статус:</td>
+                        <td style="padding: 4px;">
+                            <select name="Status" size="1">
+                                <option value="Завершен">Завершен</option>
+                                <option value="Завершен">Не завершен</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    @*<h3 style="color: #343a40; padding: 8px;">Тема - @ViewBag.ThemeName </h3>
+
+            <table>
+
+                <input name="Id" type="number" hidden value="@ViewBag.CurrentTheme.Id" />
+
+
+
+                <tr>
+                    <td style="padding: 4px;">Статус:</td>
+                    <td style="padding: 4px;">
+                        <select name="Status" size="1">
+                            <option value="Завершен">Завершен</option>
+                            <option value="Завершен">Не завершен</option>
+                        </select>
+                    </td>
+                </tr>*@
+
+                    @*<tr>
+                <td style="padding: 4px;">Статус:</td>
+                <td style="padding: 4px;">
+                    <input type="text" name="Status" value="@ViewBag.CurrentTheme.Status" />
+                </td>
+            </tr>*@
+
+
+                    @*@(ViewBag.Trls.Trl1_1 && ViewBag.Trls.Trl1_2 && ViewBag.Trls.Trl1_3 && ViewBag.Trls.Trl1_4 && ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "")
+
+            <td style="padding: 4px;">
+                    @Html.TextBoxFor(m => m.ResearchType)
+                </td>*@
+
+                    <br />
+
+                    <tr style="margin-top: 10px;">
+                        <td style="padding: 4px;">
+                        </td>
+
+                        <td style="padding: 4px;">
+                            <input type="submit" class="btn btn-primary changeThemeBtn" value="Сохранить изменения" />
+                        </td>
+
+                        <td style="padding: 4px;">
+                        </td>
+                    </tr>
+
+                </table>
+            </form>
+        </div>
+
+
+        <div class="col-sm-7">
+            <div style="box-shadow: 0 1px 2px 3px #e9e8e8; padding: 8px; ">
+                <div class="tab" style="border:none;">
+                    <button class="tablinks active" onclick="openTab(event, 'Stages')">Этапы</button>
+                    <button class="tablinks" onclick="openTab(event, 'Files')">Файлы</button>
+                </div>
+
+                <!-- Tab content -->
+                <div id="Stages" class="tabcontent" style="display:block; border:none;">
+
+                    <h3 style="padding: 8px;">Этапы <a asp-controller="Stages" asp-action="Stage"> + </a> </h3>
+
+
+                    @*<div class="col-sm-3">
+                        <h3> <a class="nav-link" asp-area="" asp-route-themeName="@ViewBag.ThemeName" asp-controller="TRLs" asp-action="Index">TRL</a> </h3>
+                    </div>*@
+
+
+                    <div style="overflow-x:auto;">
+                        <table class="table table-hover" style="text-align: center; ">
+
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;"></th>
+                                    <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;"></th>
+                                    <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;"></th>
+                                    <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">№ этапа</th>
+                                    <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Этап</th>
+                                    <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Срок выполнения - начало</th>
+                                    <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Срок выполнения - конец</th>
+                                    <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Сумма этапа</th>
+                                    <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Акт о завершении работ</th>
+                                    <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Статус</th>
+                                </tr>
+                            </thead>
+
+
+                            @{int i = 1;}
+                            @foreach (var stage in @ViewBag.Stages)
+                            {
+
+                                <tbody>
+                                    <tr>
+                                        <td style="vertical-align:middle"><a asp-controller="Stages" asp-action="StageDetail" asp-route-id="@stage.Id" style="font-weight: 700;"> >>> </a></td>
+                                        <td style="vertical-align:middle"><a asp-controller="Stages" asp-action="ChangingStage" asp-route-id="@stage.Id"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                                        <td style="vertical-align:middle"><a onclick="deleteStage('@stage.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                                        <td>@i</td>
+                                        <td>@stage.StageName</td>
+
+                                        @if (@stage.WorkStart != null)
+                                        {
+                                            if (@stage.WorkEnd != null)
+                                            {
+                                                <td>@stage.WorkStart.ToString("dd/MM/yyyy")</td>
+                                                <td>@stage.WorkEnd.ToString("dd/MM/yyyy")</td>
+                                            }
+                                            else
+                                            {
+                                                <td>@stage.WorkStart.ToString("dd/MM/yyyy")</td>
+                                                <td>@stage.WorkEnd</td>
+                                            }
+                                        }
+                                        else if (@stage.WorkEnd != null)
+                                        {
+                                            <td>@stage.WorkStart</td>
+                                            <td>@stage.WorkEnd.ToString("dd/MM/yyyy")</td>
+                                        }
+                                        else
+                                        {
+                                            <td>@stage.WorkStart</td>
+                                            <td>@stage.WorkEnd</td>
+                                        }
+
+                                        <td>@stage.Amount</td>
+                                        <td>@stage.CompletionAct</td>
+                                        <td>@stage.Status</td>
+
+                                    </tr>
+                                </tbody>
+
+                                i++;
+
+                            }
+
+                        </table>
+
+                        <br />
+                        <br />
+
+                    </div>
+                </div>
+
+
+                <div id="Files" class="tabcontent" style="border:none;">
+                    <h3 style="padding: 8px;">Файлы</h3>
+
+                    <table class="table table-hover " style="text-align: center;">
+                        <thead>
+                            <tr>
+                                <th scope="col">Имя файла</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var file in @ViewBag.Files)
+                            {
+                                <tr>
+                                    <td>@file.Filename.@file.FileType</td>
+                                    <td><a href="#">  </a></td>
+                                    <td><a onclick="deleteFile('@file.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                    <form asp-action="AddFile" asp-controller="Files" method="post" enctype="multipart/form-data">
+                        <input type="file" name="uploadedFile" />
+                        <input type="submit" value="Сохранить">
+                    </form>
+                </div>
+            </div>
+
+            <br /><br />
+
+        </div>
+
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    function deleteFile(fileId) {
+        $.ajax({
+            url: '/delete_file/' + fileId,
+            type: 'DELETE',
+            contentType: "application/json; charset=utf-8",
+            success: function () {
+                location.reload()
+            },
+            error: function () {
+                alert("Ошибка выполнения!")
+            }
+        })
+    }
+</script>
+
+
+<script type="text/javascript">
+    function deleteStage(stageId) {
+        $.ajax({
+            url: '/delete_stage/' + stageId,
+            type: 'DELETE',
+            contentType: "application/json; charset=utf-8",
+            success: function () {
+                location.reload()
+            },
+            error: function () {
+                alert("Ошибка выполнения!")
+            }
+        })
+    }
+
+</script>
+
+<script type="text/javascript">
+    function openTab(evt, tabName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+

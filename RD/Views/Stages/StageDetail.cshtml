@@ -108,13 +108,13 @@
                     <tr>
                         <td style="padding: 4px;">Сумма этапа:</td>
                         <td style="padding: 4px;">
-                            <input type="text" name="Amount" value="@ViewBag.Stage.Amount" />
+                            <input type="number" name="Amount" value="@ViewBag.Stage.Amount" />
                         </td>
                     </tr>
 
 
                     <tr>
-                        <td style="padding: 4px;">Акт о завершении:</td>
+                        <td style="padding: 4px;">Акт о завершении работ:</td>
                         <td style="padding: 4px;">
                             <input type="text" name="CompletionAct" value="@ViewBag.Stage.CompletionAct" />
                         </td>
@@ -123,10 +123,12 @@
                     <tr>
                         <td style="padding: 4px;">Статус:</td>
                         <td style="padding: 4px;">
-                            <input type="text" name="Status" value="@ViewBag.Stage.Status" />
+                            <select name="Status" size="1">
+                                <option value="Завершен">Завершен</option>
+                                <option value="Завершен">Не завершен</option>
+                            </select>
                         </td>
                     </tr>
-
 
                     <tr><br></tr>
 
@@ -162,30 +164,28 @@
                         <thead>
                             <tr>
                                 <th scope="col"></th>
-                                <th scope="col">Наименование</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
                                 <th scope="col">Результат</th>
-                                <th scope="col">Расположение</th>
-                                <th scope="col">Записи</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-
+                                <th scope="col">Уточнение</th>
+                                <th scope="col">Местоположение</th>
+                                <th scope="col">Примечание</th>
                             </tr>
                         </thead>
 
                         <tbody>
                             @foreach (var scientificDoc in @ViewBag.ScientificDocs)
                             {
-                                <tr>
-                                    <td><a class="nav-link" asp-controller="Docs" asp-action="Index">Документы</a> </td>
+                            <tr>
+                                <td><a class="nav-link" asp-controller="Docs" asp-action="Index">>>></a> </td>
+                                <td>@Html.ActionLink("изменить", "ChangingScientificDoc", new { id = scientificDoc.Id })</td>
+                                <td><a onclick="deleteScientificDoc('@scientificDoc.Id')" href="#"> удалить </a></td>
 
-                                    <td>@scientificDoc.Name</td>
-                                    <td>@scientificDoc.Result</td>
-                                    <td>@scientificDoc.Location</td>
-                                    <td>@scientificDoc.Note</td>
-
-                                    <td>@Html.ActionLink("изменить", "ChangingScientificDoc", new { id = scientificDoc.Id })</td>
-                                    <td><a onclick="deleteScientificDoc('@scientificDoc.Id')" href="#"> удалить </a></td>
-                                </tr>
+                                <td>@scientificDoc.Result</td>
+                                <td>@scientificDoc.Name</td>
+                                <td>@scientificDoc.Location</td>
+                                <td>@scientificDoc.Note</td>
+                            </tr>
                             }
                         </tbody>
                     </table>
@@ -203,21 +203,22 @@
 
                             <thead>
                                 <tr>
-                                    <th scope="col">Имя</th>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
-
+                                    @*<th scope="col"></th>
+                                    <th scope="col"></th>*@
+                                    <th scope="col">Результат</th>
+                                    <th scope="col">Местоположение</th>
                                 </tr>
                             </thead>
 
                             <tbody>
                                 @foreach (var product in @ViewBag.Products)
                                 {
-                                    <tr>
-                                        <td>@product.Name</td>
-                                        <td>@Html.ActionLink("изменить", "Product", new { id = product.Id })</td>
-                                        <td><a onclick="deleteProduct('@product.Id')" href="#"> удалить </a></td>
-                                    </tr>
+                                <tr>
+                                    @*<td>@Html.ActionLink("изменить", "Product", new { id = product.Id })</td>
+                                    <td><a onclick="deleteProduct('@product.Id')" href="#"> удалить </a></td>*@
+                                    <td>@product.Name</td>
+                                    <td>@product.Location</td>
+                                </tr>
                                 }
                             </tbody>
                         </table>
@@ -233,6 +234,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col"></th>
+                                    <th scope="col"></th>
                                     <th scope="col">Результат</th>
                                     <th scope="col">Реквизиты</th>
                                     <th scope="col">Авторы</th>
@@ -243,16 +245,14 @@
                             <tbody>
                                 @foreach (var ria in @ViewBag.RIAs)
                                 {
-                                    <tr>
-                                        <td></td>
-                                        <td>@ria.Result</td>
-                                        <td>@ria.Props</td>
-                                        <td>@ria.Authors</td>
-                                        <td>@ria.Location</td>
-
-                                        <td>@Html.ActionLink("изменить", "ChangingRIA", new { id = ria.Id })</td>
-                                        <td><a onclick="deleteRIA('@ria.Id')" href="#"> удалить </a></td>
-                                    </tr>
+                                <tr>
+                                    <td>@Html.ActionLink("изменить", "ChangingRIA", new { id = ria.Id })</td>
+                                    <td><a onclick="deleteRIA('@ria.Id')" href="#"> удалить </a></td>
+                                    <td>@ria.Result</td>
+                                    <td>@ria.Props</td>
+                                    <td>@ria.Authors</td>
+                                    <td>@ria.Location</td>
+                                </tr>
                                 }
                             </tbody>
                         </table>

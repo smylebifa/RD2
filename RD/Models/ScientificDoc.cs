@@ -9,6 +9,8 @@ namespace RD.Models
     {
         public int Id { get; set; }
         public int StageId { get; set; }
+        
+        // Предмет (уточнение)
         public string? Name { get; set; }
         public string? Result { get; set; }
         public string? Location { get; set; }

@@ -106,7 +106,7 @@
                     <tr>
                         <td style="padding: 4px;">Наименование темы:</td>
                         <td style="padding: 4px;">
-                            <input type="text" name="Name" value="@ViewBag.CurrentTheme.Name" />
+                            <textarea name="Name">@ViewBag.CurrentTheme.Name</textarea>
                         </td>
                     </tr>
 
@@ -132,35 +132,16 @@
                     </tr>
 
                     <tr>
-                        <td style="padding: 4px;">Срок - начало:</td>
+                        <td style="padding: 4px;">Срок выполнения - начало:</td>
                         <td style="padding: 4px;">
                             <input type="date" id="WorkStart" name="WorkStart" value="@WorkStart" min="1950-01-01" />
                         </td>
                     </tr>
 
                     <tr>
-                        <td style="padding: 4px;">Срок - конец:</td>
+                        <td style="padding: 4px;">Срок выполнения - конец:</td>
                         <td style="padding: 4px;">
                             <input type="date" id="WorkEnd" name="WorkEnd" min="1950-01-01" value="@WorkEnd" />
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td style="padding: 4px;">Приказ об открытии темы:</td>
-                        <td style="padding: 4px;">
-                            <input type="text" name="Decree" value="@ViewBag.CurrentTheme.Decree" />
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td style="padding: 4px;">Вид документа:</td>
-                        <td style="padding: 4px;">
-                            <select name="DocType" size="1">
-                                <option value="Гос. Контракт">Гос. Контракт</option>
-                                <option value="Договор">Договор</option>
-                                <option value="Контракт">Контракт</option>
-                                <option value="Хоз. договора">Хоз. договора</option>
-                            </select>
                         </td>
                     </tr>
 
@@ -186,9 +167,30 @@
                     </tr>
 
                     <tr>
+                        <td style="padding: 4px;">Приказ об открытии темы:</td>
+                        <td style="padding: 4px;">
+                            <input type="text" name="Decree" value="@ViewBag.CurrentTheme.Decree" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 4px;">Вид документа:</td>
+                        <td style="padding: 4px;">
+                            <select name="DocType" size="1">
+                                <option value="Гос. Контракт">Гос. Контракт</option>
+                                <option value="Договор">Договор</option>
+                                <option value="Контракт">Контракт</option>
+                                <option value="Хоз. договора">Хоз. договора</option>
+                            </select>
+                        </td>
+                    </tr>
+
+
+
+                    <tr>
                         <td style="padding: 4px;">Реквизиты документа:</td>
                         <td style="padding: 4px;">
-                            <input type="text" name="Props" value="@ViewBag.CurrentTheme.Props" />
+                            <textarea type="text" name="Props">@ViewBag.CurrentTheme.Props</textarea>
                         </td>
                     </tr>
 
@@ -223,16 +225,26 @@
                     <tr>
                         <td style="padding: 4px;">Статус:</td>
                         <td style="padding: 4px;">
-                            <input type="text" name="Status" value="@ViewBag.CurrentTheme.Status" />
+                            <select name="Status" size="1">
+                                <option value="Завершен">Завершен</option>
+                                <option value="Завершен">Не завершен</option>
+                            </select>
                         </td>
                     </tr>
+
+                    @*<tr>
+                        <td style="padding: 4px;">Статус:</td>
+                        <td style="padding: 4px;">
+                            <input type="text" name="Status" value="@ViewBag.CurrentTheme.Status" />
+                        </td>
+                    </tr>*@
 
 
                     @*@(ViewBag.Trls.Trl1_1 && ViewBag.Trls.Trl1_2 && ViewBag.Trls.Trl1_3 && ViewBag.Trls.Trl1_4 && ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "")
 
-                        <td style="padding: 4px;">
-                                @Html.TextBoxFor(m => m.ResearchType)
-                            </td>*@
+        <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.ResearchType)
+            </td>*@
 
                     <br />
 
@@ -289,7 +301,7 @@
                                     <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Срок выполнения - начало</th>
                                     <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Срок выполнения - конец</th>
                                     <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Сумма этапа</th>
-                                    <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Акт о завершении</th>
+                                    <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Акт о завершении работ</th>
                                     <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Статус</th>
                                 </tr>
                             </thead>
@@ -358,30 +370,35 @@
 
                         <thead>
                             <tr>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                <th scope="col">Наменование контрагента</th>
                                 <th scope="col">Наменование договора</th>
                                 <th scope="col">Срок выполнения - начало</th>
                                 <th scope="col">Срок выполнения - конец</th>
                                 <th scope="col">Реквизиты договора</th>
+                                <th scope="col">Акт о завершении работ</th>
                                 <th scope="col">Статус</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
                             </tr>
                         </thead>
 
                         <tbody>
                             @foreach (var contract in @ViewBag.Contracts)
                             {
-                                <tr>
-                                    <td>@contract.NameContract</td>
-                                    <td>@contract.WorkStart</td>
-                                    <td>@contract.WorkEnd</td>
-                                    <td>@contract.Props</td>
-                                    <td>@contract.Amount</td>
-                                    <td>@contract.Status</td>
-
-                                    <td> <a class="nav-link text-primary" asp-controller="Contracts" asp-action="ChangingContract" asp-route-id="@contract.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
-                                    <td><a onclick="deleteContract('@contract.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
-                                </tr>
+                            <tr>
+                                <td style="vertical-align:middle"><a asp-controller="Contracts" asp-action="ContractDetail" asp-route-themeId="@ViewBag.ThemeId" style="font-weight: 700;"> >>> </a></td>
+                                <td> <a class="nav-link text-primary" asp-controller="Contracts" asp-action="ChangingContract" asp-route-id="@contract.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                                <td><a onclick="deleteContract('@contract.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
+                                <td>@contract.CounterpartyName</td>
+                                <td>@contract.NameContract</td>
+                                <td>@contract.WorkStart</td>
+                                <td>@contract.WorkEnd</td>
+                                <td>@contract.Props</td>
+                                <td>@contract.Amount</td>
+                                <td>@contract.Act</td>
+                                <td>@contract.Status</td>
+                            </tr>
                             }
                         </tbody>
                     </table>
@@ -440,21 +457,17 @@
                     <thead>
                         <tr>
                             <th scope="col"></th>
+                            <th scope="col"></th>
                             <th scope="col">Год</th>
                             <th scope="col">Сумма</th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td></td>
+                            <td> <a asp-controller="AnnualFinancings" asp-action="AnnualFinancing" asp-route-id="@ViewBag.AnnualFinancings.Id" asp-route-themeName="@ViewBag.ThemeName"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                            <td><a onclick="deleteAnnualFinancing('@ViewBag.AnnualFinancings.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
                             <td>@ViewBag.AnnualFinancings.Year</td>
                             <td>@ViewBag.AnnualFinancings.Amount</td>
-                            <td>
-                                <a asp-controller="AnnualFinancings" asp-action="AnnualFinancing" asp-route-id="@ViewBag.AnnualFinancings.Id" asp-route-themeName="@ViewBag.ThemeName"> <i class="fa fa-pencil" aria-hidden="true"></i></a>
-                            </td>
-                            <td><a onclick="deleteAnnualFinancing('@ViewBag.AnnualFinancings.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
                         </tr>
                     </tbody>
                 </table>
