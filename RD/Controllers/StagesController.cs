@@ -23,13 +23,16 @@ namespace RD.Controllers
         private readonly ScientificDocsService _scientificDocsService;
         private readonly ProductsService _productsService;
         private readonly RIAsService _riasService;
+        private readonly CustomersService _customersService;
 
         private static int ThemeId;
         private static string ThemeName;
 
+        private static IEnumerable<Customer> Customers;
+
         public StagesController(ILogger<StagesController> logger, StagesService stageService, 
             ThemesService themeService, AnnualFinancingsService annualFinancings, ContractsService сontractsService, FilesService filesService,
-            ScientificDocsService scientificDocsService, ProductsService productsService, RIAsService riasService)
+            ScientificDocsService scientificDocsService, ProductsService productsService, RIAsService riasService, CustomersService customersService)
         {
             _logger = logger;
             _stageService = stageService;
@@ -42,6 +45,8 @@ namespace RD.Controllers
             _productsService = productsService;
             _riasService = riasService;
 
+            _customersService = customersService;
+
         }
 
         public IActionResult Index(int themeId, string themeName)
@@ -52,7 +57,7 @@ namespace RD.Controllers
             var theme = _themeService.GetThemes().FirstOrDefault(x => x.Id == themeId);
             ViewBag.CurrentTheme = theme;
 
-            var annualFinancings = _annualFinancingsService.GetAnnualFinancings().FirstOrDefault(x => x.ThemeId == theme.Id);
+            var annualFinancings = _annualFinancingsService.GetAnnualFinancings().ToList().FindAll(x => x.ThemeId == themeId);
             ViewBag.AnnualFinancings = annualFinancings;
 
             var сontracts = _сontractsService.GetContracts();
@@ -60,7 +65,9 @@ namespace RD.Controllers
 
             var files = _filesService.GetFiles();
             ViewBag.Files = files;
-            
+
+            Customers = _customersService.GetCustomers();
+            ViewBag.Customers = Customers;
 
             if (themeName == null)
             {
@@ -122,6 +129,7 @@ namespace RD.Controllers
         {
             ViewBag.ThemeName = ThemeName;
             ViewBag.ThemeId = ThemeId;
+
             return View();
         }
 
@@ -129,7 +137,7 @@ namespace RD.Controllers
         public IActionResult AddStage(Stage stage)
         {
             _stageService.AddStage(stage);
-            return RedirectToAction("Index", "Stages", new { id = ThemeId, themeName = ThemeName });
+            return RedirectToAction("Index", "Stages", new { themeId = ThemeId, themeName = ThemeName });
         }
 
         [HttpDelete("/delete_stage/{id}")]

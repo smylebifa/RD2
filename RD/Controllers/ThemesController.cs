@@ -60,11 +60,12 @@ namespace RD.Controllers
             return View();
         }
 
-        [HttpGet("/edit_theme/{id}")]
+        [HttpGet("/edit_theme/{themeId}")]
         public IActionResult ChangingTheme(int themeId)
         {
             var theme = _themeService.GetThemes().FirstOrDefault(x => x.Id == themeId);
             ViewBag.CurrentTheme = theme;
+            ViewBag.Customers = Customers;
             return View(theme);
         }
 

@@ -65,9 +65,10 @@
     <tr>
         <td style="padding: 4px;">Наименование темы:</td>
         <td style="padding: 4px;">
-            <input type="text" name="Name" value="@ViewBag.CurrentTheme.Name" />
+            <textarea name="Name">@ViewBag.CurrentTheme.Name</textarea>
         </td>
     </tr>
+
 
     <tr>
         <td style="padding: 4px;">ФИО руководителя:</td>
@@ -86,7 +87,22 @@
     <tr>
         <td style="padding: 4px;">Заказчик работы:</td>
         <td style="padding: 4px;">
-            <input type="text" name="CustomerName" value="@ViewBag.CurrentTheme.CustomerName" />
+            @*<input type="text" name="CustomerName" />*@
+            <select name="CustomerName" id="model">
+                <option value=""> </option>
+                @foreach (var customer in @ViewBag.Customers)
+                {
+                    if (@ViewBag.CurrentTheme.CustomerName == @customer.Name)
+                    {
+                        <option value="@customer.Name" selected>@customer.Name</option>
+                    }
+
+                    else
+                    {
+                        <option value="@customer.Name">@customer.Name</option>
+                    }
+                }
+            </select>
         </td>
     </tr>
 
@@ -115,10 +131,51 @@
         <td style="padding: 4px;">Вид документа:</td>
         <td style="padding: 4px;">
             <select name="DocType" size="1">
-                <option value="Гос. Контракт">Гос. Контракт</option>
-                <option value="Договор">Договор</option>
-                <option value="Контракт">Контракт</option>
-                <option value="Хоз. договора">Хоз. договора</option>
+
+                @if (@ViewBag.CurrentTheme.DocType == "Гос. Контракт")
+                {
+                    <option value="Гос. Контракт" selected>Гос. Контракт</option>
+                    <option value="Договор">Договор</option>
+                    <option value="Контракт">Контракт</option>
+                    <option value="Хоз. договора">Хоз. договора</option>
+                    <option value=""> </option>
+                }
+
+                else if (@ViewBag.CurrentTheme.DocType == "Договор")
+                {
+                    <option value="Гос. Контракт">Гос. Контракт</option>
+                    <option value="Договор" selected>Договор</option>
+                    <option value="Контракт">Контракт</option>
+                    <option value="Хоз. договора">Хоз. договора</option>
+                    <option value=""> </option>
+                }
+
+                else if (@ViewBag.CurrentTheme.DocType == "Контракт")
+                {
+                    <option value="Гос. Контракт">Гос. Контракт</option>
+                    <option value="Договор">Договор</option>
+                    <option value="Контракт" selected>Контракт</option>
+                    <option value="Хоз. договора">Хоз. договора</option>
+                    <option value=""> </option>
+                }
+
+                else if (@ViewBag.CurrentTheme.DocType == "Хоз. договора")
+                {
+                    <option value="Гос. Контракт">Гос. Контракт</option>
+                    <option value="Договор">Договор</option>
+                    <option value="Контракт">Контракт</option>
+                    <option value="Хоз. договора" selected>Хоз. договора</option>
+                    <option value=""> </option>
+                }
+
+                else
+                {
+                    <option value="Гос. Контракт">Гос. Контракт</option>
+                    <option value="Договор">Договор</option>
+                    <option value="Контракт">Контракт</option>
+                    <option value="Хоз. договора">Хоз. договора</option>
+                    <option value="" selected> </option>
+                }
             </select>
         </td>
     </tr>
@@ -147,7 +204,7 @@
     <tr>
         <td style="padding: 4px;">Реквизиты документа:</td>
         <td style="padding: 4px;">
-            <input type="text" name="Props" value="@ViewBag.CurrentTheme.Props" />
+            <textarea type="text" name="Props">@ViewBag.CurrentTheme.Props</textarea>
         </td>
     </tr>
 
@@ -167,51 +224,204 @@
         </td>*@
 
 
-<tr>
-    <td style="padding: 4px;">Тип исследования:</td>
-    <td style="padding: 4px;">
-        <select name="ResearchType" id="ResearchType" size="1">
-            <option value="Прикладное">Прикладное</option>
-            <option value="Фундаментальное">Фундаментальное</option>
-            <option value="Разработка">Разработка</option>
-            <option value="Поисковое">Поисковое</option>
-            <option value="ОКР">ОКР</option>
-            <option value="Пользовательское" id="selectCustom"> </option>
-        </select>
-    </td>
+    <tr>
+        <td style="padding: 4px;">Тип исследования:</td>
+        <td style="padding: 4px;">
+            <select name="ResearchType" id="ResearchType" size="1">
 
-    <td style="padding: 4px;">
-        <div class="custom-control custom-switch">
-            <input type="checkbox" class="custom-control-input" onclick="showCustomInput()" id="customSwitch1">
-            <label class="custom-control-label" for="customSwitch1">Ввести свое значение</label>
-        </div>
-    </td>
+                @{
+
+                    if (@ViewBag.CurrentTheme.ResearchType == "Прикладное")
+                    {
+                        <option value="Прикладное" selected>Прикладное</option>
+                        <option value="Фундаментальное">Фундаментальное</option>
+                        <option value="Разработка">Разработка</option>
+                        <option value="Поисковое">Поисковое</option>
+                        <option value="ОКР">ОКР</option>
+                        <option value="Пользовательское" id="selectCustom"> </option>
+                    }
+
+                    else if (@ViewBag.CurrentTheme.ResearchType == "Фундаментальное")
+                    {
+                        <option value="Прикладное">Прикладное</option>
+                        <option value="Фундаментальное" selected>Фундаментальное</option>
+                        <option value="Разработка">Разработка</option>
+                        <option value="Поисковое">Поисковое</option>
+                        <option value="ОКР">ОКР</option>
+                        <option value="Пользовательское" id="selectCustom"> </option>
+                    }
+
+                    else if (@ViewBag.CurrentTheme.ResearchType == "Разработка")
+                    {
+                        <option value="Прикладное">Прикладное</option>
+                        <option value="Фундаментальное">Фундаментальное</option>
+                        <option value="Разработка" selected>Разработка</option>
+                        <option value="Поисковое">Поисковое</option>
+                        <option value="ОКР">ОКР</option>
+                        <option value="Пользовательское" id="selectCustom"> </option>
+                    }
+
+                    else if (@ViewBag.CurrentTheme.ResearchType == "Поисковое")
+                    {
+                        <option value="Прикладное">Прикладное</option>
+                        <option value="Фундаментальное">Фундаментальное</option>
+                        <option value="Разработка">Разработка</option>
+                        <option value="Поисковое" selected>Поисковое</option>
+                        <option value="ОКР">ОКР</option>
+                        <option value="Пользовательское" id="selectCustom"> </option>
+                    }
+
+                    else if (@ViewBag.CurrentTheme.ResearchType == "ОКР")
+                    {
+                        <option value="Прикладное">Прикладное</option>
+                        <option value="Фундаментальное">Фундаментальное</option>
+                        <option value="Разработка">Разработка</option>
+                        <option value="Поисковое">Поисковое</option>
+                        <option value="ОКР" selected>ОКР</option>
+                        <option value="Пользовательское" id="selectCustom"> </option>
+                    }
 
 
-    <td style="padding: 4px;">
-        <div id="customObj" style="display:none;">
-            <input type="text" id="inputCustom">
-            <button class="btn btn-primary" type="button" onclick="useCustomText()">Выбрать</button>
-        </div>
-    </td>
+                    else
+                    {
+                        <option value="Прикладное">Прикладное</option>
+                        <option value="Фундаментальное">Фундаментальное</option>
+                        <option value="Разработка">Разработка</option>
+                        <option value="Поисковое">Поисковое</option>
+                        <option value="ОКР">ОКР</option>
+                        <option value="Пользовательское" id="selectCustom" selected> </option>
+                    }
+                }
 
-    <td>
-        <input type="text" hidden id="researchType" value="@ViewBag.CurrentTheme.ResearchType" />
-    </td>
+            </select>
+        </td>
 
-</tr>
-    
+        <td style="padding: 4px;">
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" onclick="showCustomInput()" id="customSwitch1">
+                <label class="custom-control-label" for="customSwitch1">Ввести свое значение</label>
+            </div>
+        </td>
+
+
+        <td style="padding: 4px;">
+            <div id="customObj" style="display:none;">
+                <input type="text" id="inputCustom">
+                <button class="btn btn-primary" type="button" onclick="useCustomText()">Выбрать</button>
+            </div>
+        </td>
+
+        <td>
+            <input type="text" hidden id="researchType" value="@ViewBag.CurrentTheme.ResearchType" />
+        </td>
+
+    </tr>
+
+    @*<tr>
+            <td style="padding: 4px;">Область знания:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="Knowledge" value="@ViewBag.CurrentTheme.Knowledge" />
+            </td>
+        </tr>*@
+
     <tr>
         <td style="padding: 4px;">Область знания:</td>
         <td style="padding: 4px;">
-            <input type="text" name="Knowledge" value="@ViewBag.CurrentTheme.Knowledge" />
+            <select name="Knowledge" size="1">
+
+                @if (@ViewBag.CurrentTheme.Knowledge == "Общественные науки в целом")
+                {
+                    <option value="Общественные науки в целом" selected>Общественные науки в целом</option>
+                    <option value="Философия">Философия</option>
+                    <option value="История">История</option>
+                    <option value="Социология">Социология</option>
+                    <option value="Демография">Демография</option>
+                    <option value="" > </option>
+                }
+
+                else if (@ViewBag.CurrentTheme.Knowledge == "Философия")
+                {
+                    <option value="Общественные науки в целом">Общественные науки в целом</option>
+                    <option value="Философия" selected>Философия</option>
+                    <option value="История">История</option>
+                    <option value="Социология">Социология</option>
+                    <option value="Демография">Демография</option>
+                    <option value="" > </option>
+                }
+
+                else if (@ViewBag.CurrentTheme.Knowledge == "История")
+                {
+                    <option value="Общественные науки в целом">Общественные науки в целом</option>
+                    <option value="Философия">Философия</option>
+                    <option value="История" selected>История</option>
+                    <option value="Социология">Социология</option>
+                    <option value="Демография">Демография</option>
+                    <option value="" > </option>
+                }
+
+                else if (@ViewBag.CurrentTheme.Knowledge == "Социология")
+                {
+                    <option value="Общественные науки в целом">Общественные науки в целом</option>
+                    <option value="Философия">Философия</option>
+                    <option value="История">История</option>
+                    <option value="Социология" selected>Социология</option>
+                    <option value="Демография">Демография</option>
+                    <option value="" > </option>
+
+                }
+
+                else if (@ViewBag.CurrentTheme.Knowledge == "Демография")
+                {
+                    <option value="Общественные науки в целом">Общественные науки в целом</option>
+                    <option value="Философия">Философия</option>
+                    <option value="История">История</option>
+                    <option value="Социология">Социология</option>
+                    <option value="Демография" selected>Демография</option>
+                    <option value="" > </option>
+                }
+
+                else
+                {
+                    <option value="Общественные науки в целом">Общественные науки в целом</option>
+                    <option value="Философия">Философия</option>
+                    <option value="История">История</option>
+                    <option value="Социология">Социология</option>
+                    <option value="Демография">Демография</option>
+                    <option value="" selected> </option>
+                }
+
+            </select>
         </td>
     </tr>
 
     <tr>
         <td style="padding: 4px;">Статус:</td>
         <td style="padding: 4px;">
-            <input type="text" name="Status" value="@ViewBag.CurrentTheme.Status" />
+            <select name="Status" size="1">
+                @{
+
+                    if (@ViewBag.CurrentTheme.Status == "Завершен")
+                    {
+                        <option value="Завершен" selected>Завершен</option>
+                        <option value="Не завершен">Не завершен</option>
+                        <option value="" > </option>
+                    }
+
+                    else if (@ViewBag.CurrentTheme.Status == "Не завершен")
+                    {
+                        <option value="Завершен">Завершен</option>
+                        <option value="Не завершен" selected>Не завершен</option>
+                        <option value="" > </option>
+                    }
+
+                    else
+                    {
+                        <option value="Завершен">Завершен</option>
+                        <option value="Не завершен">Не завершен</option>
+                        <option value="" selected> </option>
+                    }
+                }
+            </select>
         </td>
     </tr>
 

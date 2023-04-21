@@ -1,0 +1,44 @@
+﻿@model RD.Models.AnnualFinancing;
+
+@{
+    ViewBag.Title = "Редактирование финансирования";
+    Layout = "_Layout";
+}
+
+    <h3>Изменение финансирования</h3>
+
+<form method="post" asp-action="Edit" style="border-color: #343a40;">
+    <table>
+
+        <input name="Id" type="text" hidden value="@ViewBag.CurrentAnnualFinancing.Id" />
+        <input name="ThemeId" type="text" hidden value="@ViewBag.CurrentAnnualFinancing.ThemeId" />
+
+        <tr>
+            <td style="padding: 4px;">Год:</td>
+            <td style="padding: 4px;">
+                <input type="number" name="Year" value="@ViewBag.CurrentAnnualFinancing.Year" required />
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 4px;">Сумма:</td>
+            <td style="padding: 4px;">
+                <input type="number" name="Amount" value="@ViewBag.CurrentAnnualFinancing.Amount" required />
+            </td>
+        </tr>
+
+
+        <tr>
+            <td style="padding: 4px;">
+            </td>
+
+            <td style="padding: 4px;">
+                <a class="btn btn-outline-dark" href="/Stages?themeId=@ViewBag.ThemeId&themeName=@ViewBag.ThemeName" style="text-align:center">Отмена</a>
+                <input class="btn btn-primary" type="submit" value="Изменить финансирование" />
+            </td>
+
+            <td style="padding: 4px;">
+            </td>
+        </tr>
+
+    </table>
+</form>

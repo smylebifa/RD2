@@ -38,29 +38,49 @@ namespace RD.Controllers
             return View();
         }
 
-        [HttpPost("/add_annual_financing")]
+        [HttpGet("/add_annual_financing")]
+        public IActionResult AnnualFinancing(int themeId, string themeName)
+        {
+            ViewBag.ThemeId = themeId;
+            ViewBag.ThemeName = themeName;
+
+            ThemeId = themeId;
+            ThemeName = themeName;
+
+            return View();
+        }
+
+        [HttpPost]
         public IActionResult AddAnnualFinancing(AnnualFinancing annualFinancing)
         {
             _annualFinancingsService.AddAnnualFinancing(annualFinancing);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Stages", new { themeId = ThemeId, themeName = ThemeName });
         }
 
-        [HttpGet("/edit_annual_financing/{id}")]
-        public new IActionResult AnnualFinancing(int id, string themeName)
+
+        [HttpGet("/edit_annual_financing")]
+        public new IActionResult ChangingAnnualFinancing(int annualFinancingId, string themeName)
         {
-            var annualFinancing = _annualFinancingsService.GetAnnualFinancings().FirstOrDefault(x => x.Id == id);
+            var annualFinancing = _annualFinancingsService.GetAnnualFinancings().FirstOrDefault(x => x.Id == annualFinancingId);
 
             ThemeId = annualFinancing.ThemeId;
             ThemeName = themeName;
 
+            ViewBag.ThemeId = ThemeId;
+            ViewBag.ThemeName = themeName;
+
+            ViewBag.CurrentAnnualFinancing = annualFinancing;
+
             return View(annualFinancing);
         }
 
-        [HttpPost("/edit_annual_financing")]
+        [HttpPost]
         public IActionResult Edit(AnnualFinancing annualFinancing)
         {
+            ViewBag.CurrentAnnualFinancing = annualFinancing;
+
             _annualFinancingsService.UpdateAnnualFinancing(annualFinancing);
-            return RedirectToAction("Index", "Stages", new { id = ThemeId, themeName = ThemeName });
+            return RedirectToAction("Index", "Stages", new { themeId = ThemeId, themeName = ThemeName });
         }
 
         [HttpDelete("/delete_annual_financing/{id}")]

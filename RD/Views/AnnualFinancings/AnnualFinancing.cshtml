@@ -1,37 +1,39 @@
 ﻿@model RD.Models.AnnualFinancing;
 
 @{
-    ViewBag.Title = "Редактирование финансирования";
+    ViewBag.Title = "Добавление финансирования";
     Layout = "_Layout";
 }
 
-@using (Html.BeginForm("Edit", "AnnualFinancings", FormMethod.Post))
-{
+
+<h3>Добавление финансирования</h3>
+
+<form method="post" asp-action="AddAnnualFinancing" style="border-color: #343a40;">
+
     <table>
-        @Html.HiddenFor(m => m.Id)
-        @Html.HiddenFor(m => m.ThemeId)
+
         <tr>
             <td style="padding: 4px;">Год:</td>
             <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.Year)
+                <input type="number" name="Year" required />
             </td>
         </tr>
-
         <tr>
             <td style="padding: 4px;">Сумма:</td>
             <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.Amount)
+                <input type="number" name="Amount" required />
             </td>
         </tr>
+
+        <input name="ThemeId" type="text" hidden value="@ViewBag.ThemeId" />
 
         <tr>
             <td style="padding: 4px;">
             </td>
 
             <td style="padding: 4px;">
-                <a class="nav-link btn btn-outline-dark" href="/Stages/Index/@ViewBag.ThemeId?themeName=@ViewBag.ThemeName">Отмена</a>
-
-                <input class="btn btn-primary" style="margin-left: 6px;" type="submit" value="Изменить финансирование" />
+                <a class="btn btn-outline-dark" href="/Stages?themeId=@ViewBag.ThemeId&themeName=@ViewBag.ThemeName" style="text-align:center">Отмена</a>
+                <input class="btn btn-primary" type="submit" value="Добавить финансирование" />
             </td>
 
             <td style="padding: 4px;">
@@ -39,6 +41,5 @@
         </tr>
 
     </table>
-}
-
+</form>
 

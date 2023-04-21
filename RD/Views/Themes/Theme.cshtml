@@ -11,7 +11,7 @@
 
 <form method="post" asp-action="AddTheme" name="addThemeForm" style="border-color: #343a40;">
 
-    <table>
+    <table style="border: 1px solid #12121214;">
 
         <tr>
             <td style="padding: 4px;">Номер темы:</td>
@@ -23,7 +23,7 @@
         <tr>
             <td style="padding: 4px;">Наименование темы:</td>
             <td style="padding: 4px;">
-                <input type="text" name="Name" />
+                <textarea name="Name"></textarea>
             </td>
         </tr>
 
@@ -49,8 +49,8 @@
             <td style="padding: 4px;">Заказчик работы:</td>
             <td style="padding: 4px;">
                 @*<input type="text" name="CustomerName" />*@
-                <select id="model">
-                    <option selected> </option>
+                <select name="CustomerName" id="model">
+                    <option value="" selected> </option>
                     @foreach (var customer in @ViewBag.Customers)
                     {
                         <option value="@customer.Name">@customer.Name</option>
@@ -88,6 +88,7 @@
                     <option value="Договор">Договор</option>
                     <option value="Контракт">Контракт</option>
                     <option value="Хоз. договора">Хоз. договора</option>
+                    <option value="" selected> </option>
                 </select>
             </td>
         </tr>
@@ -116,7 +117,7 @@
         <tr>
             <td style="padding: 4px;">Реквизиты документа:</td>
             <td style="padding: 4px;">
-                <input type="text" name="Props" />
+                <textarea type="text" name="Props"></textarea>
             </td>
         </tr>
 
@@ -124,7 +125,7 @@
 
         @*Кастомное поле выбора из списка*@
 
-        <tr>
+        <tr style="border: 1px solid #12121214;">
 
             <td style="padding: 4px;">Тип исследования:</td>
             <td style="padding: 4px;">
@@ -135,7 +136,7 @@
                         <option value="Разработка">Разработка</option>
                         <option value="Поисковое">Поисковое</option>
                         <option value="ОКР">ОКР</option>
-                        <option value="Пользовательское" id="selectCustom"> </option>
+                        <option value="" id="customResearchType" selected> </option>
                     </select>
                 </div>
 
@@ -156,31 +157,41 @@
                 </div>
             </td>
 
-
         </tr>
 
         <tr>
             <td style="padding: 4px;">Область знания:</td>
             <td style="padding: 4px;">
-                <input type="text" name="Knowledge" />
+                <select name="Knowledge" size="1">
+                    <option value="Общественные науки в целом">Общественные науки в целом</option>
+                    <option value="Философия">Философия</option>
+                    <option value="История">История</option>
+                    <option value="Социология">Социология</option>
+                    <option value="Демография">Демография</option>
+                    <option value="" selected> </option>
+                </select>
             </td>
         </tr>
 
         <tr>
             <td style="padding: 4px;">Статус:</td>
             <td style="padding: 4px;">
-                <input type="text" name="Status" />
+                <select name="Status" size="1">
+                    <option value="Завершен">Завершен</option>
+                    <option value="Не завершен">Не завершен</option>
+                    <option value="" selected> </option>
+                </select>
             </td>
         </tr>
 
         <br />
 
         @*<tr>
-                <td style="padding: 4px;">Документы:</td>
-                <td style="padding: 4px;">
-                    <input type="file" name="upload" />
-                </td>
-            </tr>*@
+            <td style="padding: 4px;">Документы:</td>
+            <td style="padding: 4px;">
+                <input type="file" name="upload" />
+            </td>
+        </tr>*@
 
         <br />
 
@@ -190,7 +201,7 @@
 
             <td style="padding: 4px;">
                 <a class="btn btn-outline-dark" href="/Themes" style="text-align:center">Отмена</a>
-                <input type="submit" class="btn btn-outline-primary submitBtn" value="Добавить тему" />
+                <input type="submit" class="btn btn-primary submitBtn" value="Добавить тему" />
             </td>
 
             <td style="padding: 4px;">
@@ -226,11 +237,11 @@
     }
 
     function useCustomText() {
-        var selectCustom = document.getElementById("selectCustom");
+        var customResearchType = document.getElementById("customResearchType");
         var inputCustom = document.getElementById("inputCustom");
-        selectCustom.selected = true;
-        selectCustom.text = inputCustom.value;
-        selectCustom.value = inputCustom.value;
+        customResearchType.selected = true;
+        customResearchType.text = inputCustom.value;
+        customResearchType.value = inputCustom.value;
     }
 
 </script>
