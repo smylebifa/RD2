@@ -119,13 +119,6 @@
                     </tr>
 
                     <tr>
-                        <td style="padding: 4px;">Акт о завершении работ:</td>
-                        <td style="padding: 4px;">
-                            <input type="text" name="Act" value="@ViewBag.CurrentContract.Act" />
-                        </td>
-                    </tr>
-
-                    <tr>
                         <td style="padding: 4px;">Статус:</td>
                         <td style="padding: 4px;">
                             <select name="Status" size="1">
@@ -217,7 +210,7 @@
                                     <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Срок выполнения - начало</th>
                                     <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Срок выполнения - конец</th>
                                     <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Сумма этапа</th>
-                                    <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Акт о завершении работ</th>
+                                    <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Общий объем финансирования</th>
                                     <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Статус</th>
                                 </tr>
                             </thead>
@@ -260,7 +253,6 @@
                                         }
 
                                         <td>@stage.Amount</td>
-                                        <td>@stage.CompletionAct</td>
                                         <td>@stage.Status</td>
 
                                     </tr>

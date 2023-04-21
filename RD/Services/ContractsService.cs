@@ -10,7 +10,7 @@ namespace RD.Services
 
         public static List<Contract> Contracts = new List<Contract>
         {
-                new Contract(1, "Договор 1", 50000, ""),
+                new Contract(1, 1, "Договор 1", 50000, ""),
         };
 
         public IEnumerable<Contract> GetContracts()
@@ -44,6 +44,7 @@ namespace RD.Services
             existing.Status = contract.Status;
             existing.WorkStart = contract.WorkStart;
             existing.WorkEnd = contract.WorkEnd;
+            existing.Amount = contract.Amount;
         }
 
         public void DeleteContract(int id)

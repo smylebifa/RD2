@@ -15,14 +15,23 @@ namespace RD.Controllers
         private readonly ContractsService _contractsService;
         private readonly StagesService _stageService;
         private readonly FilesService _filesService;
+        private readonly CounterpartiesService _counterpartiesService;
 
-        public ContractsController(ILogger<ContractsController> logger, ContractsService contractsService, StagesService stageService, FilesService filesService)
+        private static int ThemeId;
+        private static string ThemeName;
+
+        private static IEnumerable<Counterparty> Counterparties;
+
+
+        public ContractsController(ILogger<ContractsController> logger, ContractsService contractsService, StagesService stageService, FilesService filesService, CounterpartiesService counterpartiesService)
         {
             _logger = logger;
             _contractsService = contractsService;
 
             _stageService = stageService;
             _filesService = filesService;
+
+            _counterpartiesService = counterpartiesService;
         }
 
         public ActionResult Index()
@@ -32,9 +41,9 @@ namespace RD.Controllers
             return View();
         }
 
-        public ActionResult ContractDetail(int themId)
+        public ActionResult ContractDetail(int themeId)
         {
-            var contracts = _contractsService.GetContracts().FirstOrDefault(x => x.ThemeId == themId);
+            var contracts = _contractsService.GetContracts().FirstOrDefault(x => x.ThemeId == themeId);
             ViewBag.CurrentContract = contracts;
 
             var stages = _stageService.GetStages();
@@ -54,8 +63,18 @@ namespace RD.Controllers
         //}
 
         [HttpGet("/add_contract")]
-        public IActionResult Contract()
+        public IActionResult Contract(int themeId, string themeName)
         {
+            ViewBag.ThemeName = themeName;
+            ViewBag.ThemeId = themeId;
+
+            ThemeId = themeId;
+            ThemeName = themeName;
+
+            Counterparties = _counterpartiesService.GetCounterparties();
+
+            ViewBag.Counterparties = Counterparties;
+
             return View();
         }
 
@@ -64,13 +83,24 @@ namespace RD.Controllers
         public IActionResult Contracts(Contract contract)
         {
             _contractsService.AddContract(contract);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Stages", new { themeId = ThemeId, themeName = ThemeName });
         }
 
-        [HttpGet("/edit_contract/{id}")]
-        public new IActionResult ChangingContract(int id)
+        public new IActionResult ChangingContract(int contractId, int themeId, string themeName)
         {
-            var contract = _contractsService.GetContracts().FirstOrDefault(x => x.Id == id);
+            var contract = _contractsService.GetContracts().FirstOrDefault(x => x.Id == contractId);
+
+            ViewBag.ThemeId = themeId;
+            ViewBag.ThemeName = themeName;
+
+            ThemeId = themeId;
+            ThemeName = themeName;
+            
+            Counterparties = _counterpartiesService.GetCounterparties();
+
+            ViewBag.Counterparties = Counterparties;
+            ViewBag.CurrentContract = contract;
+
             return View(contract);
         }
 
@@ -78,7 +108,8 @@ namespace RD.Controllers
         public IActionResult Edit(Contract contract)
         {
             _contractsService.UpdateContract(contract);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Stages", new { themeId = ThemeId, themeName = ThemeName });
+
         }
 
         [HttpDelete("/delete_contract/{id}")]

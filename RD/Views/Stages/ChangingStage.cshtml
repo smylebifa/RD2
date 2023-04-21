@@ -81,10 +81,35 @@
         </td>
     </tr>
 
+
     <tr>
         <td style="padding: 4px;">Статус:</td>
         <td style="padding: 4px;">
-            <input type="text" name="Status" value="@ViewBag.CurrentStage.Status" />
+            <select name="Status" size="1">
+
+                @if (@ViewBag.CurrentStage.Status == "Завершен")
+                {
+                    <option value="Завершен" selected>Завершен</option>
+                    <option value="Не звершен">Не завершен</option>
+                    <option value=""> </option>
+                }
+
+                else if (@ViewBag.CurrentStage.Status == "Не завершен")
+                {
+                    <option value="Завершен">Завершен</option>
+                    <option value="Не завершен" selected>Не завершен</option>
+                    <option value=""> </option>
+                }
+
+                else
+                {
+                    <option value="Завершен">Завершен</option>
+                    <option value="Завершен">Не завершен</option>
+                    <option value="" selected> </option>
+                }
+
+
+            </select>
         </td>
     </tr>
 
@@ -117,10 +142,7 @@
 
     <tr>
         <td style="padding: 4px;">
-            <a class="nav-link btn btn-outline-dark" href="/Stages?themeId=@ViewBag.ThemeId&themeName=@ViewBag.ThemeName">Отмена</a>
-        </td>
-
-        <td style="padding: 4px;">
+            <a class="btn btn-outline-dark" href="/Stages?themeId=@ViewBag.ThemeId&themeName=@ViewBag.ThemeName">Отмена</a>
             <input type="submit" class="btn btn-outline-primary submitBtn" value="Изменить этап" />
         </td>
     </tr>

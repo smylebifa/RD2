@@ -56,20 +56,21 @@
         <tr>
             <td style="padding: 4px;">Статус:</td>
             <td style="padding: 4px;">
-                <input type="text" name="Status" />
+                <select name="Status" size="1">
+                    <option value="Завершен">Завершен</option>
+                    <option value="Не завершен">Не завершен</option>
+                    <option value="" selected> </option>
+                </select>
             </td>
         </tr>
-
 
         <br />
 
         <tr>
-
             <td style="padding: 4px;">
                 <a class="btn btn-outline-dark" href="/Stages?themeId=@ViewBag.ThemeId&themeName=@ViewBag.ThemeName" style="text-align:center">Отмена</a>
                 <input type="submit" class="btn btn-primary" value="Добавить этап" />
             </td>
-          
         </tr>
 
     </table>

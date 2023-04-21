@@ -80,7 +80,7 @@
                 <th scope="col" style="padding-bottom:0; padding-top:0rem;padding-left: 1.5rem;vertical-align: middle;">Вид исследования</th>
                 <th scope="col" style="padding-bottom:0; padding-top:0rem;padding-left: 1.5rem;vertical-align: middle;">Область знания</th>
                 <th scope="col" style="padding-bottom:0; padding-top:0rem;padding-left: 1.5rem;vertical-align: middle;">Статус</th>
-                <th scope="col" style="padding-bottom:0; padding-top:0rem;padding-left: 1.5rem;vertical-align: middle;">Документы</th>
+             @*   <th scope="col" style="padding-bottom:0; padding-top:0rem;padding-left: 1.5rem;vertical-align: middle;">Документы</th>*@
             </tr>
         </thead>
 
@@ -162,7 +162,7 @@
                 <td>@theme.Knowledge</td>
                 <td>@theme.Status</td>
 
-                <td>
+                @*<td>
 
                     @foreach (var file in ViewBag.Docs)
                     {
@@ -171,7 +171,7 @@
                     </a>
                     }
 
-                </td>
+                </td>*@
 
                 @* <td>@ViewBag.Docs</td>*@
 

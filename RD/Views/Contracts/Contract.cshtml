@@ -5,14 +5,28 @@
     Layout = "_Layout";
 }
 
-<form method="post" asp-action="Contracts" class="my-2 col-10" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
+<h3>Добавление договора</h3>
 
+<form method="post" asp-action="Contracts" class="my-2 col-10" style="border-color: #343a40;">
 
     <table>
 
-        <h2>Добавление договора</h2>
-
         @Html.HiddenFor(m => m.Id)
+
+        <tr>
+            <td style="padding: 4px;">Соисполнитель:</td>
+            <td style="padding: 4px;">
+                @*<input type="text" name="CustomerName" />*@
+                <select name="CounterpartyName" id="model">
+                    <option value=""> </option>
+                    @foreach (var counterparty in @ViewBag.Counterparties)
+                    {
+                            <option value="@counterparty.Name">@counterparty.Name</option>
+                    }
+                </select>
+            </td>
+        </tr>
+
         <tr>
             <td style="padding: 4px;">Наменование договора:</td>
             <td style="padding: 4px;">
@@ -42,22 +56,27 @@
         </tr>
 
         <tr>
+            <td style="padding: 4px;">Общий объем финансирования:</td>
+            <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.Amount)
+            </td>
+        </tr>
+
+        <tr>
             <td style="padding: 4px;">Статус:</td>
             <td style="padding: 4px;">
                 @Html.TextBoxFor(m => m.Status)
             </td>
         </tr>
 
+
+
+        <br />
+
         <tr>
             <td style="padding: 4px;">
-            </td>
-
-            <td style="padding: 4px;">
-                <input type="button" value="Отмена" onClick='location.href="/"' />
+                <a class="btn btn-outline-dark" href="/Stages?themeId=@ViewBag.ThemeId&themeName=@ViewBag.ThemeName" style="text-align:center">Отмена</a>
                 <input class="btn btn-primary" style="margin-left: 6px;" type="submit" value="Добавить контракт" />
-            </td>
-
-            <td style="padding: 4px;">
             </td>
         </tr>
 

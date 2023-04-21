@@ -16,7 +16,6 @@ namespace RD.Models
         public DateTime? WorkEnd { get; set; }
         public string? Props { get; set; }
         public float? Amount { get; set; }
-        public string? Act { get; set; }
         public string? Status { get; set; }
 
         public Contract()
@@ -24,18 +23,20 @@ namespace RD.Models
             Id = 1;
         }
 
-        public Contract(int id, string nameContract)
+        public Contract(int id, int themeId, string nameContract)
         {
             Id = id;
             NameContract = nameContract;
+            ThemeId = themeId;
         }
 
-        public Contract(int id, string nameContract, float amount, string status)
+        public Contract(int id, int themeId, string nameContract, float amount, string status)
         {
             Id = id;
             NameContract = nameContract;
             Amount = amount;
             Status = Status;
+            ThemeId = themeId;
         }
     }
 }

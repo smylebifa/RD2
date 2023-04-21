@@ -5,57 +5,91 @@
     Layout = "_Layout";
 }
 
+    <h3>Изменение договора</h3>
+
+
 @using (Html.BeginForm("Edit", "Contracts", FormMethod.Post))
 {
-    <table>
-        @Html.HiddenFor(m => m.Id)
-        <tr>
-            <td style="padding: 4px;">Наменование договора:</td>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.NameContract)
-            </td>
-        </tr>
+<table>
+    @Html.HiddenFor(m => m.Id)
 
-        <tr>
-            <td style="padding: 4px;">Срок выполнения - начало:</td>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.WorkStart)
-            </td>
-        </tr>
+    <tr>
+        <td style="padding: 4px;">Соисполнитель:</td>
+        <td style="padding: 4px;">
+            @*<input type="text" name="CustomerName" />*@
+            <select name="CounterpartyName" id="model">
+                <option value=""> </option>
+                @foreach (var counterparty in @ViewBag.Counterparties)
+                {
+                    if (@ViewBag.CurrentContract.CounterpartyName == @counterparty.Name)
+                    {
+            <option value="@counterparty.Name" selected>@counterparty.Name</option>
+                    }
 
-        <tr>
-            <td style="padding: 4px;">Срок выполнения - конец:</td>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.WorkEnd)
-            </td>
-        </tr>
+                    else
+                    {
+            <option value="@counterparty.Name">@counterparty.Name</option>
+                    }
+                }
+            </select>
+        </td>
+    </tr>
 
-        <tr>
-            <td style="padding: 4px;">Реквизиты договора:</td>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.Props)
-            </td>
-        </tr>
+    <tr>
+        <td style="padding: 4px;">Наменование договора:</td>
+        <td style="padding: 4px;">
+            @Html.TextBoxFor(m => m.NameContract)
+        </td>
+    </tr>
 
-        <tr>
-            <td style="padding: 4px;">Статус:</td>
-            <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.Status)
-            </td>
-        </tr>
+    <tr>
+        <td style="padding: 4px;">Срок выполнения - начало:</td>
+        <td style="padding: 4px;">
+            @Html.TextBoxFor(m => m.WorkStart)
+        </td>
+    </tr>
 
-        <tr>
-            <td style="padding: 4px;">
-            </td>
+    <tr>
+        <td style="padding: 4px;">Срок выполнения - конец:</td>
+        <td style="padding: 4px;">
+            @Html.TextBoxFor(m => m.WorkEnd)
+        </td>
+    </tr>
 
-            <td style="padding: 4px;">
-                <input type="button" value="Отмена" onClick='location.href="/"' />
-                <input class="btn btn-primary" style="margin-left: 6px;" type="submit" value="Изменить контракт" />
-            </td>
+    <tr>
+        <td style="padding: 4px;">Реквизиты договора:</td>
+        <td style="padding: 4px;">
+            @Html.TextBoxFor(m => m.Props)
+        </td>
+    </tr>
 
-            <td style="padding: 4px;">
-            </td>
-        </tr>
+    <tr>
+        <td style="padding: 4px;">Общий объем финансирования:</td>
+        <td style="padding: 4px;">
+            @Html.TextBoxFor(m => m.Amount)
+        </td>
+    </tr>
 
-    </table>
+
+    <tr>
+        <td style="padding: 4px;">Статус:</td>
+        <td style="padding: 4px;">
+            @Html.TextBoxFor(m => m.Status)
+        </td>
+    </tr>
+
+    <tr>
+        <td style="padding: 4px;">
+        </td>
+
+        <td style="padding: 4px;">
+            <a class="btn btn-outline-dark" href="/Stages?themeId=@ViewBag.ThemeId&themeName=@ViewBag.ThemeName" style="text-align:center">Отмена</a>
+            <input class="btn btn-primary" style="margin-left: 6px;" type="submit" value="Изменить контракт" />
+        </td>
+
+        <td style="padding: 4px;">
+        </td>
+    </tr>
+
+</table>
 }
