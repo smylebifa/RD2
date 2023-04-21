@@ -576,9 +576,9 @@
                             @foreach (var contract in @ViewBag.Contracts)
                             {
                             <tr>
-                                <td style="vertical-align:middle"><a asp-controller="Contracts" asp-action="ContractDetail" asp-route-themeId="@ViewBag.ThemeId" style="font-weight: 700;"> >>> </a></td>
-                                <td style="vertical-align:middle"> <a class="nav-link text-primary" asp-controller="Contracts" asp-action="ChangingContract"  asp-route-contractId="@contract.Id" asp-route-themeId="@ViewBag.ThemeId" asp-route-themeName="@ViewBag.ThemeName" ><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
-                                <td style="vertical-align:middle"><a onclick="deleteContract('@contract.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
+                                <td style="vertical-align:middle;"><a asp-controller="Contracts" asp-action="ContractDetail" asp-route-themeId="@ViewBag.ThemeId" style="font-weight: 700;"> >>> </a></td>
+                                <td style="vertical-align:middle;"> <a class="nav-link text-primary" asp-controller="Contracts" asp-action="ChangingContract"  asp-route-contractId="@contract.Id" asp-route-themeId="@ViewBag.ThemeId" asp-route-themeName="@ViewBag.ThemeName" ><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                                <td style="vertical-align:middle;"><a onclick="deleteContract('@contract.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
                                 <td>@contract.CounterpartyName</td>
                                 <td>@contract.NameContract</td>
                                 <td>@contract.WorkStart</td>

@@ -19,6 +19,7 @@ namespace RD.Services
 
         private static readonly List<TRL1> TRLs1 = new List<TRL1>();
         private static readonly List<TRL2> TRLs2 = new List<TRL2>();
+        private static readonly List<TRL3> TRLs3 = new List<TRL3>();
 
 
         //public void SaveTRL1(string themeName, bool trl1_1, bool trl1_2, bool trl1_3, bool trl1_4,
@@ -731,6 +732,305 @@ namespace RD.Services
 
         }
 
+        public void SaveTRL3(string themeName, TRL3 trl3)
+        {
+            //var Trl = _dbContext.TRLs.FirstOrDefault(x => x.StageName == themeName);
+
+            //Trl.TotalCount = count;
+
+            //_dbContext.SaveChanges();
+
+            var Trl3 = TRLs3.FirstOrDefault(x => x.ThemeName == themeName);
+
+            if (Trl3 != null)
+            {
+                if (trl3.Trl1 == true)
+                {
+                    trl3.Trl1_1 = true;
+                    trl3.Trl1_2 = true;
+                    trl3.Trl1_3 = true;
+                    trl3.Trl1_4 = true;
+                }
+
+                //if (trl3.Trlx == true)
+                //{
+                //    trl2.Trl2_1 = true;
+                //    trl2.Trl2_2 = true;
+                //    trl2.Trl2_3 = true;
+
+                //}
+
+                //if (trl3.Trl3x == true)
+                //{
+                //    trl2.Trl3_1 = true;
+                //    trl2.Trl3_2 = true;
+                //    trl2.Trl3_3 = true;
+                //    trl2.Trl3_4 = true;
+                //    trl2.Trl3_5 = true;
+                //    trl2.Trl3_6 = true;
+                //    trl2.Trl3_7 = true;
+                //    trl2.Trl3_8 = true;
+
+                //}
+
+                //if (trl2.Trl4 == true)
+                //{
+                //    trl2.Trl4_1 = true;
+                //    trl2.Trl4_2 = true;
+                //    trl2.Trl4_3 = true;
+                //    trl2.Trl4_4 = true;
+                //    trl2.Trl4_5 = true;
+                //    trl2.Trl4_6 = true;
+                //    trl2.Trl4_7 = true;
+                //    trl2.Trl4_8 = true;
+                //    trl2.Trl4_9 = true;
+                //    trl2.Trl4_10 = true;
+                //    trl2.Trl4_11 = true;
+
+                //}
+
+                //if (trl2.Trl5 == true)
+                //{
+                //    trl2.Trl5_1 = true;
+                //    trl2.Trl5_2 = true;
+                //    trl2.Trl5_3 = true;
+                //    trl2.Trl5_4 = true;
+                //    trl2.Trl5_5 = true;
+                //    trl2.Trl5_6 = true;
+                //    trl2.Trl5_7 = true;
+                //    trl2.Trl5_8 = true;
+                //    trl2.Trl5_9 = true;
+                //    trl2.Trl5_10 = true;
+
+                //}
+
+                //if (trl2.Trl6 == true)
+                //{
+                //    trl2.Trl6_1 = true;
+                //    trl2.Trl6_2 = true;
+                //    trl2.Trl6_3 = true;
+                //    trl2.Trl6_4 = true;
+                //    trl2.Trl6_5 = true;
+                //    trl2.Trl6_6 = true;
+                //    trl2.Trl6_7 = true;
+                //    trl2.Trl6_8 = true;
+                //    trl2.Trl6_9 = true;
+                //    trl2.Trl6_10 = true;
+
+                //}
+
+                //if (trl2.Trl7 == true)
+                //{
+                //    trl2.Trl7_1 = true;
+                //    trl2.Trl7_2 = true;
+                //    trl2.Trl7_3 = true;
+                //    trl2.Trl7_4 = true;
+
+                //}
+
+                //if (trl2.Trl8 == true)
+                //{
+                //    trl2.Trl8_1 = true;
+                //    trl2.Trl8_2 = true;
+                //    trl2.Trl8_3 = true;
+                //    trl2.Trl8_4 = true;
+                //}
+
+                int count = 0;
+
+                if (trl3.Trl1_1 == true)
+                    count++;
+
+                if (trl3.Trl1_2 == true)
+                    count++;
+
+                if (trl3.Trl1_3 == true)
+                    count++;
+
+                if (trl3.Trl1_4 == true)
+                    count++;
+
+
+                if (trl3.Trl2_1 == true)
+                    count++;
+
+                if (trl3.Trl2_2 == true)
+                    count++;
+
+                if (trl3.Trl2_3 == true)
+                    count++;
+
+
+
+                //if (trl2.Trl3_1 == true)
+                //    count++;
+
+                //if (trl2.Trl3_2 == true)
+                //    count++;
+
+                //if (trl2.Trl3_3 == true)
+                //    count++;
+
+                //if (trl2.Trl3_4 == true)
+                //    count++;
+
+                //if (trl2.Trl3_5 == true)
+                //    count++;
+
+                //if (trl2.Trl3_6 == true)
+                //    count++;
+
+                //if (trl2.Trl3_7 == true)
+                //    count++;
+
+                //if (trl2.Trl3_8 == true)
+                //    count++;
+
+
+
+
+                //if (trl2.Trl4_1 == true)
+                //    count++;
+
+                //if (trl2.Trl4_2 == true)
+                //    count++;
+
+                //if (trl2.Trl4_3 == true)
+                //    count++;
+
+                //if (trl2.Trl4_4 == true)
+                //    count++;
+
+                //if (trl2.Trl4_5 == true)
+                //    count++;
+
+                //if (trl2.Trl4_6 == true)
+                //    count++;
+
+                //if (trl2.Trl4_7 == true)
+                //    count++;
+
+                //if (trl2.Trl4_8 == true)
+                //    count++;
+
+                //if (trl2.Trl4_9 == true)
+                //    count++;
+
+                //if (trl2.Trl4_10 == true)
+                //    count++;
+
+                //if (trl2.Trl4_11 == true)
+                //    count++;
+
+
+
+                //if (trl2.Trl5_1 == true)
+                //    count++;
+
+                //if (trl2.Trl5_2 == true)
+                //    count++;
+
+                //if (trl2.Trl5_3 == true)
+                //    count++;
+
+                //if (trl2.Trl5_4 == true)
+                //    count++;
+
+                //if (trl2.Trl5_5 == true)
+                //    count++;
+
+                //if (trl2.Trl5_6 == true)
+                //    count++;
+
+                //if (trl2.Trl5_7 == true)
+                //    count++;
+
+                //if (trl2.Trl5_8 == true)
+                //    count++;
+
+                //if (trl2.Trl5_9 == true)
+                //    count++;
+
+                //if (trl2.Trl5_10 == true)
+                //    count++;
+
+
+
+
+
+                //if (trl2.Trl6_1 == true)
+                //    count++;
+
+                //if (trl2.Trl6_2 == true)
+                //    count++;
+
+                //if (trl2.Trl6_3 == true)
+                //    count++;
+
+                //if (trl2.Trl6_4 == true)
+                //    count++;
+
+                //if (trl2.Trl6_5 == true)
+                //    count++;
+
+                //if (trl2.Trl6_6 == true)
+                //    count++;
+
+                //if (trl2.Trl6_7 == true)
+                //    count++;
+
+                //if (trl2.Trl6_8 == true)
+                //    count++;
+
+                //if (trl2.Trl6_9 == true)
+                //    count++;
+
+                //if (trl2.Trl6_10 == true)
+                //    count++;
+
+
+
+
+                //if (trl2.Trl7_1 == true)
+                //    count++;
+
+                //if (trl2.Trl7_2 == true)
+                //    count++;
+
+                //if (trl2.Trl7_3 == true)
+                //    count++;
+
+                //if (trl2.Trl7_4 == true)
+                //    count++;
+
+
+
+
+
+                //if (trl2.Trl8_1 == true)
+                //    count++;
+
+                //if (trl2.Trl8_2 == true)
+                //    count++;
+
+                //if (trl2.Trl8_3 == true)
+                //    count++;
+
+                //if (trl2.Trl8_4 == true)
+                //    count++;
+
+
+
+                trl3.TotalCount = count;
+
+
+                TRLs3.Remove(Trl3);
+
+                TRLs3.Add(trl3);
+
+            }
+
+        }
 
 
         public TRL1 GetTrls1(string themeName)
@@ -807,6 +1107,35 @@ namespace RD.Services
 
         }
 
+        public TRL3 GetTrls3(string themeName)
+        {
+
+            if (TRLs3.Count == 0)
+            {
+                TRL3 trl3 = new TRL3(themeName, 0);
+                TRLs3.Add(trl3);
+                return trl3;
+            }
+
+            else
+            {
+                var existing = TRLs3.FirstOrDefault(x => x.ThemeName == themeName);
+
+                if (existing == null)
+                {
+                    TRL3 trl3 = new TRL3(themeName, 0);
+                    TRLs3.Add(trl3);
+                    return trl3;
+                }
+
+                else
+                {
+                    return existing;
+                }
+            }
+
+
+        }
 
     }
 }

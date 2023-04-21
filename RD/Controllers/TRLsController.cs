@@ -48,6 +48,15 @@ namespace RD.Controllers
             return View();
         }
 
+        public ActionResult TRLPage3(int themeId, string themeName)
+        {
+            var trls3 = _trlsService.GetTrls3(themeName);
+            ViewBag.Trls3 = trls3;
+            ViewBag.ThemeId = themeId;
+            ViewBag.ThemeName = themeName;
+            return View();
+        }
+
         [HttpPost]
         public IActionResult SaveTRL1(TRL1 trl1, string themeName)
         {
@@ -60,6 +69,14 @@ namespace RD.Controllers
         {
             _trlsService.SaveTRL2(themeName, trl2);
             return RedirectToAction("TRLPage2", "TRLs", new { themeName = themeName });
+
+        }
+
+        [HttpPost]
+        public IActionResult SaveTRL3(TRL3 trl3, string themeName)
+        {
+            _trlsService.SaveTRL3(themeName, trl3);
+            return RedirectToAction("TRLPage3", "TRLs", new { themeName = themeName });
 
         }
     }

@@ -177,9 +177,9 @@
                             @foreach (var scientificDoc in @ViewBag.ScientificDocs)
                             {
                             <tr>
-                                <td><a class="nav-link" asp-controller="Docs" asp-action="Index">>>></a> </td>
-                                <td>@Html.ActionLink("изменить", "ChangingScientificDoc", new { id = scientificDoc.Id })</td>
-                                <td><a onclick="deleteScientificDoc('@scientificDoc.Id')" href="#"> удалить </a></td>
+                                <td style="vertical-align:middle;"><a class="nav-link" asp-controller="Docs" asp-action="Index" style="font-weight: 700;">>>></a> </td>
+                                <td style="vertical-align:middle;"> <a class="nav-link text-primary" asp-controller="ScientificDocs" asp-action="ChangingScientificDoc" asp-route-contractId="@scientificDoc.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                                <td style="vertical-align:middle;"><a onclick="deleteScientificDoc('@scientificDoc.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"> </a></td>
 
                                 <td>@scientificDoc.Result</td>
                                 <td>@scientificDoc.Name</td>
@@ -246,8 +246,9 @@
                                 @foreach (var ria in @ViewBag.RIAs)
                                 {
                                 <tr>
-                                    <td>@Html.ActionLink("изменить", "ChangingRIA", new { id = ria.Id })</td>
-                                    <td><a onclick="deleteRIA('@ria.Id')" href="#"> удалить </a></td>
+                                    <td style="vertical-align:middle;"> <a class="nav-link text-primary" asp-controller="RIAs" asp-action="ChangingRIA" asp-route-contractId="@ria.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                                    <td style="vertical-align:middle;"><a onclick="deleteRIA('@ria.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"> </a></td>
+
                                     <td>@ria.Result</td>
                                     <td>@ria.Props</td>
                                     <td>@ria.Authors</td>
