@@ -87,9 +87,12 @@ namespace RD.Controllers
         }
 
 
-        public IActionResult StageDetail(int id)
+        public IActionResult StageDetail(int themeId, int stageId)
         {
-            var stage = _stageService.GetStages().FirstOrDefault(x => x.Id == id);
+            var stage = _stageService.GetStages().FirstOrDefault(x => x.ThemeId == themeId && x.Id == stageId);
+            
+            stage.ThemeName = ThemeName;
+
             ViewBag.Stage = stage;
 
             var scientificDocs = _scientificDocsService.GetScientificDocs();
@@ -103,6 +106,11 @@ namespace RD.Controllers
 
             var files = _filesService.GetFiles();
             ViewBag.Files = files;
+
+            ViewBag.ThemeName = ThemeName;
+            ViewBag.ThemeId = ThemeId;
+
+            ViewBag.StageId = stage.Id;
 
             return View();
         }

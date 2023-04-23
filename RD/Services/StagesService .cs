@@ -20,7 +20,7 @@ namespace RD.Services
 
         private static readonly List<Stage> Stages = new List<Stage>
         {
-                new Stage(1, "1", "Этап 1"),
+                new Stage(1, 1, "1", "Этап 1"),
         };
 
         public IEnumerable<Stage> GetStages()

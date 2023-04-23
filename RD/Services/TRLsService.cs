@@ -17,9 +17,9 @@ namespace RD.Services
         //    _dbContext = dbContext;
         //}
 
-        private static readonly List<TRL1> TRLs1 = new List<TRL1>();
-        private static readonly List<TRL2> TRLs2 = new List<TRL2>();
-        private static readonly List<TRL3> TRLs3 = new List<TRL3>();
+        private static readonly List<TRL1> TRLs1 = new List<TRL1> { new TRL1("Teма 1", 1, 0 ) };
+        private static readonly List<TRL2> TRLs2 = new List<TRL2> { new TRL2("Teма 1", 1, 0) };
+        private static readonly List<TRL3> TRLs3 = new List<TRL3> { new TRL3("Teма 1", 1, 0) };
 
 
         //public void SaveTRL1(string themeName, bool trl1_1, bool trl1_2, bool trl1_3, bool trl1_4,
@@ -31,7 +31,7 @@ namespace RD.Services
 
         //public void SaveTRL1(string themeName, bool[] trl3, bool[] trl4)
         //{
-        public void SaveTRL1(string themeName, TRL1 trl1)
+        public void SaveTRL1(string themeName, int stageId, TRL1 trl1)
         {
             //var Trl = _dbContext.TRLs.FirstOrDefault(x => x.StageName == themeName);
 
@@ -39,7 +39,7 @@ namespace RD.Services
 
             //_dbContext.SaveChanges();
 
-            var Trl1 = TRLs1.FirstOrDefault(x => x.ThemeName == themeName);
+            var Trl1 = TRLs1.FirstOrDefault(x => x.ThemeName == themeName && x.StageId == stageId);
 
             if (Trl1 != null)
             {
@@ -432,7 +432,7 @@ namespace RD.Services
 
 
 
-        public void SaveTRL2(string themeName, TRL2 trl2)
+        public void SaveTRL2(string themeName, int stageId, TRL2 trl2)
         {
             //var Trl = _dbContext.TRLs.FirstOrDefault(x => x.StageName == themeName);
 
@@ -440,7 +440,7 @@ namespace RD.Services
 
             //_dbContext.SaveChanges();
 
-            var Trl2 = TRLs2.FirstOrDefault(x => x.ThemeName == themeName);
+            var Trl2 = TRLs2.FirstOrDefault(x => x.ThemeName == themeName && x.StageId == stageId);
 
             if (Trl2 != null)
             {
@@ -732,7 +732,7 @@ namespace RD.Services
 
         }
 
-        public void SaveTRL3(string themeName, TRL3 trl3)
+        public void SaveTRL3(string themeName, int stageId, TRL3 trl3)
         {
             //var Trl = _dbContext.TRLs.FirstOrDefault(x => x.StageName == themeName);
 
@@ -740,7 +740,7 @@ namespace RD.Services
 
             //_dbContext.SaveChanges();
 
-            var Trl3 = TRLs3.FirstOrDefault(x => x.ThemeName == themeName);
+            var Trl3 = TRLs3.FirstOrDefault(x => x.ThemeName == themeName && x.StageId == stageId);
 
             if (Trl3 != null)
             {
@@ -1033,7 +1033,7 @@ namespace RD.Services
         }
 
 
-        public TRL1 GetTrls1(string themeName)
+        public TRL1 GetTrls1(string themeName, int stageId)
         {
             //var existing = _dbContext.TRLs.FirstOrDefault(x => x.StageName == themeName);
 
@@ -1058,11 +1058,11 @@ namespace RD.Services
 
             else
             {
-                var existing = TRLs1.FirstOrDefault(x => x.ThemeName == themeName);
+                var existing = TRLs1.FirstOrDefault(x => x.ThemeName == themeName && x.StageId == stageId);
 
                 if (existing == null)
                 {
-                    TRL1 trl1 = new TRL1(themeName, 0);
+                    TRL1 trl1 = new TRL1(themeName, stageId, 0);
                     TRLs1.Add(trl1);
                     return trl1;
                 }
@@ -1077,7 +1077,7 @@ namespace RD.Services
         }
 
 
-        public TRL2 GetTrls2(string themeName)
+        public TRL2 GetTrls2(string themeName, int stageId)
         {
             
             if (TRLs2.Count == 0)
@@ -1089,11 +1089,11 @@ namespace RD.Services
 
             else
             {
-                var existing = TRLs2.FirstOrDefault(x => x.ThemeName == themeName);
+                var existing = TRLs2.FirstOrDefault(x => x.ThemeName == themeName && x.StageId == stageId);
 
                 if (existing == null)
                 {
-                    TRL2 trl2 = new TRL2(themeName, 0);
+                    TRL2 trl2 = new TRL2(themeName, stageId, 0);
                     TRLs2.Add(trl2);
                     return trl2;
                 }
@@ -1107,7 +1107,7 @@ namespace RD.Services
 
         }
 
-        public TRL3 GetTrls3(string themeName)
+        public TRL3 GetTrls3(string themeName, int stageId)
         {
 
             if (TRLs3.Count == 0)
@@ -1119,11 +1119,11 @@ namespace RD.Services
 
             else
             {
-                var existing = TRLs3.FirstOrDefault(x => x.ThemeName == themeName);
+                var existing = TRLs3.FirstOrDefault(x => x.ThemeName == themeName && x.StageId == stageId);
 
                 if (existing == null)
                 {
-                    TRL3 trl3 = new TRL3(themeName, 0);
+                    TRL3 trl3 = new TRL3(themeName, stageId, 0);
                     TRLs3.Add(trl3);
                     return trl3;
                 }

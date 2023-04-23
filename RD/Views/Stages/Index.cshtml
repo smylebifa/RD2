@@ -461,9 +461,6 @@
                     <button class="tablinks active" onclick="openTab(event, 'Stages')">Этапы</button>
                     <button class="tablinks" onclick="openTab(event, 'Contracts')">Договоры</button>
                     <button class="tablinks" onclick="openTab(event, 'Files')">Файлы</button>
-                    <button>
-                        <a asp-area="" asp-route-themeId="@ViewBag.ThemeId" asp-route-themeName="@ViewBag.ThemeName" asp-controller="TRLs" asp-action="Index">TRL</a> 
-                    </button>
                 </div>
 
                 <!-- Tab content -->
@@ -492,6 +489,7 @@
                                     <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Сумма этапа</th>
                                     <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Акт о завершении работ</th>
                                     <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Статус</th>
+                                    <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">TRL</th>
                                 </tr>
                             </thead>
 
@@ -502,7 +500,7 @@
 
                                 <tbody>
                                     <tr>
-                                        <td style="vertical-align:middle"><a asp-controller="Stages" asp-action="StageDetail" asp-route-id="@stage.Id" style="font-weight: 700;"> >>> </a></td>
+                                        <td style="vertical-align:middle"><a asp-controller="Stages" asp-action="StageDetail" asp-route-themeId="@ViewBag.ThemeId" asp-route-stageId="@stage.Id"  style="font-weight: 700;"> >>> </a></td>
                                         <td style="vertical-align:middle"><a asp-controller="Stages" asp-action="ChangingStage" asp-route-id="@stage.Id"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
                                         <td style="vertical-align:middle"><a onclick="deleteStage('@stage.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i></a></td>
                                         <td>@i</td>
@@ -535,6 +533,7 @@
                                         <td>@stage.Amount</td>
                                         <td>@stage.CompletionAct</td>
                                         <td>@stage.Status</td>
+                                        <td>@stage.TRL</td>
 
                                     </tr>
                                 </tbody>
@@ -577,7 +576,7 @@
                             {
                             <tr>
                                 <td style="vertical-align:middle;"><a asp-controller="Contracts" asp-action="ContractDetail" asp-route-themeId="@ViewBag.ThemeId" style="font-weight: 700;"> >>> </a></td>
-                                <td style="vertical-align:middle;"> <a class="nav-link text-primary" asp-controller="Contracts" asp-action="ChangingContract"  asp-route-contractId="@contract.Id" asp-route-themeId="@ViewBag.ThemeId" asp-route-themeName="@ViewBag.ThemeName" ><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                                <td style="vertical-align:middle;"> <a class="nav-link text-primary" asp-controller="Contracts" asp-action="ChangingContract" asp-route-contractId="@contract.Id" asp-route-themeId="@ViewBag.ThemeId" asp-route-themeName="@ViewBag.ThemeName"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
                                 <td style="vertical-align:middle;"><a onclick="deleteContract('@contract.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
                                 <td>@contract.CounterpartyName</td>
                                 <td>@contract.NameContract</td>

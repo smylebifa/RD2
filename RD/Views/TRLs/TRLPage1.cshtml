@@ -180,7 +180,7 @@
 }
 
 
-<form method="post" asp-action="SaveTRL1" asp-route-themeName="@ViewBag.ThemeName" name="trl1Form">
+<form method="post" asp-action="SaveTRL1" asp-route-themeName="@ViewBag.ThemeName" asp-route-themeId="@ViewBag.ThemeId" asp-route-stageId="@ViewBag.StageId" name="trl1Form">
 
 
     <div style="overflow-x:auto;">
@@ -1133,8 +1133,7 @@
             </div>
 
             <div class="col-sm">
-
-                <a class="btn btn-outline-dark" href="/TRLs?themeId=@ViewBag.ThemeId&themeName=@ViewBag.ThemeName" style="text-align:center"> Назад </a>
+                <a class="btn btn-outline-dark" asp-controller="Stages" asp-action="StageDetail" asp-route-themeId="@ViewBag.ThemeId" asp-route-stageId="@ViewBag.StageId" style="text-align:center"> Назад </a>
                 <input type="submit" class="btn btn-outline-primary submitBtn" value="Рассчитать" />
             </div>
 

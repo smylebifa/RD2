@@ -22,6 +22,7 @@ namespace RD.Models
         public string? ThemeName { get; set; }
 
         public int? TotalCount { get; set; }
+        public int StageId { get; set; }
 
         public bool Trl1 { get; set; }
         public bool Trl2 { get; set; }
@@ -58,9 +59,10 @@ namespace RD.Models
         {
             //Id = Guid.NewGuid();
             ThemeName = "Theme 1";
+            StageId = 1;
         }
 
-        public TRL3(string themeName, int totalCount = 0)
+        public TRL3(string themeName, int stageId, int totalCount = 0)
         {
             Trl1_1 = false;
             Trl1_2 = false;
@@ -72,6 +74,7 @@ namespace RD.Models
             Trl2_3 = false;
 
             ThemeName = themeName;
+            StageId = stageId;
 
             TotalCount = totalCount;
 

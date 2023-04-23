@@ -75,9 +75,24 @@
 
                 <table>
                     <tr>
-                        <td style="padding: 4px;">Наменование соисполнителя:</td>
+                        <td style="padding: 4px;">Соисполнитель:</td>
                         <td style="padding: 4px;">
-                            <input type="text" name="CounterpartyName" value="@ViewBag.CurrentContract.CounterpartyName" />
+                            @*<input type="text" name="CustomerName" />*@
+                            <select name="CounterpartyName" id="model">
+                                <option value=""> </option>
+                                @foreach (var counterparty in @ViewBag.Counterparties)
+                                {
+                                    if (@ViewBag.CurrentContract.CounterpartyName == @counterparty.Name)
+                                    {
+                                        <option value="@counterparty.Name" selected>@counterparty.Name</option>
+                                    }
+
+                                    else
+                                    {
+                                        <option value="@counterparty.Name">@counterparty.Name</option>
+                                    }
+                                }
+                            </select>
                         </td>
                     </tr>
 
@@ -130,35 +145,35 @@
 
                     @*<h3 style="color: #343a40; padding: 8px;">Тема - @ViewBag.ThemeName </h3>
 
-            <table>
+        <table>
 
-                <input name="Id" type="number" hidden value="@ViewBag.CurrentTheme.Id" />
+            <input name="Id" type="number" hidden value="@ViewBag.CurrentTheme.Id" />
 
 
 
-                <tr>
-                    <td style="padding: 4px;">Статус:</td>
-                    <td style="padding: 4px;">
-                        <select name="Status" size="1">
-                            <option value="Завершен">Завершен</option>
-                            <option value="Завершен">Не завершен</option>
-                        </select>
-                    </td>
-                </tr>*@
-
-                    @*<tr>
+            <tr>
                 <td style="padding: 4px;">Статус:</td>
                 <td style="padding: 4px;">
-                    <input type="text" name="Status" value="@ViewBag.CurrentTheme.Status" />
+                    <select name="Status" size="1">
+                        <option value="Завершен">Завершен</option>
+                        <option value="Завершен">Не завершен</option>
+                    </select>
                 </td>
             </tr>*@
+
+                    @*<tr>
+            <td style="padding: 4px;">Статус:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="Status" value="@ViewBag.CurrentTheme.Status" />
+            </td>
+        </tr>*@
 
 
                     @*@(ViewBag.Trls.Trl1_1 && ViewBag.Trls.Trl1_2 && ViewBag.Trls.Trl1_3 && ViewBag.Trls.Trl1_4 && ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "")
 
-            <td style="padding: 4px;">
-                    @Html.TextBoxFor(m => m.ResearchType)
-                </td>*@
+        <td style="padding: 4px;">
+                @Html.TextBoxFor(m => m.ResearchType)
+            </td>*@
 
                     <br />
 

@@ -20,6 +20,7 @@ namespace RD.Models
         public bool? Trl2_5 { get; set; }
 
         public string? ThemeName { get; set; }
+        public int StageId { get; set; }
 
         public int? TotalReady { get; set; }
 
@@ -48,7 +49,7 @@ namespace RD.Models
         public TRL()
         {
             //Id = Guid.NewGuid();
-            ThemeName = "Theme 1";
+            //ThemeName = "Theme 1";
         }
 }
 }

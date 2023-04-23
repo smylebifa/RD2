@@ -151,6 +151,9 @@
                     <button class="tablinks" onclick="openTab(event, 'Product')">Продукт</button>
                     <button class="tablinks" onclick="openTab(event, 'RIA')">Рид</button>
                     <button class="tablinks" onclick="openTab(event, 'Files')">Файлы</button>
+                    <button>
+                        <a asp-area="" asp-route-themeId="@ViewBag.ThemeId" asp-route-themeName="@ViewBag.ThemeName"  asp-route-stageId="@ViewBag.StageId" asp-controller="TRLs" asp-action="Index">TRL</a>
+                    </button>
                 </div>
 
                 <!-- Tab content -->

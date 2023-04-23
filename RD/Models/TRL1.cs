@@ -119,12 +119,13 @@ namespace RD.Models
 
 
         public string ThemeName { get; set; }
+        public int StageId { get; set; }
 
         public int? TotalCount { get; set; }
 
         public TRL1() {}
 
-            public TRL1(string themeName, int totalCount = 0)
+            public TRL1(string themeName, int stageId, int totalCount = 0)
         {
             Trl1_1 = false;
             Trl1_2 = false;
@@ -238,6 +239,8 @@ namespace RD.Models
             ThemeName = themeName;
 
             TotalCount = totalCount;
+
+            StageId = stageId;
 
         }
     }

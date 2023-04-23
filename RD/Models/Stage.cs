@@ -8,6 +8,8 @@ namespace RD.Models
     public class Stage
     {
         public int Id { get; set; }
+        public int ThemeId { get; set; }
+        public string ThemeName { get; set; }
         public string? StageNumber { get; set; }
         public string? StageName { get; set; }
         public DateTime? WorkStart { get; set; }
@@ -15,6 +17,8 @@ namespace RD.Models
         public int? Amount { get; set; }
         public string? CompletionAct { get; set; }
         public string? Status { get; set; }
+        
+        public double? TRL { get; set; }
         
         public int? CounterpartyId { get; set; }
         public int? ContractId { get; set; }
@@ -34,6 +38,15 @@ namespace RD.Models
             StageNumber = stageNumber;
             StageName = stageName;
         }
+
+        public Stage(int id, int themeId, string? stageNumber, string? stageName)
+        {
+            Id = id;
+            ThemeId = themeId; 
+            StageNumber = stageNumber;
+            StageName = stageName;
+        }
+
 
         public Stage()
         {
