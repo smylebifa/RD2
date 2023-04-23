@@ -69,7 +69,7 @@ namespace RD.Controllers
             _trlsService.SaveTRL1(themeName, stageId, trl1);
             
             Stage stage = _stagesService.GetStages().FirstOrDefault(x => x.Id == stageId && x.ThemeName == themeName);
-            stage.TRL = Math.Round((double)trl1.TotalCount / (4 + 9 + 12 + 17 + 12 + 16 + 7 + 5), 2);
+            stage.TRL = Math.Round((double)trl1.TotalCount / (1 + 4 + 9 + 12 + 17 + 12 + 16 + 7 + 5), 2);
             
             return RedirectToAction("TRLPage1", "TRLs", new { stageId, themeId, themeName });
         }

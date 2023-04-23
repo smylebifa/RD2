@@ -9,6 +9,8 @@ namespace RD.Models
     {
         public int Id { get; set; }
 
+        public bool Trl0_1 { get; set; }
+     
         public bool Trl1_1 { get; set; }
         public bool Trl1_2 { get; set; }
         public bool Trl1_3 { get; set; }
@@ -127,6 +129,8 @@ namespace RD.Models
 
             public TRL1(string themeName, int stageId, int totalCount = 0)
         {
+            Trl0_1 = false;
+           
             Trl1_1 = false;
             Trl1_2 = false;
             Trl1_3 = false;
