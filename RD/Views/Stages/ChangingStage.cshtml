@@ -36,7 +36,9 @@
 {
 <table>
 
-    @Html.HiddenFor(m => m.Id)
+    <input name="ThemeName" type="text" hidden value="@ViewBag.ThemeName" />
+    <input name="ThemeId" type="number" hidden value="@ViewBag.ThemeId" />
+    <input name="Id" type="number" hidden value="@ViewBag.CurrentStage.Id" />
 
     <tr>
         <td style="padding: 4px;">№ этапа:</td>

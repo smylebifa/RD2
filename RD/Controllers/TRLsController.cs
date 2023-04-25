@@ -69,7 +69,7 @@ namespace RD.Controllers
             _trlsService.SaveTRL1(themeName, stageId, trl1);
             
             Stage stage = _stagesService.GetStages().FirstOrDefault(x => x.Id == stageId && x.ThemeName == themeName);
-            stage.TRL = Math.Round((double)trl1.TotalCount / (1 + 4 + 9 + 12 + 17 + 12 + 16 + 7 + 5), 2);
+            stage.TRL1 = Math.Round((double) trl1.TotalCount / (1 + 4 + 9 + 12 + 17 + 12 + 16 + 7 + 5), 2);
             
             return RedirectToAction("TRLPage1", "TRLs", new { stageId, themeId, themeName });
         }
@@ -80,7 +80,7 @@ namespace RD.Controllers
             _trlsService.SaveTRL2(themeName, stageId, trl2);
 
             Stage stage = _stagesService.GetStages().FirstOrDefault(x => x.Id == stageId && x.ThemeName == themeName);
-            stage.TRL = Math.Round((double) trl2.TotalCount / (4 + 3 + 8 + 11 + 10 + 10 + 4 + 4) , 2);
+            stage.TRL2 = Math.Round((double) trl2.TotalCount / (4 + 3 + 8 + 11 + 10 + 10 + 4 + 4) , 2);
 
             return RedirectToAction("TRLPage2", "TRLs", new { stageId, themeId, themeName });
 
@@ -92,7 +92,7 @@ namespace RD.Controllers
             _trlsService.SaveTRL3(themeName, stageId, trl3);
 
             Stage stage = _stagesService.GetStages().FirstOrDefault(x => x.Id == stageId && x.ThemeName == themeName);
-            stage.TRL = Math.Round((double) trl3.TotalCount / (10 + 1) , 2);
+            stage.TRL3 = Math.Round((double) trl3.TotalCount / (10 + 1) , 2);
 
             return RedirectToAction("TRLPage3", "TRLs", new { stageId, themeId, themeName });
 

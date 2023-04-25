@@ -17,7 +17,7 @@ namespace RD.Services
         //    _dbContext = dbContext;
         //}
 
-        private static readonly List<TRL1> TRLs1 = new List<TRL1> { new TRL1("Teма 1", 1, 0 ) };
+        private static readonly List<TRL1> TRLs1 = new List<TRL1> { new TRL1("Teма 1", 1, 0) };
         private static readonly List<TRL2> TRLs2 = new List<TRL2> { new TRL2("Teма 1", 1, 0) };
         private static readonly List<TRL3> TRLs3 = new List<TRL3> { new TRL3("Teма 1", 1, 0) };
 
@@ -43,270 +43,53 @@ namespace RD.Services
 
             if (Trl1 != null)
             {
+
+                if (trl1.Trl1_1 && trl1.Trl1_2 && trl1.Trl1_3 && trl1.Trl1_4)
+                {
+                    trl1.Trl1x = true;
+                }
+
+                if (trl1.Trl2_1 && trl1.Trl2_2 && trl1.Trl2_3 && trl1.Trl2_4 && trl1.Trl2_5 && trl1.Trl2_6 && trl1.Trl2_7 && trl1.Trl2_8 && trl1.Trl2_9)
+                {
+                    trl1.Trl2 = true;
+                }
+
+                if (trl1.Trl3_1 && trl1.Trl3_2 && trl1.Trl3_3 && trl1.Trl3_4 && trl1.Trl3_5 && trl1.Trl3_6 && trl1.Trl3_7 && trl1.Trl3_8 && trl1.Trl3_9
+                    && trl1.Trl3_10 && trl1.Trl3_11 && trl1.Trl3_12)
+                {
+                    trl1.Trl3 = true;
+                }
+
+                if (trl1.Trl4_1 && trl1.Trl4_2 && trl1.Trl4_3 && trl1.Trl4_4 && trl1.Trl4_5 && trl1.Trl4_6 && trl1.Trl4_7 && trl1.Trl4_8 && trl1.Trl4_9
+                    && trl1.Trl4_10 && trl1.Trl4_11 && trl1.Trl4_12 && trl1.Trl4_13 && trl1.Trl4_14 && trl1.Trl4_15 && trl1.Trl4_16 && trl1.Trl4_17)
+                {
+                    trl1.Trl4 = true;
+                }
+
+                if (trl1.Trl5_1 && trl1.Trl5_2 && trl1.Trl5_3 && trl1.Trl5_4 && trl1.Trl5_5 && trl1.Trl5_6 && trl1.Trl5_7 && trl1.Trl5_8 && trl1.Trl5_9
+                    && trl1.Trl5_10 && trl1.Trl5_11 && trl1.Trl5_12)
+                {
+                    trl1.Trl5 = true;
+                }
+
+                if (trl1.Trl6_1 && trl1.Trl6_2 && trl1.Trl6_3 && trl1.Trl6_4 && trl1.Trl6_5 && trl1.Trl6_6 && trl1.Trl6_7 && trl1.Trl6_8 && trl1.Trl6_9
+                         && trl1.Trl6_10 && trl1.Trl6_11 && trl1.Trl6_12 && trl1.Trl6_13 && trl1.Trl6_14 && trl1.Trl6_15 && trl1.Trl6_16)
+                {
+                    trl1.Trl6 = true;
+                }
+
+                if (trl1.Trl7_1 && trl1.Trl7_2 && trl1.Trl7_3 && trl1.Trl7_4 && trl1.Trl7_5 && trl1.Trl7_6 && trl1.Trl7_7)
+                {
+                    trl1.Trl7 = true;
+                }
+
+                if (trl1.Trl8_1 && trl1.Trl8_2 && trl1.Trl8_3 && trl1.Trl8_4 && trl1.Trl8_5)
+                {
+                    trl1.Trl8 = true;
+                }
+
+
                 int count = 0;
-
-                if (trl1.Trl1x)
-                {
-                    trl1.Trl1_1 = true;
-                    trl1.Trl1_2 = true;
-                    trl1.Trl1_3 = true;
-                    trl1.Trl1_4 = true;
-                }
-
-                else
-                {
-                    if (trl1.Trl1_1 && trl1.Trl1_2 && trl1.Trl1_3  && trl1.Trl1_4)
-                    {
-                        trl1.Trl1_1 = false;
-                        trl1.Trl1_2 = false;
-                        trl1.Trl1_3 = false;
-                        trl1.Trl1_4 = false;
-                    }
-
-                }
-
-                if (trl1.Trl2)
-                {
-                    trl1.Trl2_1 = true;
-                    trl1.Trl2_2 = true;
-                    trl1.Trl2_3 = true;
-                    trl1.Trl2_4 = true;
-                    trl1.Trl2_5 = true;
-                    trl1.Trl2_6 = true;
-                    trl1.Trl2_7 = true;
-                    trl1.Trl2_8 = true;
-                    trl1.Trl2_9 = true;
-                }
-
-                else
-                {
-                    if (trl1.Trl2_1 && trl1.Trl2_2 && trl1.Trl2_3 && trl1.Trl2_4 && trl1.Trl2_5 && trl1.Trl2_6 && trl1.Trl2_7 && trl1.Trl2_8 && trl1.Trl2_9)
-                    {
-                        trl1.Trl2_1 = false;
-                        trl1.Trl2_2 = false;
-                        trl1.Trl2_3 = false;
-                        trl1.Trl2_4 = false;
-                        trl1.Trl2_5 = false;
-                        trl1.Trl2_6 = false;
-                        trl1.Trl2_7 = false;
-                        trl1.Trl2_8 = false;
-                        trl1.Trl2_9 = false;
-                    }
-
-                }
-
-                if (trl1.Trl3 == true)
-                {
-                    trl1.Trl3_1 = true;
-                    trl1.Trl3_2 = true;
-                    trl1.Trl3_3 = true;
-                    trl1.Trl3_4 = true;
-                    trl1.Trl3_5 = true;
-                    trl1.Trl3_6 = true;
-                    trl1.Trl3_7 = true;
-                    trl1.Trl3_8 = true;
-                    trl1.Trl3_9 = true;
-                    trl1.Trl3_10 = true;
-                    trl1.Trl3_11 = true;
-                    trl1.Trl3_12 = true;
-                }
-
-                else
-                {
-                    if (trl1.Trl3_1 && trl1.Trl3_2 && trl1.Trl3_3 && trl1.Trl3_4 && trl1.Trl3_5 && trl1.Trl3_6 && trl1.Trl3_7 && trl1.Trl3_8 && trl1.Trl3_9
-                        && trl1.Trl3_10 && trl1.Trl3_11 && trl1.Trl3_12)
-                    {
-                        trl1.Trl3_1 = false;
-                        trl1.Trl3_2 = false;
-                        trl1.Trl3_3 = false;
-                        trl1.Trl3_4 = false;
-                        trl1.Trl3_5 = false;
-                        trl1.Trl3_6 = false;
-                        trl1.Trl3_7 = false;
-                        trl1.Trl3_8 = false;
-                        trl1.Trl3_9 = false;
-                        trl1.Trl3_10 = false;
-                        trl1.Trl3_11 = false;
-                        trl1.Trl3_12 = false;
-                    }
-
-                }
-
-                if (trl1.Trl4 == true)
-                {
-                    trl1.Trl4_1 = true;
-                    trl1.Trl4_2 = true;
-                    trl1.Trl4_3 = true;
-                    trl1.Trl4_4 = true;
-                    trl1.Trl4_5 = true;
-                    trl1.Trl4_6 = true;
-                    trl1.Trl4_7 = true;
-                    trl1.Trl4_8 = true;
-                    trl1.Trl4_9 = true;
-                    trl1.Trl4_10 = true;
-                    trl1.Trl4_11 = true;
-                    trl1.Trl4_12 = true;
-                    trl1.Trl4_13 = true;
-                    trl1.Trl4_14 = true;
-                    trl1.Trl4_15 = true;
-                    trl1.Trl4_16 = true;
-                    trl1.Trl4_17 = true;
-                }
-
-                else
-                {
-                    if (trl1.Trl4_1 && trl1.Trl4_2 && trl1.Trl4_3 && trl1.Trl4_4 && trl1.Trl4_5 && trl1.Trl4_6 && trl1.Trl4_7 && trl1.Trl4_8 && trl1.Trl4_9
-                        && trl1.Trl4_10 && trl1.Trl4_11 && trl1.Trl4_12 && trl1.Trl4_13 && trl1.Trl4_14 && trl1.Trl4_15 && trl1.Trl4_16 && trl1.Trl4_17)
-                    {
-                        trl1.Trl4_1 = false;
-                        trl1.Trl4_2 = false;
-                        trl1.Trl4_3 = false;
-                        trl1.Trl4_4 = false;
-                        trl1.Trl4_5 = false;
-                        trl1.Trl4_6 = false;
-                        trl1.Trl4_7 = false;
-                        trl1.Trl4_8 = false;
-                        trl1.Trl4_9 = false;
-                        trl1.Trl4_10 = false;
-                        trl1.Trl4_11 = false;
-                        trl1.Trl4_12 = false;
-                        trl1.Trl4_13 = false;
-                        trl1.Trl4_14 = false;
-                        trl1.Trl4_15 = false;
-                        trl1.Trl4_16 = false;
-                        trl1.Trl4_17 = false;
-                    }
-
-                }
-
-                if (trl1.Trl5 == true)
-                {
-                    trl1.Trl5_1 = true;
-                    trl1.Trl5_2 = true;
-                    trl1.Trl5_3 = true;
-                    trl1.Trl5_4 = true;
-                    trl1.Trl5_5 = true;
-                    trl1.Trl5_6 = true;
-                    trl1.Trl5_7 = true;
-                    trl1.Trl5_8 = true;
-                    trl1.Trl5_9 = true;
-                    trl1.Trl5_10 = true;
-                    trl1.Trl5_11 = true;
-                    trl1.Trl5_12 = true;
-                }
-
-                else
-                {
-                    if (trl1.Trl5_1 && trl1.Trl5_2 && trl1.Trl5_3 && trl1.Trl5_4 && trl1.Trl5_5 && trl1.Trl5_6 && trl1.Trl5_7 && trl1.Trl5_8 && trl1.Trl5_9
-                        && trl1.Trl5_10 && trl1.Trl5_11 && trl1.Trl5_12)
-                    {
-                        trl1.Trl5_1 = false;
-                        trl1.Trl5_2 = false;
-                        trl1.Trl5_3 = false;
-                        trl1.Trl5_4 = false;
-                        trl1.Trl5_5 = false;
-                        trl1.Trl5_6 = false;
-                        trl1.Trl5_7 = false;
-                        trl1.Trl5_8 = false;
-                        trl1.Trl5_9 = false;
-                        trl1.Trl5_10 = false;
-                        trl1.Trl5_11 = false;
-                        trl1.Trl5_12 = false;
-                    }
-
-                }
-
-                if (trl1.Trl6 == true)
-                {
-                    trl1.Trl6_1 = true;
-                    trl1.Trl6_2 = true;
-                    trl1.Trl6_3 = true;
-                    trl1.Trl6_4 = true;
-                    trl1.Trl6_5 = true;
-                    trl1.Trl6_6 = true;
-                    trl1.Trl6_7 = true;
-                    trl1.Trl6_8 = true;
-                    trl1.Trl6_9 = true;
-                    trl1.Trl6_10 = true;
-                    trl1.Trl6_11 = true;
-                    trl1.Trl6_12 = true;
-                    trl1.Trl6_13 = true;
-                    trl1.Trl6_14 = true;
-                    trl1.Trl6_15 = true;
-                    trl1.Trl6_16 = true;
-                }
-
-                else
-                {
-                    if (trl1.Trl6_1 && trl1.Trl6_2 && trl1.Trl6_3 && trl1.Trl6_4 && trl1.Trl6_5 && trl1.Trl6_6 && trl1.Trl6_7 && trl1.Trl6_8 && trl1.Trl6_9
-                        && trl1.Trl6_10 && trl1.Trl6_11 && trl1.Trl6_12 && trl1.Trl6_13 && trl1.Trl6_14 && trl1.Trl6_15 && trl1.Trl6_16)
-                    {
-                        trl1.Trl6_1 = false;
-                        trl1.Trl6_2 = false;
-                        trl1.Trl6_3 = false;
-                        trl1.Trl6_4 = false;
-                        trl1.Trl6_5 = false;
-                        trl1.Trl6_6 = false;
-                        trl1.Trl6_7 = false;
-                        trl1.Trl6_8 = false;
-                        trl1.Trl6_9 = false;
-                        trl1.Trl6_10 = false;
-                        trl1.Trl6_11 = false;
-                        trl1.Trl6_12 = false;
-                        trl1.Trl6_13 = false;
-                        trl1.Trl6_14 = false;
-                        trl1.Trl6_15 = false;
-                        trl1.Trl6_16 = false;
-                    }
-
-                }
-
-                if (trl1.Trl7 == true)
-                {
-                    trl1.Trl7_1 = true;
-                    trl1.Trl7_2 = true;
-                    trl1.Trl7_3 = true;
-                    trl1.Trl7_4 = true;
-                    trl1.Trl7_5 = true;
-                    trl1.Trl7_6 = true;
-                    trl1.Trl7_7 = true;
-                }
-
-                else
-                {
-                    if (trl1.Trl7_1 && trl1.Trl7_2 && trl1.Trl7_3 && trl1.Trl7_4 && trl1.Trl7_5 && trl1.Trl7_6 && trl1.Trl7_7)
-                    {
-                        trl1.Trl7_1 = false;
-                        trl1.Trl7_2 = false;
-                        trl1.Trl7_3 = false;
-                        trl1.Trl7_4 = false;
-                        trl1.Trl7_5 = false;
-                        trl1.Trl7_6 = false;
-                        trl1.Trl7_7 = false;
-                    }
-
-                }
-
-                if (trl1.Trl8 == true)
-                {
-                    trl1.Trl8_1 = true;
-                    trl1.Trl8_2 = true;
-                    trl1.Trl8_3 = true;
-                    trl1.Trl8_4 = true;
-                    trl1.Trl8_5 = true;
-                }
-
-                else
-                {
-                    if (trl1.Trl8_1 && trl1.Trl8_2 && trl1.Trl8_3 && trl1.Trl8_4 && trl1.Trl8_5)
-                    {
-                        trl1.Trl8_1 = false;
-                        trl1.Trl8_2 = false;
-                        trl1.Trl8_3 = false;
-                        trl1.Trl8_4 = false;
-                        trl1.Trl8_5 = false;
-                    }
-                }
 
                 if (trl1.Trl0_1 == true)
                     count++;
@@ -565,8 +348,7 @@ namespace RD.Services
                 if (trl1.Trl8_5 == true)
                     count++;
 
-              
-                
+
                 trl1.TotalCount = count;
 
 
@@ -576,7 +358,6 @@ namespace RD.Services
             }
 
         }
-
 
 
         public void SaveTRL2(string themeName, int stageId, TRL2 trl2)
@@ -591,97 +372,53 @@ namespace RD.Services
 
             if (Trl2 != null)
             {
-                if (trl2.Trl1 == true)
+                if (trl2.Trl1_1 && trl2.Trl1_2 && trl2.Trl1_3 && trl2.Trl1_4)
                 {
-                    trl2.Trl1_1 = true;
-                    trl2.Trl1_2 = true;
-                    trl2.Trl1_3 = true;
-                    trl2.Trl1_4 = true;
+                    trl2.Trl1 = true;
                 }
 
-                if (trl2.Trl2x == true)
+                if (trl2.Trl2_1 && trl2.Trl2_2 && trl2.Trl2_3)
                 {
-                    trl2.Trl2_1 = true;
-                    trl2.Trl2_2 = true;
-                    trl2.Trl2_3 = true;
-                   
+                    trl2.Trl2x = true;
                 }
 
-                if (trl2.Trl3 == true)
+                if (trl2.Trl3_1 && trl2.Trl3_2 && trl2.Trl3_3 && trl2.Trl3_4 && trl2.Trl3_5 && trl2.Trl3_6 && trl2.Trl3_7 && trl2.Trl3_8)
                 {
-                    trl2.Trl3_1 = true;
-                    trl2.Trl3_2 = true;
-                    trl2.Trl3_3 = true;
-                    trl2.Trl3_4 = true;
-                    trl2.Trl3_5 = true;
-                    trl2.Trl3_6 = true;
-                    trl2.Trl3_7 = true;
-                    trl2.Trl3_8 = true;
-                    
+                    trl2.Trl3 = true;
                 }
 
-                if (trl2.Trl4 == true)
+                if (trl2.Trl4_1 && trl2.Trl4_2 && trl2.Trl4_3 && trl2.Trl4_4 && trl2.Trl4_5 && trl2.Trl4_6 && trl2.Trl4_7 && trl2.Trl4_8
+                        && trl2.Trl4_9 && trl2.Trl4_10 && trl2.Trl4_11)
                 {
-                    trl2.Trl4_1 = true;
-                    trl2.Trl4_2 = true;
-                    trl2.Trl4_3 = true;
-                    trl2.Trl4_4 = true;
-                    trl2.Trl4_5 = true;
-                    trl2.Trl4_6 = true;
-                    trl2.Trl4_7 = true;
-                    trl2.Trl4_8 = true;
-                    trl2.Trl4_9 = true;
-                    trl2.Trl4_10 = true;
-                    trl2.Trl4_11 = true;
-                  
+                    trl2.Trl4 = true;
                 }
 
-                if (trl2.Trl5 == true)
+
+                if (trl2.Trl5_1 && trl2.Trl5_2 && trl2.Trl5_3 && trl2.Trl5_4 && trl2.Trl5_5 && trl2.Trl5_6 && trl2.Trl5_7 && trl2.Trl5_8
+                        && trl2.Trl5_9 && trl2.Trl5_10)
                 {
-                    trl2.Trl5_1 = true;
-                    trl2.Trl5_2 = true;
-                    trl2.Trl5_3 = true;
-                    trl2.Trl5_4 = true;
-                    trl2.Trl5_5 = true;
-                    trl2.Trl5_6 = true;
-                    trl2.Trl5_7 = true;
-                    trl2.Trl5_8 = true;
-                    trl2.Trl5_9 = true;
-                    trl2.Trl5_10 = true;
-                  
+                    trl2.Trl5 = true;
                 }
 
-                if (trl2.Trl6 == true)
+
+                if (trl2.Trl6_1 && trl2.Trl6_2 && trl2.Trl6_3 && trl2.Trl6_4 && trl2.Trl6_5 && trl2.Trl6_6 && trl2.Trl6_7 && trl2.Trl6_8
+                        && trl2.Trl6_9 && trl2.Trl6_10)
                 {
-                    trl2.Trl6_1 = true;
-                    trl2.Trl6_2 = true;
-                    trl2.Trl6_3 = true;
-                    trl2.Trl6_4 = true;
-                    trl2.Trl6_5 = true;
-                    trl2.Trl6_6 = true;
-                    trl2.Trl6_7 = true;
-                    trl2.Trl6_8 = true;
-                    trl2.Trl6_9 = true;
-                    trl2.Trl6_10 = true;
-                   
+                    trl2.Trl6 = true;
                 }
 
-                if (trl2.Trl7 == true)
+
+                if (trl2.Trl7_1 && trl2.Trl7_2 && trl2.Trl7_3 && trl2.Trl7_4)
                 {
-                    trl2.Trl7_1 = true;
-                    trl2.Trl7_2 = true;
-                    trl2.Trl7_3 = true;
-                    trl2.Trl7_4 = true;
-                   
+                    trl2.Trl7 = true;
                 }
 
-                if (trl2.Trl8 == true)
+
+                if (trl2.Trl8_1 && trl2.Trl8_2 && trl2.Trl8_3 && trl2.Trl8_4)
                 {
                     trl2.Trl8_1 = true;
-                    trl2.Trl8_2 = true;
-                    trl2.Trl8_3 = true;
-                    trl2.Trl8_4 = true;
                 }
+
 
                 int count = 0;
 
@@ -707,7 +444,7 @@ namespace RD.Services
                 if (trl2.Trl2_3 == true)
                     count++;
 
-              
+
 
                 if (trl2.Trl3_1 == true)
                     count++;
@@ -733,7 +470,7 @@ namespace RD.Services
                 if (trl2.Trl3_8 == true)
                     count++;
 
-              
+
 
 
                 if (trl2.Trl4_1 == true)
@@ -768,7 +505,7 @@ namespace RD.Services
 
                 if (trl2.Trl4_11 == true)
                     count++;
-              
+
 
 
                 if (trl2.Trl5_1 == true)
@@ -800,8 +537,6 @@ namespace RD.Services
 
                 if (trl2.Trl5_10 == true)
                     count++;
-
-              
 
 
 
@@ -835,7 +570,7 @@ namespace RD.Services
                 if (trl2.Trl6_10 == true)
                     count++;
 
-               
+
 
 
                 if (trl2.Trl7_1 == true)
@@ -850,7 +585,6 @@ namespace RD.Services
                 if (trl2.Trl7_4 == true)
                     count++;
 
-             
 
 
 
@@ -866,7 +600,7 @@ namespace RD.Services
                 if (trl2.Trl8_4 == true)
                     count++;
 
-               
+
 
                 trl2.TotalCount = count;
 
@@ -1198,7 +932,7 @@ namespace RD.Services
 
             if (TRLs1.Count == 0)
             {
-                TRL1 trl1 = new TRL1(themeName, 0);
+                TRL1 trl1 = new TRL1(themeName, stageId, 0);
                 TRLs1.Add(trl1);
                 return trl1;
             }
@@ -1226,10 +960,10 @@ namespace RD.Services
 
         public TRL2 GetTrls2(string themeName, int stageId)
         {
-            
+
             if (TRLs2.Count == 0)
             {
-                TRL2 trl2 = new TRL2(themeName, 0);
+                TRL2 trl2 = new TRL2(themeName, stageId, 0);
                 TRLs2.Add(trl2);
                 return trl2;
             }
@@ -1259,7 +993,7 @@ namespace RD.Services
 
             if (TRLs3.Count == 0)
             {
-                TRL3 trl3 = new TRL3(themeName, 0);
+                TRL3 trl3 = new TRL3(themeName, stageId, 0);
                 TRLs3.Add(trl3);
                 return trl3;
             }

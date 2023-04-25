@@ -67,7 +67,7 @@
     <div class="col-sm-4"></div>
 
     <div class="col-sm-4">
-        <a class="btn btn-outline-dark" href="/Stages/StageDetail/themeId=@ViewBag.ThemeId&stageId=@ViewBag.StageId" style="text-align:center">Назад</a>
+        <a class="btn btn-outline-dark" asp-controller="Stages" asp-route-stageId="@ViewBag.StageId" asp-route-themeId="@ViewBag.ThemeId" asp-action="StageDetail">Назад</a>
     </div>
 
     <div class="col-sm-4"></div>

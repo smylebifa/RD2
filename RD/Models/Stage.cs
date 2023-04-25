@@ -17,8 +17,15 @@ namespace RD.Models
         public int? Amount { get; set; }
         public string? CompletionAct { get; set; }
         public string? Status { get; set; }
-        
-        public double? TRL { get; set; }
+
+        // Оборудование
+        public double? TRL1 { get; set; }
+
+        // Программное обеспечение
+        public double? TRL2 { get; set; }
+
+        // Комплексная система
+        public double? TRL3 { get; set; }
         
         public int? CounterpartyId { get; set; }
         public int? ContractId { get; set; }

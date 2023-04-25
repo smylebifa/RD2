@@ -489,18 +489,35 @@
                                     <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Сумма этапа</th>
                                     <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Акт о завершении работ</th>
                                     <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">Статус</th>
-                                    <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">TRL</th>
+                                    <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">TRL - Оборудование</th>
+                                    <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">TRL - Программное обеспечение</th>
+                                    <th scope="col" style="padding-bottom:0; padding-top:0rem; padding-left: 1.5rem;vertical-align: middle;">TRL - Комплексная система</th>
                                 </tr>
                             </thead>
 
 
-                            @{int i = 1;}
+                            @{int i = 1; double trlSum1 = 0.0; double trlSum2 = 0.0; double trlSum3 = 0.0;}
                             @foreach (var stage in @ViewBag.Stages)
                             {
+                                if (@stage.TRL1 > 0.0)
+                                {
+                                    trlSum1 += @stage.TRL1;
+                                }
+
+                                if (@stage.TRL2 > 0.0)
+                                {
+                                     trlSum2 += @stage.TRL2;
+                                }
+
+                                if (@stage.TRL3 > 0.0)
+                                {
+                                    trlSum3 += @stage.TRL3;
+                                }
+
 
                                 <tbody>
                                     <tr>
-                                        <td style="vertical-align:middle"><a asp-controller="Stages" asp-action="StageDetail" asp-route-themeId="@ViewBag.ThemeId" asp-route-stageId="@stage.Id"  style="font-weight: 700;"> >>> </a></td>
+                                        <td style="vertical-align:middle"><a asp-controller="Stages" asp-action="StageDetail" asp-route-themeId="@ViewBag.ThemeId" asp-route-stageId="@stage.Id" style="font-weight: 700;"> >>> </a></td>
                                         <td style="vertical-align:middle"><a asp-controller="Stages" asp-action="ChangingStage" asp-route-id="@stage.Id"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
                                         <td style="vertical-align:middle"><a onclick="deleteStage('@stage.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i></a></td>
                                         <td>@i</td>
@@ -533,7 +550,9 @@
                                         <td>@stage.Amount</td>
                                         <td>@stage.CompletionAct</td>
                                         <td>@stage.Status</td>
-                                        <td>@stage.TRL</td>
+                                        <td>@trlSum1</td>
+                                        <td>@trlSum2</td>
+                                        <td>@trlSum3</td>
 
                                     </tr>
                                 </tbody>

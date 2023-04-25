@@ -52,7 +52,8 @@
 {
 <table>
 
-    @Html.HiddenFor(m => m.Id)
+    <input name="Id" type="number" hidden value="@ViewBag.CurrentStage.Id" />
+
 
     <tr>
         <td style="padding: 4px;">Номер темы:</td>
@@ -336,7 +337,7 @@
                     <option value="История">История</option>
                     <option value="Социология">Социология</option>
                     <option value="Демография">Демография</option>
-                    <option value="" > </option>
+                    <option value=""> </option>
                 }
 
                 else if (@ViewBag.CurrentTheme.Knowledge == "Философия")
@@ -346,7 +347,7 @@
                     <option value="История">История</option>
                     <option value="Социология">Социология</option>
                     <option value="Демография">Демография</option>
-                    <option value="" > </option>
+                    <option value=""> </option>
                 }
 
                 else if (@ViewBag.CurrentTheme.Knowledge == "История")
@@ -356,7 +357,7 @@
                     <option value="История" selected>История</option>
                     <option value="Социология">Социология</option>
                     <option value="Демография">Демография</option>
-                    <option value="" > </option>
+                    <option value=""> </option>
                 }
 
                 else if (@ViewBag.CurrentTheme.Knowledge == "Социология")
@@ -366,7 +367,7 @@
                     <option value="История">История</option>
                     <option value="Социология" selected>Социология</option>
                     <option value="Демография">Демография</option>
-                    <option value="" > </option>
+                    <option value=""> </option>
 
                 }
 
@@ -377,7 +378,7 @@
                     <option value="История">История</option>
                     <option value="Социология">Социология</option>
                     <option value="Демография" selected>Демография</option>
-                    <option value="" > </option>
+                    <option value=""> </option>
                 }
 
                 else
@@ -404,14 +405,14 @@
                     {
                         <option value="Завершен" selected>Завершен</option>
                         <option value="Не завершен">Не завершен</option>
-                        <option value="" > </option>
+                        <option value=""> </option>
                     }
 
                     else if (@ViewBag.CurrentTheme.Status == "Не завершен")
                     {
                         <option value="Завершен">Завершен</option>
                         <option value="Не завершен" selected>Не завершен</option>
-                        <option value="" > </option>
+                        <option value=""> </option>
                     }
 
                     else
