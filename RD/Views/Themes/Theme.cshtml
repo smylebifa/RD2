@@ -9,9 +9,9 @@
 
 <h3>Добавление темы</h3>
 
-<form method="post" asp-action="AddTheme" name="addThemeForm" style="border-color: #343a40;">
+<form method="post" asp-action="AddTheme" name="addThemeForm">
 
-    <table style="border: 1px solid #12121214;">
+    <table>
 
         <tr>
             <td style="padding: 4px;">Номер темы:</td>
@@ -125,7 +125,7 @@
 
         @*Кастомное поле выбора из списка*@
 
-        <tr style="border: 1px solid #12121214;">
+        <tr>
 
             <td style="padding: 4px;">Тип исследования:</td>
             <td style="padding: 4px;">
@@ -161,8 +161,8 @@
 
         <tr>
             <td style="padding: 4px;">Область знания:</td>
-            <td style="padding: 4px;">
-                <select name="Knowledge" size="1">
+            <td style="padding: 4px; width: 300px;">
+                <select name="Knowledge" size="1" style="width:100%;">
                     <option value="Общественные науки в целом">Общественные науки в целом</option>
                     <option value="Философия">Философия</option>
                     <option value="История">История</option>

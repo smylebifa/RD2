@@ -50,179 +50,179 @@
 
 @using (Html.BeginForm("Edit", "Themes", FormMethod.Post))
 {
-<table>
+    <table>
 
-    <input name="Id" type="number" hidden value="@ViewBag.CurrentStage.Id" />
-
-
-    <tr>
-        <td style="padding: 4px;">Номер темы:</td>
-        <td style="padding: 4px;">
-            <input type="number" name="Number" value="@ViewBag.CurrentTheme.Number" />
-        </td>
-    </tr>
+        <input name="Id" type="number" hidden value="@ViewBag.CurrentTheme.Id" />
 
 
-    <tr>
-        <td style="padding: 4px;">Наименование темы:</td>
-        <td style="padding: 4px;">
-            <textarea name="Name">@ViewBag.CurrentTheme.Name</textarea>
-        </td>
-    </tr>
+        <tr>
+            <td style="padding: 4px;">Номер темы:</td>
+            <td style="padding: 4px;">
+                <input type="number" name="Number" value="@ViewBag.CurrentTheme.Number" />
+            </td>
+        </tr>
 
 
-    <tr>
-        <td style="padding: 4px;">ФИО руководителя:</td>
-        <td style="padding: 4px;">
-            <input type="text" name="FioManager" value="@ViewBag.CurrentTheme.FioManager" />
-        </td>
-    </tr>
+        <tr>
+            <td style="padding: 4px;">Наименование темы:</td>
+            <td style="padding: 4px;">
+                <textarea name="Name">@ViewBag.CurrentTheme.Name</textarea>
+            </td>
+        </tr>
 
-    <tr>
-        <td style="padding: 4px;">Подразделение исполнитель:</td>
-        <td style="padding: 4px;">
-            <input type="text" name="ExecutiveDepartment" value="@ViewBag.CurrentTheme.ExecutiveDepartment" />
-        </td>
-    </tr>
 
-    <tr>
-        <td style="padding: 4px;">Заказчик работы:</td>
-        <td style="padding: 4px;">
-            @*<input type="text" name="CustomerName" />*@
-            <select name="CustomerName" id="model">
-                <option value=""> </option>
-                @foreach (var customer in @ViewBag.Customers)
-                {
-                    if (@ViewBag.CurrentTheme.CustomerName == @customer.Name)
+        <tr>
+            <td style="padding: 4px;">ФИО руководителя:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="FioManager" value="@ViewBag.CurrentTheme.FioManager" />
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">Подразделение исполнитель:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="ExecutiveDepartment" value="@ViewBag.CurrentTheme.ExecutiveDepartment" />
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">Заказчик работы:</td>
+            <td style="padding: 4px;">
+                @*<input type="text" name="CustomerName" />*@
+                <select name="CustomerName" id="model">
+                    <option value=""> </option>
+                    @foreach (var customer in @ViewBag.Customers)
                     {
-                        <option value="@customer.Name" selected>@customer.Name</option>
+                        if (@ViewBag.CurrentTheme.CustomerName == @customer.Name)
+                        {
+                            <option value="@customer.Name" selected>@customer.Name</option>
+                        }
+
+                        else
+                        {
+                            <option value="@customer.Name">@customer.Name</option>
+                        }
+                    }
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">Срок - начало:</td>
+            <td style="padding: 4px;">
+                <input type="date" id="WorkStart" name="WorkStart" value="@WorkStart" min="1950-01-01" />
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">Срок - конец:</td>
+            <td style="padding: 4px;">
+                <input type="date" id="WorkEnd" name="WorkEnd" min="1950-01-01" value="@WorkEnd" />
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">Приказ об открытии темы:</td>
+            <td style="padding: 4px;">
+                <input type="text" name="Decree" value="@ViewBag.CurrentTheme.Decree" />
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">Вид документа:</td>
+            <td style="padding: 4px;">
+                <select name="DocType" size="1">
+
+                    @if (@ViewBag.CurrentTheme.DocType == "Гос. Контракт")
+                    {
+                        <option value="Гос. Контракт" selected>Гос. Контракт</option>
+                        <option value="Договор">Договор</option>
+                        <option value="Контракт">Контракт</option>
+                        <option value="Хоз. договора">Хоз. договора</option>
+                        <option value=""> </option>
+                    }
+
+                    else if (@ViewBag.CurrentTheme.DocType == "Договор")
+                    {
+                        <option value="Гос. Контракт">Гос. Контракт</option>
+                        <option value="Договор" selected>Договор</option>
+                        <option value="Контракт">Контракт</option>
+                        <option value="Хоз. договора">Хоз. договора</option>
+                        <option value=""> </option>
+                    }
+
+                    else if (@ViewBag.CurrentTheme.DocType == "Контракт")
+                    {
+                        <option value="Гос. Контракт">Гос. Контракт</option>
+                        <option value="Договор">Договор</option>
+                        <option value="Контракт" selected>Контракт</option>
+                        <option value="Хоз. договора">Хоз. договора</option>
+                        <option value=""> </option>
+                    }
+
+                    else if (@ViewBag.CurrentTheme.DocType == "Хоз. договора")
+                    {
+                        <option value="Гос. Контракт">Гос. Контракт</option>
+                        <option value="Договор">Договор</option>
+                        <option value="Контракт">Контракт</option>
+                        <option value="Хоз. договора" selected>Хоз. договора</option>
+                        <option value=""> </option>
                     }
 
                     else
                     {
-                        <option value="@customer.Name">@customer.Name</option>
+                        <option value="Гос. Контракт">Гос. Контракт</option>
+                        <option value="Договор">Договор</option>
+                        <option value="Контракт">Контракт</option>
+                        <option value="Хоз. договора">Хоз. договора</option>
+                        <option value="" selected> </option>
                     }
-                }
-            </select>
-        </td>
-    </tr>
+                </select>
+            </td>
+        </tr>
 
-    <tr>
-        <td style="padding: 4px;">Срок - начало:</td>
-        <td style="padding: 4px;">
-            <input type="date" id="WorkStart" name="WorkStart" value="@WorkStart" min="1950-01-01" />
-        </td>
-    </tr>
+        <tr>
+            <td style="padding: 4px;">Общий объем финансирования:</td>
+            <td style="padding: 4px;">
+                <input type="number" name="Amount" value="@ViewBag.CurrentTheme.Amount" />
+            </td>
+        </tr>
 
-    <tr>
-        <td style="padding: 4px;">Срок - конец:</td>
-        <td style="padding: 4px;">
-            <input type="date" id="WorkEnd" name="WorkEnd" min="1950-01-01" value="@WorkEnd" />
-        </td>
-    </tr>
+        <tr>
+            <td style="padding: 4px;">НДС:</td>
+            <td style="padding: 4px;">
+                <input type="number" name="Vat" value="@ViewBag.CurrentTheme.Vat" />
+            </td>
+        </tr>
 
-    <tr>
-        <td style="padding: 4px;">Приказ об открытии темы:</td>
-        <td style="padding: 4px;">
-            <input type="text" name="Decree" value="@ViewBag.CurrentTheme.Decree" />
-        </td>
-    </tr>
+        <tr>
+            <td style="padding: 4px;">Объем без НДС:</td>
+            <td style="padding: 4px;">
+                <input type="number" name="AmountWithoutVat" value="@ViewBag.CurrentTheme.AmountWithoutVat" />
+            </td>
+        </tr>
 
-    <tr>
-        <td style="padding: 4px;">Вид документа:</td>
-        <td style="padding: 4px;">
-            <select name="DocType" size="1">
-
-                @if (@ViewBag.CurrentTheme.DocType == "Гос. Контракт")
-                {
-                    <option value="Гос. Контракт" selected>Гос. Контракт</option>
-                    <option value="Договор">Договор</option>
-                    <option value="Контракт">Контракт</option>
-                    <option value="Хоз. договора">Хоз. договора</option>
-                    <option value=""> </option>
-                }
-
-                else if (@ViewBag.CurrentTheme.DocType == "Договор")
-                {
-                    <option value="Гос. Контракт">Гос. Контракт</option>
-                    <option value="Договор" selected>Договор</option>
-                    <option value="Контракт">Контракт</option>
-                    <option value="Хоз. договора">Хоз. договора</option>
-                    <option value=""> </option>
-                }
-
-                else if (@ViewBag.CurrentTheme.DocType == "Контракт")
-                {
-                    <option value="Гос. Контракт">Гос. Контракт</option>
-                    <option value="Договор">Договор</option>
-                    <option value="Контракт" selected>Контракт</option>
-                    <option value="Хоз. договора">Хоз. договора</option>
-                    <option value=""> </option>
-                }
-
-                else if (@ViewBag.CurrentTheme.DocType == "Хоз. договора")
-                {
-                    <option value="Гос. Контракт">Гос. Контракт</option>
-                    <option value="Договор">Договор</option>
-                    <option value="Контракт">Контракт</option>
-                    <option value="Хоз. договора" selected>Хоз. договора</option>
-                    <option value=""> </option>
-                }
-
-                else
-                {
-                    <option value="Гос. Контракт">Гос. Контракт</option>
-                    <option value="Договор">Договор</option>
-                    <option value="Контракт">Контракт</option>
-                    <option value="Хоз. договора">Хоз. договора</option>
-                    <option value="" selected> </option>
-                }
-            </select>
-        </td>
-    </tr>
-
-    <tr>
-        <td style="padding: 4px;">Общий объем финансирования:</td>
-        <td style="padding: 4px;">
-            <input type="number" name="Amount" value="@ViewBag.CurrentTheme.Amount" />
-        </td>
-    </tr>
-
-    <tr>
-        <td style="padding: 4px;">НДС:</td>
-        <td style="padding: 4px;">
-            <input type="number" name="Vat" value="@ViewBag.CurrentTheme.Vat" />
-        </td>
-    </tr>
-
-    <tr>
-        <td style="padding: 4px;">Объем без НДС:</td>
-        <td style="padding: 4px;">
-            <input type="number" name="AmountWithoutVat" value="@ViewBag.CurrentTheme.AmountWithoutVat" />
-        </td>
-    </tr>
-
-    <tr>
-        <td style="padding: 4px;">Реквизиты документа:</td>
-        <td style="padding: 4px;">
-            <textarea type="text" name="Props">@ViewBag.CurrentTheme.Props</textarea>
-        </td>
-    </tr>
+        <tr>
+            <td style="padding: 4px;">Реквизиты документа:</td>
+            <td style="padding: 4px;">
+                <textarea type="text" name="Props">@ViewBag.CurrentTheme.Props</textarea>
+            </td>
+        </tr>
 
 
 
 
-    @*@Html.DropDownListFor(model => model.TeamId, ViewBag.Teams as SelectList)*@
+        @*@Html.DropDownListFor(model => model.TeamId, ViewBag.Teams as SelectList)*@
 
 
-    @*<td style="padding: 4px;">
-            <select name="DocType" size="1">
-                <option @{if (el= =0) { @("selected") } } value="Гос. Контракт">Гос. Контракт</option>
-                <option @{if (el= =1) "selected" } value="Договор">Договор</option>
-                <option @{if (el= =2) "selected" } value="Контракт">Контракт</option>
-                <option @{if (el= =3) "selected" } value="Хоз. договора">Хоз. договора</option>
-            </select>
-        </td>*@
+        @*<td style="padding: 4px;">
+                <select name="DocType" size="1">
+                    <option @{if (el= =0) { @("selected") } } value="Гос. Контракт">Гос. Контракт</option>
+                    <option @{if (el= =1) "selected" } value="Договор">Договор</option>
+                    <option @{if (el= =2) "selected" } value="Контракт">Контракт</option>
+                    <option @{if (el= =3) "selected" } value="Хоз. договора">Хоз. договора</option>
+                </select>
+            </td>*@
 
 
     <tr>
@@ -295,6 +295,7 @@
                 }
 
             </select>
+
         </td>
 
         <td style="padding: 4px;">
@@ -303,7 +304,6 @@
                 <label class="custom-control-label" for="customSwitch1">Ввести свое значение</label>
             </div>
         </td>
-
 
         <td style="padding: 4px;">
             <div id="customObj" style="display:none;">
@@ -318,154 +318,228 @@
 
     </tr>
 
-    @*<tr>
+        @*<tr>
+                <td style="padding: 4px;">Область знания:</td>
+                <td style="padding: 4px;">
+                    <input type="text" name="Knowledge" value="@ViewBag.CurrentTheme.Knowledge" />
+                </td>
+            </tr>*@
+
+        <tr>
             <td style="padding: 4px;">Область знания:</td>
-            <td style="padding: 4px;">
-                <input type="text" name="Knowledge" value="@ViewBag.CurrentTheme.Knowledge" />
-            </td>
-        </tr>*@
-
-    <tr>
-        <td style="padding: 4px;">Область знания:</td>
-        <td style="padding: 4px;">
-            <select name="Knowledge" size="1">
-
-                @if (@ViewBag.CurrentTheme.Knowledge == "Общественные науки в целом")
-                {
-                    <option value="Общественные науки в целом" selected>Общественные науки в целом</option>
-                    <option value="Философия">Философия</option>
-                    <option value="История">История</option>
-                    <option value="Социология">Социология</option>
-                    <option value="Демография">Демография</option>
-                    <option value=""> </option>
-                }
-
-                else if (@ViewBag.CurrentTheme.Knowledge == "Философия")
-                {
-                    <option value="Общественные науки в целом">Общественные науки в целом</option>
-                    <option value="Философия" selected>Философия</option>
-                    <option value="История">История</option>
-                    <option value="Социология">Социология</option>
-                    <option value="Демография">Демография</option>
-                    <option value=""> </option>
-                }
-
-                else if (@ViewBag.CurrentTheme.Knowledge == "История")
-                {
-                    <option value="Общественные науки в целом">Общественные науки в целом</option>
-                    <option value="Философия">Философия</option>
-                    <option value="История" selected>История</option>
-                    <option value="Социология">Социология</option>
-                    <option value="Демография">Демография</option>
-                    <option value=""> </option>
-                }
-
-                else if (@ViewBag.CurrentTheme.Knowledge == "Социология")
-                {
-                    <option value="Общественные науки в целом">Общественные науки в целом</option>
-                    <option value="Философия">Философия</option>
-                    <option value="История">История</option>
-                    <option value="Социология" selected>Социология</option>
-                    <option value="Демография">Демография</option>
-                    <option value=""> </option>
-
-                }
-
-                else if (@ViewBag.CurrentTheme.Knowledge == "Демография")
-                {
-                    <option value="Общественные науки в целом">Общественные науки в целом</option>
-                    <option value="Философия">Философия</option>
-                    <option value="История">История</option>
-                    <option value="Социология">Социология</option>
-                    <option value="Демография" selected>Демография</option>
-                    <option value=""> </option>
-                }
-
-                else
-                {
+            <td style="padding: 4px; width: 300px;">
+                <select name="Knowledge" id="Knowledge" size="1" style="width:100%;">
                     <option value="Общественные науки в целом">Общественные науки в целом</option>
                     <option value="Философия">Философия</option>
                     <option value="История">История</option>
                     <option value="Социология">Социология</option>
                     <option value="Демография">Демография</option>
+                    <option value="экономика и экономические науки">экономика и экономические науки</option>
+                    <option value="Государство и право. юридические науки">Государство и право. юридические науки</option>
+                    <option value="политика и политические науки">политика и политические науки</option>
+                    <option value="науковедение">науковедение</option>
+                    <option value="культура. культурология">культура. культурология</option>
+                    <option value="народное образование. педагогика">народное образование. педагогика</option>
+                    <option value="психология">психология</option>
+                    <option value="языкознание">языкознание</option>
+                    <option value="литература. литературоведение. устное народное творчество">литература. литературоведение. устное народное творчество</option>
+                    <option value="искусство. искусствоведение">искусство. искусствоведение</option>
+                    <option value="массовая коммуникация. журналистика. средства массовой информации">массовая коммуникация. журналистика. средства массовой информации</option>
+                    <option value="Информатика">Информатика</option>
+                    <option value="религия. атеизм">религия. атеизм</option>
+                    <option value="комплексное изучение отдельных стран и регионов">комплексное изучение отдельных стран и регионов</option>
+                    <option value="комплексные проблемы общественных наук">комплексные проблемы общественных наук</option>
+                    <option value="Математика">Математика</option>
+                    <option value="Кибернетика">Кибернетика</option>
+                    <option value="Физика">Физика</option>
+                    <option value="Механика">Механика</option>
+                    <option value="Химия">Химия</option>
+                    <option value="Биология">Биология</option>
+                    <option value="геодезия. картография">геодезия. картография</option>
+                    <option value="Геофизика">Геофизика</option>
+                    <option value="Геология">Геология</option>
+                    <option value="География">География</option>
+                    <option value="Астрономия">Астрономия</option>
+                    <option value="Общие и комплексные проблемы естественных и точных наук">Общие и комплексные проблемы естественных и точных наук</option>
+                    <option value="Энергетика">Энергетика</option>
+                    <option value="Электротехника">Электротехника</option>
+                    <option value="Электроника. радиотехника">Электроника. радиотехника</option>
+                    <option value="Связь">Связь</option>
+                    <option value="Автоматика. вычислительная техника">Автоматика. вычислительная техника</option>
+                    <option value="Горное дело">Горное дело</option>
+                    <option value="Металлургия">Металлургия</option>
+                    <option value="Машиностроение">Машиностроение</option>
+                    <option value="Ядерная техника">Ядерная техника</option>
+                    <option value="Приборостроение">Приборостроение</option>
+                    <option value="полиграфия. репрография. фотокинотехника">полиграфия. репрография. фотокинотехника</option>
+                    <option value="химическая технология. химическая промышленность">химическая технология. химическая промышленность</option>
+                    <option value="Биотехнология">Биотехнология</option>
+                    <option value="Легкая промышленность">Легкая промышленность</option>
+                    <option value="Пищевая промышленность">Пищевая промышленность</option>
+                    <option value="лесная и деревообрабатывающая промышленность">лесная и деревообрабатывающая промышленность</option>
+                    <option value="Строительство.Архитектура">Строительство.Архитектура</option>
+                    <option value="Сельское и лесное хозяйство">Сельское и лесное хозяйство</option>
+                    <option value="Рыбное хозяйство.Аквакультура">Рыбное хозяйство.Аквакультура</option>
+                    <option value="Водное хозяйство">Водное хозяйство</option>
+                    <option value="внутренняя торговля. туристско-экскурсионное обслуживание">внутренняя торговля. туристско-экскурсионное обслуживание</option>
+                    <option value="Внешняя торговля">Внешняя торговля</option>
+                    <option value="Транспорт">Транспорт</option>
+                    <option value="жилищно-коммунальное хозяйство. домоводство. бытовое обслуживание">жилищно-коммунальное хозяйство. домоводство. бытовое обслуживание</option>
+                    <option value="Медицина и здравоохранение">Медицина и здравоохранение</option>
+                    <option value="Физическая культура и спорт">Физическая культура и спорт</option>
+                    <option value="Военное дело">Военное дело</option>
+                    <option value="Прочие отрасли экономики">Прочие отрасли экономики</option>
+                    <option value="общие и комплексные проблемы технических и прикладных наук и отраслей народного хозяйства">общие и комплексные проблемы технических и прикладных наук и отраслей народного хозяйства</option>
+                    <option value="Организация и управление">Организация и управление</option>
+                    <option value="Статистика">Статистика</option>
+                    <option value="Стандартизация">Стандартизация</option>
+                    <option value="патентное дело. изобретательство. рационализаторство">патентное дело. изобретательство. рационализаторство</option>
+                    <option value="Охрана труда">Охрана труда</option>
+                    <option value="охрана окружающей среды. экология человека">охрана окружающей среды. экология человека</option>
+                    <option value="Космические исследования">Космические исследования</option>
+                    <option value="Метрология">Метрология</option>
                     <option value="" selected> </option>
-                }
 
-            </select>
-        </td>
-    </tr>
+                    @*@if (@ViewBag.CurrentTheme.Knowledge == "Общественные науки в целом")
+                        {
+                            <option value="Общественные науки в целом" selected>Общественные науки в целом</option>
+                            <option value="Философия">Философия</option>
+                            <option value="История">История</option>
+                            <option value="Социология">Социология</option>
+                            <option value="Демография">Демография</option>
+                            <option value=""> </option>
+                        }
 
-    <tr>
-        <td style="padding: 4px;">Статус:</td>
-        <td style="padding: 4px;">
-            <select name="Status" size="1">
-                @{
+                        else if (@ViewBag.CurrentTheme.Knowledge == "Философия")
+                        {
+                            <option value="Общественные науки в целом">Общественные науки в целом</option>
+                            <option value="Философия" selected>Философия</option>
+                            <option value="История">История</option>
+                            <option value="Социология">Социология</option>
+                            <option value="Демография">Демография</option>
+                            <option value=""> </option>
+                        }
 
-                    if (@ViewBag.CurrentTheme.Status == "Завершен")
-                    {
-                        <option value="Завершен" selected>Завершен</option>
-                        <option value="Не завершен">Не завершен</option>
-                        <option value=""> </option>
+                        else if (@ViewBag.CurrentTheme.Knowledge == "История")
+                        {
+                            <option value="Общественные науки в целом">Общественные науки в целом</option>
+                            <option value="Философия">Философия</option>
+                            <option value="История" selected>История</option>
+                            <option value="Социология">Социология</option>
+                            <option value="Демография">Демография</option>
+                            <option value=""> </option>
+                        }
+
+                        else if (@ViewBag.CurrentTheme.Knowledge == "Социология")
+                        {
+                            <option value="Общественные науки в целом">Общественные науки в целом</option>
+                            <option value="Философия">Философия</option>
+                            <option value="История">История</option>
+                            <option value="Социология" selected>Социология</option>
+                            <option value="Демография">Демография</option>
+                            <option value=""> </option>
+
+                        }
+
+                        else if (@ViewBag.CurrentTheme.Knowledge == "Демография")
+                        {
+                            <option value="Общественные науки в целом">Общественные науки в целом</option>
+                            <option value="Философия">Философия</option>
+                            <option value="История">История</option>
+                            <option value="Социология">Социология</option>
+                            <option value="Демография" selected>Демография</option>
+                            <option value=""> </option>
+                        }
+
+                        else
+                        {
+                            <option value="Общественные науки в целом">Общественные науки в целом</option>
+                            <option value="Философия">Философия</option>
+                            <option value="История">История</option>
+                            <option value="Социология">Социология</option>
+                            <option value="Демография">Демография</option>
+                            <option value="" selected> </option>
+                        }*@
+
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding: 4px;">Статус:</td>
+            <td style="padding: 4px;">
+                <select name="Status" size="1">
+                    @{
+
+                        if (@ViewBag.CurrentTheme.Status == "Завершен")
+                        {
+                            <option value="Завершен" selected>Завершен</option>
+                            <option value="Не завершен">Не завершен</option>
+                            <option value=""> </option>
+                        }
+
+                        else if (@ViewBag.CurrentTheme.Status == "Не завершен")
+                        {
+                            <option value="Завершен">Завершен</option>
+                            <option value="Не завершен" selected>Не завершен</option>
+                            <option value=""> </option>
+                        }
+
+                        else
+                        {
+                            <option value="Завершен">Завершен</option>
+                            <option value="Не завершен">Не завершен</option>
+                            <option value="" selected> </option>
+                        }
                     }
-
-                    else if (@ViewBag.CurrentTheme.Status == "Не завершен")
-                    {
-                        <option value="Завершен">Завершен</option>
-                        <option value="Не завершен" selected>Не завершен</option>
-                        <option value=""> </option>
-                    }
-
-                    else
-                    {
-                        <option value="Завершен">Завершен</option>
-                        <option value="Не завершен">Не завершен</option>
-                        <option value="" selected> </option>
-                    }
-                }
-            </select>
-        </td>
-    </tr>
+                </select>
+            </td>
+        </tr>
 
 
-    @*@(ViewBag.Trls.Trl1_1 && ViewBag.Trls.Trl1_2 && ViewBag.Trls.Trl1_3 && ViewBag.Trls.Trl1_4 && ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "")
+        @*@(ViewBag.Trls.Trl1_1 && ViewBag.Trls.Trl1_2 && ViewBag.Trls.Trl1_3 && ViewBag.Trls.Trl1_4 && ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "")
 
-        <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.ResearchType)
-            </td>*@
+            <td style="padding: 4px;">
+                    @Html.TextBoxFor(m => m.ResearchType)
+                </td>*@
 
-    <tr><br></tr>
+        <tr><br></tr>
 
-    <tr>
-        <td style="padding: 4px;">
-        </td>
+        <tr>
+            <td style="padding: 4px;">
+            </td>
 
-        <td style="padding: 4px;">
-            <a class="btn btn-outline-dark" href="/Themes" style="text-align:center">Отмена</a>
-            <input type="submit" class="btn btn-outline-primary submitBtn" value="Изменить тему" />
-        </td>
+            <td style="padding: 4px;">
+                <a class="btn btn-outline-dark" href="/Themes" style="text-align:center">Отмена</a>
+                <input type="submit" class="btn btn-outline-primary submitBtn" value="Изменить тему" />
+            </td>
 
-        <td style="padding: 4px;">
-        </td>
-    </tr>
+            <td style="padding: 4px;">
+            </td>
+        </tr>
 
 
-</table>
+    </table>
+
+    <input id="CurrentKnowledge" type="text" hidden value="@ViewBag.CurrentTheme.Knowledge" />
 
 }
 
 <script>
-    $(document).ready( function(){
-    var option, selectedOption;
-        for (let i = 0; i < 5; i++) {
-            option = document.getElementById('ResearchType').options[i];
-            selectedOption = document.getElementById('researchType').value;
+    $(document).ready(function () {
+        var option, selectedOption;
+        for (let i = 0; i < 69; i++) {
+            option = document.getElementById('Knowledge').options[i];
+            selectedOption = document.getElementById('CurrentKnowledge').value;
             if (option.value == selectedOption) {
-                document.getElementById('ResearchType').value = option.value;
+                option.setAttribute("selected", "selected");
                 break;
             }
         }
     });
 </script>
+
+
 
 @if (@customOption)
 {
@@ -480,7 +554,7 @@
 }
 
 <script>
-        function showCustomInput() {
+    function showCustomInput() {
         var customObj = document.getElementById('customObj');
         if (customObj.style.display == '')
             customObj.style.display = 'none';
