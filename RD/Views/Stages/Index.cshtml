@@ -496,22 +496,26 @@
                             </thead>
 
 
-                            @{int i = 1; double trlSum1 = 0.0; double trlSum2 = 0.0; double trlSum3 = 0.0;}
+                            @{int i = 1; double trlSum1 = 0.0; double trlSum2 = 0.0; double trlSum3 = 0.0;
+                                 double trlSum1Percent = 0.0; double trlSum2Percent = 0.0; double trlSum3Percent = 0.0;}
                             @foreach (var stage in @ViewBag.Stages)
                             {
                                 if (@stage.TRL1 > 0.0)
                                 {
                                     trlSum1 += @stage.TRL1;
+                                    trlSum1Percent = trlSum1 * 100;
                                 }
 
                                 if (@stage.TRL2 > 0.0)
                                 {
-                                     trlSum2 += @stage.TRL2;
+                                    trlSum2 += @stage.TRL2;
+                                    trlSum2Percent = trlSum2 * 100;
                                 }
 
                                 if (@stage.TRL3 > 0.0)
                                 {
                                     trlSum3 += @stage.TRL3;
+                                    trlSum3Percent = trlSum3 * 100;
                                 }
 
 
@@ -550,9 +554,9 @@
                                         <td>@stage.Amount</td>
                                         <td>@stage.CompletionAct</td>
                                         <td>@stage.Status</td>
-                                        <td>@trlSum1</td>
-                                        <td>@trlSum2</td>
-                                        <td>@trlSum3</td>
+                                        <td>@trlSum1Percent%</td>
+                                        <td>@trlSum2Percent%</td>
+                                        <td>@trlSum3Percent%</td>
 
                                     </tr>
                                 </tbody>
