@@ -5,7 +5,6 @@
     Layout = "_Layout";
 
     bool Trl1 = false, Trl2x = false, Trl3 = false, Trl4 = false, Trl5 = false, Trl6 = false, Trl7 = false, Trl8 = false;
-
 }
 
 <div class="container">
@@ -966,9 +965,9 @@
         var notReady = Total - ready;
 
         var data = google.visualization.arrayToDataTable([
-            ['Уровни', 'Количество'],
-            ['Выполненные уровни', ready],
-            ['Не выполненные уровни', notReady],
+            ['Задачи', 'Количество'],
+            ['Выполненные задачи', ready],
+            ['Не выполненные задачи', notReady],
         ]);
 
         // Optional; add a title and set the width and height of the chart

@@ -416,7 +416,7 @@ namespace RD.Services
 
                 if (trl2.Trl8_1 && trl2.Trl8_2 && trl2.Trl8_3 && trl2.Trl8_4)
                 {
-                    trl2.Trl8_1 = true;
+                    trl2.Trl8 = true;
                 }
 
 
@@ -625,97 +625,63 @@ namespace RD.Services
 
             if (Trl3 != null)
             {
-                if (trl3.Trl1 == true)
+                if (trl3.Trl1_1 && trl3.Trl1_2 && trl3.Trl1_3 && trl3.Trl1_4 && trl3.Trl1_5 && trl3.Trl1_6 && trl3.Trl1_7 && trl3.Trl1_8)
                 {
-                    trl3.Trl1_1 = true;
-                    trl3.Trl1_2 = true;
-                    trl3.Trl1_3 = true;
-                    trl3.Trl1_4 = true;
+                    trl3.Trl1 = true;
                 }
 
-                //if (trl3.Trlx == true)
-                //{
-                //    trl2.Trl2_1 = true;
-                //    trl2.Trl2_2 = true;
-                //    trl2.Trl2_3 = true;
+                if (trl3.Trl2_1 && trl3.Trl2_2 && trl3.Trl2_3 && trl3.Trl2_4 && trl3.Trl2_5 && trl3.Trl2_6 && trl3.Trl2_7 && trl3.Trl2_8 && trl3.Trl2_9
+                    && trl3.Trl2_10 && trl3.Trl2_11 && trl3.Trl2_12 && trl3.Trl2_13 && trl3.Trl2_14 && trl3.Trl2_15 && trl3.Trl2_16 && trl3.Trl2_17
+                    && trl3.Trl2_18 && trl3.Trl2_19)
+                {
+                    trl3.Trl2 = true;
+                }
 
-                //}
+                if (trl3.Trl3_1 && trl3.Trl3_2 && trl3.Trl3_3 && trl3.Trl3_4 && trl3.Trl3_5 && trl3.Trl3_6 && trl3.Trl3_7 && trl3.Trl3_8
+                    && trl3.Trl3_9 && trl3.Trl3_10 && trl3.Trl3_11 && trl3.Trl3_12 && trl3.Trl3_13 && trl3.Trl3_14)
+                {
+                    trl3.Trl3x = true;
+                }
+               
+                if (trl3.Trl4_1 && trl3.Trl4_2 && trl3.Trl4_3 && trl3.Trl4_4 && trl3.Trl4_5 && trl3.Trl4_6 && trl3.Trl4_7 && trl3.Trl4_8
+                        && trl3.Trl4_9 && trl3.Trl4_10 && trl3.Trl4_11 && trl3.Trl4_12 && trl3.Trl4_13 && trl3.Trl4_14 && trl3.Trl4_15 
+                        && trl3.Trl4_16 && trl3.Trl4_17 && trl3.Trl4_18 && trl3.Trl4_19 && trl3.Trl4_20 && trl3.Trl4_21 && trl3.Trl4_22)
+                {
+                    trl3.Trl4 = true;
+                }
 
-                //if (trl3.Trl3x == true)
-                //{
-                //    trl2.Trl3_1 = true;
-                //    trl2.Trl3_2 = true;
-                //    trl2.Trl3_3 = true;
-                //    trl2.Trl3_4 = true;
-                //    trl2.Trl3_5 = true;
-                //    trl2.Trl3_6 = true;
-                //    trl2.Trl3_7 = true;
-                //    trl2.Trl3_8 = true;
+                if (trl3.Trl5_1 && trl3.Trl5_2 && trl3.Trl5_3 && trl3.Trl5_4 && trl3.Trl5_5 && trl3.Trl5_6 && trl3.Trl5_7 && trl3.Trl5_8
+                        && trl3.Trl5_9 && trl3.Trl5_10 && trl3.Trl5_11 && trl3.Trl5_12 && trl3.Trl5_13 && trl3.Trl5_14 && trl3.Trl5_15 
+                        && trl3.Trl5_16 && trl3.Trl5_17 && trl3.Trl5_18 && trl3.Trl5_19 && trl3.Trl5_20 && trl3.Trl5_21 && trl3.Trl5_22)
+                {
+                    trl3.Trl5 = true;
+                }
 
-                //}
+                if (trl3.Trl6_1 && trl3.Trl6_2 && trl3.Trl6_3 && trl3.Trl6_4 && trl3.Trl6_5 && trl3.Trl6_6 && trl3.Trl6_7 && trl3.Trl6_8 && trl3.Trl6_9 
+                    && trl3.Trl6_10 && trl3.Trl6_11 && trl3.Trl6_12 && trl3.Trl6_13 && trl3.Trl6_14 && trl3.Trl6_15 && trl3.Trl6_16 && trl3.Trl6_17 
+                    && trl3.Trl6_18 && trl3.Trl6_19 && trl3.Trl6_20 && trl3.Trl6_21 && trl3.Trl6_22 && trl3.Trl6_23 && trl3.Trl6_24 && trl3.Trl6_25)
+                {
+                    trl3.Trl6 = true;
+                }
 
-                //if (trl2.Trl4 == true)
-                //{
-                //    trl2.Trl4_1 = true;
-                //    trl2.Trl4_2 = true;
-                //    trl2.Trl4_3 = true;
-                //    trl2.Trl4_4 = true;
-                //    trl2.Trl4_5 = true;
-                //    trl2.Trl4_6 = true;
-                //    trl2.Trl4_7 = true;
-                //    trl2.Trl4_8 = true;
-                //    trl2.Trl4_9 = true;
-                //    trl2.Trl4_10 = true;
-                //    trl2.Trl4_11 = true;
 
-                //}
+                if (trl3.Trl7_1 && trl3.Trl7_2 && trl3.Trl7_3 && trl3.Trl7_4 && trl3.Trl7_5 && trl3.Trl7_6 && trl3.Trl7_7 && trl3.Trl7_8)
+                {
+                    trl3.Trl7 = true;
+                }
 
-                //if (trl2.Trl5 == true)
-                //{
-                //    trl2.Trl5_1 = true;
-                //    trl2.Trl5_2 = true;
-                //    trl2.Trl5_3 = true;
-                //    trl2.Trl5_4 = true;
-                //    trl2.Trl5_5 = true;
-                //    trl2.Trl5_6 = true;
-                //    trl2.Trl5_7 = true;
-                //    trl2.Trl5_8 = true;
-                //    trl2.Trl5_9 = true;
-                //    trl2.Trl5_10 = true;
 
-                //}
+                if (trl3.Trl8_1 && trl3.Trl8_2 && trl3.Trl8_3 && trl3.Trl8_4 && trl3.Trl8_5 && trl3.Trl8_6 && trl3.Trl8_7 && trl3.Trl8_8 
+                    && trl3.Trl8_9 && trl3.Trl8_10 && trl3.Trl8_11)
+                {
+                    trl3.Trl8 = true;
+                }
 
-                //if (trl2.Trl6 == true)
-                //{
-                //    trl2.Trl6_1 = true;
-                //    trl2.Trl6_2 = true;
-                //    trl2.Trl6_3 = true;
-                //    trl2.Trl6_4 = true;
-                //    trl2.Trl6_5 = true;
-                //    trl2.Trl6_6 = true;
-                //    trl2.Trl6_7 = true;
-                //    trl2.Trl6_8 = true;
-                //    trl2.Trl6_9 = true;
-                //    trl2.Trl6_10 = true;
+                if (trl3.Trl9_1 && trl3.Trl9_2 && trl3.Trl9_3 && trl3.Trl9_4 && trl3.Trl9_5 && trl3.Trl9_6 && trl3.Trl9_7 && trl3.Trl9_8 && trl3.Trl9_9)
+                {
+                    trl3.Trl9 = true;
+                }
 
-                //}
-
-                //if (trl2.Trl7 == true)
-                //{
-                //    trl2.Trl7_1 = true;
-                //    trl2.Trl7_2 = true;
-                //    trl2.Trl7_3 = true;
-                //    trl2.Trl7_4 = true;
-
-                //}
-
-                //if (trl2.Trl8 == true)
-                //{
-                //    trl2.Trl8_1 = true;
-                //    trl2.Trl8_2 = true;
-                //    trl2.Trl8_3 = true;
-                //    trl2.Trl8_4 = true;
-                //}
 
                 int count = 0;
 
@@ -731,6 +697,18 @@ namespace RD.Services
                 if (trl3.Trl1_4 == true)
                     count++;
 
+                if (trl3.Trl1_5 == true)
+                    count++;
+
+                if (trl3.Trl1_6 == true)
+                    count++;
+
+                if (trl3.Trl1_7 == true)
+                    count++;
+
+                if (trl3.Trl1_8 == true)
+                    count++;
+
 
                 if (trl3.Trl2_1 == true)
                     count++;
@@ -741,164 +719,400 @@ namespace RD.Services
                 if (trl3.Trl2_3 == true)
                     count++;
 
+                if (trl3.Trl2_4 == true)
+                    count++;
 
+                if (trl3.Trl2_5 == true)
+                    count++;
 
-                //if (trl2.Trl3_1 == true)
-                //    count++;
+                if (trl3.Trl2_6 == true)
+                    count++;
 
-                //if (trl2.Trl3_2 == true)
-                //    count++;
+                if (trl3.Trl2_7 == true)
+                    count++;
 
-                //if (trl2.Trl3_3 == true)
-                //    count++;
+                if (trl3.Trl2_8 == true)
+                    count++;
 
-                //if (trl2.Trl3_4 == true)
-                //    count++;
+                if (trl3.Trl2_9 == true)
+                    count++;
 
-                //if (trl2.Trl3_5 == true)
-                //    count++;
+                if (trl3.Trl2_10 == true)
+                    count++;
 
-                //if (trl2.Trl3_6 == true)
-                //    count++;
+                if (trl3.Trl2_11 == true)
+                    count++;
 
-                //if (trl2.Trl3_7 == true)
-                //    count++;
+                if (trl3.Trl2_12 == true)
+                    count++;
 
-                //if (trl2.Trl3_8 == true)
-                //    count++;
+                if (trl3.Trl2_13 == true)
+                    count++;
 
+                if (trl3.Trl2_14 == true)
+                    count++;
 
+                if (trl3.Trl2_15 == true)
+                    count++;
 
+                if (trl3.Trl2_16 == true)
+                    count++;
 
-                //if (trl2.Trl4_1 == true)
-                //    count++;
+                if (trl3.Trl2_17 == true)
+                    count++;
 
-                //if (trl2.Trl4_2 == true)
-                //    count++;
+                if (trl3.Trl2_18 == true)
+                    count++;
 
-                //if (trl2.Trl4_3 == true)
-                //    count++;
+                if (trl3.Trl2_19 == true)
+                    count++;
 
-                //if (trl2.Trl4_4 == true)
-                //    count++;
 
-                //if (trl2.Trl4_5 == true)
-                //    count++;
 
-                //if (trl2.Trl4_6 == true)
-                //    count++;
+                if (trl3.Trl3_1 == true)
+                    count++;
 
-                //if (trl2.Trl4_7 == true)
-                //    count++;
+                if (trl3.Trl3_2 == true)
+                    count++;
 
-                //if (trl2.Trl4_8 == true)
-                //    count++;
+                if (trl3.Trl3_3 == true)
+                    count++;
 
-                //if (trl2.Trl4_9 == true)
-                //    count++;
+                if (trl3.Trl3_4 == true)
+                    count++;
 
-                //if (trl2.Trl4_10 == true)
-                //    count++;
+                if (trl3.Trl3_5 == true)
+                    count++;
 
-                //if (trl2.Trl4_11 == true)
-                //    count++;
+                if (trl3.Trl3_6 == true)
+                    count++;
 
+                if (trl3.Trl3_7 == true)
+                    count++;
 
+                if (trl3.Trl3_8 == true)
+                    count++;
 
-                //if (trl2.Trl5_1 == true)
-                //    count++;
+                if (trl3.Trl3_9 == true)
+                    count++;
 
-                //if (trl2.Trl5_2 == true)
-                //    count++;
+                if (trl3.Trl3_10 == true)
+                    count++;
 
-                //if (trl2.Trl5_3 == true)
-                //    count++;
+                if (trl3.Trl3_11 == true)
+                    count++;
 
-                //if (trl2.Trl5_4 == true)
-                //    count++;
+                if (trl3.Trl3_12 == true)
+                    count++;
 
-                //if (trl2.Trl5_5 == true)
-                //    count++;
+                if (trl3.Trl3_13 == true)
+                    count++;
 
-                //if (trl2.Trl5_6 == true)
-                //    count++;
+                if (trl3.Trl3_14 == true)
+                    count++;
 
-                //if (trl2.Trl5_7 == true)
-                //    count++;
 
-                //if (trl2.Trl5_8 == true)
-                //    count++;
 
-                //if (trl2.Trl5_9 == true)
-                //    count++;
+                if (trl3.Trl4_1 == true)
+                    count++;
 
-                //if (trl2.Trl5_10 == true)
-                //    count++;
+                if (trl3.Trl4_2 == true)
+                    count++;
 
+                if (trl3.Trl4_3 == true)
+                    count++;
 
+                if (trl3.Trl4_4 == true)
+                    count++;
 
+                if (trl3.Trl4_5 == true)
+                    count++;
 
+                if (trl3.Trl4_6 == true)
+                    count++;
 
-                //if (trl2.Trl6_1 == true)
-                //    count++;
+                if (trl3.Trl4_7 == true)
+                    count++;
 
-                //if (trl2.Trl6_2 == true)
-                //    count++;
+                if (trl3.Trl4_8 == true)
+                    count++;
 
-                //if (trl2.Trl6_3 == true)
-                //    count++;
+                if (trl3.Trl4_9 == true)
+                    count++;
 
-                //if (trl2.Trl6_4 == true)
-                //    count++;
+                if (trl3.Trl4_10 == true)
+                    count++;
 
-                //if (trl2.Trl6_5 == true)
-                //    count++;
+                if (trl3.Trl4_11 == true)
+                    count++;
 
-                //if (trl2.Trl6_6 == true)
-                //    count++;
+                if (trl3.Trl4_12 == true)
+                    count++;
 
-                //if (trl2.Trl6_7 == true)
-                //    count++;
+                if (trl3.Trl4_13 == true)
+                    count++;
 
-                //if (trl2.Trl6_8 == true)
-                //    count++;
+                if (trl3.Trl4_14 == true)
+                    count++;
 
-                //if (trl2.Trl6_9 == true)
-                //    count++;
+                if (trl3.Trl4_15 == true)
+                    count++;
 
-                //if (trl2.Trl6_10 == true)
-                //    count++;
+                if (trl3.Trl4_16 == true)
+                    count++;
 
+                if (trl3.Trl4_17 == true)
+                    count++;
 
+                if (trl3.Trl4_18 == true)
+                    count++;
 
+                if (trl3.Trl4_19 == true)
+                    count++;
 
-                //if (trl2.Trl7_1 == true)
-                //    count++;
+                if (trl3.Trl4_20 == true)
+                    count++;
 
-                //if (trl2.Trl7_2 == true)
-                //    count++;
+                if (trl3.Trl4_21 == true)
+                    count++;
 
-                //if (trl2.Trl7_3 == true)
-                //    count++;
+                if (trl3.Trl4_22 == true)
+                    count++;
 
-                //if (trl2.Trl7_4 == true)
-                //    count++;
 
+                if (trl3.Trl5_1 == true)
+                    count++;
 
+                if (trl3.Trl5_2 == true)
+                    count++;
 
+                if (trl3.Trl5_3 == true)
+                    count++;
 
+                if (trl3.Trl5_4 == true)
+                    count++;
 
-                //if (trl2.Trl8_1 == true)
-                //    count++;
+                if (trl3.Trl5_5 == true)
+                    count++;
 
-                //if (trl2.Trl8_2 == true)
-                //    count++;
+                if (trl3.Trl5_6 == true)
+                    count++;
 
-                //if (trl2.Trl8_3 == true)
-                //    count++;
+                if (trl3.Trl5_7 == true)
+                    count++;
 
-                //if (trl2.Trl8_4 == true)
-                //    count++;
+                if (trl3.Trl5_8 == true)
+                    count++;
+
+                if (trl3.Trl5_9 == true)
+                    count++;
+
+                if (trl3.Trl5_10 == true)
+                    count++;
+
+                if (trl3.Trl5_11 == true)
+                    count++;
+
+                if (trl3.Trl5_12 == true)
+                    count++;
+
+                if (trl3.Trl5_13 == true)
+                    count++;
+
+                if (trl3.Trl5_14 == true)
+                    count++;
+
+                if (trl3.Trl5_15 == true)
+                    count++;
+
+                if (trl3.Trl5_16 == true)
+                    count++;
+
+                if (trl3.Trl5_17 == true)
+                    count++;
+
+                if (trl3.Trl5_18 == true)
+                    count++;
+
+                if (trl3.Trl5_19 == true)
+                    count++;
+
+                if (trl3.Trl5_20 == true)
+                    count++;
+
+                if (trl3.Trl5_21 == true)
+                    count++;
+
+                if (trl3.Trl5_22 == true)
+                    count++;
+
+
+
+
+                if (trl3.Trl6_1 == true)
+                    count++;
+
+                if (trl3.Trl6_2 == true)
+                    count++;
+
+                if (trl3.Trl6_3 == true)
+                    count++;
+
+                if (trl3.Trl6_4 == true)
+                    count++;
+
+                if (trl3.Trl6_5 == true)
+                    count++;
+
+                if (trl3.Trl6_6 == true)
+                    count++;
+
+                if (trl3.Trl6_7 == true)
+                    count++;
+
+                if (trl3.Trl6_8 == true)
+                    count++;
+
+                if (trl3.Trl6_9 == true)
+                    count++;
+
+                if (trl3.Trl6_10 == true)
+                    count++;
+
+                if (trl3.Trl6_11 == true)
+                    count++;
+
+                if (trl3.Trl6_12 == true)
+                    count++;
+
+                if (trl3.Trl6_13 == true)
+                    count++;
+
+                if (trl3.Trl6_14 == true)
+                    count++;
+
+                if (trl3.Trl6_15 == true)
+                    count++;
+
+                if (trl3.Trl6_16 == true)
+                    count++;
+
+                if (trl3.Trl6_17 == true)
+                    count++;
+
+                if (trl3.Trl6_18 == true)
+                    count++;
+
+                if (trl3.Trl6_19 == true)
+                    count++;
+
+                if (trl3.Trl6_20 == true)
+                    count++;
+
+                if (trl3.Trl6_21 == true)
+                    count++;
+
+                if (trl3.Trl6_22 == true)
+                    count++;
+
+                if (trl3.Trl6_23 == true)
+                    count++;
+
+                if (trl3.Trl6_24 == true)
+                    count++;
+
+                if (trl3.Trl6_25 == true)
+                    count++;
+
+               
+
+                if (trl3.Trl7_1 == true)
+                    count++;
+
+                if (trl3.Trl7_2 == true)
+                    count++;
+
+                if (trl3.Trl7_3 == true)
+                    count++;
+
+                if (trl3.Trl7_4 == true)
+                    count++;
+
+                if (trl3.Trl7_5 == true)
+                    count++;
+
+                if (trl3.Trl7_6 == true)
+                    count++;
+
+                if (trl3.Trl7_7 == true)
+                    count++;
+
+                if (trl3.Trl7_8 == true)
+                    count++;
+
+
+
+
+                if (trl3.Trl8_1 == true)
+                    count++;
+
+                if (trl3.Trl8_2 == true)
+                    count++;
+
+                if (trl3.Trl8_3 == true)
+                    count++;
+
+                if (trl3.Trl8_4 == true)
+                    count++;
+
+                if (trl3.Trl8_5 == true)
+                    count++;
+
+                if (trl3.Trl8_6 == true)
+                    count++;
+
+                if (trl3.Trl8_7 == true)
+                    count++;
+
+                if (trl3.Trl8_8 == true)
+                    count++;
+
+                if (trl3.Trl8_9 == true)
+                    count++;
+
+                if (trl3.Trl8_10 == true)
+                    count++;
+
+                if (trl3.Trl8_11 == true)
+                    count++;
+
+
+                if (trl3.Trl9_1 == true)
+                    count++;
+
+                if (trl3.Trl9_2 == true)
+                    count++;
+
+                if (trl3.Trl9_3 == true)
+                    count++;
+
+                if (trl3.Trl9_4 == true)
+                    count++;
+
+                if (trl3.Trl9_5 == true)
+                    count++;
+
+                if (trl3.Trl9_6 == true)
+                    count++;
+
+                if (trl3.Trl9_7 == true)
+                    count++;
+
+                if (trl3.Trl9_8 == true)
+                    count++;
+
+                if (trl3.Trl9_9 == true)
+                    count++;
 
 
 

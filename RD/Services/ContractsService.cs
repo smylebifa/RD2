@@ -39,6 +39,8 @@ namespace RD.Services
             var existing = Contracts.FirstOrDefault(x => x.Id == contract.Id);
             if (existing == null)
                 return;
+          
+            existing.CounterpartyName = contract.CounterpartyName;
             existing.NameContract = contract.NameContract;
             existing.Props = contract.Props;
             existing.Status = contract.Status;
