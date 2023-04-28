@@ -12,6 +12,7 @@
     <table>
 
         @Html.HiddenFor(m => m.Id)
+        <input name="ThemeId" type="number" hidden value="@ViewBag.ThemeId" />
 
         <tr>
             <td style="padding: 4px;">Соисполнитель:</td>
@@ -21,7 +22,7 @@
                     <option value=""> </option>
                     @foreach (var counterparty in @ViewBag.Counterparties)
                     {
-                            <option value="@counterparty.Name">@counterparty.Name</option>
+                        <option value="@counterparty.Name">@counterparty.Name</option>
                     }
                 </select>
             </td>

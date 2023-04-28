@@ -74,7 +74,11 @@
     <tr>
         <td style="padding: 4px;">Статус:</td>
         <td style="padding: 4px;">
-            @Html.TextBoxFor(m => m.Status)
+            <select name="Status" size="1">
+                <option value="Завершен">Завершен</option>
+                <option value="Не завершен">Не завершен</option>
+                <option value="" selected> </option>
+            </select>
         </td>
     </tr>
 

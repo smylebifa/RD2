@@ -41,16 +41,23 @@ namespace RD.Controllers
             return View();
         }
 
-        public ActionResult ContractDetail(int themeId)
+        public ActionResult ContractDetail(int themeId, string themeName, int contractId)
         {
-            var contracts = _contractsService.GetContracts().FirstOrDefault(x => x.ThemeId == themeId);
-            ViewBag.CurrentContract = contracts;
+            var contract = _contractsService.GetContracts().FirstOrDefault(x => x.ThemeId == themeId && x.Id == contractId);
+            ViewBag.CurrentContract = contract;
 
             var stages = _stageService.GetStages();
             ViewBag.Stages = stages;
 
             var files = _filesService.GetFiles();
             ViewBag.Files = files;
+
+            var counterparties = _counterpartiesService.GetCounterparties();
+
+            ViewBag.Counterparties = counterparties;
+
+            ViewBag.ThemeId = themeId;
+            ViewBag.ThemeName = themeName;
 
             return View();
         }

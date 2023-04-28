@@ -25,6 +25,8 @@ namespace RD.Controllers
         private readonly RIAsService _riasService;
         private readonly CustomersService _customersService;
 
+        private readonly TRLsService _trlService;
+        
         private static int ThemeId;
         private static string ThemeName;
 
@@ -32,7 +34,8 @@ namespace RD.Controllers
 
         public StagesController(ILogger<StagesController> logger, StagesService stageService, 
             ThemesService themeService, AnnualFinancingsService annualFinancings, ContractsService сontractsService, FilesService filesService,
-            ScientificDocsService scientificDocsService, ProductsService productsService, RIAsService riasService, CustomersService customersService)
+            ScientificDocsService scientificDocsService, ProductsService productsService, RIAsService riasService, CustomersService customersService,
+            TRLsService trlService)
         {
             _logger = logger;
             _stageService = stageService;
@@ -47,6 +50,7 @@ namespace RD.Controllers
 
             _customersService = customersService;
 
+            _trlService = trlService;
         }
 
         public IActionResult Index(int themeId, string themeName)
@@ -152,6 +156,8 @@ namespace RD.Controllers
         public IActionResult Delete(int id)
         {
             _stageService.DeleteStage(id);
+            _trlService.DeleteTRLs(id);
+
             return Ok();
         }
 

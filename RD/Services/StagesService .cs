@@ -84,6 +84,7 @@ namespace RD.Services
             var existing = Stages.FirstOrDefault(x => x.Id == id);
             if (existing == null)
                 return;
+
             Stages.Remove(existing);
         }
 

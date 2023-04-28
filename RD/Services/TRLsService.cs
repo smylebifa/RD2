@@ -1232,5 +1232,27 @@ namespace RD.Services
 
         }
 
+        public void DeleteTRLs(int stageId)
+        {
+            var trl1 = TRLs1.FirstOrDefault(x => x.StageId == stageId);
+            var trl2 = TRLs2.FirstOrDefault(x => x.StageId == stageId);
+            var trl3 = TRLs3.FirstOrDefault(x => x.StageId == stageId);
+
+            if (trl1 != null)
+            {
+                TRLs1.Remove(trl1);
+            }
+
+            if (trl2 != null)
+            {
+                TRLs2.Remove(trl2);
+            }
+
+            if (trl3 != null)
+            {
+                TRLs3.Remove(trl3);
+            }
+        }
+
     }
 }
