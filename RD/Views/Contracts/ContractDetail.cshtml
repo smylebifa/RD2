@@ -148,35 +148,35 @@
 
                     @*<h3 style="color: #343a40; padding: 8px;">Тема - @ViewBag.ThemeName </h3>
 
-            <table>
+                        <table>
 
-                <input name="Id" type="number" hidden value="@ViewBag.CurrentTheme.Id" />
+                            <input name="Id" type="number" hidden value="@ViewBag.CurrentTheme.Id" />
 
 
 
-                <tr>
-                    <td style="padding: 4px;">Статус:</td>
-                    <td style="padding: 4px;">
-                        <select name="Status" size="1">
-                            <option value="Завершен">Завершен</option>
-                            <option value="Завершен">Не завершен</option>
-                        </select>
-                    </td>
-                </tr>*@
+                            <tr>
+                                <td style="padding: 4px;">Статус:</td>
+                                <td style="padding: 4px;">
+                                    <select name="Status" size="1">
+                                        <option value="Завершен">Завершен</option>
+                                        <option value="Завершен">Не завершен</option>
+                                    </select>
+                                </td>
+                            </tr>*@
 
                     @*<tr>
-                <td style="padding: 4px;">Статус:</td>
-                <td style="padding: 4px;">
-                    <input type="text" name="Status" value="@ViewBag.CurrentTheme.Status" />
-                </td>
-            </tr>*@
+                            <td style="padding: 4px;">Статус:</td>
+                            <td style="padding: 4px;">
+                                <input type="text" name="Status" value="@ViewBag.CurrentTheme.Status" />
+                            </td>
+                        </tr>*@
 
 
                     @*@(ViewBag.Trls.Trl1_1 && ViewBag.Trls.Trl1_2 && ViewBag.Trls.Trl1_3 && ViewBag.Trls.Trl1_4 && ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "")
 
-            <td style="padding: 4px;">
-                    @Html.TextBoxFor(m => m.ResearchType)
-                </td>*@
+                        <td style="padding: 4px;">
+                                @Html.TextBoxFor(m => m.ResearchType)
+                            </td>*@
 
                     <br />
 
@@ -240,7 +240,7 @@
 
                                 <tbody>
                                     <tr>
-                                        <td style="vertical-align:middle"><a asp-controller="Stages" asp-action="StageDetail" asp-route-id="@stage.Id" style="font-weight: 700;"> >>> </a></td>
+                                        <td style="vertical-align:middle"><a asp-controller="Stages" asp-action="StageDetail" asp-route-stageId="@stage.Id" asp-route-themeId="@ViewBag.ThemeId" style="font-weight: 700;"> >>> </a></td>
                                         <td style="vertical-align:middle"><a asp-controller="Stages" asp-action="ChangingStage" asp-route-id="@stage.Id"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
                                         <td style="vertical-align:middle"><a onclick="deleteStage('@stage.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i></a></td>
                                         <td>@i</td>
