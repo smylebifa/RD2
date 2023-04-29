@@ -36,7 +36,7 @@ namespace RD.Controllers
         }
 
         [HttpGet("/edit_counterparty/{id}")]
-        public new IActionResult Counterparty(int id)
+        public new IActionResult ChangingCounterparty(int id)
         {
             var counterparty = _counterpartiesService.GetCounterparties().FirstOrDefault(x => x.Id == id);
             return View(counterparty);

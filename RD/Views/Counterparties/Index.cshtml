@@ -6,27 +6,27 @@
 }
 
 
-    <h3>Соисполнители</h3>
+<h3>Соисполнители</h3>
 
 <table class="table table-hover " style="text-align: center;">
 
     <thead>
         <tr>
+            <th scope="col"></th>
+            <th scope="col"></th>
             <th scope="col">Имя</th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-
         </tr>
     </thead>
 
     <tbody>
         @foreach (var counterparty in @ViewBag.Counterparties)
         {
-            <tr>
-                <td>@counterparty.Name</td>
-                <td>@Html.ActionLink("изменить", "Counterparty", new { id = counterparty.Id })</td>
-                <td><a onclick="deleteUser('@counterparty.Id')" href="#"> удалить </a></td>
-            </tr>
+        <tr>
+            <td style="vertical-align:middle"><a asp-controller="Counterparties" asp-action="ChangingCounterparty" asp-route-id="@counterparty.Id"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+            <td style="vertical-align:middle"><a onclick="deleteCounterparty('@counterparty.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i></a></td>
+            <td style="vertical-align:middle">@counterparty.Name</td>
+            <td></td>
+        </tr>
         }
     </tbody>
 </table>
@@ -54,9 +54,9 @@
 
 
 <script type="text/javascript">
-        function deleteUser(userId) {
+        function deleteCounterparty(counterpartyId) {
             $.ajax({
-                url: '/delete_counterparty/' + userId,
+                url: '/delete_counterparty/' + counterpartyId,
                 type: 'DELETE',
                 contentType: "application/json; charset=utf-8",
                 success: function () {

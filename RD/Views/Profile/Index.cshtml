@@ -1,81 +1,114 @@
 ﻿@model RD.Models.User;
 
 @{
-    ViewBag.Title = "Профиль";
+    ViewBag.Title = "Профиль пользователя";
     Layout = "_Layout";
 
 }
 
-<h4>Профиль пользователя</h4>
+<div id="modDialog" class="modal fade">
+    <div id="dialogContent" class="modal-dialog"></div>
+</div>
 
-<form method="post" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
+<h3 style="padding:4px;">Профиль пользователя</h3>
+
+<h5 style="padding:4px;">@ViewBag.FullName</h5>
+
+<form method="post" asp-action="ChangePassword" name="ChangePasswordForm">
+
     <table>
 
-        <h5>Смена пароля</h5>
+        <h5 style="padding:4px;">Изменить пароль</h5>
 
         <tr>
-            <td style="padding: 4px;">
-                <input type="text" placeholder="Текущий пароль" id="oldPassword" />
+            <td style="padding:4px;">
+                <input type="password" placeholder="Текущий пароль" name="oldPassword" id="oldPassword" />
             </td>
         </tr>
 
         <tr>
-            <td style="padding: 4px;">
-                <input type="text" placeholder="Новый пароль" id="newPassword" />
+            <td style="padding:4px;">
+                <input type="password" placeholder="Новый пароль" name="newPassword" id="newPassword" />
             </td>
         </tr>
 
         <tr>
-            <td style="padding: 4px;">
-                <input type="text" placeholder="Повторить новый пароль" id="newPassword2" />
+            <td style="padding:4px;">
+                <input type="password" placeholder="Повторить новый пароль" name="newPassword2" id="newPassword2" />
             </td>
         </tr>
 
         <tr>
-            <td style="padding: 4px;">
+            <td style="padding:4px;">
                 <a class="btn btn-outline-dark" href="/" style="text-align:center">Отмена</a>
-                <a onclick="changePassword()" class="btn btn-outline-primary">Изменить пароль</a>
+                <button class="btn btn-outline-primary submitBtn" type="submit" style="text-align:center">Изменить пароль</button>
             </td>
         </tr>
 
     </table>
+
 </form>
 
+@if (ViewBag.Status == "success")
+{
+    <script>
+        $.get(this.href, function () {
+            $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Сообщение</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Статус:</dt> <dd>Пароль был изменен</dd> </dl> </div> </div>');
+            $('#modDialog').modal('show');
+        });
+    </script>
 
-@*<script type="text/javascript">
-    function changeLogin() {
-        var newLogin = document.getElementById('newLogin').value;
-        $.ajax({
-            url: '/change_login/' + newLogin,
-            type: 'POST',
-            contentType: "application/json; charset=utf-8",
-            success: function () {
-                location.reload();
-            },
-            error: function () {
-                alert("Ошибка выполнения!")
-            }
-        })
-    }
-</script>*@
+    ViewBag.Status = "";
+}
+
+else if (ViewBag.Status == "error")
+{
+    <script>
+        $.get(this.href, function () {
+            $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Пароль не был изменен</dd> </dl> </div> </div>');
+            $('#modDialog').modal('show');
+        });
+    </script>
+
+    ViewBag.Status = "";
+}
+
+
 
 <script type="text/javascript">
-    function changePassword() {
+    $(function () {
+        $.ajaxSetup({ cache: false });
+        $(".submitBtn").click(function (e) {
 
-        var oldPassword = document.getElementById('oldPassword').value;
-        var newPassword = document.getElementById('newPassword').value;
-        var newPassword2 = document.getElementById('newPassword2').value;
+            var oldPassword = document.getElementById('oldPassword').value;
+            var newPassword = document.getElementById('newPassword').value;
+            var newPassword2 = document.getElementById('newPassword2').value;
 
-        $.ajax({
-            url: '/change_password/' + oldPassword + '/' + newPassword + '/' + newPassword2,
-            type: 'POST',
-            contentType: "application/json; charset=utf-8",
-            success: function () {
-                location.reload()
-            },
-            error: function () {
-                alert("Ошибка выполнения!")
+            if (oldPassword == "") {
+                e.preventDefault();
+                $.get(this.href, function () {
+                    $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Введите старый пароль</dd> </dl> </div> </div>');
+                    $('#modDialog').modal('show');
+                });
             }
-        })
-    }
+
+             else if (newPassword == "" || newPassword2 == "") {
+                e.preventDefault();
+                $.get(this.href, function () {
+                    $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Введите новый пароль</dd> </dl> </div> </div>');
+                    $('#modDialog').modal('show');
+                });
+            }
+
+            else if (newPassword != newPassword2) {
+                e.preventDefault();
+                $.get(this.href, function () {
+                    $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Пароли не совпадают</dd> </dl> </div> </div>');
+                    $('#modDialog').modal('show');
+                });
+
+            }
+
+        });
+    })
 </script>

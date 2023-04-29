@@ -127,7 +127,7 @@
 
         <tr>
 
-            <td style="padding: 4px;">Тип исследования:</td>
+            <td style="padding: 4px;">Вид исследования:</td>
             <td style="padding: 4px;">
                 <div class="select">
                     <select name="ResearchType" size="1">
@@ -160,7 +160,7 @@
         </tr>
 
         <tr>
-            <td style="padding: 4px;">Область знания:</td>
+            <td style="padding: 4px;">Область знаний:</td>
             <td style="padding: 4px; width: 300px;">
                 <select name="Knowledge" size="1" style="width:100%;">
                     <option value="Общественные науки в целом">Общественные науки в целом</option>
@@ -251,11 +251,11 @@
         <br />
 
         @*<tr>
-            <td style="padding: 4px;">Документы:</td>
-            <td style="padding: 4px;">
-                <input type="file" name="upload" />
-            </td>
-        </tr>*@
+                <td style="padding: 4px;">Документы:</td>
+                <td style="padding: 4px;">
+                    <input type="file" name="upload" />
+                </td>
+            </tr>*@
 
         <br />
 
@@ -278,16 +278,16 @@
 
 
 @*<form asp-action="AddFile" asp-controller="Themes" method="post" enctype="multipart/form-data">
-    <input type="file" name="uploadedFile" /><br>
-    <input type="submit" value="Загрузить" />
-</form>*@
+        <input type="file" name="uploadedFile" /><br>
+        <input type="submit" value="Загрузить" />
+    </form>*@
 
 
 @*<h3>Все файлы</h3>
-@foreach (var f in ViewBag.Docs)
-{
-    <p><img src="@Url.Content(f.Path)"></p>
-}*@
+    @foreach (var f in ViewBag.Docs)
+    {
+        <p><img src="@Url.Content(f.Path)"></p>
+    }*@
 
 
 

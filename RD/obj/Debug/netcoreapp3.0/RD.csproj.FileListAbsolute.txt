@@ -417,8 +417,6 @@ C:\Users\Oleg\source\repos\RD\RD2\RD\bin\Debug\netcoreapp3.0\Pomelo.EntityFramew
 C:\Users\Oleg\source\repos\RD\RD2\RD\bin\Debug\netcoreapp3.0\Pomelo.EntityFrameworkCore.MySql.Design.dll
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\RD.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Themes\ChangingTheme.cshtml.g.cs
-C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Customers\Customer.cshtml.g.cs
-C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Counterparties\Counterparty.cshtml.g.cs
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\AnnualFinancings\AnnualFinancing.cshtml.g.cs
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\AnnualFinancings\Index.cshtml.g.cs
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Files\Index.cshtml.g.cs
@@ -446,3 +444,5 @@ C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Files\F
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Stages\StageDetail.cshtml.g.cs
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Contracts\ContractDetail.cshtml.g.cs
 C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\AnnualFinancings\ChangingAnnualFinancing.cshtml.g.cs
+C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Counterparties\ChangingCounterparty.cshtml.g.cs
+C:\Users\Oleg\source\repos\RD\RD2\RD\obj\Debug\netcoreapp3.0\Razor\Views\Customers\ChangingCustomer.cshtml.g.cs

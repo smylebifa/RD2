@@ -11,21 +11,20 @@
 
     <thead>
         <tr>
+            <th scope="col"></th>
+            <th scope="col"></th>
             <th scope="col">Имя</th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-
         </tr>
     </thead>
 
     <tbody>
         @foreach (var customer in @ViewBag.Customers)
         {
-            <tr>
-                <td>@customer.Name</td>
-                <td>@Html.ActionLink("изменить", "Customer", new { id = customer.Id })</td>
-                <td><a onclick="deleteUser('@customer.Id')" href="#"> удалить </a></td>
-            </tr>
+        <tr>
+            <td style="vertical-align:middle"><a asp-controller="Customers" asp-action="ChangingCustomer" asp-route-id="@customer.Id"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+            <td style="vertical-align:middle"><a onclick="deleteCustomer('@customer.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i></a></td>
+            <td style="vertical-align:middle">@customer.Name</td>
+        </tr>
         }
     </tbody>
 </table>
@@ -53,9 +52,9 @@
 
 
 <script type="text/javascript">
-    function deleteUser(userId) {
+    function deleteCustomer(customerId) {
         $.ajax({
-            url: '/delete_customer/' + userId,
+            url: '/delete_customer/' + customerId,
             type: 'DELETE',
             contentType: "application/json; charset=utf-8",
             success: function () {

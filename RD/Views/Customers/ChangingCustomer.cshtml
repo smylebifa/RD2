@@ -5,6 +5,9 @@
     Layout = "_Layout";
 }
 
+    <h3>Изменение заказчика</h3>
+
+
 @using (Html.BeginForm("Edit", "Customers", FormMethod.Post))
 {
     <table>
@@ -14,14 +17,16 @@
             <td style="padding: 4px;">
                 @Html.TextBoxFor(m => m.Name)
             </td>
-        </tr>        
+        </tr>
+
+        <br/>
 
         <tr>
             <td style="padding: 4px;">
             </td>
 
             <td style="padding: 4px;">
-                <input type="button" value="Отмена" onClick='location.href="/"' />
+                <input type="button" class="btn btn-outline-dark" value="Отмена" onClick='location.href="/Customers"' />
                 <input class="btn btn-primary" style="margin-left: 6px;" type="submit" value="Изменить заказчика" />
             </td>
 

@@ -1,12 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RD.Services;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
 
 namespace RD.Controllers
 {
@@ -23,12 +19,22 @@ namespace RD.Controllers
             _usersService = usersService;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string status = "")
         {
             var userClaims = HttpContext.User.Claims;
             var name = userClaims.FirstOrDefault(x => x.Type == ClaimTypes.Name)?.Value;
 
             ViewBag.UserName = name;
+
+            var currentUser = _usersService.GetUsers().FirstOrDefault(x => x.Login == name);
+
+            if (currentUser != null)
+            {
+                ViewBag.FullName = currentUser.FullName;
+            }
+
+            ViewBag.Status = status;
+
             return View();
         }
 
@@ -44,14 +50,18 @@ namespace RD.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpPost("/change_password/{oldPassword}/{newPassword}/{newPassword2}")]
         public IActionResult ChangePassword(string oldPassword, string newPassword, string newPassword2)
         {
             var userClaims = HttpContext.User.Claims;
             var name = userClaims.FirstOrDefault(x => x.Type == ClaimTypes.Name)?.Value;
 
-            _usersService.ChangePassword(name, oldPassword, newPassword, newPassword2);
-            return RedirectToAction(nameof(Index));
+            bool passwordChanged = _usersService.ChangePassword(name, oldPassword, newPassword, newPassword2);
+            if (passwordChanged)
+                return RedirectToAction("Index", "Profile", new { status = "success" });
+            else
+                return RedirectToAction("Index", "Profile", new { status = "error" });
+
+
         }
     }
 }

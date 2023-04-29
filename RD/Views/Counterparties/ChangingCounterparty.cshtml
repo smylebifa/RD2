@@ -1,0 +1,38 @@
+﻿@model RD.Models.Counterparty;
+
+@{
+    ViewBag.Title = "Редактирование соисполнителя";
+    Layout = "_Layout";
+}
+
+    <h3>Изменение соисполнителя</h3>
+
+@using (Html.BeginForm("Edit", "Counterparties", FormMethod.Post))
+{
+<table>
+    @Html.HiddenFor(m => m.Id)
+    <tr>
+        <td style="padding: 4px;">Имя:</td>
+        <td style="padding: 4px;">
+            @Html.TextBoxFor(m => m.Name)
+        </td>
+    </tr>
+
+    <br />
+
+
+    <tr>
+        <td style="padding: 4px;">
+        </td>
+
+        <td style="padding: 4px;">
+            <input type="button" class="btn btn-outline-dark" value="Отмена" onClick='location.href="/Counterparties"' />
+            <input class="btn btn-primary" style="margin-left: 6px;" type="submit" value="Изменить соисполнителя" />
+        </td>
+
+        <td style="padding: 4px;">
+        </td>
+    </tr>
+
+</table>
+}

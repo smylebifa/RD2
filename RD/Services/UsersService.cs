@@ -179,9 +179,8 @@ namespace RD.Services
 
         }
 
-        public void ChangePassword(string login, string oldPassword, string newPassword, string newPassword2)
+        public bool ChangePassword(string login, string oldPassword, string newPassword, string newPassword2)
         {
-            //var user = _dbContext.Users.FirstOrDefault(x => x.Login == login);
             //var person = _dbContext.Persons.FirstOrDefault(x => x.Login == login);
 
             //if (newPassword == newPassword2 && user.Password == oldPassword)
@@ -197,17 +196,17 @@ namespace RD.Services
             //_dbContext.SaveChanges();
 
 
-            var existing = Users.FirstOrDefault(x => x.Password == oldPassword);
+            var existing = Users.FirstOrDefault(x => x.Login == login && x.Password == oldPassword);
             if (existing != null)
             {
                 if (newPassword == newPassword2)
                 {
                     existing.Password = newPassword;
+                    return true;
                 }
-                    
             }
 
-                
+            return false;
         }
 
     }

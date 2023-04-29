@@ -35,7 +35,7 @@ namespace RD.Controllers
         }
 
         [HttpGet("/edit_customer/{id}")]
-        public new IActionResult Customer(int id)
+        public new IActionResult ChangingCustomer(int id)
         {
             var customer = _customersService.GetCustomers().FirstOrDefault(x => x.Id == id);
             return View(customer);
