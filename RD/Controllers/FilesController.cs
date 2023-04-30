@@ -45,8 +45,11 @@ namespace RD.Controllers
 
       
         [HttpPost]
-        public async Task<IActionResult> AddFile(IFormFile uploadedFile)
+        public async Task<IActionResult> AddFile(int themeId, string themeName, IFormFile uploadedFile)
         {
+            Files = _filesService.GetFiles();
+            ViewBag.Files = Files;
+
             if (uploadedFile != null)
             {
                 // путь к папке Files
@@ -63,15 +66,16 @@ namespace RD.Controllers
                     LastId++;
                 }
 
-                Models.File file = new Models.File { Id = LastId, Filename = uploadedFile.FileName, FileType = "txt", Path = filePath };
+                Models.File file = new Models.File { Id = LastId, Filename = uploadedFile.FileName, FileType = uploadedFile.ContentType, Path = filePath };
                 _filesService.AddFile(file);
             }
 
-            return RedirectToAction("ChangingFile", "Files");
+            return RedirectToAction("Index", "Stages", new {themeId, themeName });
+
         }
 
         [HttpGet("/edit_file/{id}")]
-        public new IActionResult ChangingFile(int id)
+        public IActionResult ChangingFile(int id)
         {
             var doc = _filesService.GetFiles().FirstOrDefault(x => x.Id == id);
             ViewBag.Doc = doc;

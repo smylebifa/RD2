@@ -11,8 +11,8 @@ namespace RD.Services
 
         public static List<File> Files = new List<File>
         {
-                new File(1, "file1", "docx"),
-                new File(2, "file2", "txt"),
+                new File(1, "file1.txt"),
+                new File(2, "file2.txt"),
         };
 
         public IEnumerable<File> GetFiles()

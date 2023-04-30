@@ -190,7 +190,7 @@
                             @foreach (var scientificDoc in @ViewBag.ScientificDocs)
                             {
                                 <tr>
-                                    <td style="vertical-align:middle;"><a asp-controller="Docs" asp-action="Index" class="nav-link" style="font-weight: 700;">>>></a> </td>
+                                    <td style="vertical-align:middle;"><a asp-controller="Docs" asp-action="Index" style="font-weight: 700;">>>></a> </td>
                                     <td style="vertical-align:middle;"> <a class="nav-link text-primary" asp-controller="ScientificDocs" asp-action="ChangingScientificDoc" asp-route-contractId="@scientificDoc.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
                                     <td style="vertical-align:middle;"><a onclick="deleteScientificDoc('@scientificDoc.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"> </a></td>
 

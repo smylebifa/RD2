@@ -46,7 +46,7 @@ namespace RD.Controllers
             var contract = _contractsService.GetContracts().FirstOrDefault(x => x.ThemeId == themeId && x.Id == contractId);
             ViewBag.CurrentContract = contract;
 
-            var stages = _stageService.GetStages();
+            var stages = _stageService.GetStages().FirstOrDefault(x => x.ThemeId == themeId && x.Id == contractId); 
             ViewBag.Stages = stages;
 
             var files = _filesService.GetFiles();

@@ -79,6 +79,64 @@
         border: 1px solid #ccc;
         border-top: none;
     }
+
+    .input-file {
+	position: relative;
+	display: inline-block;
+}
+.input-file-btn {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+	text-decoration: none;
+	font-size: 14px;
+	vertical-align: middle;
+	color: rgb(255 255 255);
+	text-align: center;
+	border-radius: 4px;
+	background-color: #007bff;
+	line-height: 22px;
+	height: 40px;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	border: none;
+	margin: 0;
+	transition: background-color 0.2s;
+}
+.input-file-text {
+	padding: 0 10px;
+	line-height: 40px;
+	display: inline-block;
+}
+.input-file input[type=file] {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	display: block;
+	width: 0;
+	height: 0;
+}
+ 
+/* Focus */
+.input-file input[type=file]:focus + .input-file-btn {
+	box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+ 
+/* Hover/active */
+.input-file:hover .input-file-btn {
+	background-color: #007bff;
+}
+.input-file:active .input-file-btn {
+	background-color: rgba(0,123,255,.25);
+}
+ 
+/* Disabled */
+.input-file input[type=file]:disabled + .input-file-btn {
+	background-color: #eee;
+}
+
+
 </style>
 
 
@@ -630,18 +688,39 @@
                             @foreach (var file in @ViewBag.Files)
                             {
                                 <tr>
-                                    <td>@file.Filename.@file.FileType</td>
+                                    <td>@file.Filename</td>
                                     <td><a href="#">  </a></td>
                                     <td><a onclick="deleteFile('@file.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
                                 </tr>
                             }
+
+                            @*@foreach (var file in ViewBag.Docs)
+                {
+                    <a href="docs/@file.NameDoc.@file.DocType" download="@file.NameDoc.@file.DocType">
+                        @file.NameDoc
+                    </a>
+                }*@
+                            <tr>
+                            </tr>
                         </tbody>
                     </table>
 
-                    <form asp-action="AddFile" asp-controller="Files" method="post" enctype="multipart/form-data">
-                        <input type="file" name="uploadedFile" />
-                        <input type="submit" value="Сохранить">
+                    <form asp-action="AddFile" style="padding-left:200px;" asp-controller="Files" method="post" enctype="multipart/form-data">
+
+                        <input type="number" name="themeId" value="@ViewBag.ThemeId" hidden />
+                        <input type="text" name="themeName" value="@ViewBag.ThemeName" hidden />
+                        <td style="align-content:center;">
+                         @*   <input type="file" name="uploadedFile" />*@
+                            <label class="input-file">
+                                <input type="file" name="uploadedFile">
+                                <span class="input-file-btn">Выберите файл</span>
+                                <span class="input-file-text">Выбранный файл</span>
+                            </label>
+
+                            <input type="submit" class="btn btn-outline-primary" value="Добавить">
+                        </td>
                     </form>
+
                 </div>
             </div>
 
@@ -694,6 +773,12 @@
             }
         })
     }
+
+$('.input-file input[type=file]').on('change', function(){
+	let file = this.files[0];
+	$(this).closest('.input-file').find('.input-file-text').html(file.name);
+});
+
 </script>
 
 <script type="text/javascript">
