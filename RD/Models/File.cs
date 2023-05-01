@@ -13,34 +13,36 @@ namespace RD.Models
         public string? FileType { get; set; }
         public string Path { get; set; }
 
+        public File()
+        {
+        }
+
         public File(int id, string? filename)
         {
             Id = id;
             Filename = filename;
         }
 
-        public File(int id, string? filename, string? fileType)
+        ////public File(string? filename)
+        ////{
+        ////    Filename = filename;
+        ////}
+
+
+        public File(int id, string? filename, string path)
         {
             Id = id;
             Filename = filename;
-            FileType = fileType;
-        }
-
-        public File(string? filename)
-        {
-            Filename = filename;
-        }
-
-        public File(int id, string? filename, string fileType, string path)
-        {
-            Id = id;
-            Filename  = filename;
-            FileType = fileType;
             Path = path;
         }
 
-        public File()
+        public File(int id, string? filename, string path, string fileType)
         {
+            Id = id;
+            Filename = filename;
+            Path = path;
+            FileType = fileType;
         }
+
     }
 }

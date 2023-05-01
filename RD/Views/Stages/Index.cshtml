@@ -95,7 +95,7 @@
 	color: rgb(255 255 255);
 	text-align: center;
 	border-radius: 4px;
-	background-color: #007bff;
+	background-color: #1b6ec2;
 	line-height: 22px;
 	height: 40px;
 	padding: 10px 20px;
@@ -688,7 +688,11 @@
                             @foreach (var file in @ViewBag.Files)
                             {
                                 <tr>
-                                    <td>@file.Filename</td>
+                                    <td>
+                                        <a href="files/@file.Filename" download="@file.Filename">
+                                            @file.Filename
+                                        </a>
+                                    </td>
                                     <td><a href="#">  </a></td>
                                     <td><a onclick="deleteFile('@file.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
                                 </tr>

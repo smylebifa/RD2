@@ -11,8 +11,7 @@ namespace RD.Services
 
         public static List<File> Files = new List<File>
         {
-                new File(1, "file1.txt"),
-                new File(2, "file2.txt"),
+                new File(1, "file1.txt", "/files/file3.txt"),
         };
 
         public IEnumerable<File> GetFiles()
@@ -119,7 +118,7 @@ namespace RD.Services
                 return;
         }
 
-        public void DeleteFile(int id)
+        public void DeleteFile(int id, string rootPath)
         {
             //var existing = _dbContext.Users.FirstOrDefault(x => x.Id == id);
             //var person = _dbContext.Persons.FirstOrDefault(x => x.Id == id);
@@ -136,6 +135,8 @@ namespace RD.Services
             if (existing == null)
                 return;
             Files.Remove(existing);
+
+            System.IO.File.Delete(rootPath + existing.Path);
         }
 
     }

@@ -53,21 +53,28 @@ namespace RD.Controllers
             if (uploadedFile != null)
             {
                 // путь к папке Files
-                string filePath = "/docs/" + uploadedFile.FileName;
+                string filePath = "/files/" + uploadedFile.FileName;
                 // сохраняем файл в папку Files в каталоге wwwroot
                 using (var fileStream = new FileStream(dirPath + filePath, FileMode.Create))
                 {
                     await uploadedFile.CopyToAsync(fileStream);
                 }
 
-                int LastId = Files.Max(file => file.Id);
-                if (LastId is int)
+                if (Files.Count() < 1 || Files == null)
                 {
-                    LastId++;
+                    Models.File file = new Models.File { Id = 1, Filename = uploadedFile.FileName, Path = filePath, FileType = uploadedFile.ContentType };
+                    _filesService.AddFile(file);
                 }
 
-                Models.File file = new Models.File { Id = LastId, Filename = uploadedFile.FileName, FileType = uploadedFile.ContentType, Path = filePath };
-                _filesService.AddFile(file);
+                else
+                {
+                    int LastId = Files.Max(file => file.Id);
+                        LastId++;
+
+                    Models.File file = new Models.File { Id = LastId, Filename = uploadedFile.FileName, Path = filePath, FileType = uploadedFile.ContentType};
+                    _filesService.AddFile(file);
+                }
+                
             }
 
             return RedirectToAction("Index", "Stages", new {themeId, themeName });
@@ -92,7 +99,7 @@ namespace RD.Controllers
         [HttpDelete("/delete_file/{id}")]
         public IActionResult Delete(int id)
         {
-            _filesService.DeleteFile(id);
+            _filesService.DeleteFile(id, _appEnvironment.WebRootPath);
             return Ok();
         }
 
