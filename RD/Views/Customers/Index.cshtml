@@ -5,7 +5,11 @@
     Layout = "_Layout";
 }
 
-    <h3>Заказчики</h3>
+<div id="modDialog" class="modal fade">
+    <div id="dialogContent" class="modal-dialog"></div>
+</div>
+
+<h3>Заказчики</h3>
 
 <table class="table table-hover " style="text-align: center;">
 
@@ -13,36 +17,36 @@
         <tr>
             <th scope="col"></th>
             <th scope="col"></th>
-            <th scope="col">Имя</th>
+            <th scope="col">Наименование</th>
         </tr>
     </thead>
 
     <tbody>
         @foreach (var customer in @ViewBag.Customers)
         {
-        <tr>
-            <td style="vertical-align:middle"><a asp-controller="Customers" asp-action="ChangingCustomer" asp-route-id="@customer.Id"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
-            <td style="vertical-align:middle"><a onclick="deleteCustomer('@customer.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i></a></td>
-            <td style="vertical-align:middle">@customer.Name</td>
-        </tr>
+            <tr>
+                <td style="vertical-align:middle"><a asp-controller="Customers" asp-action="ChangingCustomer" asp-route-id="@customer.Id"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                <td style="vertical-align:middle"><a onclick="deleteCustomer('@customer.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                <td style="vertical-align:middle">@customer.Name</td>
+            </tr>
         }
     </tbody>
 </table>
 <form method="post" asp-action="Customers" class="my-5 col-5" style="border-style: dashed; border-width:thin; border-color: #343a40; padding: 8px; ">
     <table>
-        <h4>Добавление заказчиков</h4>
+        <h4>Добавление заказчика</h4>
 
         <tr>
-            <td style="padding: 4px;">Имя:</td>
+            <td style="padding: 4px;">Наименование:</td>
             <td style="padding: 4px;">
-                <input name="Name" />
+                <input type="text" required name="Name" />
             </td>
         </tr>
 
 
         <tr>
             <td style="padding: 2px;">
-                <input type="submit"  class="btn btn-primary" value="Добавить" />
+                <input type="submit" class="btn btn-primary" value="Добавить" />
             </td>
             <td></td>
         </tr>
@@ -66,3 +70,24 @@
         })
     }
 </script>
+
+
+@if (ViewBag.Status == "success")
+{
+    <script type="text/javascript">
+            $.get(this.href, function () {
+                $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Сообщение</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Статус:</dt> <dd>Заказчик был добавлен в справочник</dd> </dl> </div> </div>');
+                $('#modDialog').modal('show');
+            });
+    </script>
+}
+
+else if (ViewBag.Status == "error")
+{
+    <script type="text/javascript">
+                $.get(this.href, function () {
+                    $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Заказчик не был добавлен. Возможно уже существует заказчик с таким именем.</dd> </dl> </div> </div>');
+                    $('#modDialog').modal('show');
+                });
+    </script>
+}

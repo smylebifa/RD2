@@ -9,114 +9,119 @@ namespace RD.Services
     public class CounterpartiesService
     {
 
-            public static List<Counterparty> Counterparties = new List<Counterparty>
+        public static List<Counterparty> Counterparties = new List<Counterparty>
         {
                 new Counterparty(1, "Петров И. Н.")
         };
 
-            public IEnumerable<Counterparty> GetCounterparties()
-            {
-                return Counterparties;
-                //return _dbContext.Users.ToArray();
-            }
+        public IEnumerable<Counterparty> GetCounterparties()
+        {
+            return Counterparties;
+            //return _dbContext.Users.ToArray();
+        }
 
-            public void AddCounterparty(Counterparty counterparty)
-            {
-                if (Counterparties.Any(x => x.Name == counterparty.Name))
-                    throw new ArgumentException("User with such login already exists.");
+        public bool AddCounterparty(Counterparty counterparty)
+        {
+            if (Counterparties.Any(x => x.Name == counterparty.Name))
+                return false;
 
+            if (Counterparties.Count() < 1 || Counterparties == null)
+                counterparty.Id = 1;
+            else
+            {
                 int LastId = Counterparties.Max(user => user.Id);
-                if (LastId is int)
-                {
                 counterparty.Id = LastId + 1;
-
-                Counterparties.Add(counterparty);
-                }
-
-                //if (_dbContext.Users.Any(x => x.Login == user.Login))
-                //    throw new ArgumentException("User with such name already exists.");
-
-                //_dbContext.Users.Add(user);
-
-                //var salt = RandomString(10);
-                //var newPerson = new Person()
-                //{
-                //    Id = user.Id,
-                //    Login = user.Login,
-                //    PasswordHash = Hash(user.Password + salt),
-                //    Salt = salt,
-                //};
-
-                //_dbContext.Persons.Add(newPerson);
-
-                //_dbContext.SaveChanges();
             }
 
-            public void UpdateCounterparty(Counterparty counterparty)
-            {
-                //var existing = _dbContext.Users.FirstOrDefault(x => x.Id == user.Id);
+            Counterparties.Add(counterparty);
 
-                //if (existing == null)
-                //    return;
-
-                //existing.Login = user.Login;
-                //existing.Password = user.Password;
-                //existing.IsActive= true;
-
-                //_dbContext.SaveChanges();
-
-                var existing = Counterparties.FirstOrDefault(x => x.Id == counterparty.Id);
-                if (existing == null)
-                    return;
-
-                existing.Name = counterparty.Name;
-
-            }
-
-            public void DeleteCounterparty(int id)
-            {
-                //var existing = _dbContext.Users.FirstOrDefault(x => x.Id == id);
-                //var person = _dbContext.Persons.FirstOrDefault(x => x.Id == id);
-
-                //if (existing == null)
-                //    return;
-
-                //_dbContext.Users.Remove(existing);
-                //_dbContext.Persons.Remove(person);
-
-                //_dbContext.SaveChanges();
-
-                var existing = Counterparties.FirstOrDefault(x => x.Id == id);
-                if (existing == null)
-                    return;
-                Counterparties.Remove(existing);
-            }
+            return true;
 
 
-            //public bool ChangeLogin(string oldLogin, string newLogin)
+            //if (_dbContext.Users.Any(x => x.Login == user.Login))
+            //    throw new ArgumentException("User with such name already exists.");
+
+            //_dbContext.Users.Add(user);
+
+            //var salt = RandomString(10);
+            //var newPerson = new Person()
             //{
-            //    //var existing = _dbContext.Users.FirstOrDefault(x => x.Login == newLogin);
-            //    //var user = _dbContext.Users.FirstOrDefault(x => x.Login == oldLogin);
-            //    //var person = _dbContext.Persons.FirstOrDefault(x => x.Login == oldLogin);
+            //    Id = user.Id,
+            //    Login = user.Login,
+            //    PasswordHash = Hash(user.Password + salt),
+            //    Salt = salt,
+            //};
 
-            //    //if (existing != null)
-            //    //    return false;
+            //_dbContext.Persons.Add(newPerson);
 
-            //    //user.Login = newLogin;
-            //    //person.Login = newLogin;
+            //_dbContext.SaveChanges();
+        }
 
-            //    //_dbContext.SaveChanges();
+        public void UpdateCounterparty(Counterparty counterparty)
+        {
+            //var existing = _dbContext.Users.FirstOrDefault(x => x.Id == user.Id);
 
-            //    var existing = Users.FirstOrDefault(x => x.Login == oldLogin);
-            //    if (existing != null)
+            //if (existing == null)
+            //    return;
 
-            //        existing.Login = newLogin;
+            //existing.Login = user.Login;
+            //existing.Password = user.Password;
+            //existing.IsActive= true;
 
-            //    return true;
+            //_dbContext.SaveChanges();
 
-            //}
+            var existing = Counterparties.FirstOrDefault(x => x.Id == counterparty.Id);
+            if (existing == null)
+                return;
+
+            existing.Name = counterparty.Name;
+
+        }
+
+        public void DeleteCounterparty(int id)
+        {
+            //var existing = _dbContext.Users.FirstOrDefault(x => x.Id == id);
+            //var person = _dbContext.Persons.FirstOrDefault(x => x.Id == id);
+
+            //if (existing == null)
+            //    return;
+
+            //_dbContext.Users.Remove(existing);
+            //_dbContext.Persons.Remove(person);
+
+            //_dbContext.SaveChanges();
+
+            var existing = Counterparties.FirstOrDefault(x => x.Id == id);
+            if (existing == null)
+                return;
+            Counterparties.Remove(existing);
+        }
+
+
+        //public bool ChangeLogin(string oldLogin, string newLogin)
+        //{
+        //    //var existing = _dbContext.Users.FirstOrDefault(x => x.Login == newLogin);
+        //    //var user = _dbContext.Users.FirstOrDefault(x => x.Login == oldLogin);
+        //    //var person = _dbContext.Persons.FirstOrDefault(x => x.Login == oldLogin);
+
+        //    //if (existing != null)
+        //    //    return false;
+
+        //    //user.Login = newLogin;
+        //    //person.Login = newLogin;
+
+        //    //_dbContext.SaveChanges();
+
+        //    var existing = Users.FirstOrDefault(x => x.Login == oldLogin);
+        //    if (existing != null)
+
+        //        existing.Login = newLogin;
+
+        //    return true;
+
+        //}
 
 
 
-}
+    }
 }

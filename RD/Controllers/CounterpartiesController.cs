@@ -21,18 +21,27 @@ namespace RD.Controllers
             _counterpartiesService = counterpartiesService;
         }
 
-        public ActionResult Index()
+        public ActionResult Index(string status = "")
         {
             var counterparties = _counterpartiesService.GetCounterparties();
             ViewBag.Counterparties = counterparties;
+            ViewBag.Status = status; 
             return View();
         }
 
         [HttpPost]
         public IActionResult Counterparties(Counterparty counterparty)
         {
-            _counterpartiesService.AddCounterparty(counterparty);
-            return RedirectToAction(nameof(Index));
+            bool counterpartyWasAdded = _counterpartiesService.AddCounterparty(counterparty);
+            if (counterpartyWasAdded)
+            {
+                return RedirectToAction("Index", "Counterparties", new { status = "success" });
+            }
+
+            else
+            {
+                return RedirectToAction("Index", "Counterparties", new { status = "error" });
+            }
         }
 
         [HttpGet("/edit_counterparty/{id}")]

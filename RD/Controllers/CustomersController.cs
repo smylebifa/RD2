@@ -20,18 +20,29 @@ namespace RD.Controllers
             _customersService = customersService;
         }
 
-        public ActionResult Index()
+        public ActionResult Index(string status = "")
         {
             var customers = _customersService.GetCustomers();
             ViewBag.Customers = customers;
+            ViewBag.Status = status;
             return View();
         }
 
         [HttpPost]
         public IActionResult Customers(Customer customer)
         {
-            _customersService.AddCustomer(customer);
-            return RedirectToAction(nameof(Index));
+            bool customerWasAdded = _customersService.AddCustomer(customer);
+            
+            if (customerWasAdded)
+            {
+                return RedirectToAction("Index", "Customers", new { status = "success" });
+            }
+
+            else 
+            {
+                return RedirectToAction("Index", "Customers", new { status = "error" });
+            }
+
         }
 
         [HttpGet("/edit_customer/{id}")]

@@ -5,6 +5,10 @@
     Layout = "_Layout";
 }
 
+<div id="modDialog" class="modal fade">
+    <div id="dialogContent" class="modal-dialog"></div>
+</div>
+
 
 <h3>Соисполнители</h3>
 
@@ -14,19 +18,19 @@
         <tr>
             <th scope="col"></th>
             <th scope="col"></th>
-            <th scope="col">Имя</th>
+            <th scope="col">Наименование</th>
         </tr>
     </thead>
 
     <tbody>
         @foreach (var counterparty in @ViewBag.Counterparties)
         {
-        <tr>
-            <td style="vertical-align:middle"><a asp-controller="Counterparties" asp-action="ChangingCounterparty" asp-route-id="@counterparty.Id"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
-            <td style="vertical-align:middle"><a onclick="deleteCounterparty('@counterparty.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i></a></td>
-            <td style="vertical-align:middle">@counterparty.Name</td>
-            <td></td>
-        </tr>
+            <tr>
+                <td style="vertical-align:middle"><a asp-controller="Counterparties" asp-action="ChangingCounterparty" asp-route-id="@counterparty.Id"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                <td style="vertical-align:middle"><a onclick="deleteCounterparty('@counterparty.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                <td style="vertical-align:middle">@counterparty.Name</td>
+                <td></td>
+            </tr>
         }
     </tbody>
 </table>
@@ -35,16 +39,16 @@
         <h4>Добавление соисполнителя</h4>
 
         <tr>
-            <td style="padding: 4px;">Имя:</td>
+            <td style="padding: 4px;">Наименование:</td>
             <td style="padding: 4px;">
-                <input name="Name" />
+                <input type="text" required name="Name" />
             </td>
         </tr>
 
 
         <tr>
             <td style="padding: 2px;">
-                <input type="submit"  class="btn btn-primary" value="Добавить" />
+                <input type="submit" class="btn btn-primary" value="Добавить" />
             </td>
             <td></td>
         </tr>
@@ -54,17 +58,38 @@
 
 
 <script type="text/javascript">
-        function deleteCounterparty(counterpartyId) {
-            $.ajax({
-                url: '/delete_counterparty/' + counterpartyId,
-                type: 'DELETE',
-                contentType: "application/json; charset=utf-8",
-                success: function () {
-                    location.reload()
-                },
-                error: function () {
-                    alert("Ошибка выполнения!")
-                }
-            })
-        }
+    function deleteCounterparty(counterpartyId) {
+        $.ajax({
+            url: '/delete_counterparty/' + counterpartyId,
+            type: 'DELETE',
+            contentType: "application/json; charset=utf-8",
+            success: function () {
+                location.reload()
+            },
+            error: function () {
+                alert("Ошибка выполнения!")
+            }
+        })
+    }
 </script>
+
+
+@if (ViewBag.Status == "success")
+{
+    <script type="text/javascript">
+        $.get(this.href, function () {
+            $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Сообщение</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Статус:</dt> <dd>Соисполнитель был добавлен в справочник</dd> </dl> </div> </div>');
+            $('#modDialog').modal('show');
+        });
+    </script>
+}
+
+else if (ViewBag.Status == "error")
+{
+    <script type="text/javascript">
+        $.get(this.href, function () {
+            $('#dialogContent').html('<div class="modal-content"> <div class="modal-header"><h4>Ошибка</h4><button class="close" data-dismiss="modal" area-hidden="true">x</button></div><div class="modal-body"> <dl class="dl-horizontal"> <dt>Ошибка:</dt> <dd>Соисполнитель не был добавлен. Возможно уже существует соисполнитель с таким именем.</dd> </dl> </div> </div>');
+            $('#modDialog').modal('show');
+        });
+    </script>
+}
