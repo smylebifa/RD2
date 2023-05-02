@@ -6,23 +6,10 @@
 
     var CurTheme = ViewBag.CurrentTheme;
 
-    var el = 0;
-
-    if (CurTheme.DocType == "Гос.Контракт")
-
-        el = 0;
-    else if (CurTheme.DocType == "Договор")
-        el = 1;
-    else if (CurTheme.DocType == "Контракт")
-        el = 2;
-    else if (CurTheme.DocType == "Хоз.договора")
-        el = 3;
-
     string WorkStart = "";
     string WorkEnd = "";
 
     bool customOption = true;
-
 }
 
 @{
@@ -88,7 +75,6 @@
         <tr>
             <td style="padding: 4px;">Заказчик работы:</td>
             <td style="padding: 4px;">
-                @*<input type="text" name="CustomerName" />*@
                 <select name="CustomerName" id="model">
                     <option value=""> </option>
                     @foreach (var customer in @ViewBag.Customers)
@@ -210,21 +196,6 @@
         </tr>
 
 
-
-
-        @*@Html.DropDownListFor(model => model.TeamId, ViewBag.Teams as SelectList)*@
-
-
-        @*<td style="padding: 4px;">
-                <select name="DocType" size="1">
-                    <option @{if (el= =0) { @("selected") } } value="Гос. Контракт">Гос. Контракт</option>
-                    <option @{if (el= =1) "selected" } value="Договор">Договор</option>
-                    <option @{if (el= =2) "selected" } value="Контракт">Контракт</option>
-                    <option @{if (el= =3) "selected" } value="Хоз. договора">Хоз. договора</option>
-                </select>
-            </td>*@
-
-
     <tr>
         <td style="padding: 4px;">Вид исследования:</td>
         <td style="padding: 4px;">
@@ -318,13 +289,6 @@
 
     </tr>
 
-        @*<tr>
-                <td style="padding: 4px;">Область знания:</td>
-                <td style="padding: 4px;">
-                    <input type="text" name="Knowledge" value="@ViewBag.CurrentTheme.Knowledge" />
-                </td>
-            </tr>*@
-
         <tr>
             <td style="padding: 4px;">Область знаний:</td>
             <td style="padding: 4px; width: 300px;">
@@ -399,67 +363,6 @@
                     <option value="Космические исследования">Космические исследования</option>
                     <option value="Метрология">Метрология</option>
                     <option value="" selected> </option>
-
-                    @*@if (@ViewBag.CurrentTheme.Knowledge == "Общественные науки в целом")
-                        {
-                            <option value="Общественные науки в целом" selected>Общественные науки в целом</option>
-                            <option value="Философия">Философия</option>
-                            <option value="История">История</option>
-                            <option value="Социология">Социология</option>
-                            <option value="Демография">Демография</option>
-                            <option value=""> </option>
-                        }
-
-                        else if (@ViewBag.CurrentTheme.Knowledge == "Философия")
-                        {
-                            <option value="Общественные науки в целом">Общественные науки в целом</option>
-                            <option value="Философия" selected>Философия</option>
-                            <option value="История">История</option>
-                            <option value="Социология">Социология</option>
-                            <option value="Демография">Демография</option>
-                            <option value=""> </option>
-                        }
-
-                        else if (@ViewBag.CurrentTheme.Knowledge == "История")
-                        {
-                            <option value="Общественные науки в целом">Общественные науки в целом</option>
-                            <option value="Философия">Философия</option>
-                            <option value="История" selected>История</option>
-                            <option value="Социология">Социология</option>
-                            <option value="Демография">Демография</option>
-                            <option value=""> </option>
-                        }
-
-                        else if (@ViewBag.CurrentTheme.Knowledge == "Социология")
-                        {
-                            <option value="Общественные науки в целом">Общественные науки в целом</option>
-                            <option value="Философия">Философия</option>
-                            <option value="История">История</option>
-                            <option value="Социология" selected>Социология</option>
-                            <option value="Демография">Демография</option>
-                            <option value=""> </option>
-
-                        }
-
-                        else if (@ViewBag.CurrentTheme.Knowledge == "Демография")
-                        {
-                            <option value="Общественные науки в целом">Общественные науки в целом</option>
-                            <option value="Философия">Философия</option>
-                            <option value="История">История</option>
-                            <option value="Социология">Социология</option>
-                            <option value="Демография" selected>Демография</option>
-                            <option value=""> </option>
-                        }
-
-                        else
-                        {
-                            <option value="Общественные науки в целом">Общественные науки в целом</option>
-                            <option value="Философия">Философия</option>
-                            <option value="История">История</option>
-                            <option value="Социология">Социология</option>
-                            <option value="Демография">Демография</option>
-                            <option value="" selected> </option>
-                        }*@
 
                 </select>
             </td>

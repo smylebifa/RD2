@@ -46,7 +46,7 @@ namespace RD.Controllers
             var contract = _contractsService.GetContracts().FirstOrDefault(x => x.ThemeId == themeId && x.Id == contractId);
             ViewBag.CurrentContract = contract;
 
-            var stages = _stageService.GetStages().FirstOrDefault(x => x.ThemeId == themeId && x.Id == contractId); 
+            var stages = _stageService.GetStages().Where(x => x.ThemeId == themeId && x.Id == contractId);
             ViewBag.Stages = stages;
 
             var files = _filesService.GetFiles();
@@ -58,6 +58,7 @@ namespace RD.Controllers
 
             ViewBag.ThemeId = themeId;
             ViewBag.ThemeName = themeName;
+            
 
             return View();
         }
@@ -102,7 +103,7 @@ namespace RD.Controllers
 
             ThemeId = themeId;
             ThemeName = themeName;
-            
+
             Counterparties = _counterpartiesService.GetCounterparties();
 
             ViewBag.Counterparties = Counterparties;
@@ -124,7 +125,7 @@ namespace RD.Controllers
         {
             _contractsService.DeleteContract(id);
             return Ok();
-        }  
+        }
 
     }
 }

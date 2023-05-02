@@ -81,62 +81,64 @@
     }
 
     .input-file {
-	position: relative;
-	display: inline-block;
-}
-.input-file-btn {
-	position: relative;
-	display: inline-block;
-	cursor: pointer;
-	outline: none;
-	text-decoration: none;
-	font-size: 14px;
-	vertical-align: middle;
-	color: rgb(255 255 255);
-	text-align: center;
-	border-radius: 4px;
-	background-color: #1b6ec2;
-	line-height: 22px;
-	height: 40px;
-	padding: 10px 20px;
-	box-sizing: border-box;
-	border: none;
-	margin: 0;
-	transition: background-color 0.2s;
-}
-.input-file-text {
-	padding: 0 10px;
-	line-height: 40px;
-	display: inline-block;
-}
-.input-file input[type=file] {
-	position: absolute;
-	z-index: -1;
-	opacity: 0;
-	display: block;
-	width: 0;
-	height: 0;
-}
- 
-/* Focus */
-.input-file input[type=file]:focus + .input-file-btn {
-	box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
-}
- 
-/* Hover/active */
-.input-file:hover .input-file-btn {
-	background-color: #007bff;
-}
-.input-file:active .input-file-btn {
-	background-color: rgba(0,123,255,.25);
-}
- 
-/* Disabled */
-.input-file input[type=file]:disabled + .input-file-btn {
-	background-color: #eee;
-}
+        position: relative;
+        display: inline-block;
+    }
 
+    .input-file-btn {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        outline: none;
+        text-decoration: none;
+        font-size: 14px;
+        vertical-align: middle;
+        color: rgb(255 255 255);
+        text-align: center;
+        border-radius: 4px;
+        background-color: #1b6ec2;
+        line-height: 22px;
+        height: 40px;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        border: none;
+        margin: 0;
+        transition: background-color 0.2s;
+    }
 
+    .input-file-text {
+        padding: 0 10px;
+        line-height: 40px;
+        display: inline-block;
+    }
+
+    .input-file input[type=file] {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        display: block;
+        width: 0;
+        height: 0;
+    }
+
+        /* Focus */
+        .input-file input[type=file]:focus + .input-file-btn {
+            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+        }
+
+    /* Hover/active */
+    .input-file:hover .input-file-btn {
+        background-color: #007bff;
+    }
+
+    .input-file:active .input-file-btn {
+        background-color: rgba(0,123,255,.25);
+    }
+
+    /* Disabled */
+    .input-file input[type=file]:disabled + .input-file-btn {
+        background-color: #eee;
+    }
 </style>
 
 
@@ -480,20 +482,20 @@
                     </tr>
 
                     @*<tr>
-            <td style="padding: 4px;">Статус:</td>
-            <td style="padding: 4px;">
-                <input type="text" name="Status" value="@ViewBag.CurrentTheme.Status" />
-            </td>
-        </tr>*@
+                            <td style="padding: 4px;">Статус:</td>
+                            <td style="padding: 4px;">
+                                <input type="text" name="Status" value="@ViewBag.CurrentTheme.Status" />
+                            </td>
+                        </tr>*@
 
 
                     @*@(ViewBag.Trls.Trl1_1 && ViewBag.Trls.Trl1_2 && ViewBag.Trls.Trl1_3 && ViewBag.Trls.Trl1_4 && ViewBag.Trls.Trl1_5 ? "checked=\"checked\"" : "")
 
-        <td style="padding: 4px;">
-                @Html.TextBoxFor(m => m.ResearchType)
-            </td>*@
+                        <td style="padding: 4px;">
+                                @Html.TextBoxFor(m => m.ResearchType)
+                            </td>*@
 
-                    
+
                     <tr>
                         <td style="padding: 4px;">
                         </td>
@@ -554,7 +556,7 @@
 
 
                             @{int i = 1; double trlSum1 = 0.0; double trlSum2 = 0.0; double trlSum3 = 0.0;
-                                 double trlSum1Percent = 0.0; double trlSum2Percent = 0.0; double trlSum3Percent = 0.0;}
+                                double trlSum1Percent = 0.0; double trlSum2Percent = 0.0; double trlSum3Percent = 0.0;}
                             @foreach (var stage in @ViewBag.Stages)
                             {
                                 if (@stage.TRL1 > 0.0)
@@ -699,11 +701,11 @@
                             }
 
                             @*@foreach (var file in ViewBag.Docs)
-                {
-                    <a href="docs/@file.NameDoc.@file.DocType" download="@file.NameDoc.@file.DocType">
-                        @file.NameDoc
-                    </a>
-                }*@
+                                {
+                                    <a href="docs/@file.NameDoc.@file.DocType" download="@file.NameDoc.@file.DocType">
+                                        @file.NameDoc
+                                    </a>
+                                }*@
                             <tr>
                             </tr>
                         </tbody>
@@ -714,7 +716,7 @@
                         <input type="number" name="themeId" value="@ViewBag.ThemeId" hidden />
                         <input type="text" name="themeName" value="@ViewBag.ThemeName" hidden />
                         <td style="align-content:center;">
-                         @*   <input type="file" name="uploadedFile" />*@
+                            @*   <input type="file" name="uploadedFile" />*@
                             <label class="input-file">
                                 <input type="file" name="uploadedFile">
                                 <span class="input-file-btn">Выберите файл</span>
@@ -730,34 +732,34 @@
 
             <br /><br />
 
-                  <div style="box-shadow: 0 1px 2px 3px #e9e8e8; padding: 8px; ">
+            <div style="box-shadow: 0 1px 2px 3px #e9e8e8; padding: 8px; ">
 
-                      <h3 style="padding: 8px;">Финансирование по годам <a asp-controller="AnnualFinancings" asp-action="AnnualFinancing" asp-route-themeId="@ViewBag.ThemeId" asp-route-themeName="@ViewBag.ThemeName"> + </a> </h3>
+                <h3 style="padding: 8px;">Финансирование по годам <a asp-controller="AnnualFinancings" asp-action="AnnualFinancing" asp-route-themeId="@ViewBag.ThemeId" asp-route-themeName="@ViewBag.ThemeName"> + </a> </h3>
 
 
-                      <table class="table table-hover " style="text-align: center;">
-                          <thead>
-                              <tr>
-                                  <th scope="col"></th>
-                                  <th scope="col"></th>
-                                  <th scope="col">Год</th>
-                                  <th scope="col">Сумма</th>
-                              </tr>
-                          </thead>
-                          <tbody>
+                <table class="table table-hover " style="text-align: center;">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col">Год</th>
+                            <th scope="col">Сумма</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                              @foreach (var annualFinancing in @ViewBag.AnnualFinancings)
-                              {
-                                  <tr>
-                                      <td> <a asp-controller="AnnualFinancings" asp-action="ChangingAnnualFinancing" asp-route-annualFinancingId="@annualFinancing.Id" asp-route-themeName="@ViewBag.ThemeName"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
-                                      <td><a onclick="deleteAnnualFinancing('@annualFinancing.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
-                                      <td>@annualFinancing.Year</td>
-                                      <td>@annualFinancing.Amount</td>
-                                  </tr>
-                              }
-                          </tbody>
-                      </table>
-                  </div>
+                        @foreach (var annualFinancing in @ViewBag.AnnualFinancings)
+                        {
+                            <tr>
+                                <td> <a asp-controller="AnnualFinancings" asp-action="ChangingAnnualFinancing" asp-route-annualFinancingId="@annualFinancing.Id" asp-route-themeName="@ViewBag.ThemeName"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                                <td><a onclick="deleteAnnualFinancing('@annualFinancing.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
+                                <td>@annualFinancing.Year</td>
+                                <td>@annualFinancing.Amount</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
@@ -778,10 +780,10 @@
         })
     }
 
-$('.input-file input[type=file]').on('change', function(){
-	let file = this.files[0];
-	$(this).closest('.input-file').find('.input-file-text').html(file.name);
-});
+    $('.input-file input[type=file]').on('change', function () {
+        let file = this.files[0];
+        $(this).closest('.input-file').find('.input-file-text').html(file.name);
+    });
 
 </script>
 
