@@ -70,7 +70,7 @@
     <div class="row" style="align-items:center">
         <div class="col-sm-5">
 
-            <form method="post" asp-action="Edit" asp-controller="Stages" class="my-2 col-10" style="box-shadow: 0 1px 2px 3px #e9e8e8; padding: 8px; ">
+            <form method="post" asp-action="Edit" asp-controller="Stages" class="my-2 col-10" style="box-shadow: 0 1px 2px 3px #e9e8e8; padding: 8px; min-width: 360px;">
 
                 <h3 style="color: #343a40; padding: 8px;">Этап - @ViewBag.Stage.StageName </h3>
 
@@ -153,7 +153,7 @@
 
         </div>
 
-        <div class="col-sm-7">
+        <div class="col-sm-7" style="padding-left: 145px;">
 
             <div style="box-shadow: 0 1px 2px 3px #e9e8e8; padding: 8px; ">
                 <div class="tab" style="border:none;">
@@ -171,37 +171,38 @@
 
                     <h3 style="padding: 8px;">Научно-техническая документация <a asp-controller="ScientificDocs" asp-action="ScientificDoc"> + </a> </h3>
 
+                    <div style="overflow-x:auto;">
+                        <table class="table table-hover " style="text-align: center;">
 
-                    <table class="table table-hover " style="text-align: center;">
-
-                        <thead>
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                                <th scope="col">Результат</th>
-                                <th scope="col">Уточнение</th>
-                                <th scope="col">Местоположение</th>
-                                <th scope="col">Примечание</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            @foreach (var scientificDoc in @ViewBag.ScientificDocs)
-                            {
+                            <thead>
                                 <tr>
-                                    <td style="vertical-align:middle;"><a asp-controller="Docs" asp-action="Index" style="font-weight: 700;">>>></a> </td>
-                                    <td style="vertical-align:middle;"> <a class="nav-link text-primary" asp-controller="ScientificDocs" asp-action="ChangingScientificDoc" asp-route-contractId="@scientificDoc.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
-                                    <td style="vertical-align:middle;"><a onclick="deleteScientificDoc('@scientificDoc.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"> </a></td>
-
-                                    <td>@scientificDoc.Result</td>
-                                    <td>@scientificDoc.Name</td>
-                                    <td>@scientificDoc.Location</td>
-                                    <td>@scientificDoc.Note</td>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col">Результат</th>
+                                    <th scope="col">Уточнение</th>
+                                    <th scope="col">Местоположение</th>
+                                    <th scope="col">Примечание</th>
                                 </tr>
-                            }
-                        </tbody>
-                    </table>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var scientificDoc in @ViewBag.ScientificDocs)
+                                {
+                                    <tr>
+                                        <td style="vertical-align:middle;"><a asp-controller="Docs" asp-action="Index" style="font-weight: 700;">>>></a> </td>
+                                        <td style="vertical-align:middle;"> <a class="nav-link text-primary" asp-controller="ScientificDocs" asp-action="ChangingScientificDoc" asp-route-contractId="@scientificDoc.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                                        <td style="vertical-align:middle;"><a onclick="deleteScientificDoc('@scientificDoc.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"> </a></td>
+
+                                        <td>@scientificDoc.Result</td>
+                                        <td>@scientificDoc.Name</td>
+                                        <td>@scientificDoc.Location</td>
+                                        <td>@scientificDoc.Note</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
 
                 </div>
 
@@ -212,29 +213,31 @@
                     <h3 style="padding: 8px;">Продукт <a asp-controller="Products" asp-action="Product"> + </a> </h3>
 
 
-                    <table class="table table-hover " style="text-align: center;">
+                    <div style="overflow-x:auto;">
+                        <table class="table table-hover " style="text-align: center;">
 
-                        <thead>
-                            <tr>
-                                @*<th scope="col"></th>
-                                    <th scope="col"></th>*@
-                                <th scope="col">Результат</th>
-                                <th scope="col">Местоположение</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            @foreach (var product in @ViewBag.Products)
-                            {
+                            <thead>
                                 <tr>
-                                    @*<td>@Html.ActionLink("изменить", "Product", new { id = product.Id })</td>
-                                        <td><a onclick="deleteProduct('@product.Id')" href="#"> удалить </a></td>*@
-                                    <td>@product.Name</td>
-                                    <td>@product.Location</td>
+                                    @*<th scope="col"></th>
+                        <th scope="col"></th>*@
+                                    <th scope="col">Результат</th>
+                                    <th scope="col">Местоположение</th>
                                 </tr>
-                            }
-                        </tbody>
-                    </table>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var product in @ViewBag.Products)
+                                {
+                                    <tr>
+                                        @*<td>@Html.ActionLink("изменить", "Product", new { id = product.Id })</td>
+                            <td><a onclick="deleteProduct('@product.Id')" href="#"> удалить </a></td>*@
+                                        <td>@product.Name</td>
+                                        <td>@product.Location</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
 
@@ -242,34 +245,36 @@
 
                     <h3 style="padding: 8px;">РИД</h3>
 
-                    <table class="table table-hover " style="text-align: center;">
+                    <div style="overflow-x:auto;">
+                        <table class="table table-hover " style="text-align: center;">
 
-                        <thead>
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                                <th scope="col">Результат</th>
-                                <th scope="col">Реквизиты</th>
-                                <th scope="col">Авторы</th>
-                                <th scope="col">Местоположение</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            @foreach (var ria in @ViewBag.RIAs)
-                            {
+                            <thead>
                                 <tr>
-                                    <td style="vertical-align:middle;"> <a class="nav-link text-primary" asp-controller="RIAs" asp-action="ChangingRIA" asp-route-contractId="@ria.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
-                                    <td style="vertical-align:middle;"><a onclick="deleteRIA('@ria.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"> </a></td>
-
-                                    <td>@ria.Result</td>
-                                    <td>@ria.Props</td>
-                                    <td>@ria.Authors</td>
-                                    <td>@ria.Location</td>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col">Результат</th>
+                                    <th scope="col">Реквизиты</th>
+                                    <th scope="col">Авторы</th>
+                                    <th scope="col">Местоположение</th>
                                 </tr>
-                            }
-                        </tbody>
-                    </table>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var ria in @ViewBag.RIAs)
+                                {
+                                    <tr>
+                                        <td style="vertical-align:middle;"> <a class="nav-link text-primary" asp-controller="RIAs" asp-action="ChangingRIA" asp-route-contractId="@ria.Id"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                                        <td style="vertical-align:middle;"><a onclick="deleteRIA('@ria.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"> </a></td>
+
+                                        <td>@ria.Result</td>
+                                        <td>@ria.Props</td>
+                                        <td>@ria.Authors</td>
+                                        <td>@ria.Location</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
 
                 </div>
 
@@ -277,37 +282,37 @@
                 <div id="Files" class="tabcontent" style="border:none;">
                     <h3 style="padding: 8px;">Файлы</h3>
 
-                    <table class="table table-hover " style="text-align: center;">
-                        <thead>
-                            <tr>
-                                <th scope="col">Имя файла</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var file in @ViewBag.Files)
-                            {
+                    <div style="overflow-x:auto;">
+                        <table class="table table-hover " style="text-align: center;">
+                            <thead>
                                 <tr>
-                                    <td>@file.Filename.@file.FileType</td>
-                                    <td><a href="#">  </a></td>
-                                    <td><a onclick="deleteFile('@file.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
+                                    <th scope="col">Имя файла</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+
                                 </tr>
-                            }
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach (var file in @ViewBag.Files)
+                                {
+                                    <tr>
+                                        <td>@file.Filename.@file.FileType</td>
+                                        <td><a href="#">  </a></td>
+                                        <td><a onclick="deleteFile('@file.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
 
                     <form asp-controller="Files" asp-action="AddFile" method="post" enctype="multipart/form-data">
                         <input type="file" name="uploadedFile" />
                         <input type="submit" value="Сохранить">
                     </form>
 
-
-
                 </div>
 
-            </div>
+                </div>
 
 
         </div>

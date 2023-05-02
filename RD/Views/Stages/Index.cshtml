@@ -146,7 +146,7 @@
     <div class="row" style="align-items:center">
         <div class="col-sm-5">
 
-            <form method="post" asp-action="Edit" asp-controller="Themes" class="my-2 col-10" style="box-shadow: 0 1px 2px 3px #e9e8e8; padding: 8px; ">
+            <form method="post" asp-action="Edit" asp-controller="Themes" class="my-2 col-10" style="box-shadow: 0 1px 2px 3px #e9e8e8; padding: 8px; min-width: 360px;">
 
                 <h3 style="color: #343a40; padding: 8px;">Тема - @ViewBag.ThemeName </h3>
 
@@ -514,7 +514,7 @@
         </div>
 
 
-        <div class="col-sm-7">
+        <div class="col-sm-7" style="padding-left: 145px;">
             <div style="box-shadow: 0 1px 2px 3px #e9e8e8; padding: 8px; ">
                 <div class="tab" style="border:none;">
                     <button class="tablinks active" onclick="openTab(event, 'Stages')">Этапы</button>
@@ -637,79 +637,84 @@
                     <h3 style="padding: 8px;">Договоры <a asp-controller="Contracts" asp-action="Contract" asp-route-themeId="@ViewBag.ThemeId" asp-route-themeName="@ViewBag.ThemeName"> + </a> </h3>
 
 
-                    <table class="table table-hover" style="text-align: center;">
+                    <div style="overflow-x:auto;">
+                        <table class="table table-hover" style="text-align: center;">
 
-                        <thead>
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                                <th scope="col">Соисполнитель</th>
-                                <th scope="col">Наменование договора</th>
-                                <th scope="col">Срок выполнения - начало</th>
-                                <th scope="col">Срок выполнения - конец</th>
-                                <th scope="col">Реквизиты договора</th>
-                                <th scope="col">Общий объем финансирования</th>
-                                <th scope="col">Статус</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            @foreach (var contract in @ViewBag.Contracts)
-                            {
+                            <thead>
                                 <tr>
-                                    <td style="vertical-align:middle;"><a asp-controller="Contracts" asp-action="ContractDetail" asp-route-themeId="@ViewBag.ThemeId" asp-route-contractId="@contract.Id" asp-route-themeName="@ViewBag.ThemeName" style="font-weight: 700;"> >>> </a></td>
-                                    <td style="vertical-align:middle;"> <a class="nav-link text-primary" asp-controller="Contracts" asp-action="ChangingContract" asp-route-contractId="@contract.Id" asp-route-themeId="@ViewBag.ThemeId" asp-route-themeName="@ViewBag.ThemeName"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
-                                    <td style="vertical-align:middle;"><a onclick="deleteContract('@contract.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
-                                    <td>@contract.CounterpartyName</td>
-                                    <td>@contract.NameContract</td>
-                                    <td>@contract.WorkStart</td>
-                                    <td>@contract.WorkEnd</td>
-                                    <td>@contract.Props</td>
-                                    <td>@contract.Amount</td>
-                                    <td>@contract.Status</td>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col">Соисполнитель</th>
+                                    <th scope="col">Наменование договора</th>
+                                    <th scope="col">Срок выполнения - начало</th>
+                                    <th scope="col">Срок выполнения - конец</th>
+                                    <th scope="col">Реквизиты договора</th>
+                                    <th scope="col">Общий объем финансирования</th>
+                                    <th scope="col">Статус</th>
                                 </tr>
-                            }
-                        </tbody>
-                    </table>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var contract in @ViewBag.Contracts)
+                                {
+                                    <tr>
+                                        <td style="vertical-align:middle;"><a asp-controller="Contracts" asp-action="ContractDetail" asp-route-themeId="@ViewBag.ThemeId" asp-route-contractId="@contract.Id" asp-route-themeName="@ViewBag.ThemeName" style="font-weight: 700;"> >>> </a></td>
+                                        <td style="vertical-align:middle;"> <a class="nav-link text-primary" asp-controller="Contracts" asp-action="ChangingContract" asp-route-contractId="@contract.Id" asp-route-themeId="@ViewBag.ThemeId" asp-route-themeName="@ViewBag.ThemeName"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                                        <td style="vertical-align:middle;"><a onclick="deleteContract('@contract.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
+                                        <td>@contract.CounterpartyName</td>
+                                        <td>@contract.NameContract</td>
+                                        <td>@contract.WorkStart</td>
+                                        <td>@contract.WorkEnd</td>
+                                        <td>@contract.Props</td>
+                                        <td>@contract.Amount</td>
+                                        <td>@contract.Status</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <div id="Files" class="tabcontent" style="border:none;">
                     <h3 style="padding: 8px;">Файлы</h3>
 
-                    <table class="table table-hover " style="text-align: center;">
-                        <thead>
-                            <tr>
-                                <th scope="col">Имя файла</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
+                    <div style="overflow-x:auto;">
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var file in @ViewBag.Files)
-                            {
+                        <table class="table table-hover " style="text-align: center;">
+                            <thead>
                                 <tr>
-                                    <td>
-                                        <a href="files/@file.Filename" download="@file.Filename">
-                                            @file.Filename
-                                        </a>
-                                    </td>
-                                    <td><a href="#">  </a></td>
-                                    <td><a onclick="deleteFile('@file.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
-                                </tr>
-                            }
+                                    <th scope="col">Имя файла</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
 
-                            @*@foreach (var file in ViewBag.Docs)
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var file in @ViewBag.Files)
                                 {
-                                    <a href="docs/@file.NameDoc.@file.DocType" download="@file.NameDoc.@file.DocType">
-                                        @file.NameDoc
-                                    </a>
-                                }*@
-                            <tr>
-                            </tr>
-                        </tbody>
-                    </table>
+                                    <tr>
+                                        <td>
+                                            <a href="files/@file.Filename" download="@file.Filename">
+                                                @file.Filename
+                                            </a>
+                                        </td>
+                                        <td><a href="#">  </a></td>
+                                        <td><a onclick="deleteFile('@file.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
+                                    </tr>
+                                }
+
+                                @*@foreach (var file in ViewBag.Docs)
+                    {
+                        <a href="docs/@file.NameDoc.@file.DocType" download="@file.NameDoc.@file.DocType">
+                            @file.NameDoc
+                        </a>
+                    }*@
+                                <tr>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <form asp-action="AddFile" style="padding-left:200px;" asp-controller="Files" method="post" enctype="multipart/form-data">
 
@@ -728,39 +733,41 @@
                     </form>
 
                 </div>
-            </div>
+                </div>
 
             <br /><br />
 
-            <div style="box-shadow: 0 1px 2px 3px #e9e8e8; padding: 8px; ">
+                  <div style="box-shadow: 0 1px 2px 3px #e9e8e8; padding: 8px; ">
 
-                <h3 style="padding: 8px;">Финансирование по годам <a asp-controller="AnnualFinancings" asp-action="AnnualFinancing" asp-route-themeId="@ViewBag.ThemeId" asp-route-themeName="@ViewBag.ThemeName"> + </a> </h3>
+                      <h3 style="padding: 8px;">Финансирование по годам <a asp-controller="AnnualFinancings" asp-action="AnnualFinancing" asp-route-themeId="@ViewBag.ThemeId" asp-route-themeName="@ViewBag.ThemeName"> + </a> </h3>
 
+                      <div style="overflow-x:auto;">
 
-                <table class="table table-hover " style="text-align: center;">
-                    <thead>
-                        <tr>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col">Год</th>
-                            <th scope="col">Сумма</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                          <table class="table table-hover " style="text-align: center;">
+                              <thead>
+                                  <tr>
+                                      <th scope="col"></th>
+                                      <th scope="col"></th>
+                                      <th scope="col">Год</th>
+                                      <th scope="col">Сумма</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
 
-                        @foreach (var annualFinancing in @ViewBag.AnnualFinancings)
-                        {
-                            <tr>
-                                <td> <a asp-controller="AnnualFinancings" asp-action="ChangingAnnualFinancing" asp-route-annualFinancingId="@annualFinancing.Id" asp-route-themeName="@ViewBag.ThemeName"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
-                                <td><a onclick="deleteAnnualFinancing('@annualFinancing.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
-                                <td>@annualFinancing.Year</td>
-                                <td>@annualFinancing.Amount</td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-        </div>
+                                  @foreach (var annualFinancing in @ViewBag.AnnualFinancings)
+                                  {
+                                      <tr>
+                                          <td> <a asp-controller="AnnualFinancings" asp-action="ChangingAnnualFinancing" asp-route-annualFinancingId="@annualFinancing.Id" asp-route-themeName="@ViewBag.ThemeName"> <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                                          <td><a onclick="deleteAnnualFinancing('@annualFinancing.Id')" href="#"> <i class="fa fa-trash" aria-hidden="true"></i> </a></td>
+                                          <td>@annualFinancing.Year</td>
+                                          <td>@annualFinancing.Amount</td>
+                                      </tr>
+                                  }
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+                  </div>
     </div>
 </div>
 
